@@ -214,7 +214,7 @@
         {"kind": "drive", "points": ["qiqihar", "zhalantun", "boketu", "yakeshi", "hailar", "morigele", "erguna", "genhe", "moerdaoga", "bailudao", "qiqian", "bailudao", "moerdaoga", "taiping", "linjiang", "shiwei", "jiuka", "baka", "qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi", "aershan", "aershan_east", "chaihe", "moguqi", "zhalantun", "qiqihar", "daqing", "harbin"]}
       ],
       "labels": ["qiqihar", "zhalantun", "hailar", "morigele", "genhe", "qiqian", "qika", "heishantou", "xinzuoqi", "aershan", "daqing", "harbin"],
-      "photos": ["boketu_forest", "morigele_curve", "erguna_wetland", "aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve", "wulan_taiji", "wuka_valley", "xinzuoqi_sunset", "budonghe_sunset", "wusulangzi_day", "tuofeng_view", "dujuan_lake", "shitang_forest", "moa_valley", "shanshui_rock"],
+      "photos": ["boketu_forest", "morigele_curve", "erguna_wetland", "aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve", "wulan_taiji", "wuka_valley", "budonghe_sunset", "wusulangzi_day", "tuofeng_view", "dujuan_lake", "shitang_forest", "moa_valley", "shanshui_rock"],
       "photo_labels": []
     },
     "r01": {
@@ -255,7 +255,7 @@
       "badge": "方案二 · D5 / 8",
       "routes": [{"kind": "drive", "points": ["qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi"]}],
       "labels": ["qika", "heishantou", "hailar", "xinzuoqi"],
-      "photos": ["wulan_taiji", "wuka_valley", "xinzuoqi_sunset"]
+      "photos": ["wulan_taiji", "wuka_valley"]
     },
     "r06": {
       "title": "10.01 新巴尔虎左旗到阿尔山",
