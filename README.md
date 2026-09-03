@@ -2,6 +2,10 @@
 
 这是 2026-09-26 至 2026-10-03 的 Quarto 在线路书。路线从齐齐哈尔出发，经蘑阿公路、阿尔山、莫日格勒河、卡线、奇乾、根河和五大连池，于 10 月 3 日晚抵达哈尔滨。
 
+在线阅读：<https://aliosvictor.github.io/dongbei-roadbook/>
+
+[![使用 EdgeOne Makers 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Faliosvictor%2Fdongbei-roadbook%2Ftree%2Fgh-pages&project-name=dongbei-roadbook&output-directory=.%2F)
+
 ## 内容入口
 
 - `index.qmd`：完整行程、每天时间线、摄影与器材安排。
