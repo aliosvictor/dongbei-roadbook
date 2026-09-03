@@ -11,7 +11,7 @@ lightbox: true
 > 版本日期：2026-09-03<br>
 > 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 新巴尔虎左旗 → 莫日格勒河 → 额尔古纳 → 黑山头 → 卡线 → 奇乾 → 根河 → 嫩江 → 五大连池 → 哈尔滨
 
-![八日完整路线总览](figures/maps/overview.png){.route-map fig-alt="从齐齐哈尔经阿尔山、呼伦贝尔、卡线、奇乾、根河和五大连池到哈尔滨的完整路线图"}
+![八日完整路线总览](figures/maps/overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="从齐齐哈尔经阿尔山、呼伦贝尔、卡线、奇乾、根河和五大连池到哈尔滨的完整路线图"}
 
 > 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 表示自驾路线，橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号表示路线节点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。公路沿线拍摄点以现场正规停车带为准。
 
@@ -85,7 +85,7 @@ lightbox: true
 
 ### Day 1｜9 月 26 日：齐齐哈尔—蘑阿公路—阿尔山 {#day-1}
 
-![Day 1 路线与全程定位](figures/maps/d01.png){.route-map fig-alt="齐齐哈尔经扎兰屯、蘑菇气和柴河到阿尔山的当日路线图"}
+![Day 1 路线与全程定位](figures/maps/d01.webp){.route-map loading="lazy" decoding="async" fig-alt="齐齐哈尔经扎兰屯、蘑菇气和柴河到阿尔山的当日路线图"}
 
 **路线**<br>
 齐齐哈尔 → 甘南 → 阿荣旗 → 扎兰屯外围 → 蘑菇气 → 柴河 → 蘑阿公路 → 阿尔山国家森林公园东侧 → 天池服务区附近
@@ -131,7 +131,7 @@ lightbox: true
 
 ### Day 2｜9 月 27 日：阿尔山—新巴尔虎左旗 {#day-2}
 
-![Day 2 路线与全程定位](figures/maps/d02.png){.route-map fig-alt="阿尔山园区经阿尔山市到新巴尔虎左旗的当日路线图"}
+![Day 2 路线与全程定位](figures/maps/d02.webp){.route-map loading="lazy" decoding="async" fig-alt="阿尔山园区经阿尔山市到新巴尔虎左旗的当日路线图"}
 
 **路线**<br>
 乌苏浪子湖 → 阿尔山园区精选机位 → 伊尔施 → 阿尔山市 → 阿木古郎镇（新巴尔虎左旗）
@@ -167,7 +167,7 @@ lightbox: true
 
 ### Day 3｜9 月 28 日：新巴尔虎左旗—海拉尔—莫日格勒河—额尔古纳—黑山头 {#day-3}
 
-![Day 3 路线与全程定位](figures/maps/d03.png){.route-map fig-alt="新巴尔虎左旗经海拉尔、莫日格勒河和额尔古纳到黑山头的当日路线图"}
+![Day 3 路线与全程定位](figures/maps/d03.webp){.route-map loading="lazy" decoding="async" fig-alt="新巴尔虎左旗经海拉尔、莫日格勒河和额尔古纳到黑山头的当日路线图"}
 
 **路线**<br>
 新巴尔虎左旗 → 海拉尔 → 陈巴尔虎旗 → 莫日格勒河景区 → 额尔古纳湿地 → 黑山头
@@ -211,7 +211,7 @@ lightbox: true
 
 ### Day 4｜9 月 29 日：黑山头—五卡—乌兰山—七卡 {#day-4}
 
-![Day 4 路线与全程定位](figures/maps/d04.png){.route-map fig-alt="黑山头沿卡线经五卡和乌兰山到七卡的当日路线图"}
+![Day 4 路线与全程定位](figures/maps/d04.webp){.route-map loading="lazy" decoding="async" fig-alt="黑山头沿卡线经五卡和乌兰山到七卡的当日路线图"}
 
 **路线**<br>
 黑山头 → 五卡 → 乌兰山 → 七卡
@@ -254,7 +254,7 @@ lightbox: true
 
 ### Day 5｜9 月 30 日：七卡—室韦—临江—太平—莫尔道嘎—白鹿岛—奇乾 {#day-5}
 
-![Day 5 路线与全程定位](figures/maps/d05.png){.route-map fig-alt="七卡经室韦、临江、太平、莫尔道嘎和白鹿岛到奇乾的当日路线图"}
+![Day 5 路线与全程定位](figures/maps/d05.webp){.route-map loading="lazy" decoding="async" fig-alt="七卡经室韦、临江、太平、莫尔道嘎和白鹿岛到奇乾的当日路线图"}
 
 **路线**<br>
 七卡 → 八卡 → 九卡 → 室韦 → 临江 → 太平 → 莫尔道嘎 → 白鹿岛 → 奇乾
@@ -300,7 +300,7 @@ lightbox: true
 
 ### Day 6｜10 月 1 日：奇乾晨雾—莫尔道嘎—根河 {#day-6}
 
-![Day 6 路线与全程定位](figures/maps/d06.png){.route-map fig-alt="奇乾经白鹿岛和莫尔道嘎到根河的当日路线图"}
+![Day 6 路线与全程定位](figures/maps/d06.webp){.route-map loading="lazy" decoding="async" fig-alt="奇乾经白鹿岛和莫尔道嘎到根河的当日路线图"}
 
 **路线**<br>
 奇乾 → 白鹿岛附近 → 莫尔道嘎 → X954 → X325 → G332 → 根河
@@ -346,7 +346,7 @@ lightbox: true
 
 ### Day 7｜10 月 2 日：根河—敖鲁古雅—阿里河—加格达奇—嫩江 {#day-7}
 
-![Day 7 路线与全程定位](figures/maps/d07.png){.route-map fig-alt="根河经敖鲁古雅、阿里河、加格达奇和大杨树到嫩江的当日路线图"}
+![Day 7 路线与全程定位](figures/maps/d07.webp){.route-map loading="lazy" decoding="async" fig-alt="根河经敖鲁古雅、阿里河、加格达奇和大杨树到嫩江的当日路线图"}
 
 **路线**<br>
 根河 → 敖鲁古雅 → 伊图里河 → 克一河 → 甘河 → 吉文 → 阿里河 → 加格达奇 → 大杨树 → 嫩江
@@ -384,7 +384,7 @@ lightbox: true
 
 ### Day 8｜10 月 3 日：嫩江—五大连池—哈尔滨 {#day-8}
 
-![Day 8 路线与全程定位](figures/maps/d08.png){.route-map fig-alt="嫩江经五大连池、北安和绥化到哈尔滨的当日路线图"}
+![Day 8 路线与全程定位](figures/maps/d08.webp){.route-map loading="lazy" decoding="async" fig-alt="嫩江经五大连池、北安和绥化到哈尔滨的当日路线图"}
 
 **路线**<br>
 嫩江 → 五大连池风景区 → 北安方向 → 绥化方向 → 哈尔滨

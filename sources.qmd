@@ -10,7 +10,7 @@ toc-depth: 2
 
 本页汇总 2026-09-26 至 2026-10-03 三套路线共用的核验入口。出发前按 T-7 日、T-72 小时、当天早晨三个时间点更新动态信息。
 
-![全程道路与天气检查点](figures/maps/risk.png){.route-map fig-alt="蘑阿天气、卡线通行、奇乾施工、根河绕行和国庆车流检查点地图"}
+![全程道路与天气检查点](figures/maps/risk.webp){.route-map loading="lazy" decoding="async" fig-alt="蘑阿天气、卡线通行、奇乾施工、根河绕行和国庆车流检查点地图"}
 
 [OpenStreetMap｜版权与署名](https://www.openstreetmap.org/copyright) — 路线地图的底图数据来源。
 

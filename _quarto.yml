@@ -3,7 +3,7 @@ project:
   output-dir: _site
   resources:
     - figures/maps/**
-    - assets/fonts/**
+    - assets/fonts/web/**
 
 website:
   title: "大兴安岭自驾游"
@@ -20,23 +20,21 @@ website:
       - href: primary.qmd
         text: 主行程
       - href: option-skip-qiqian.qmd
-        text: 方案一 · 不去奇乾
+        text: 方案1
       - href: option-reverse.qmd
-        text: 方案二 · 反向追色
+        text: 方案2
       - href: sources.qmd
         text: 核验
   page-footer:
     left: "2026 大兴安岭自驾游"
     right: "路线图为行程示意；实际驾驶以实时导航、交警信息和现场标识为准"
-  search: true
+  search: false
   back-to-top-navigation: true
 
 format:
   html:
     title-block-banner: true
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: cosmo
     css: styles.css
     toc: true
     toc-location: left

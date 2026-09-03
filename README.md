@@ -15,7 +15,8 @@
 - `sources.qmd`：天气、道路、景区、边境与无人机核验入口。
 - `data/itinerary.json`：完整路线与每日地图控制点。
 - `scripts/build_maps.py`：生成总览、每日路线与风险地图。
-- `figures/maps/`：网站使用的静态地图图片。
+- `figures/maps/`：网站使用的 WebP 静态地图图片。
+- `assets/fonts/web/`：网站使用的精简中文字体。
 - `requirements.txt`：地图生成脚本的 Python 依赖。
 
 ## 本地预览
@@ -30,6 +31,8 @@ quarto preview
 python3 -m pip install -r requirements.txt
 python3 scripts/build_maps.py
 ```
+
+地图输出为适合网页加载的 WebP 图片。
 
 生成静态网站：
 

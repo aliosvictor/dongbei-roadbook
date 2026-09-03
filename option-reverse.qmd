@@ -1,5 +1,5 @@
 ---
-title: "方案二｜反向追色"
+title: "方案2｜反向追色"
 subtitle: "北部秋色明显更早时，先奇乾与卡线，再向南到阿尔山"
 description: "由北向南追赶秋色的八日大兴安岭摄影自驾备选方案"
 lang: zh
@@ -11,7 +11,7 @@ lightbox: true
 > 使用条件：9 月 23—24 日实时画面显示奇乾、根河已经进入盛色，而阿尔山仍明显偏绿。<br>
 > 核心路线：齐齐哈尔 → 海拉尔 → 莫日格勒河 → 根河 → 奇乾 → 卡线 → 新巴尔虎左旗 → 阿尔山 → 蘑阿公路 → 扎兰屯 → 哈尔滨
 
-![方案二完整路线](figures/maps/reverse_overview.png){.route-map fig-alt="从齐齐哈尔先到海拉尔、根河和奇乾，再反向经过卡线、阿尔山和蘑阿公路到哈尔滨的路线图"}
+![方案二完整路线](figures/maps/reverse_overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="从齐齐哈尔先到海拉尔、根河和奇乾，再反向经过卡线、阿尔山和蘑阿公路到哈尔滨的路线图"}
 
 > 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 表示自驾路线，橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号表示路线节点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。
 
@@ -30,7 +30,7 @@ lightbox: true
 
 ### Day 1｜9 月 26 日：齐齐哈尔—扎兰屯—博克图—牙克石—海拉尔 {#reverse-day-1}
 
-![方案二 Day 1 路线](figures/maps/r01.png){.route-map fig-alt="方案二第一天齐齐哈尔经扎兰屯、博克图和牙克石到海拉尔路线图"}
+![方案二 Day 1 路线](figures/maps/r01.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第一天齐齐哈尔经扎兰屯、博克图和牙克石到海拉尔路线图"}
 
 **里程与驾驶**：约 580—630 公里，纯驾驶约 8—9 小时。住宿海拉尔。
 
@@ -47,7 +47,7 @@ lightbox: true
 
 ### Day 2｜9 月 27 日：海拉尔—莫日格勒河—额尔古纳—根河 {#reverse-day-2}
 
-![方案二 Day 2 路线](figures/maps/r02.png){.route-map fig-alt="方案二第二天海拉尔经莫日格勒河和额尔古纳到根河路线图"}
+![方案二 Day 2 路线](figures/maps/r02.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第二天海拉尔经莫日格勒河和额尔古纳到根河路线图"}
 
 **里程与驾驶**：约 340—380 公里，纯驾驶约 6—7 小时。住宿根河。
 
@@ -65,7 +65,7 @@ lightbox: true
 
 ### Day 3｜9 月 28 日：根河—莫尔道嘎—白鹿岛—奇乾 {#reverse-day-3}
 
-![方案二 Day 3 路线](figures/maps/r03.png){.route-map fig-alt="方案二第三天根河经莫尔道嘎和白鹿岛到奇乾路线图"}
+![方案二 Day 3 路线](figures/maps/r03.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第三天根河经莫尔道嘎和白鹿岛到奇乾路线图"}
 
 **里程与驾驶**：约 300—340 公里，纯驾驶约 7—8 小时。住宿奇乾，必须提前预订。
 
@@ -84,7 +84,7 @@ lightbox: true
 
 ### Day 4｜9 月 29 日：奇乾—莫尔道嘎—太平—临江—室韦—七卡 {#reverse-day-4}
 
-![方案二 Day 4 路线](figures/maps/r04.png){.route-map fig-alt="方案二第四天奇乾经莫尔道嘎、太平、临江和室韦到七卡路线图"}
+![方案二 Day 4 路线](figures/maps/r04.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第四天奇乾经莫尔道嘎、太平、临江和室韦到七卡路线图"}
 
 **里程与驾驶**：约 360—410 公里，纯驾驶约 8—9 小时。住宿七卡。
 
@@ -104,7 +104,7 @@ lightbox: true
 
 ### Day 5｜9 月 30 日：七卡—乌兰山—黑山头—海拉尔—新巴尔虎左旗 {#reverse-day-5}
 
-![方案二 Day 5 路线](figures/maps/r05.png){.route-map fig-alt="方案二第五天七卡沿卡线经黑山头和海拉尔到新巴尔虎左旗路线图"}
+![方案二 Day 5 路线](figures/maps/r05.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第五天七卡沿卡线经黑山头和海拉尔到新巴尔虎左旗路线图"}
 
 **里程与驾驶**：约 430—500 公里，纯驾驶约 7—8 小时。住宿新巴尔虎左旗。
 
@@ -123,7 +123,7 @@ lightbox: true
 
 ### Day 6｜10 月 1 日：新巴尔虎左旗—阿尔山 {#reverse-day-6}
 
-![方案二 Day 6 路线](figures/maps/r06.png){.route-map fig-alt="方案二第六天新巴尔虎左旗到阿尔山园区路线图"}
+![方案二 Day 6 路线](figures/maps/r06.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第六天新巴尔虎左旗到阿尔山园区路线图"}
 
 **里程与驾驶**：约 260—300 公里，纯驾驶约 4—5 小时。住宿阿尔山园区。
 
@@ -140,7 +140,7 @@ lightbox: true
 
 ### Day 7｜10 月 2 日：阿尔山—蘑阿公路—柴河—扎兰屯 {#reverse-day-7}
 
-![方案二 Day 7 路线](figures/maps/r07.png){.route-map fig-alt="方案二第七天阿尔山经蘑阿公路、柴河和蘑菇气到扎兰屯路线图"}
+![方案二 Day 7 路线](figures/maps/r07.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第七天阿尔山经蘑阿公路、柴河和蘑菇气到扎兰屯路线图"}
 
 **里程与驾驶**：约 300—340 公里，纯驾驶约 6—7 小时。住宿扎兰屯。
 
@@ -157,7 +157,7 @@ lightbox: true
 
 ### Day 8｜10 月 3 日：扎兰屯—齐齐哈尔—大庆—哈尔滨 {#reverse-day-8}
 
-![方案二 Day 8 路线](figures/maps/r08.png){.route-map fig-alt="方案二第八天扎兰屯经齐齐哈尔和大庆到哈尔滨路线图"}
+![方案二 Day 8 路线](figures/maps/r08.webp){.route-map loading="lazy" decoding="async" fig-alt="方案二第八天扎兰屯经齐齐哈尔和大庆到哈尔滨路线图"}
 
 **里程与驾驶**：约 600—680 公里，纯驾驶约 8—9 小时；当天以返程转场、途中休息和还车衔接为主。
 

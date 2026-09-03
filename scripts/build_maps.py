@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build bounded OSM-based schematic maps for the final travel roadbook.
+"""Build compact WebP OSM-based schematic maps for the travel roadbook.
 
 Route lines pass through locally stored control points. OSM tiles are cached so
 later builds retain the same basemap and avoid repeated downloads.
@@ -588,8 +588,8 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
     draw.text((target[0] - cw - 18, target[1] - 39), credit, fill=(39, 49, 40, 220), font=FONT_TINY)
 
     output.mkdir(parents=True, exist_ok=True)
-    out = output / f"{key}.png"
-    image.convert("RGB").save(out, quality=94, optimize=True)
+    out = output / f"{key}.webp"
+    image.convert("RGB").save(out, format="WEBP", quality=86, method=6)
     print(f"{key}: z{zoom} -> {out.relative_to(ROOT)}")
 
 

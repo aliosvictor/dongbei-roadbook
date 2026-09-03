@@ -1,5 +1,5 @@
 ---
-title: "方案一｜不去奇乾"
+title: "方案1｜不去奇乾"
 subtitle: "保留阿尔山与卡线，减少偏远支线和夜间驾驶"
 description: "以莫尔道嘎为北端的八日大兴安岭摄影自驾备选方案"
 lang: zh
@@ -11,7 +11,7 @@ lightbox: true
 > 使用条件：奇乾住宿没有落实，或室韦—奇乾方向道路、天气不适合进入。<br>
 > 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 莫日格勒河 → 黑山头 → 卡线 → 室韦 → 莫尔道嘎 → 根河 → 嫩江 → 五大连池 → 哈尔滨
 
-![方案一完整路线](figures/maps/skip_overview.png){.route-map fig-alt="以莫尔道嘎为北端住宿点的八日完整路线图"}
+![方案一完整路线](figures/maps/skip_overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="以莫尔道嘎为北端住宿点的八日完整路线图"}
 
 > 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 表示自驾路线，橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号表示路线节点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。
 
@@ -30,7 +30,7 @@ lightbox: true
 
 ### Day 1｜9 月 26 日：齐齐哈尔—蘑阿公路—阿尔山 {#skip-day-1}
 
-![方案一 Day 1 路线](figures/maps/s01.png){.route-map fig-alt="方案一第一天齐齐哈尔经蘑阿公路到阿尔山路线图"}
+![方案一 Day 1 路线](figures/maps/s01.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第一天齐齐哈尔经蘑阿公路到阿尔山路线图"}
 
 **里程与驾驶**：约 460—500 公里，全天约 10—11 小时。住宿阿尔山国家森林公园内或天池服务区附近。
 
@@ -47,7 +47,7 @@ lightbox: true
 
 ### Day 2｜9 月 27 日：阿尔山—新巴尔虎左旗 {#skip-day-2}
 
-![方案一 Day 2 路线](figures/maps/s02.png){.route-map fig-alt="方案一第二天阿尔山园区到新巴尔虎左旗路线图"}
+![方案一 Day 2 路线](figures/maps/s02.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第二天阿尔山园区到新巴尔虎左旗路线图"}
 
 **里程与驾驶**：约 260—300 公里，纯驾驶约 4—5 小时。住宿新巴尔虎左旗阿木古郎镇。
 
@@ -66,7 +66,7 @@ lightbox: true
 
 ### Day 3｜9 月 28 日：新左旗—莫日格勒河—黑山头 {#skip-day-3}
 
-![方案一 Day 3 路线](figures/maps/s03.png){.route-map fig-alt="方案一第三天经海拉尔、莫日格勒河和额尔古纳到黑山头路线图"}
+![方案一 Day 3 路线](figures/maps/s03.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第三天经海拉尔、莫日格勒河和额尔古纳到黑山头路线图"}
 
 **里程与驾驶**：约 340—380 公里，纯驾驶约 6—7 小时。住宿黑山头。
 
@@ -84,7 +84,7 @@ lightbox: true
 
 ### Day 4｜9 月 29 日：黑山头—卡线—七卡 {#skip-day-4}
 
-![方案一 Day 4 路线](figures/maps/s04.png){.route-map fig-alt="方案一第四天黑山头沿卡线到七卡路线图"}
+![方案一 Day 4 路线](figures/maps/s04.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第四天黑山头沿卡线到七卡路线图"}
 
 **里程与驾驶**：约 80—110 公里，以停车带拍摄为主。住宿七卡。
 
@@ -103,7 +103,7 @@ lightbox: true
 
 ### Day 5｜9 月 30 日：七卡—室韦—临江—太平—莫尔道嘎 {#skip-day-5}
 
-![方案一 Day 5 路线](figures/maps/s05.png){.route-map fig-alt="方案一第五天七卡经室韦、临江和太平到莫尔道嘎路线图"}
+![方案一 Day 5 路线](figures/maps/s05.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第五天七卡经室韦、临江和太平到莫尔道嘎路线图"}
 
 **里程与驾驶**：约 200—230 公里，纯驾驶约 5—6 小时。住宿莫尔道嘎镇。
 
@@ -122,7 +122,7 @@ lightbox: true
 
 ### Day 6｜10 月 1 日：莫尔道嘎—根河 {#skip-day-6}
 
-![方案一 Day 6 路线](figures/maps/s06.png){.route-map fig-alt="方案一第六天莫尔道嘎到根河路线图"}
+![方案一 Day 6 路线](figures/maps/s06.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第六天莫尔道嘎到根河路线图"}
 
 **里程与驾驶**：约 130—170 公里，按绕行情况约 3.5—4.5 小时。住宿根河。
 
@@ -139,7 +139,7 @@ lightbox: true
 
 ### Day 7｜10 月 2 日：根河—敖鲁古雅—嫩江 {#skip-day-7}
 
-![方案一 Day 7 路线](figures/maps/s07.png){.route-map fig-alt="方案一第七天根河经敖鲁古雅、阿里河和加格达奇到嫩江路线图"}
+![方案一 Day 7 路线](figures/maps/s07.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第七天根河经敖鲁古雅、阿里河和加格达奇到嫩江路线图"}
 
 **里程与驾驶**：约 470—520 公里，纯驾驶约 7.5—8.5 小时。住宿嫩江。
 
@@ -157,7 +157,7 @@ lightbox: true
 
 ### Day 8｜10 月 3 日：嫩江—五大连池—哈尔滨 {#skip-day-8}
 
-![方案一 Day 8 路线](figures/maps/s08.png){.route-map fig-alt="方案一第八天嫩江经五大连池到哈尔滨路线图"}
+![方案一 Day 8 路线](figures/maps/s08.webp){.route-map loading="lazy" decoding="async" fig-alt="方案一第八天嫩江经五大连池到哈尔滨路线图"}
 
 **里程与驾驶**：约 520—580 公里，纯驾驶约 6.5—7.5 小时。
 
