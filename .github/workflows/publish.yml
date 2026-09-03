@@ -10,6 +10,7 @@ on:
       - "styles.css"
       - "assets/**"
       - "figures/**"
+      - "icons/**"
       - ".github/workflows/publish.yml"
 
 jobs:

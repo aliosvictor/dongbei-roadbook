@@ -6,6 +6,7 @@ project:
   resources:
     - figures/maps/**
     - assets/fonts/web/**
+    - icons/**
 
 website:
   title: "大兴安岭自驾游"

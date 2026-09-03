@@ -270,6 +270,14 @@ tbody tr:hover {
   font-weight: 650;
 }
 
+.sun-event-icon {
+  width: 1.35em;
+  height: 1.35em;
+  margin-right: 0.38em;
+  object-fit: contain;
+  vertical-align: -0.32em;
+}
+
 tbody tr:has(.photo-stop) > td {
   background: var(--photo-blue-soft) !important;
   color: var(--photo-blue-ink);
@@ -316,6 +324,15 @@ code {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+
+  table:has(thead tr > th:nth-child(2):last-child) {
+    white-space: normal;
+  }
+
+  table:has(thead tr > th:nth-child(2):last-child) th,
+  table:has(thead tr > th:nth-child(2):last-child) td {
+    overflow-wrap: anywhere;
   }
 }
 
