@@ -35,7 +35,7 @@ lightbox: true
 
 先走阿尔山、卡线与奇乾，核心景观最完整。
 
-[查看主行程的逐日地图与时间安排](primary.qmd){.btn .btn-primary}
+[查看主行程的逐日地图与时间安排](primary.qmd){.btn .btn-outline-primary}
 :::
 
 ::: {.route-card}
