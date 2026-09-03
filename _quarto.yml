@@ -16,9 +16,15 @@ website:
     foreground: "#fffaf0"
     left:
       - href: index.qmd
-        text: 行程
+        text: 总行程
+      - href: primary.qmd
+        text: 主行程
+      - href: option-skip-qiqian.qmd
+        text: 方案一 · 不去奇乾
+      - href: option-reverse.qmd
+        text: 方案二 · 反向追色
       - href: sources.qmd
-        text: 临行核验
+        text: 核验
   page-footer:
     left: "2026 大兴安岭自驾游"
     right: "路线图为行程示意；实际驾驶以实时导航、交警信息和现场标识为准"
@@ -33,7 +39,8 @@ format:
       dark: darkly
     css: styles.css
     toc: true
-    toc-location: right
+    toc-location: left
+    toc-title: ""
     smooth-scroll: true
     link-external-newwindow: true
     anchor-sections: true

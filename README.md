@@ -8,8 +8,11 @@
 
 ## 内容入口
 
-- `index.qmd`：完整行程、每天时间线、摄影与器材安排。
-- `sources.qmd`：天气、道路、景区、边境与无人机临行核验入口。
+- `index.qmd`：三套路线的选择规则与总览。
+- `primary.qmd`：主行程的每天时间线、摄影与器材安排。
+- `option-skip-qiqian.qmd`：不进入奇乾的宽松方案。
+- `option-reverse.qmd`：北部秋色明显更早时使用的反向方案。
+- `sources.qmd`：天气、道路、景区、边境与无人机核验入口。
 - `data/itinerary.json`：完整路线与每日地图控制点。
 - `scripts/build_maps.py`：生成总览、每日路线与风险地图。
 - `figures/maps/`：网站使用的静态地图图片。

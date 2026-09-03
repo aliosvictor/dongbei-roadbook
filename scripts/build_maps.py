@@ -401,8 +401,11 @@ def build_context_inset(key: str, spec: dict, places: dict, photo_points: dict, 
         x, y = project(photo["lon"], photo["lat"])
         draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=COLORS["photo"], outline="#FFFDF7", width=1)
 
-    draw.rounded_rectangle((8, 8, 88, 36), radius=6, fill=(250, 248, 240, 232), outline=(95, 105, 59, 150), width=1)
-    draw.text((18, 10), f"{key.upper()} / 8", fill=COLORS["ink"], font=FONT_CONTEXT)
+    badge = spec.get("badge", f"{key.upper()} / 8")
+    badge_bbox = draw.textbbox((0, 0), badge, font=FONT_CONTEXT)
+    badge_width = badge_bbox[2] - badge_bbox[0] + 20
+    draw.rounded_rectangle((8, 8, 8 + badge_width, 36), radius=6, fill=(250, 248, 240, 232), outline=(95, 105, 59, 150), width=1)
+    draw.text((18, 10), badge, fill=COLORS["ink"], font=FONT_CONTEXT)
 
     legend_y = target[1] - 28
     draw.rounded_rectangle((8, legend_y - 6, 193, target[1] - 5), radius=6, fill=(250, 248, 240, 232))
@@ -445,7 +448,7 @@ def place_context_inset(image: Image.Image, inset: Image.Image, route_points: li
 
 
 def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Path, overview_spec: dict) -> None:
-    target = OVERVIEW_TARGET if key in {"overview", "risk"} else TARGET
+    target = OVERVIEW_TARGET if key in {"overview", "risk"} or spec.get("layout") == "overview" else TARGET
     point_keys: list[str] = []
     for route in spec["routes"]:
         point_keys.extend(route["points"])
@@ -545,7 +548,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
         x, y = project(hazard["lon"], hazard["lat"])
         hazard_marker(draw, x, y, hazard["label"], target[0], target[1], occupied)
 
-    if key.startswith("d"):
+    if spec.get("context") or key.startswith("d"):
         daily_route_points: list[tuple[float, float]] = []
         for route in spec["routes"]:
             if route["kind"] != "alternative":
@@ -592,7 +595,6 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
 
 def main() -> None:
     data = json.loads(DATA.read_text(encoding="utf-8"))
-    overview_spec = data["maps"]["overview"]
     requested = sys.argv[1:]
     unknown = [key for key in requested if key not in data["maps"]]
     if unknown:
@@ -600,6 +602,8 @@ def main() -> None:
     keys = requested or list(data["maps"])
     for key in keys:
         spec = data["maps"][key]
+        context_key = spec.get("context", "overview")
+        overview_spec = data["maps"][context_key]
         build_map(key, spec, data["places"], data["photo_points"], OUTPUT, overview_spec)
 
 

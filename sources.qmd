@@ -1,5 +1,5 @@
 ---
-title: "临行核验与来源"
+title: "核验"
 subtitle: "天气、道路、景区与飞行规则入口"
 lang: zh
 toc: true
@@ -15,7 +15,7 @@ toc-depth: 2
 ## 一、路线基准
 
 - `data/itinerary.json` 是路线节点、每日线路和蓝点拍摄位置的统一结构化基准。
-- `index.qmd` 是 9 月 26 日至 10 月 3 日每日安排、时间和执行事项的发布版本。
+- `index.qmd` 是三套路线的选择规则与总览；`primary.qmd`、`option-skip-qiqian.qmd`、`option-reverse.qmd` 分别承载各自的逐日安排。
 
 ## 二、日期、车辆与边境证件
 
