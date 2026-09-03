@@ -1,6 +1,6 @@
 # 大兴安岭自驾游
 
-这是 2026-09-26 至 2026-10-03 的 Quarto 在线路书。路线从齐齐哈尔出发，经蘑阿公路、阿尔山、莫日格勒河、卡线、奇乾、根河和五大连池，于 10 月 3 日晚抵达哈尔滨。
+这是 2026-09-26 至 2026-10-03 的 Quarto 在线路书。默认路线从齐齐哈尔出发，经蘑阿公路、阿尔山、莫日格勒河、卡线、奇乾、根河和五大连池，于 10 月 3 日晚抵达哈尔滨。
 
 在线阅读：<https://aliosvictor.github.io/dongbei-roadbook/>
 
@@ -16,12 +16,19 @@
 - `data/itinerary.json`：完整路线与每日地图控制点。
 - `scripts/build_maps.py`：生成总览、每日路线与风险地图。
 - `figures/maps/`：网站使用的静态地图图片。
+- `requirements.txt`：地图生成脚本的 Python 依赖。
 
 ## 本地预览
 
 ```bash
-python3 scripts/build_maps.py
 quarto preview
+```
+
+## 更新地图
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 scripts/build_maps.py
 ```
 
 生成静态网站：

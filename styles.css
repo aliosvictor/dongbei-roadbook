@@ -202,7 +202,7 @@ code {
 
   .quarto-title-block .quarto-title-banner .subtitle {
     font-size: 1rem;
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 

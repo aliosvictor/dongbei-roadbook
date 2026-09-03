@@ -8,8 +8,4 @@ __pycache__/
 /_site/
 /.tools/
 
-# Local previews
-/output/
-
-
 **/*.quarto_ipynb
