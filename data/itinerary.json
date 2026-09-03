@@ -53,7 +53,6 @@
     "boketu_forest": {"name": "博克图镇外秋林公路", "short": "博克图秋林", "lat": 48.790000, "lon": 121.760000, "grade": "A"},
     "budonghe_sunset": {"name": "不冻河观景台日落", "short": "不冻河日落", "lat": 47.288735, "lon": 120.418447, "grade": "A"},
     "wusulangzi_sunrise": {"name": "乌苏浪子湖日出与晨雾", "short": "乌苏浪子湖日出", "lat": 47.300300, "lon": 120.338500, "grade": "S"},
-    "wusulangzi_day": {"name": "乌苏浪子湖白天湖景", "short": "乌苏浪子湖", "lat": 47.300300, "lon": 120.338500, "grade": "A"},
     "tuofeng_view": {"name": "驼峰岭天池俯瞰", "short": "驼峰岭天池", "lat": 47.460091, "lon": 120.648982, "grade": "A"},
     "dujuan_lake": {"name": "杜鹃湖湖岸", "short": "杜鹃湖", "lat": 47.413970, "lon": 120.567036, "grade": "A"},
     "shitang_forest": {"name": "石塘林熔岩与秋林", "short": "石塘林", "lat": 47.372130, "lon": 120.491450, "grade": "A"},
@@ -71,27 +70,25 @@
     "moerdaoga_forest": {"name": "莫尔道嘎林区停车带", "short": "莫尔道嘎林路", "lat": 51.360000, "lon": 120.890000, "grade": "A"},
     "bailudao_valley": {"name": "白鹿岛激流河谷", "short": "白鹿岛河谷", "lat": 51.703600, "lon": 121.001300, "grade": "A"},
     "qiqian_mist": {"name": "奇乾村晨雾与河谷", "short": "奇乾晨雾", "lat": 52.179500, "lon": 120.787000, "grade": "S"},
-    "genhe_twilight": {"name": "根河河畔暮色", "short": "根河河畔", "lat": 50.780500, "lon": 121.520400, "grade": "B"},
     "aoluguya_reindeer": {"name": "敖鲁古雅驯鹿与林地", "short": "敖鲁古雅驯鹿", "lat": 50.799700, "lon": 121.472600, "grade": "A"},
     "forest_highway": {"name": "伊图里河至阿里河林海公路", "short": "林海公路停车带", "lat": 50.615000, "lon": 122.670000, "grade": "A"},
-    "laohei_volcano": {"name": "老黑山火山与熔岩台地", "short": "老黑山", "lat": 48.687406, "lon": 126.116065, "grade": "A"},
     "wenpo": {"name": "温泊水体与熔岩", "short": "温泊", "lat": 48.664152, "lon": 126.169478, "grade": "A"}
   },
   "maps": {
     "overview": {
       "title": "阿尔山、卡线与奇乾八日摄影自驾",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "bailudao", "qiqian", "moerdaoga", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "bailudao", "qiqian", "moerdaoga", "genhe", "aoluguya", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan_east", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wudalianchi", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genhe_twilight", "aoluguya_reindeer", "forest_highway", "laohei_volcano", "wenpo"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": []
     },
     "d01": {
       "title": "09.26 齐齐哈尔经蘑阿公路到阿尔山",
       "routes": [
         {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east"]},
-        {"kind": "transfer", "points": ["aershan_east", "budonghe"]}
+        {"kind": "transfer", "points": ["aershan_east", "budonghe", "aershan_east"]}
       ],
       "labels": ["qiqihar", "nianzishan", "moguqi", "chaihe", "aershan_east"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset"]
@@ -127,11 +124,11 @@
       "title": "10.01 奇乾经莫尔道嘎到根河",
       "routes": [{"kind": "drive", "points": ["qiqian", "bailudao", "moerdaoga", "genhe"]}],
       "labels": ["qiqian", "moerdaoga", "genhe"],
-      "photos": ["qiqian_mist", "moerdaoga_forest", "genhe_twilight"]
+      "photos": ["qiqian_mist", "moerdaoga_forest"]
     },
     "d07": {
       "title": "10.02 根河经阿里河、加格达奇到嫩江",
-      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
+      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
       "labels": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
       "photos": ["aoluguya_reindeer", "forest_highway"]
     },
@@ -139,16 +136,16 @@
       "title": "10.03 嫩江经五大连池到哈尔滨",
       "routes": [{"kind": "drive", "points": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}],
       "labels": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"],
-      "photos": ["laohei_volcano", "wenpo"]
+      "photos": ["wenpo"]
     },
     "skip_overview": {
       "title": "方案一：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "aoluguya", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan_east", "xinzuoqi", "morigele", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wudalianchi", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "genhe_twilight", "aoluguya_reindeer", "forest_highway", "laohei_volcano", "wenpo"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": []
     },
     "s01": {
@@ -157,7 +154,7 @@
       "badge": "方案一 · D1 / 8",
       "routes": [
         {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east"]},
-        {"kind": "transfer", "points": ["aershan_east", "budonghe"]}
+        {"kind": "transfer", "points": ["aershan_east", "budonghe", "aershan_east"]}
       ],
       "labels": ["qiqihar", "nianzishan", "moguqi", "chaihe", "aershan_east"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset"]
@@ -198,20 +195,20 @@
       "photos": ["qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest"]
     },
     "s06": {
-      "title": "10.01 莫尔道嘎到根河",
+      "title": "10.01 莫尔道嘎经根河到敖鲁古雅",
       "context": "skip_overview",
       "badge": "方案一 · D6 / 8",
-      "routes": [{"kind": "drive", "points": ["moerdaoga", "genhe"]}],
-      "labels": ["moerdaoga", "genhe"],
-      "photos": ["genhe_twilight"]
+      "routes": [{"kind": "drive", "points": ["moerdaoga", "genhe", "aoluguya", "genhe"]}],
+      "labels": ["moerdaoga", "genhe", "aoluguya"],
+      "photos": ["aoluguya_reindeer"]
     },
     "s07": {
       "title": "10.02 根河经阿里河、加格达奇到嫩江",
       "context": "skip_overview",
       "badge": "方案一 · D7 / 8",
-      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
+      "routes": [{"kind": "drive", "points": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
       "labels": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
-      "photos": ["aoluguya_reindeer", "forest_highway"]
+      "photos": ["forest_highway"]
     },
     "s08": {
       "title": "10.03 嫩江经五大连池到哈尔滨",
@@ -219,16 +216,16 @@
       "badge": "方案一 · D8 / 8",
       "routes": [{"kind": "drive", "points": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}],
       "labels": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"],
-      "photos": ["laohei_volcano", "wenpo"]
+      "photos": ["wenpo"]
     },
     "reverse_overview": {
       "title": "方案二：由北向南反向追色八日摄影自驾",
       "layout": "overview",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "zhalantun", "boketu", "yakeshi", "hailar", "morigele", "erguna", "genhe", "moerdaoga", "bailudao", "qiqian", "bailudao", "moerdaoga", "taiping", "linjiang", "shiwei", "jiuka", "baka", "qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi", "aershan", "aershan_east", "chaihe", "moguqi", "zhalantun", "qiqihar", "daqing", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "zhalantun", "boketu", "yakeshi", "hailar", "morigele", "erguna", "genhe", "aoluguya", "genhe", "moerdaoga", "bailudao", "qiqian", "bailudao", "moerdaoga", "taiping", "linjiang", "shiwei", "jiuka", "baka", "qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi", "aershan", "aershan_east", "chaihe", "moguqi", "zhalantun", "qiqihar", "daqing", "harbin"]}
       ],
       "labels": ["qiqihar", "zhalantun", "hailar", "morigele", "genhe", "qiqian", "qika", "heishantou", "xinzuoqi", "aershan", "daqing", "harbin"],
-      "photos": ["boketu_forest", "morigele_curve", "erguna_wetland", "aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve", "qika_light", "wulan_taiji", "wuka_valley", "budonghe_sunset", "wusulangzi_day", "tuofeng_view", "dujuan_lake", "shitang_forest", "moa_valley", "shanshui_rock"],
+      "photos": ["boketu_forest", "morigele_curve", "erguna_wetland", "aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve", "qika_light", "wulan_taiji", "wuka_valley", "budonghe_sunset", "tuofeng_view", "moa_valley", "shanshui_rock"],
       "photo_labels": []
     },
     "r01": {
@@ -251,7 +248,7 @@
       "title": "09.28 根河经莫尔道嘎、白鹿岛到奇乾",
       "context": "reverse_overview",
       "badge": "方案二 · D3 / 8",
-      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "moerdaoga", "bailudao", "qiqian"]}],
+      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "genhe", "moerdaoga", "bailudao", "qiqian"]}],
       "labels": ["genhe", "moerdaoga", "bailudao", "qiqian"],
       "photos": ["aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley"]
     },
@@ -277,10 +274,10 @@
       "badge": "方案二 · D6 / 8",
       "routes": [
         {"kind": "drive", "points": ["xinzuoqi", "aershan", "aershan_east"]},
-        {"kind": "transfer", "points": ["aershan_east", "tuofeng", "dujuan", "shitang", "wusulangzi", "budonghe", "aershan_east"]}
+        {"kind": "transfer", "points": ["aershan_east", "tuofeng", "budonghe", "aershan_east"]}
       ],
       "labels": ["xinzuoqi", "aershan", "aershan_east"],
-      "photos": ["wusulangzi_day", "budonghe_sunset", "shitang_forest", "dujuan_lake", "tuofeng_view"]
+      "photos": ["tuofeng_view", "budonghe_sunset"]
     },
     "r07": {
       "title": "10.02 阿尔山经蘑阿公路到扎兰屯",
@@ -304,7 +301,7 @@
         {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "qika", "shiwei", "moerdaoga", "qiqian", "genhe", "alihe", "jiagedaqi", "nenjiang", "wudalianchi", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan", "morigele", "heishantou", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genhe_twilight", "aoluguya_reindeer", "forest_highway", "laohei_volcano", "wenpo"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": [],
       "hazards": [
         {"lat": 47.550, "lon": 121.450, "label": "蘑阿天气"},
