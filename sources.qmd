@@ -6,29 +6,29 @@ toc: true
 toc-depth: 2
 ---
 
-更新日期：**2026-09-02（北京时间）**
+更新日期：**2026-09-03（北京时间）**
 
 本页对应 2026-09-26 至 2026-10-03 的完整路线。出发前按 T-7 日、T-72 小时、当天早晨三个时间点更新动态信息。
 
 ![全程道路与天气检查点](figures/maps/risk.png){.route-map fig-alt="蘑阿天气、卡线通行、奇乾施工、根河绕行和国庆车流检查点地图"}
 
-## 一、路线输入
+## 一、路线基准
 
-- [最终协作路线图](https://www.pitravel.cn/web/co-editor?co_editor_code=J5cdpIVnEacxqOkVMBDJ&id=7680811777814994737&source=wechat&lang=zh_cn) — 用户确认的路线结构与日期边界。
-- [小红书｜大兴安岭秋日路线笔记](https://www.xiaohongshu.com/explore/68ce8e5a000000000e024082?xsec_token=CB1j-VnosT9F4YIlxiFNVh5I1r8wz2MtNl751wmJooLQ0=&xsec_source=app_share) — 大兴安岭自然景观节点与沿线住宿线索。
+- `data/itinerary.json` 是路线节点、每日线路和蓝点拍摄位置的统一结构化基准。
+- `index.qmd` 是 9 月 26 日至 10 月 3 日每日安排、时间和执行事项的发布版本。
 
 ## 二、日期、车辆与边境证件
 
 - [中国政府网｜2026 年部分节假日安排](https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm) — 中秋节 9 月 25--27 日、国庆节 10 月 1--7 日；用于设置住宿和道路客流冗余。
 - [2026 年重大节假日小客车通行费安排](https://www.beijing.gov.cn/ywdt/gzdt/202511/t20251107_4265508.html) — 10 月 1 日 00:00 至 10 月 7 日 24:00 的高速免费时段。
 - [国家移民管理局｜电子边境管理区通行证办理指引](https://s.nia.gov.cn/mps/bszy/dzbjtxz/blzy/202604/t20260414_1001.html) — 通过“移民局 12367”APP/小程序办理；卡线具体点位在 T-72 小时通过 12367 确认。
-- [道路交通安全法实施条例相关条款](https://www.gov.cn/banshi/2005-08/23/content_25579_2.htm) — 连续驾驶 4 小时前停车休息至少 20 分钟。
+- [市场监管总局｜道路交通安全法实施条例](https://www.samr.gov.cn/zljds/zcfg/art/2023/art_5c212e15369443b3b2bea4e17a1c565b.html) — 连续驾驶 4 小时前停车休息至少 20 分钟。
 - [一嗨租车｜租车规则示例](https://www.1hai.cn/NewHelp/HelpContent?isLimitRules=False&menuId=24) — 用于逐项核对跨省、边境道路、轮胎底盘、救援与异地还车条款；最终以实际订单合同为准。
 
 ## 三、阿尔山、蘑阿公路与卡线
 
 - [人民网内蒙古｜2026 年阿尔山秋色较常年提前 7--10 天](https://nm.people.com.cn/n2/2026/0902/c192247-41684291.html) — 支撑 9 月 26--27 日优先安排阿尔山。
-- [S308 蘑阿公路主线工程资料](https://sdxw.iqilu.com/w/article/YS0yMS0xNzM0MDA2Nw.html) — 核对蘑菇气--柴河--阿尔山主线方向与 189.7 公里主线规模。
+- [内蒙古自治区交通运输厅信息转载｜S308 蘑阿公路养护工程主体贯通](https://finance.sina.com.cn/roll/2026-08-06/doc-inimmayt2841841.shtml) — 核对蘑菇气--柴河--阿尔山主线方向、189.7 公里规模与 2026 年养护进展。
 - [阿尔山市政府｜阿尔山国家森林公园游览与交通说明](https://www.aes.gov.cn/aes/2025-04/15/article_2025041515301061440.html) — 核对游客中心停车、园内观光车与两日游节点；实际开放时间以临行公告为准。
 - [高德地图｜乌兰山景区游客中心](https://www.amap.com/place/B0H2B7KSB8) — 核对游客中心导航落点和咨询渠道。
 - [抖音｜2026-08-15 七卡至黑山头路况实拍](https://www.douyin.com/video/7674057106925003347) — 当季实地路况线索；09.28 晚和 09.29 早再向恩和、黑山头住宿方核实。
@@ -66,7 +66,7 @@ toc-depth: 2
 ## 六、地图
 
 - [OpenStreetMap｜版权与署名](https://www.openstreetmap.org/copyright) — 本项目地图底图数据来源。
-- 地图由 `scripts/build_maps.py` 在本地生成；路线线条连接 `data/itinerary.json` 中的控制点，用于展示行程结构。实际行驶使用实时导航、交警信息和现场标识。
+- 地图由 `scripts/build_maps.py` 在本地生成；路线线条连接 `data/itinerary.json` 中的控制点，蓝点对应同一数据文件中的重点拍摄位置。实际行驶使用实时导航、交警信息和现场标识。
 
 ## 七、摄影器材与无人机
 

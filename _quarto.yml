@@ -9,7 +9,7 @@ website:
   title: "大兴安岭自驾游"
   site-url: "https://aliosvictor.github.io/dongbei-roadbook/"
   repo-url: "https://github.com/aliosvictor/dongbei-roadbook"
-  description: "2026 年 9 月 26 日至 10 月 3 日东北摄影自驾路书"
+  description: "2026 年 9 月 26 日至 10 月 3 日大兴安岭摄影自驾路书"
   navbar:
     pinned: true
     background: "#243329"
@@ -38,6 +38,3 @@ format:
     link-external-newwindow: true
     anchor-sections: true
     fig-align: center
-
-execute:
-  freeze: auto

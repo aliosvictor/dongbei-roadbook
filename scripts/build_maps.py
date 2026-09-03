@@ -49,15 +49,11 @@ COLORS = {
 
 
 def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    candidates = [
-        Path("/mnt/c/Windows/Fonts/msyhbd.ttc" if bold else "/mnt/c/Windows/Fonts/msyh.ttc"),
-        Path("/mnt/c/Windows/Fonts/simhei.ttf"),
-        Path("/home/zizhuo/texlive/2025/texmf-dist/fonts/opentype/public/fandol/FandolHei-Bold.otf"),
-    ]
-    for path in candidates:
-        if path.exists():
-            return ImageFont.truetype(str(path), size=size)
-    return ImageFont.load_default()
+    filename = "FandolHei-Bold.otf" if bold else "FandolHei-Regular.otf"
+    path = ROOT / "assets" / "fonts" / "fandol" / filename
+    if not path.exists():
+        raise FileNotFoundError(f"Bundled map font not found: {path}")
+    return ImageFont.truetype(str(path), size=size)
 
 
 FONT_LABEL = load_font(27, bold=True)
@@ -172,6 +168,8 @@ def label_box(
     text: str,
     index: int,
     canvas_width: int,
+    canvas_height: int,
+    occupied: list[tuple[float, float, float, float]],
 ) -> tuple[float, float, float, float]:
     radius = 17
     draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=COLORS["olive"], outline="#FFFDF7", width=3)
@@ -182,11 +180,32 @@ def label_box(
     text_bbox = draw.textbbox((0, 0), text, font=FONT_LABEL, stroke_width=1)
     tw = text_bbox[2] - text_bbox[0]
     th = text_bbox[3] - text_bbox[1]
-    tx = x + radius + 8
-    ty = y - th / 2 - 4
-    if tx + tw + 12 > canvas_width - 8:
-        tx = x - radius - tw - 18
-    box = (tx - 6, ty - 3, tx + tw + 8, ty + th + 7)
+    candidates = [
+        (x + radius + 8, y - th / 2 - 4),
+        (x - radius - tw - 18, y - th / 2 - 4),
+        (x + radius + 8, y + radius + 6),
+        (x - radius - tw - 18, y + radius + 6),
+        (x + radius + 8, y - radius - th - 10),
+        (x - radius - tw - 18, y - radius - th - 10),
+        (x - tw / 2, y - radius - th - 12),
+        (x - tw / 2, y + radius + 8),
+    ]
+
+    best: tuple[float, float, tuple[float, float, float, float]] | None = None
+    best_score = float("inf")
+    for raw_tx, raw_ty in candidates:
+        tx = max(8.0, min(raw_tx, canvas_width - tw - 10.0))
+        ty = max(8.0, min(raw_ty, canvas_height - th - 98.0))
+        box = (tx - 6, ty - 3, tx + tw + 8, ty + th + 7)
+        overlap = sum(boxes_overlap(box, other) for other in occupied)
+        displacement = abs(tx - raw_tx) + abs(ty - raw_ty)
+        score = overlap * 1000 + displacement
+        if score < best_score:
+            best_score = score
+            best = (tx, ty, box)
+
+    assert best is not None
+    tx, ty, box = best
     draw.rounded_rectangle(box, radius=6, fill=(250, 248, 240, 224), outline=(255, 255, 255, 235), width=2)
     draw.text((tx, ty), text, fill=COLORS["ink"], font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
     return box
@@ -265,6 +284,48 @@ def photo_marker(
         stroke_fill="#FFFFFF",
     )
     occupied.append(box)
+
+
+def hazard_marker(
+    draw: ImageDraw.ImageDraw,
+    x: float,
+    y: float,
+    text: str,
+    canvas_width: int,
+    canvas_height: int,
+    occupied: list[tuple[float, float, float, float]],
+) -> None:
+    """Draw a warning marker with a label that avoids route labels."""
+    tri = [(x, y - 20), (x - 19, y + 16), (x + 19, y + 16)]
+    draw.polygon(tri, fill=COLORS["rust"], outline="#FFFDF7")
+
+    bbox = draw.textbbox((0, 0), text, font=FONT_LABEL, stroke_width=2)
+    tw = bbox[2] - bbox[0]
+    th = bbox[3] - bbox[1]
+    candidates = [
+        (x + 24, y - th / 2 - 3),
+        (x - tw - 28, y - th / 2 - 3),
+        (x - tw / 2, y + 24),
+        (x - tw / 2, y - th - 28),
+    ]
+
+    best: tuple[float, float, tuple[float, float, float, float]] | None = None
+    best_score = float("inf")
+    for raw_tx, raw_ty in candidates:
+        tx = max(8.0, min(raw_tx, canvas_width - tw - 10.0))
+        ty = max(8.0, min(raw_ty, canvas_height - th - 98.0))
+        hazard_box = (tx - 5, ty - 3, tx + tw + 7, ty + th + 6)
+        overlap = sum(boxes_overlap(hazard_box, other) for other in occupied)
+        displacement = abs(tx - raw_tx) + abs(ty - raw_ty)
+        score = overlap * 1000 + displacement
+        if score < best_score:
+            best_score = score
+            best = (tx, ty, hazard_box)
+
+    assert best is not None
+    tx, ty, hazard_box = best
+    draw.text((tx, ty), text, fill=COLORS["rust"], font=FONT_LABEL, stroke_width=2, stroke_fill="#FFFDF7")
+    occupied.extend([hazard_box, (x - 21, y - 22, x + 21, y + 18)])
 
 
 def build_context_inset(key: str, spec: dict, places: dict, photo_points: dict, overview_spec: dict) -> Image.Image:
@@ -455,7 +516,17 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
     occupied: list[tuple[float, float, float, float]] = []
     for i, place_key in enumerate(spec.get("labels", []), start=1):
         p = places[place_key]
-        occupied.append(label_box(draw, *project(p["lon"], p["lat"]), p["short"], i, target[0]))
+        occupied.append(
+            label_box(
+                draw,
+                *project(p["lon"], p["lat"]),
+                p["short"],
+                i,
+                target[0],
+                target[1],
+                occupied,
+            )
+        )
 
     photo_labels = set(spec.get("photo_labels", spec.get("photos", [])))
     for photo_key in spec.get("photos", []):
@@ -472,9 +543,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
 
     for hazard in spec.get("hazards", []):
         x, y = project(hazard["lon"], hazard["lat"])
-        tri = [(x, y - 20), (x - 19, y + 16), (x + 19, y + 16)]
-        draw.polygon(tri, fill=COLORS["rust"], outline="#FFFDF7")
-        draw.text((x + 24, y - 14), hazard["label"], fill=COLORS["rust"], font=FONT_LABEL, stroke_width=2, stroke_fill="#FFFDF7")
+        hazard_marker(draw, x, y, hazard["label"], target[0], target[1], occupied)
 
     if key.startswith("d"):
         daily_route_points: list[tuple[float, float]] = []

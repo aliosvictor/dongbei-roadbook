@@ -133,7 +133,7 @@
       "routes": [
         {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "qika", "shiwei", "moerdaoga", "qiqian", "genhe", "alihe", "jiagedaqi", "nenjiang", "wudalianchi", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan_east", "morigele", "heishantou", "qika", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
+      "labels": ["qiqihar", "aershan", "morigele", "heishantou", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_twilight", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genhe_twilight", "aoluguya_reindeer", "forest_highway", "laohei_volcano", "wenpo"],
       "photo_labels": [],
       "hazards": [
