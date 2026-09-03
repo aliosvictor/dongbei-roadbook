@@ -32,40 +32,20 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-35e95daa4a7c3c14acdfd56da050486c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3692cf979e7d7e62a439ab4009c5af64.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-35e95daa4a7c3c14acdfd56da050486c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-35e95daa4a7c3c14acdfd56da050486c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "没有结果",
     "search-matching-documents-text": "匹配的文档",
@@ -86,169 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -259,7 +77,6 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">大兴安岭自驾游</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="搜索"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -275,11 +92,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./option-skip-qiqian.html"> 
-<span class="menu-text">方案一 · 不去奇乾</span></a>
+<span class="menu-text">方案1</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./option-reverse.html"> 
-<span class="menu-text">方案二 · 反向追色</span></a>
+<span class="menu-text">方案2</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./sources.html"> 
@@ -288,7 +105,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="切换深色模式"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -373,13 +189,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
 <blockquote class="blockquote">
 <p>版本日期：2026-09-03<br> 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 新巴尔虎左旗 → 莫日格勒河 → 额尔古纳 → 黑山头 → 卡线 → 奇乾 → 根河 → 嫩江 → 五大连池 → 哈尔滨</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="八日完整路线总览"><img src="figures/maps/overview.png" class="route-map img-fluid figure-img" alt="从齐齐哈尔经阿尔山、呼伦贝尔、卡线、奇乾、根河和五大连池到哈尔滨的完整路线图"></a></p>
+<p><a href="figures/maps/overview.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="八日完整路线总览"><img src="figures/maps/overview.webp" class="route-map img-fluid figure-img" loading="eager" decoding="async" fetchpriority="high" alt="从齐齐哈尔经阿尔山、呼伦贝尔、卡线、奇乾、根河和五大连池到哈尔滨的完整路线图"></a></p>
 <figcaption>八日完整路线总览</figcaption>
 </figure>
 </div>
@@ -550,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-1">Day 1｜9 月 26 日：齐齐哈尔—蘑阿公路—阿尔山</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Day 1 路线与全程定位"><img src="figures/maps/d01.png" class="route-map img-fluid figure-img" alt="齐齐哈尔经扎兰屯、蘑菇气和柴河到阿尔山的当日路线图"></a></p>
+<p><a href="figures/maps/d01.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Day 1 路线与全程定位"><img src="figures/maps/d01.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="齐齐哈尔经扎兰屯、蘑菇气和柴河到阿尔山的当日路线图"></a></p>
 <figcaption>Day 1 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -624,7 +439,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-2">Day 2｜9 月 27 日：阿尔山—新巴尔虎左旗</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Day 2 路线与全程定位"><img src="figures/maps/d02.png" class="route-map img-fluid figure-img" alt="阿尔山园区经阿尔山市到新巴尔虎左旗的当日路线图"></a></p>
+<p><a href="figures/maps/d02.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Day 2 路线与全程定位"><img src="figures/maps/d02.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="阿尔山园区经阿尔山市到新巴尔虎左旗的当日路线图"></a></p>
 <figcaption>Day 2 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -694,7 +509,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-3">Day 3｜9 月 28 日：新巴尔虎左旗—海拉尔—莫日格勒河—额尔古纳—黑山头</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Day 3 路线与全程定位"><img src="figures/maps/d03.png" class="route-map img-fluid figure-img" alt="新巴尔虎左旗经海拉尔、莫日格勒河和额尔古纳到黑山头的当日路线图"></a></p>
+<p><a href="figures/maps/d03.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Day 3 路线与全程定位"><img src="figures/maps/d03.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="新巴尔虎左旗经海拉尔、莫日格勒河和额尔古纳到黑山头的当日路线图"></a></p>
 <figcaption>Day 3 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -768,7 +583,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-4">Day 4｜9 月 29 日：黑山头—五卡—乌兰山—七卡</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Day 4 路线与全程定位"><img src="figures/maps/d04.png" class="route-map img-fluid figure-img" alt="黑山头沿卡线经五卡和乌兰山到七卡的当日路线图"></a></p>
+<p><a href="figures/maps/d04.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Day 4 路线与全程定位"><img src="figures/maps/d04.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="黑山头沿卡线经五卡和乌兰山到七卡的当日路线图"></a></p>
 <figcaption>Day 4 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -845,7 +660,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-5">Day 5｜9 月 30 日：七卡—室韦—临江—太平—莫尔道嘎—白鹿岛—奇乾</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Day 5 路线与全程定位"><img src="figures/maps/d05.png" class="route-map img-fluid figure-img" alt="七卡经室韦、临江、太平、莫尔道嘎和白鹿岛到奇乾的当日路线图"></a></p>
+<p><a href="figures/maps/d05.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Day 5 路线与全程定位"><img src="figures/maps/d05.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="七卡经室韦、临江、太平、莫尔道嘎和白鹿岛到奇乾的当日路线图"></a></p>
 <figcaption>Day 5 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -931,7 +746,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-6">Day 6｜10 月 1 日：奇乾晨雾—莫尔道嘎—根河</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Day 6 路线与全程定位"><img src="figures/maps/d06.png" class="route-map img-fluid figure-img" alt="奇乾经白鹿岛和莫尔道嘎到根河的当日路线图"></a></p>
+<p><a href="figures/maps/d06.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Day 6 路线与全程定位"><img src="figures/maps/d06.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="奇乾经白鹿岛和莫尔道嘎到根河的当日路线图"></a></p>
 <figcaption>Day 6 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -1009,7 +824,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-7">Day 7｜10 月 2 日：根河—敖鲁古雅—阿里河—加格达奇—嫩江</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Day 7 路线与全程定位"><img src="figures/maps/d07.png" class="route-map img-fluid figure-img" alt="根河经敖鲁古雅、阿里河、加格达奇和大杨树到嫩江的当日路线图"></a></p>
+<p><a href="figures/maps/d07.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Day 7 路线与全程定位"><img src="figures/maps/d07.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="根河经敖鲁古雅、阿里河、加格达奇和大杨树到嫩江的当日路线图"></a></p>
 <figcaption>Day 7 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -1075,7 +890,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="day-8">Day 8｜10 月 3 日：嫩江—五大连池—哈尔滨</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/maps/d08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Day 8 路线与全程定位"><img src="figures/maps/d08.png" class="route-map img-fluid figure-img" alt="嫩江经五大连池、北安和绥化到哈尔滨的当日路线图"></a></p>
+<p><a href="figures/maps/d08.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Day 8 路线与全程定位"><img src="figures/maps/d08.webp" class="route-map img-fluid figure-img" loading="lazy" decoding="async" alt="嫩江经五大连池、北安和绥化到哈尔滨的当日路线图"></a></p>
 <figcaption>Day 8 路线与全程定位</figcaption>
 </figure>
 </div>
@@ -1236,19 +1051,6 @@ ul.task-list li input[type="checkbox"] {
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> 回到顶部</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
