@@ -1,0 +1,17 @@
+# Content and map licences
+
+## Roadbook content
+
+The original roadbook text, configuration, and local build scripts in this
+repository are licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0), unless a source page states otherwise.
+
+https://creativecommons.org/licenses/by/4.0/
+
+## Generated maps
+
+The generated map images contain OpenStreetMap data and the required
+attribution. OpenStreetMap data is available under the Open Data Commons Open
+Database License (ODbL).
+
+https://www.openstreetmap.org/copyright

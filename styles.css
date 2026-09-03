@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "Fandol Hei";
+  src: url("assets/fonts/fandol/FandolHei-Regular.otf") format("opentype");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fandol Hei";
+  src: url("assets/fonts/fandol/FandolHei-Bold.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --forest: #243329;
+  --pine: #415845;
+  --moss: #6f7747;
+  --amber: #d59b42;
+  --rust: #b85335;
+  --paper: #f6f1e5;
+  --ink: #273128;
+  --muted: #6d736b;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(213, 155, 66, 0.10), transparent 26rem),
+    linear-gradient(180deg, #fbf8f0 0, #f7f2e7 34rem, #fbfaf6 100%);
+  color: var(--ink);
+  font-family: "Fandol Hei", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+.navbar {
+  box-shadow: 0 0.35rem 1.3rem rgba(30, 44, 34, 0.18);
+}
+
+.quarto-title-block .quarto-title-banner {
+  background:
+    linear-gradient(115deg, rgba(36, 51, 41, 0.96), rgba(65, 88, 69, 0.90)),
+    radial-gradient(circle at 80% 20%, rgba(213, 155, 66, 0.34), transparent 23rem);
+  color: #fffaf0;
+  padding-block: 3.5rem;
+}
+
+.quarto-title-block .subtitle,
+.quarto-title-meta {
+  color: rgba(255, 250, 240, 0.82);
+}
+
+h1, h2, h3 {
+  color: var(--forest);
+  font-weight: 760;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  margin-top: 3.4rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid rgba(111, 119, 71, 0.24);
+}
+
+h3 {
+  margin-top: 3rem;
+  padding: 0.75rem 1rem;
+  border-left: 0.42rem solid var(--rust);
+  background: linear-gradient(90deg, rgba(184, 83, 53, 0.09), transparent 80%);
+  border-radius: 0.2rem 0.7rem 0.7rem 0.2rem;
+}
+
+blockquote {
+  border-left: 0.35rem solid var(--amber);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 0 0.7rem 0.7rem 0;
+  padding: 0.75rem 1rem;
+  color: var(--forest);
+}
+
+.route-map {
+  display: block;
+  width: min(100%, 70rem);
+  margin: 1.1rem auto 1.8rem;
+  border: 1px solid rgba(36, 51, 41, 0.14);
+  border-radius: 1rem;
+  box-shadow: 0 0.9rem 2.3rem rgba(36, 51, 41, 0.12);
+}
+
+.route-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1.4rem 0 2.2rem;
+}
+
+.route-strip a {
+  display: flex;
+  align-items: center;
+  min-height: 4.2rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(65, 88, 69, 0.18);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--forest);
+  font-weight: 650;
+  text-decoration: none;
+  box-shadow: 0 0.3rem 1rem rgba(36, 51, 41, 0.06);
+}
+
+.route-strip a:hover {
+  color: var(--rust);
+  border-color: rgba(184, 83, 53, 0.42);
+  transform: translateY(-1px);
+}
+
+table {
+  display: table;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(36, 51, 41, 0.12);
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+thead {
+  background: rgba(65, 88, 69, 0.11);
+}
+
+tbody tr:hover {
+  background: rgba(213, 155, 66, 0.08);
+}
+
+code {
+  color: var(--rust);
+}
+
+@media (max-width: 850px) {
+  .route-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quarto-title-block .quarto-title-banner {
+    padding-block: 2.4rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .route-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.quarto-dark {
+    background: #172019;
+  }
+
+  body.quarto-dark h1,
+  body.quarto-dark h2,
+  body.quarto-dark h3 {
+    color: #f5ecd8;
+  }
+
+  body.quarto-dark .route-strip a,
+  body.quarto-dark blockquote,
+  body.quarto-dark table {
+    background: rgba(255, 255, 255, 0.06);
+    color: #f5ecd8;
+  }
+}

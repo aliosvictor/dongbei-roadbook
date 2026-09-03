@@ -1,0 +1,15 @@
+# Python and map caches
+__pycache__/
+*.pyc
+/tmp/
+
+# Quarto output and local tools
+/.quarto/
+/_site/
+/.tools/
+
+# Local previews
+/output/
+
+
+**/*.quarto_ipynb
