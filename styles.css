@@ -134,6 +134,23 @@ blockquote {
   box-shadow: 0 0.9rem 2.3rem rgba(36, 51, 41, 0.12);
 }
 
+.quarto-figure-center > figure:has(.route-map) {
+  display: block;
+  width: min(100%, 70rem);
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.quarto-figure-center > figure:has(.route-map) > p {
+  margin: 0;
+}
+
+.quarto-figure-center > figure:has(.route-map) .route-map {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .route-comparison {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
