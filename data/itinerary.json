@@ -78,7 +78,10 @@
     "overview": {
       "title": "阿尔山、卡线与奇乾八日摄影自驾",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "bailudao", "qiqian", "moerdaoga", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "transfer", "points": ["yizi", "wusulangzi", "jinjianggou"]},
+        {"kind": "transfer", "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
+        {"kind": "drive", "points": ["jinjianggou", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "bailudao", "qiqian", "bailudao", "moerdaoga", "genhe", "yitulihe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "forest_highway", "heilongshan_volcano", "wenpo"],
@@ -144,7 +147,10 @@
       "title": "备用方案：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "genheyuan", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "transfer", "points": ["yizi", "wusulangzi", "jinjianggou"]},
+        {"kind": "transfer", "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
+        {"kind": "drive", "points": ["jinjianggou", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "genheyuan", "genhe", "yitulihe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "morigele_cliff", "erguna_national_wetland", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "genheyuan_wetland", "forest_highway", "heilongshan_volcano", "wenpo"],
@@ -226,7 +232,10 @@
     "risk": {
       "title": "全程道路、天气与无人机检查点",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "qika", "shiwei", "taiping", "bailudao", "qiqian", "moerdaoga", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "nenjiang", "wudalianchi", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "transfer", "points": ["yizi", "wusulangzi", "jinjianggou"]},
+        {"kind": "transfer", "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
+        {"kind": "drive", "points": ["jinjianggou", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "bailudao", "qiqian", "bailudao", "moerdaoga", "genhe", "yitulihe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
       "labels": ["qiqihar", "aershan", "morigele_cliff", "erguna_national_wetland", "heishantou", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genheyuan_wetland", "forest_highway", "heilongshan_volcano", "wenpo"],

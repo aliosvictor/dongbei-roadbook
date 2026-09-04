@@ -260,6 +260,14 @@ blockquote {
   background: var(--rust);
 }
 
+.legend-transfer {
+  width: 1.25em;
+  height: 0.42em;
+  border: 0;
+  box-shadow: none;
+  background: repeating-linear-gradient(90deg, #a47e25 0 0.38em, transparent 0.38em 0.58em);
+}
+
 .legend-node {
   border-radius: 50%;
   background: var(--moss);
