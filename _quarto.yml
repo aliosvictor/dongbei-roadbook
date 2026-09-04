@@ -28,7 +28,7 @@ website:
         text: 核验
   page-footer:
     left: "2026 大兴安岭自驾游"
-    right: "路线图为行程示意；实际驾驶以实时导航、交警信息和现场标识为准"
+    right: "路线折线来自日期化高德快照；实际驾驶以实时导航、交警信息和现场标识为准"
   search: false
   back-to-top-navigation: true
 

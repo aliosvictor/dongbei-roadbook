@@ -48,6 +48,8 @@ COLORS = {
     "context_day": "#D45532",
     "photo": "#1677D2",
     "photo_pale": "#EAF4FF",
+    "optional": "#7652A6",
+    "optional_pale": "#F1EAFB",
 }
 
 GCJ_A = 6378245.0
@@ -225,9 +227,11 @@ def label_box(
     canvas_width: int,
     canvas_height: int,
     occupied: list[tuple[float, float, float, float]],
+    optional: bool = False,
 ) -> tuple[float, float, float, float]:
     radius = 17
-    draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=COLORS["olive"], outline="#FFFDF7", width=3)
+    marker_color = COLORS["optional"] if optional else COLORS["olive"]
+    draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=marker_color, outline="#FFFDF7", width=3)
     index_text = str(index)
     bbox = draw.textbbox((0, 0), index_text, font=FONT_PIN)
     draw.text((x - (bbox[2] - bbox[0]) / 2, y - (bbox[3] - bbox[1]) / 2 - 2), index_text, fill="white", font=FONT_PIN)
@@ -261,8 +265,10 @@ def label_box(
 
     assert best is not None
     tx, ty, box = best
-    draw.rounded_rectangle(box, radius=6, fill=(250, 248, 240, 224), outline=(255, 255, 255, 235), width=2)
-    draw.text((tx, ty), text, fill=COLORS["ink"], font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
+    box_fill = (241, 234, 251, 235) if optional else (250, 248, 240, 224)
+    draw.rounded_rectangle(box, radius=6, fill=box_fill, outline=(255, 255, 255, 235), width=2)
+    text_fill = COLORS["optional"] if optional else COLORS["ink"]
+    draw.text((tx, ty), text, fill=text_fill, font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
     return box
 
 
@@ -597,6 +603,7 @@ def build_map(
                 target[0],
                 target[1],
                 occupied,
+                optional=p.get("role") == "optional_supply",
             )
         )
 
@@ -642,7 +649,8 @@ def build_map(
         if kind in kinds:
             legend_items.append((kind, label))
     legend_x, legend_y = 20, target[1] - 76
-    legend_w = 92 * len(legend_items) + (116 if spec.get("photos") else 0) + 24
+    has_optional = any(places[key].get("role") == "optional_supply" for key in spec.get("labels", []))
+    legend_w = 92 * len(legend_items) + (116 if spec.get("photos") else 0) + (136 if has_optional else 0) + 24
     draw.rounded_rectangle((12, target[1] - 92, 12 + legend_w, target[1] - 16), radius=10, fill=(250, 248, 240, 228), outline=(95, 105, 59, 170), width=2)
     for kind, label in legend_items:
         draw.line((legend_x, legend_y + 10, legend_x + 32, legend_y + 10), fill=COLORS[kind], width=6)
@@ -651,6 +659,10 @@ def build_map(
     if spec.get("photos"):
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["photo"], outline="#FFFDF7", width=2)
         draw.text((legend_x + 27, legend_y - 4), "拍摄点", fill=COLORS["ink"], font=FONT_SMALL)
+        legend_x += 116
+    if has_optional:
+        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["optional"], outline="#FFFDF7", width=2)
+        draw.text((legend_x + 27, legend_y - 4), "可选补给", fill=COLORS["optional"], font=FONT_SMALL)
 
     credit = f"© OpenStreetMap contributors · 线路：高德推荐方案（核验 {checked_date}）"
     bbox = draw.textbbox((0, 0), credit, font=FONT_TINY)

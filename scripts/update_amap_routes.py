@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import math
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -71,7 +72,9 @@ def request_route(points: list[dict]) -> tuple[dict, str]:
         payload = json.load(response)
     if payload.get("code") != "1" and payload.get("code") != 1:
         raise RuntimeError(f"Amap route request failed: {payload!r}")
-    paths = payload.get("data", {}).get("route", {}).get("paths", [])
+    data = payload.get("data") or {}
+    route = data.get("route") or {}
+    paths = route.get("paths", [])
     if not paths:
         raise RuntimeError(f"Amap returned no driving path for {url}")
     return paths[0], url
@@ -97,6 +100,39 @@ def geometry_from_path(path: dict) -> tuple[list[str], int]:
     return polylines, point_count
 
 
+def distance_m(a: tuple[float, float], b: tuple[float, float]) -> float:
+    """Great-circle distance for two GCJ-02 lon/lat pairs."""
+    lon1, lat1 = a
+    lon2, lat2 = b
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+    term = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+    return 6_371_000 * 2 * math.asin(math.sqrt(term))
+
+
+def validate_route_points(points: list[dict], polylines: list[str]) -> list[int]:
+    """Reject a nominal via point that Amap silently omitted from its geometry."""
+    geometry = [
+        tuple(map(float, pair.split(",")))
+        for polyline in polylines
+        for pair in polyline.split(";")
+        if pair
+    ]
+    snap_distances: list[int] = []
+    for point in points:
+        requested = (point["lon"], point["lat"])
+        nearest = round(min(distance_m(requested, candidate) for candidate in geometry))
+        tolerance = point.get("route_snap_tolerance_m", 600)
+        if nearest > tolerance:
+            raise RuntimeError(
+                f'Amap geometry missed required point {point["name"]!r}: '
+                f"nearest route vertex is {nearest} m away (limit {tolerance} m)"
+            )
+        snap_distances.append(nearest)
+    return snap_distances
+
+
 def main() -> None:
     itinerary = json.loads(ITINERARY.read_text(encoding="utf-8"))
     places = itinerary["places"]
@@ -109,6 +145,7 @@ def main() -> None:
         path, request_url = request_route(points)
         roads = [road.get("road_name", "") for road in path.get("roads", [])]
         geometry, geometry_point_count = geometry_from_path(path)
+        point_snap_distances_m = validate_route_points(points, geometry)
         routes[key] = {
             "points": point_keys,
             "kind": spec["kind"],
@@ -120,6 +157,7 @@ def main() -> None:
             "roads": [road for road in roads if road],
             "geometry": geometry,
             "geometry_point_count": geometry_point_count,
+            "point_snap_distances_m": point_snap_distances_m,
             "route_url": route_page_url(points),
             "request_url": request_url,
         }
