@@ -26,6 +26,11 @@
   --photo-blue: #1677d2;
   --photo-blue-soft: #e7f3ff;
   --photo-blue-ink: #0d4f85;
+  --no-fly: #c62828;
+  --no-fly-soft: #ffebee;
+  --no-fly-dark: #8e1717;
+  --drone-check: #a45f00;
+  --drone-check-soft: #fff3d6;
 }
 
 body {
@@ -265,6 +270,41 @@ blockquote {
   background: #1677d2;
 }
 
+.legend-no-fly {
+  border-radius: 0.2em;
+  background: var(--no-fly);
+}
+
+.drone-no-fly {
+  color: var(--no-fly-dark) !important;
+  font-weight: 780;
+}
+
+a.drone-no-fly,
+.drone-no-fly a {
+  color: var(--no-fly-dark) !important;
+  text-decoration-color: var(--no-fly);
+  text-decoration-thickness: 0.11em;
+}
+
+.drone-check {
+  color: var(--drone-check);
+  font-weight: 700;
+}
+
+.drone-legend {
+  margin: 1rem 0 1.4rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(198, 40, 40, 0.24);
+  border-left: 0.4rem solid var(--no-fly);
+  border-radius: 0.65rem;
+  background: linear-gradient(90deg, var(--no-fly-soft), rgba(255, 255, 255, 0.78));
+}
+
+.drone-legend p {
+  margin: 0;
+}
+
 .daily-nav {
   margin: 0.45rem 0 1.2rem;
   padding: 0.2rem 0 0.2rem 0.9rem;
@@ -331,6 +371,27 @@ tbody tr:has(.photo-stop) > td:first-child {
 
 tbody tr:has(.photo-stop):hover > td {
   background: #d8ebff !important;
+}
+
+tbody tr:has(.drone-no-fly) > td {
+  background: var(--no-fly-soft) !important;
+  color: var(--no-fly-dark) !important;
+  border-color: rgba(198, 40, 40, 0.24);
+}
+
+tbody tr:has(.drone-no-fly) > td:first-child {
+  color: var(--no-fly-dark) !important;
+  font-weight: 760;
+  box-shadow: inset 0.26rem 0 var(--no-fly);
+}
+
+tbody tr:has(.drone-no-fly):hover > td {
+  background: #ffdde1 !important;
+}
+
+tbody tr:has(.drone-check) > td {
+  background: var(--drone-check-soft) !important;
+  border-color: rgba(164, 95, 0, 0.18);
 }
 
 code {
