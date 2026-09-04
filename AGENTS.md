@@ -26,7 +26,7 @@ This file defines durable repository constraints for the Northeast roadbook. Kee
 
 | Layer | Files | Rule |
 |---|---|---|
-| Editorial pages | `index.qmd`, `primary.qmd`, `option-skip-qiqian.qmd`, `option-reverse.qmd`, `sources.qmd` | These are the editable reader-facing sources. Keep route names, dates, timings, lodging, photography points, and decision rules consistent across them. |
+| Editorial pages | `index.qmd`, `primary.qmd`, `option-skip-qiqian.qmd`, `sources.qmd` | These are the editable reader-facing sources. Keep route names, dates, timings, lodging, photography points, and decision rules consistent across them. |
 | Route schema | `data/itinerary.json` | This is the authoritative source for map places, photo points, route control points, labels, route kinds, contexts, and daily map identifiers. |
 | Generated maps | `figures/maps/*.webp` | Generate these from `data/itinerary.json` with `scripts/build_maps.py`; do not hand-edit the images. Track the resulting WebP files because the published site consumes them directly. |
 | Site schema | `_quarto.yml`, `styles.css`, `assets/fonts/web/` | Keep navigation, layout, typography, loading behavior, and reader-facing labels consistent. |
@@ -35,17 +35,16 @@ This file defines durable repository constraints for the Northeast roadbook. Kee
 - `_site/`, `.quarto/`, local tools, caches, screenshots, and temporary QA artifacts are generated state and must remain untracked.
 - The former Overleaf/slides workflow is not part of the current site. Do not recreate slide decks, LaTeX outputs, or duplicate PDFs unless the user explicitly reintroduces that deliverable.
 
-## 4. Three-plan consistency
+## 4. Two-plan consistency
 
-The site has three complete alternatives with parallel information architecture:
+The site has two complete alternatives with parallel information architecture:
 
 - Main itinerary: `primary.qmd`, `overview`, and `d01` through `d08`.
-- Option 1, without Qiqian: `option-skip-qiqian.qmd`, `skip_overview`, and `s01` through `s08`.
-- Option 2, reverse foliage order: `option-reverse.qmd`, `reverse_overview`, and `r01` through `r08`.
+- Backup itinerary without Qiqian: `option-skip-qiqian.qmd`, `skip_overview`, and `s01` through `s08`.
 
 When a change affects more than one plan:
 
-- audit all three rather than copying text mechanically
+- audit both rather than copying text mechanically
 - keep the same top-level section hierarchy: summary, photography priority, sunrise/sunset reference, daily itinerary, equipment, lodging, vehicle/supplies, and daily checklist
 - keep each day's endpoint continuous with the next day's starting point
 - distinguish necessary access or return-road repetition from accidental backtracking
@@ -124,7 +123,7 @@ Before claiming completion, and before any commit when committing is in scope, c
 - the requested outcome and applicable success criteria are satisfied
 - relevant verification passed or limitations are explicitly reported
 - QMD prose, route schema, generated maps, navigation, source links, and deployment configuration agree
-- all three plans affected by a shared fact have been audited
+- both plans affected by a shared fact have been audited
 - time-sensitive claims are current enough for their use and uncertainty is explicit
 - no conflict markers, partial merges, stale temporary files, accidental outputs, duplicate artifacts, or secrets remain
 - the final report states what changed, what was verified, what was skipped, and any material remaining risk

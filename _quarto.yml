@@ -23,9 +23,7 @@ website:
       - href: primary.qmd
         text: 主行程
       - href: option-skip-qiqian.qmd
-        text: 方案1
-      - href: option-reverse.qmd
-        text: 方案2
+        text: 备用方案
       - href: sources.qmd
         text: 核验
   page-footer:

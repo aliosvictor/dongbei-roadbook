@@ -3,11 +3,6 @@
     "qiqihar": {"name": "齐齐哈尔市", "short": "齐齐哈尔", "lat": 47.354310, "lon": 123.917960},
     "longjiang": {"name": "龙江县龙江镇", "short": "龙江", "lat": 47.336851, "lon": 123.198788},
     "nianzishan": {"name": "齐齐哈尔市碾子山区", "short": "碾子山", "lat": 47.514833, "lon": 122.880928},
-    "ganan": {"name": "甘南县", "short": "甘南", "lat": 47.920310, "lon": 123.506800},
-    "arong": {"name": "阿荣旗", "short": "阿荣旗", "lat": 48.125800, "lon": 123.459000},
-    "zhalantun": {"name": "扎兰屯市", "short": "扎兰屯", "lat": 48.013733, "lon": 122.737467},
-    "boketu": {"name": "博克图镇", "short": "博克图", "lat": 48.757231, "lon": 121.909908},
-    "yakeshi": {"name": "牙克石市", "short": "牙克石", "lat": 49.285437, "lon": 120.728308},
     "moguqi": {"name": "蘑菇气镇（蘑阿公路东端）", "short": "蘑菇气", "lat": 47.494182, "lon": 122.366461},
     "chaihe": {"name": "柴河月亮小镇", "short": "柴河", "lat": 47.556670, "lon": 121.308194},
     "aershan_east": {"name": "阿尔山国家森林公园东门", "short": "阿尔山东门", "lat": 47.580340, "lon": 120.773160},
@@ -44,13 +39,11 @@
     "wudalianchi": {"name": "五大连池风景区", "short": "五大连池", "lat": 48.721400, "lon": 126.150600},
     "beian": {"name": "北安市", "short": "北安", "lat": 48.239146, "lon": 126.507452},
     "suihua": {"name": "绥化市", "short": "绥化", "lat": 46.653900, "lon": 126.968900},
-    "daqing": {"name": "大庆市", "short": "大庆", "lat": 46.596903, "lon": 125.101481},
     "harbin": {"name": "哈尔滨还车点", "short": "哈尔滨", "lat": 45.762300, "lon": 126.622700}
   },
   "photo_points": {
     "shanshui_rock": {"name": "山水岩壁画", "short": "山水岩壁画", "lat": 47.511208, "lon": 121.311820, "grade": "A"},
     "moa_valley": {"name": "蘑阿西段彩林河谷停车带", "short": "彩林河谷停车带", "lat": 47.566900, "lon": 120.981000, "grade": "S"},
-    "boketu_forest": {"name": "博克图镇外秋林公路", "short": "博克图秋林", "lat": 48.790000, "lon": 121.760000, "grade": "A"},
     "budonghe_sunset": {"name": "不冻河观景台日落", "short": "不冻河日落", "lat": 47.288735, "lon": 120.418447, "grade": "A"},
     "wusulangzi_sunrise": {"name": "乌苏浪子湖日出与晨雾", "short": "乌苏浪子湖日出", "lat": 47.300300, "lon": 120.338500, "grade": "S"},
     "tuofeng_view": {"name": "驼峰岭天池俯瞰", "short": "驼峰岭天池", "lat": 47.460091, "lon": 120.648982, "grade": "A"},
@@ -139,7 +132,7 @@
       "photos": ["wenpo"]
     },
     "skip_overview": {
-      "title": "方案一：不去奇乾八日摄影自驾",
+      "title": "备用方案：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
         {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "aoluguya", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
@@ -151,7 +144,7 @@
     "s01": {
       "title": "09.26 齐齐哈尔经蘑阿公路到阿尔山",
       "context": "skip_overview",
-      "badge": "方案一 · D1 / 8",
+      "badge": "备用方案 · D1 / 8",
       "routes": [
         {"kind": "drive", "points": ["qiqihar", "longjiang", "nianzishan", "moguqi", "chaihe", "aershan_east"]},
         {"kind": "transfer", "points": ["aershan_east", "budonghe", "aershan_east"]}
@@ -162,7 +155,7 @@
     "s02": {
       "title": "09.27 阿尔山到新巴尔虎左旗",
       "context": "skip_overview",
-      "badge": "方案一 · D2 / 8",
+      "badge": "备用方案 · D2 / 8",
       "routes": [
         {"kind": "transfer", "points": ["aershan_east", "wusulangzi", "shitang", "dujuan", "tuofeng", "aershan_east"]},
         {"kind": "drive", "points": ["aershan_east", "aershan", "xinzuoqi"]}
@@ -173,7 +166,7 @@
     "s03": {
       "title": "09.28 新左旗经莫日格勒河到黑山头",
       "context": "skip_overview",
-      "badge": "方案一 · D3 / 8",
+      "badge": "备用方案 · D3 / 8",
       "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "chenbaerhu", "morigele", "erguna", "heishantou"]}],
       "labels": ["xinzuoqi", "hailar", "erguna", "heishantou"],
       "photos": ["morigele_curve", "erguna_wetland"]
@@ -181,7 +174,7 @@
     "s04": {
       "title": "09.29 黑山头沿卡线到七卡",
       "context": "skip_overview",
-      "badge": "方案一 · D4 / 8",
+      "badge": "备用方案 · D4 / 8",
       "routes": [{"kind": "drive", "points": ["heishantou", "wuka", "wulan", "qika"]}],
       "labels": ["heishantou", "qika"],
       "photos": ["heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light"]
@@ -189,7 +182,7 @@
     "s05": {
       "title": "09.30 七卡经室韦、临江和太平到莫尔道嘎",
       "context": "skip_overview",
-      "badge": "方案一 · D5 / 8",
+      "badge": "备用方案 · D5 / 8",
       "routes": [{"kind": "drive", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga"]}],
       "labels": ["qika", "shiwei", "linjiang", "taiping", "moerdaoga"],
       "photos": ["qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest"]
@@ -197,7 +190,7 @@
     "s06": {
       "title": "10.01 莫尔道嘎经根河到敖鲁古雅",
       "context": "skip_overview",
-      "badge": "方案一 · D6 / 8",
+      "badge": "备用方案 · D6 / 8",
       "routes": [{"kind": "drive", "points": ["moerdaoga", "genhe", "aoluguya", "genhe"]}],
       "labels": ["moerdaoga", "genhe", "aoluguya"],
       "photos": ["aoluguya_reindeer"]
@@ -205,7 +198,7 @@
     "s07": {
       "title": "10.02 根河经阿里河、加格达奇到嫩江",
       "context": "skip_overview",
-      "badge": "方案一 · D7 / 8",
+      "badge": "备用方案 · D7 / 8",
       "routes": [{"kind": "drive", "points": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
       "labels": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
       "photos": ["forest_highway"]
@@ -213,87 +206,10 @@
     "s08": {
       "title": "10.03 嫩江经五大连池到哈尔滨",
       "context": "skip_overview",
-      "badge": "方案一 · D8 / 8",
+      "badge": "备用方案 · D8 / 8",
       "routes": [{"kind": "drive", "points": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}],
       "labels": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"],
       "photos": ["wenpo"]
-    },
-    "reverse_overview": {
-      "title": "方案二：由北向南反向追色八日摄影自驾",
-      "layout": "overview",
-      "routes": [
-        {"kind": "drive", "points": ["qiqihar", "zhalantun", "boketu", "yakeshi", "hailar", "morigele", "erguna", "genhe", "aoluguya", "genhe", "moerdaoga", "bailudao", "qiqian", "bailudao", "moerdaoga", "taiping", "linjiang", "shiwei", "jiuka", "baka", "qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi", "aershan", "aershan_east", "chaihe", "moguqi", "zhalantun", "qiqihar", "daqing", "harbin"]}
-      ],
-      "labels": ["qiqihar", "zhalantun", "hailar", "morigele", "genhe", "qiqian", "qika", "heishantou", "xinzuoqi", "aershan", "daqing", "harbin"],
-      "photos": ["boketu_forest", "morigele_curve", "erguna_wetland", "aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve", "qika_light", "wulan_taiji", "wuka_valley", "budonghe_sunset", "tuofeng_view", "moa_valley", "shanshui_rock"],
-      "photo_labels": []
-    },
-    "r01": {
-      "title": "09.26 齐齐哈尔经扎兰屯、博克图到海拉尔",
-      "context": "reverse_overview",
-      "badge": "方案二 · D1 / 8",
-      "routes": [{"kind": "drive", "points": ["qiqihar", "ganan", "arong", "zhalantun", "boketu", "yakeshi", "hailar"]}],
-      "labels": ["qiqihar", "zhalantun", "boketu", "yakeshi", "hailar"],
-      "photos": ["boketu_forest"]
-    },
-    "r02": {
-      "title": "09.27 海拉尔经莫日格勒河、额尔古纳到根河",
-      "context": "reverse_overview",
-      "badge": "方案二 · D2 / 8",
-      "routes": [{"kind": "drive", "points": ["hailar", "chenbaerhu", "morigele", "erguna", "genhe"]}],
-      "labels": ["hailar", "morigele", "erguna", "genhe"],
-      "photos": ["morigele_curve", "erguna_wetland"]
-    },
-    "r03": {
-      "title": "09.28 根河经莫尔道嘎、白鹿岛到奇乾",
-      "context": "reverse_overview",
-      "badge": "方案二 · D3 / 8",
-      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "genhe", "moerdaoga", "bailudao", "qiqian"]}],
-      "labels": ["genhe", "moerdaoga", "bailudao", "qiqian"],
-      "photos": ["aoluguya_reindeer", "moerdaoga_forest", "bailudao_valley"]
-    },
-    "r04": {
-      "title": "09.29 奇乾经室韦沿卡线北段到七卡",
-      "context": "reverse_overview",
-      "badge": "方案二 · D4 / 8",
-      "routes": [{"kind": "drive", "points": ["qiqian", "bailudao", "moerdaoga", "taiping", "linjiang", "shiwei", "jiuka", "baka", "qika"]}],
-      "labels": ["qiqian", "moerdaoga", "linjiang", "shiwei", "qika"],
-      "photos": ["qiqian_mist", "taiping_forest", "linjiang_hill", "jiuka_valley", "baka_curve"]
-    },
-    "r05": {
-      "title": "09.30 七卡经黑山头、海拉尔到新巴尔虎左旗",
-      "context": "reverse_overview",
-      "badge": "方案二 · D5 / 8",
-      "routes": [{"kind": "drive", "points": ["qika", "wulan", "wuka", "heishantou", "chenbaerhu", "hailar", "xinzuoqi"]}],
-      "labels": ["qika", "heishantou", "hailar", "xinzuoqi"],
-      "photos": ["qika_light", "wulan_taiji", "wuka_valley"]
-    },
-    "r06": {
-      "title": "10.01 新巴尔虎左旗到阿尔山",
-      "context": "reverse_overview",
-      "badge": "方案二 · D6 / 8",
-      "routes": [
-        {"kind": "drive", "points": ["xinzuoqi", "aershan", "aershan_east"]},
-        {"kind": "transfer", "points": ["aershan_east", "tuofeng", "budonghe", "aershan_east"]}
-      ],
-      "labels": ["xinzuoqi", "aershan", "aershan_east"],
-      "photos": ["tuofeng_view", "budonghe_sunset"]
-    },
-    "r07": {
-      "title": "10.02 阿尔山经蘑阿公路到扎兰屯",
-      "context": "reverse_overview",
-      "badge": "方案二 · D7 / 8",
-      "routes": [{"kind": "drive", "points": ["aershan_east", "chaihe", "moguqi", "zhalantun"]}],
-      "labels": ["aershan_east", "chaihe", "moguqi", "zhalantun"],
-      "photos": ["moa_valley", "shanshui_rock"]
-    },
-    "r08": {
-      "title": "10.03 扎兰屯经齐齐哈尔、大庆到哈尔滨",
-      "context": "reverse_overview",
-      "badge": "方案二 · D8 / 8",
-      "routes": [{"kind": "drive", "points": ["zhalantun", "arong", "ganan", "qiqihar", "daqing", "harbin"]}],
-      "labels": ["zhalantun", "qiqihar", "daqing", "harbin"],
-      "photos": []
     },
     "risk": {
       "title": "全程关键道路与天气检查点",
