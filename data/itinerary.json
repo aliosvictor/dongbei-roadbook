@@ -17,7 +17,7 @@
     "xinzuoqi": {"name": "新巴尔虎左旗阿木古郎镇", "short": "新左旗", "lat": 48.216000, "lon": 118.269000},
     "hailar": {"name": "海拉尔区", "short": "海拉尔", "lat": 49.234715, "lon": 119.824542},
     "tuga": {"name": "图嘎营地", "short": "图嘎营地", "lat": 49.556800, "lon": 119.809336},
-    "morigele_cliff": {"name": "莫日格勒河北岸断崖", "short": "北岸断崖", "lat": 49.699578, "lon": 120.094643},
+    "morigele_cliff": {"name": "莫日格勒河北线道路参考点（非导航终点）", "short": "北线参考点", "lat": 49.699578, "lon": 120.094643},
     "erguna_national_wetland": {"name": "额尔古纳国家湿地公园", "short": "国家湿地公园", "lat": 50.360025, "lon": 120.415101},
     "erguna": {"name": "额尔古纳市", "short": "额尔古纳", "lat": 50.243102, "lon": 120.180506},
     "heishantou": {"name": "黑山头镇", "short": "黑山头", "lat": 50.214262, "lon": 119.532592},
@@ -42,7 +42,7 @@
     "jiagedaqi": {"name": "加格达奇区", "short": "加格达奇", "lat": 50.424700, "lon": 124.126700},
     "dayangshu": {"name": "大杨树镇", "short": "大杨树", "lat": 49.751800, "lon": 124.573900},
     "nenjiang": {"name": "嫩江市", "short": "嫩江", "lat": 49.171600, "lon": 125.229900},
-    "wudalianchi": {"name": "五大连池风景区", "short": "五大连池", "lat": 48.721400, "lon": 126.150600},
+    "wudalianchi": {"name": "五大连池风景区·温泊景区", "short": "温泊", "lat": 48.664152, "lon": 126.169478},
     "beian": {"name": "北安市", "short": "北安", "lat": 48.239146, "lon": 126.507452},
     "suihua": {"name": "绥化市", "short": "绥化", "lat": 46.653900, "lon": 126.968900},
     "harbin": {"name": "哈尔滨还车点", "short": "哈尔滨", "lat": 45.762300, "lon": 126.622700}
@@ -105,7 +105,8 @@
       "title": "09.28 新左旗经莫日格勒河到黑山头",
       "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou"]}],
       "labels": ["xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou"],
-      "photos": ["morigele_curve", "erguna_wetland"]
+      "photos": ["morigele_curve", "erguna_wetland"],
+      "photo_labels": []
     },
     "d04": {
       "title": "09.29 黑山头沿卡线到七卡",
@@ -135,7 +136,8 @@
       "title": "10.03 嫩江经五大连池到哈尔滨",
       "routes": [{"kind": "drive", "points": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}],
       "labels": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"],
-      "photos": ["wenpo"]
+      "photos": ["wenpo"],
+      "photo_labels": []
     },
     "skip_overview": {
       "title": "备用方案：不去奇乾八日摄影自驾",
@@ -175,7 +177,8 @@
       "badge": "备用方案 · D3 / 8",
       "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou"]}],
       "labels": ["xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou"],
-      "photos": ["morigele_curve", "erguna_wetland"]
+      "photos": ["morigele_curve", "erguna_wetland"],
+      "photo_labels": []
     },
     "s04": {
       "title": "09.29 黑山头沿卡线到七卡",
@@ -215,7 +218,8 @@
       "badge": "备用方案 · D8 / 8",
       "routes": [{"kind": "drive", "points": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}],
       "labels": ["nenjiang", "wudalianchi", "beian", "suihua", "harbin"],
-      "photos": ["wenpo"]
+      "photos": ["wenpo"],
+      "photo_labels": []
     },
     "risk": {
       "title": "全程关键道路与天气检查点",
