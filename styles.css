@@ -248,6 +248,28 @@ blockquote {
   background: #1677d2;
 }
 
+.daily-nav {
+  margin: 0.45rem 0 1.2rem;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 0.24rem solid rgba(65, 88, 69, 0.72);
+  color: var(--ink);
+}
+
+.daily-nav p {
+  margin: 0.35rem 0;
+}
+
+.daily-nav a {
+  color: #245d45;
+  font-weight: 650;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.daily-nav a:hover {
+  color: var(--rust);
+}
+
 table {
   display: table;
   width: 100%;
