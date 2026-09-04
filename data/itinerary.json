@@ -16,8 +16,9 @@
     "aershan": {"name": "阿尔山市", "short": "阿尔山", "lat": 47.177440, "lon": 119.943575},
     "xinzuoqi": {"name": "新巴尔虎左旗阿木古郎镇", "short": "新左旗", "lat": 48.216000, "lon": 118.269000},
     "hailar": {"name": "海拉尔区", "short": "海拉尔", "lat": 49.234715, "lon": 119.824542},
-    "chenbaerhu": {"name": "陈巴尔虎旗", "short": "陈巴尔虎旗", "lat": 49.328700, "lon": 119.437600},
-    "morigele": {"name": "莫日格勒河景区", "short": "莫日格勒河", "lat": 49.522900, "lon": 119.655200},
+    "tuga": {"name": "图嘎营地", "short": "图嘎营地", "lat": 49.556800, "lon": 119.809336},
+    "morigele_cliff": {"name": "莫日格勒河北岸断崖", "short": "北岸断崖", "lat": 49.699578, "lon": 120.094643},
+    "erguna_national_wetland": {"name": "额尔古纳国家湿地公园", "short": "国家湿地公园", "lat": 50.360025, "lon": 120.415101},
     "erguna": {"name": "额尔古纳市", "short": "额尔古纳", "lat": 50.243102, "lon": 120.180506},
     "heishantou": {"name": "黑山头镇", "short": "黑山头", "lat": 50.214262, "lon": 119.532592},
     "wuka": {"name": "五卡", "short": "五卡", "lat": 50.437788, "lon": 119.265158},
@@ -34,6 +35,9 @@
     "genhe": {"name": "根河市", "short": "根河", "lat": 50.780500, "lon": 121.520400},
     "aoluguya": {"name": "敖鲁古雅使鹿部落景区", "short": "敖鲁古雅", "lat": 50.799700, "lon": 121.472600},
     "yitulihe": {"name": "伊图里河镇", "short": "伊图里河", "lat": 50.636700, "lon": 121.858600},
+    "keyihe": {"name": "克一河镇", "short": "克一河", "lat": 50.652024, "lon": 122.492273},
+    "ganhe": {"name": "甘河镇", "short": "甘河", "lat": 50.630038, "lon": 123.043289},
+    "jiwen": {"name": "吉文镇", "short": "吉文", "lat": 50.582418, "lon": 123.199395},
     "alihe": {"name": "阿里河镇", "short": "阿里河", "lat": 50.590300, "lon": 123.727500},
     "jiagedaqi": {"name": "加格达奇区", "short": "加格达奇", "lat": 50.424700, "lon": 124.126700},
     "dayangshu": {"name": "大杨树镇", "short": "大杨树", "lat": 49.751800, "lon": 124.573900},
@@ -52,8 +56,8 @@
     "dujuan_lake": {"name": "杜鹃湖湖岸", "short": "杜鹃湖", "lat": 47.413970, "lon": 120.567036, "grade": "A"},
     "shitang_forest": {"name": "石塘林熔岩与秋林", "short": "石塘林", "lat": 47.372130, "lon": 120.491450, "grade": "A"},
     "xinzuoqi_sunset": {"name": "新左旗镇东草原日落", "short": "左旗草原日落", "lat": 48.205000, "lon": 118.348000, "grade": "B"},
-    "morigele_curve": {"name": "莫日格勒河高位河曲", "short": "莫日格勒河曲", "lat": 49.522900, "lon": 119.655200, "grade": "S"},
-    "erguna_wetland": {"name": "额尔古纳湿地观景台", "short": "湿地观景台日落", "lat": 50.249200, "lon": 120.148865, "grade": "A"},
+    "morigele_curve": {"name": "莫日格勒河北岸断崖河曲", "short": "北岸断崖河曲", "lat": 49.699578, "lon": 120.094643, "grade": "S"},
+    "erguna_wetland": {"name": "额尔古纳国家湿地公园", "short": "国家湿地公园", "lat": 50.360025, "lon": 120.415101, "grade": "A"},
     "heishantou_sunrise": {"name": "黑山头日出观测坡", "short": "黑山头日出", "lat": 50.214090, "lon": 119.526600, "grade": "A"},
     "wuka_valley": {"name": "五卡河谷停车带", "short": "五卡河谷", "lat": 50.437788, "lon": 119.265158, "grade": "S"},
     "wulan_taiji": {"name": "乌兰山太极湾俯瞰", "short": "乌兰山太极湾", "lat": 50.603812, "lon": 119.451961, "grade": "S"},
@@ -73,9 +77,9 @@
     "overview": {
       "title": "阿尔山、卡线与奇乾八日摄影自驾",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "bailudao", "qiqian", "moerdaoga", "genhe", "aoluguya", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "bailudao", "qiqian", "moerdaoga", "genhe", "aoluguya", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wudalianchi", "harbin"],
+      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": []
     },
@@ -90,8 +94,8 @@
     "d02": {
       "title": "09.27 阿尔山到新巴尔虎左旗",
       "routes": [
-        {"kind": "alternative", "points": ["yizi", "wusulangzi", "jinjianggou"]},
-        {"kind": "transfer", "points": ["jinjianggou", "shitang", "dujuan", "tuofeng", "jinjianggou"]},
+        {"kind": "transfer", "points": ["yizi", "wusulangzi", "jinjianggou"]},
+        {"kind": "transfer", "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
         {"kind": "drive", "points": ["jinjianggou", "aershan", "xinzuoqi"]}
       ],
       "labels": ["yizi", "jinjianggou", "aershan", "xinzuoqi"],
@@ -99,8 +103,8 @@
     },
     "d03": {
       "title": "09.28 新左旗经莫日格勒河到黑山头",
-      "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "chenbaerhu", "morigele", "erguna", "heishantou"]}],
-      "labels": ["xinzuoqi", "hailar", "erguna", "heishantou"],
+      "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou"]}],
+      "labels": ["xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou"],
       "photos": ["morigele_curve", "erguna_wetland"]
     },
     "d04": {
@@ -110,9 +114,9 @@
       "photos": ["heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light"]
     },
     "d05": {
-      "title": "09.30 七卡经室韦、莫尔道嘎到奇乾",
-      "routes": [{"kind": "drive", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "bailudao", "qiqian"]}],
-      "labels": ["qika", "shiwei", "moerdaoga", "qiqian"],
+      "title": "09.30 七卡经室韦、太平到奇乾",
+      "routes": [{"kind": "drive", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "bailudao", "qiqian"]}],
+      "labels": ["qika", "shiwei", "taiping", "qiqian"],
       "photos": ["qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "bailudao_valley"]
     },
     "d06": {
@@ -123,7 +127,7 @@
     },
     "d07": {
       "title": "10.02 根河经阿里河、加格达奇到嫩江",
-      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
+      "routes": [{"kind": "drive", "points": ["genhe", "aoluguya", "genhe", "yitulihe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
       "labels": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
       "photos": ["aoluguya_reindeer", "forest_highway"]
     },
@@ -137,9 +141,9 @@
       "title": "备用方案：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "aoluguya", "genhe", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "wuka", "wulan", "qika", "baka", "jiuka", "shiwei", "linjiang", "taiping", "moerdaoga", "genhe", "aoluguya", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang", "wudalianchi", "beian", "suihua", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "morigele", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wudalianchi", "harbin"],
+      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "morigele_cliff", "erguna_national_wetland", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": []
     },
@@ -158,8 +162,8 @@
       "context": "skip_overview",
       "badge": "备用方案 · D2 / 8",
       "routes": [
-        {"kind": "alternative", "points": ["yizi", "wusulangzi", "jinjianggou"]},
-        {"kind": "transfer", "points": ["jinjianggou", "shitang", "dujuan", "tuofeng", "jinjianggou"]},
+        {"kind": "transfer", "points": ["yizi", "wusulangzi", "jinjianggou"]},
+        {"kind": "transfer", "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
         {"kind": "drive", "points": ["jinjianggou", "aershan", "xinzuoqi"]}
       ],
       "labels": ["yizi", "jinjianggou", "aershan", "xinzuoqi"],
@@ -169,8 +173,8 @@
       "title": "09.28 新左旗经莫日格勒河到黑山头",
       "context": "skip_overview",
       "badge": "备用方案 · D3 / 8",
-      "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "chenbaerhu", "morigele", "erguna", "heishantou"]}],
-      "labels": ["xinzuoqi", "hailar", "erguna", "heishantou"],
+      "routes": [{"kind": "drive", "points": ["xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou"]}],
+      "labels": ["xinzuoqi", "hailar", "morigele_cliff", "erguna_national_wetland", "heishantou"],
       "photos": ["morigele_curve", "erguna_wetland"]
     },
     "s04": {
@@ -201,7 +205,7 @@
       "title": "10.02 根河经阿里河、加格达奇到嫩江",
       "context": "skip_overview",
       "badge": "备用方案 · D7 / 8",
-      "routes": [{"kind": "drive", "points": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
+      "routes": [{"kind": "drive", "points": ["genhe", "yitulihe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "dayangshu", "nenjiang"]}],
       "labels": ["genhe", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
       "photos": ["forest_highway"]
     },
@@ -216,9 +220,9 @@
     "risk": {
       "title": "全程关键道路与天气检查点",
       "routes": [
-        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "morigele", "erguna", "heishantou", "qika", "shiwei", "moerdaoga", "qiqian", "genhe", "alihe", "jiagedaqi", "nenjiang", "wudalianchi", "harbin"]}
+        {"kind": "drive", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi", "aershan", "xinzuoqi", "hailar", "tuga", "morigele_cliff", "erguna_national_wetland", "erguna", "heishantou", "qika", "shiwei", "taiping", "bailudao", "qiqian", "moerdaoga", "genhe", "keyihe", "ganhe", "jiwen", "alihe", "jiagedaqi", "nenjiang", "wudalianchi", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan", "morigele", "heishantou", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
+      "labels": ["qiqihar", "aershan", "morigele_cliff", "erguna_national_wetland", "heishantou", "qiqian", "genhe", "nenjiang", "wudalianchi", "harbin"],
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_wetland", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "taiping_forest", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "forest_highway", "wenpo"],
       "photo_labels": [],
       "hazards": [

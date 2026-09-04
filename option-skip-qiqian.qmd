@@ -9,11 +9,13 @@ lightbox: true
 ---
 
 > 使用条件：奇乾住宿没有落实，或室韦—奇乾方向道路、天气不适合进入。<br>
-> 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 莫日格勒河 → 黑山头 → 卡线 → 室韦 → 莫尔道嘎 → 根河 → 嫩江 → 五大连池 → 哈尔滨
+> 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 莫日格勒河北岸断崖 → 额尔古纳国家湿地公园 → 黑山头 → 卡线 → 室韦 → 莫尔道嘎 → 根河 → 嫩江 → 五大连池 → 哈尔滨
 
 ![备用方案完整路线](figures/maps/skip_overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="以莫尔道嘎为北端住宿点的备用方案八日完整路线图"}
 
 > 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 表示自驾路线，橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号表示路线节点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。
+
+> 高德链接规则：已核准的具体 POI 直接链接高德地点页；其余有明确名称的点使用高德地点搜索链接。住宿、加油和还车门店只有在订单地址确定后才能生成唯一落点，因此保留为“已收藏的具体 POI”，不再用虚构链接或“订单对应位置”替代。
 
 ::: {.route-strip}
 [09.26 齐齐哈尔 → 阿尔山](#skip-day-1) [09.27 阿尔山 → 新左旗](#skip-day-2) [09.28 新左旗 → 黑山头](#skip-day-3) [09.29 黑山头 → 七卡](#skip-day-4) [09.30 七卡 → 莫尔道嘎](#skip-day-5) [10.01 莫尔道嘎 → 根河](#skip-day-6) [10.02 根河 → 嫩江](#skip-day-7) [10.03 嫩江 → 哈尔滨](#skip-day-8)
@@ -32,14 +34,14 @@ lightbox: true
 
 - 蘑阿公路西段的秋林、河谷和火山地貌；
 - 乌苏浪子湖日出与晨雾；
-- 莫日格勒河高位河曲；
+- 莫日格勒河北岸断崖河曲；
 - 黑山头—五卡—乌兰山—七卡的卡线核心段；
 - 七卡至八卡 S 弯及九卡至室韦前沟。
 
 ### A 级：天气合适时重点完成
 
 - 阿尔山不冻河日落；
-- 额尔古纳湿地日落与黑山头日出；
+- 额尔古纳国家湿地公园与黑山头日出；
 - 临江河谷、太平林路和莫尔道嘎秋林；
 - 敖鲁古雅驯鹿与林地；
 - 五大连池温泊。
@@ -54,9 +56,9 @@ lightbox: true
 
 | 日期 | 蓝点拍摄地 | 执行方式 |
 |---|---|---|
-| 9 月 26 日 | 山水岩壁画；蘑阿西段彩林河谷停车带；不冻河日落 | 蘑阿两次短停，不冻河为固定日落机位 |
+| 9 月 26 日 | 山水岩壁画；蘑阿西段彩林河谷停车带；不冻河日落 | 蘑阿三次短停，不冻河为固定日落机位 |
 | 9 月 27 日 | 乌苏浪子湖；驼峰岭天池；杜鹃湖；石塘林；新左旗草原 | 晨拍固定；园区按光线选 1—2 个；草原日落机动执行 |
-| 9 月 28 日 | 莫日格勒河高位河曲；额尔古纳湿地 | 河曲为白天核心，湿地为主日落机位 |
+| 9 月 28 日 | 莫日格勒河北岸断崖河曲；额尔古纳国家湿地公园 | 北岸断崖需道路干燥且确认开放；湿地公园以闭园前完成为准 |
 | 9 月 29 日 | 黑山头日出；五卡河谷；乌兰山太极湾；七卡暮色 | 日出后补觉；五卡与乌兰山优先；七卡看体力与云量 |
 | 9 月 30 日 | 七卡河谷日出（天气备选）；七八卡 S 弯；九卡前沟；临江南山；太平林路；莫尔道嘎林路 | 黑山头日出未获得有效晨景、七卡次晨雾或层云合适时启用日出备选；其余时间按常规 08:00 起床。前两处道路机位优先；临江南山只在路面干燥时进入 |
 | 10 月 1 日 | 敖鲁古雅驯鹿与林地 | 14:30 前抵达并完成当日核心；前一日未拍到莫尔道嘎林路时只补拍一次 |
@@ -71,7 +73,7 @@ lightbox: true
 |---|---|---:|---:|---:|
 | 9 月 26 日 | 阿尔山不冻河 | 05:49 | 17:51 | 17:00—17:05 |
 | 9 月 27 日 | 乌苏浪子湖 | 05:50 | 17:49 | 05:10—05:15 |
-| 9 月 28 日 | 额尔古纳 | 05:53 | 17:47 | 16:45—17:00 |
+| 9 月 28 日 | 额尔古纳 | 05:53 | 17:47 | 当天不以湿地公园内日落为目标 |
 | 9 月 29 日 | 黑山头 | 05:57 | 17:47 | 05:15—05:20 |
 | 9 月 30 日 | 七卡（天气备选） | 05:59 | 17:44 | 05:15—05:20；满足替换条件时执行 |
 
@@ -83,14 +85,14 @@ lightbox: true
 
 **路线**：齐齐哈尔 → 龙江 → 碾子山 → 蘑菇气 → 柴河 → 蘑阿公路 → 阿尔山东门 → 不冻河观景台 → 依子民宿。
 
-**里程与驾驶**：约 390—430 公里，全天约 9—10 小时。
+**里程与驾驶**：约 390—430 公里；按 06:30—19:15 的当前时间表，全天约 12 小时 45 分钟（含用餐、三次短停与日落拍摄）。
 
 **当晚住宿**：依子民宿（G621 哈拉哈河 2 号大桥东南约 410 米）。提前预订；从柴河联系民宿确认晚到入住、晚餐和次晨出入安排。
 
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　齐齐哈尔住宿收藏点 → 碾子山区 → [蘑菇气镇](https://www.amap.com/place/B01D60N39P) → [柴河月亮小镇](https://www.amap.com/place/B0FFJ8DUFQ) → 柴河源游客服务中心 → 阿尔山国家森林公园东门 → [不冻河观景台](https://www.amap.com/place/B0FFJEZTED) → 依子民宿订单定位
+**自驾顺序**　齐齐哈尔已收藏住宿点 → [碾子山区](https://uri.amap.com/search?keyword=碾子山区&city=齐齐哈尔市&view=map&src=dongbei-roadbook&callnative=1) → [蘑菇气镇](https://www.amap.com/place/B01D60N39P) → [柴河月亮小镇](https://www.amap.com/place/B0FFJ8DUFQ) → [柴河源游客服务中心](https://uri.amap.com/search?keyword=柴河源游客服务中心&city=扎兰屯市&view=map&src=dongbei-roadbook&callnative=1) → [阿尔山国家森林公园东门](https://uri.amap.com/search?keyword=阿尔山国家森林公园东门&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1) → [不冻河观景台](https://www.amap.com/place/B0FFJEZTED) → [依子民宿](https://uri.amap.com/search?keyword=依子民宿&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)
 
 **沿途拍摄**　[山水岩壁画](https://www.amap.com/place/B01D60NC0B)作为可选停靠；蘑阿西段彩林河谷在柴河至柴河源段按正规停车带落点。
 :::
@@ -124,11 +126,11 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**晨拍与停车**　依子民宿订单定位 → 乌苏浪子湖 → 金江沟游客服务中心停车场；9 月 25 日确认凌晨通行方式，不能自驾时使用提前预约的车辆。
+**晨拍与停车**　[依子民宿](https://uri.amap.com/search?keyword=依子民宿&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1) → [乌苏浪子湖](https://uri.amap.com/search?keyword=乌苏浪子湖&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1) → [金江沟游客服务中心](https://uri.amap.com/search?keyword=金江沟游客服务中心&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)停车场；9 月 25 日确认凌晨通行方式，不能自驾时使用提前预约的车辆。
 
-**园内目标站点**　金江沟游客服务中心 → 驼峰岭天池；返程时间充足时，再从杜鹃湖、石塘林中选择 1 个。收费景点间按当日调度乘景交。
+**园内目标站点**　[金江沟游客服务中心](https://uri.amap.com/search?keyword=金江沟游客服务中心&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1) → [驼峰岭天池](https://uri.amap.com/search?keyword=驼峰岭天池&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)；返程时间充足时，再从[杜鹃湖](https://uri.amap.com/search?keyword=杜鹃湖&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)、[石塘林](https://uri.amap.com/search?keyword=石塘林&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)中选择 1 个。收费景点间按当日调度乘景交，不设置“阿尔山天池”为目标点。
 
-**取车后自驾**　金江沟游客服务中心停车场 → 阿尔山市 → 新巴尔虎左旗阿木古郎镇 → 当晚住宿收藏点。
+**取车后自驾**　[金江沟游客服务中心](https://uri.amap.com/search?keyword=金江沟游客服务中心&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)停车场 → [阿尔山市](https://uri.amap.com/search?keyword=阿尔山市&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1) → [新巴尔虎左旗阿木古郎镇](https://uri.amap.com/search?keyword=阿木古郎镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → 当晚已收藏住宿点。
 :::
 
 | 时间 | 安排 |
@@ -147,36 +149,38 @@ lightbox: true
 
 **交通**：乌苏浪子湖晨拍的车辆方式提前确认；收费景点之间使用景区观光车。全部行李随车放置，拍完后直接从金江沟驶向阿尔山市，不返回依子民宿。
 
-### Day 3｜9 月 28 日：新左旗—莫日格勒河—黑山头 {#skip-day-3}
+### Day 3｜9 月 28 日：新左旗—莫日格勒河北岸断崖—额尔古纳国家湿地公园—黑山头 {#skip-day-3}
 
 ![备用方案 Day 3 路线](figures/maps/s03.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第三天经海拉尔、莫日格勒河和额尔古纳到黑山头路线图"}
 
-**里程与驾驶**：约 340—380 公里，纯驾驶约 6—7 小时。
+**里程与驾驶**：约 430—500 公里；北岸土路条件成立时，纯驾驶与低速通行按 8—9.5 小时准备。
 
 **当晚住宿**：黑山头镇。
 
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　新左旗住宿收藏点 → 海拉尔补给收藏点 → [呼伦贝尔大草原·莫尔格勒河景区](https://www.amap.com/place/B0JDZ5C6RX) → [额尔古纳湿地景区西停车场](https://www.amap.com/place/B0FFKF6767) → 黑山头住宿收藏点。
+**自驾顺序**　新左旗已收藏住宿点 → 海拉尔已收藏补给点 → [图嘎营地](https://www.amap.com/place/B0I1OCCZBF) → [断崖](https://www.amap.com/place/B0KDPC3LJC) → [额尔古纳国家湿地公园](https://www.amap.com/place/B0FFJ2XXCH) → [额尔古纳市](https://uri.amap.com/search?keyword=额尔古纳市&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → 黑山头已收藏住宿点。
 
-**观景线目标**　[浩林温都日驿站](https://www.amap.com/place/B0J10U123W)；当日开放社会车辆北线自驾时，依次设置[图嘎营地](https://www.amap.com/place/B0I1OCCZBF) → 曲水云天 → 马背山 → 阿达盖驿站。
+**北岸主选**　只在道路干燥、当地确认开放且车辆条件合适时，按“图嘎营地 → 断崖”进入；雨后、积水、封控或轿车条件不合适时立即放弃。
+
+**安全回退**　改为[呼伦贝尔大草原·莫尔格勒河景区](https://www.amap.com/place/B0JDZ5C6RX)停车，按当天管理乘观光车前往[浩林温都日驿站](https://www.amap.com/place/B0J10U123W)，不搜索来源不明的“高端观景台”。
 :::
 
 | 时间 | 安排 |
 |---|---|
-| 07:30 | 起床 |
-| 08:10 | 新巴尔虎左旗出发 |
-| 11:00—11:30 | 海拉尔补油、简餐 |
-| 12:15—14:15 | <span class="photo-stop">按当天规则使用景交车或官方代驾完成莫日格勒河观景线</span> |
-| 14:15 | 完成取车并离开；超过此时直接前往黑山头，取消额尔古纳湿地停留 |
-| 15:40—17:25 | <span class="photo-stop">额尔古纳湿地</span> |
-| 17:25—18:10 | <span class="photo-stop"><img src="icons/sunset_3222795.png" class="sun-event-icon" alt="日落">湿地日落；闭园较早时沿黑山头方向择安全位置</span> |
-| 18:10—19:20 | 前往黑山头入住 |
+| 06:30 | 起床 |
+| 07:10 | 新巴尔虎左旗出发 |
+| 09:50—10:20 | 海拉尔补油、简餐；再次确认北岸断崖开放与路面 |
+| 11:10—13:10 | <span class="photo-stop">条件成立时经图嘎营地前往北岸断崖；条件不成立时执行正规景区回退</span> |
+| 13:10 | 离开莫日格勒河的硬截止；超过此时取消湿地公园，直接前往黑山头 |
+| 13:10—15:25 | 前往额尔古纳国家湿地公园 |
+| 15:25—16:40 | <span class="photo-stop">额尔古纳国家湿地公园；以当日最晚入园和闭园时间为准</span> |
+| 16:40—19:15 | 经额尔古纳市区补给后前往黑山头；到店即入住休息 |
 
-**摄影**：莫日格勒河曲线优先于湿地日落；海拉尔只承担补给和穿行功能。
+**摄影**：莫日格勒河北岸断崖河曲优先；额尔古纳只使用“额尔古纳国家湿地公园”，不混用市区西侧的“额尔古纳湿地景区”。海拉尔只承担补给和穿行功能。
 
-**交通**：提前两天确认社会车辆准入、景交车、官方代驾和南北游客中心取车方式。社会车辆不能连续穿越且无法在北端取车时，只完成可达的高位河曲并返回原停车点；14:15 前完成取车可继续前往额尔古纳，超过 14:15 直接驶向黑山头。
+**交通**：提前两天向景区或当地住宿方确认图嘎营地至断崖道路是否开放、是否积水以及车辆要求；不以短视频口述替代当天确认。北岸不可达时使用正规景区观光车；13:10 前不能离开莫日格勒河就取消国家湿地公园。
 
 ### Day 4｜9 月 29 日：黑山头—卡线—七卡 {#skip-day-4}
 
@@ -189,7 +193,7 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　黑山头日落观测点 → 黑山头镇加油站收藏点 → 五卡 → [额尔古纳河乌兰山景区](https://www.amap.com/place/B0H2B7KCNJ) → 七卡住宿收藏点。
+**自驾顺序**　[黑山头日落观测点](https://www.amap.com/place/B0HUKN51FP) → 黑山头已收藏加油站 → [五卡](https://uri.amap.com/search?keyword=五卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [额尔古纳河乌兰山景区](https://www.amap.com/place/B0H2B7KCNJ) → [七卡](https://uri.amap.com/search?keyword=七卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1)已收藏住宿点。
 
 **卡线路径**　五卡无法搜索时直接把乌兰山景区设为下一站，确认导航全程沿 X904 和额尔古纳河方向行驶。
 :::
@@ -218,7 +222,7 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　七卡住宿收藏点 → 八卡 → 九卡（额尔古纳市） → [室韦魅力名镇旅游区](https://www.amap.com/place/B0IK3CUHLM) → 临江小镇（额尔古纳市） → 老鹰嘴入口 → 太平村（额尔古纳市莫尔道嘎镇） → [莫尔道嘎镇](https://www.amap.com/place/B01D60N3D5) → 当晚住宿收藏点。
+**自驾顺序**　[七卡](https://uri.amap.com/search?keyword=七卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1)已收藏住宿点 → [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [室韦魅力名镇旅游区](https://www.amap.com/place/B0IK3CUHLM) → [临江村](https://uri.amap.com/search?keyword=临江村&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [老鹰嘴](https://uri.amap.com/search?keyword=老鹰嘴&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [太平村](https://uri.amap.com/search?keyword=太平村&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) → [莫尔道嘎镇](https://www.amap.com/place/B01D60N3D5) → 当晚已收藏住宿点。
 
 **当日落点**　老鹰嘴和临江—太平路段按住宿方提供的位置与当日通行信息更新；直连道路不可用时从室韦前往莫尔道嘎。
 :::
@@ -252,9 +256,9 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　莫尔道嘎住宿收藏点 → X325 → G332 → 根河住宿收藏点 → [敖鲁古雅使鹿部落景区](https://www.amap.com/place/B0K1NULQCT) → 根河住宿收藏点。
+**自驾顺序**　莫尔道嘎已收藏住宿点 → X954 → X325 → G332 → [根河市](https://uri.amap.com/search?keyword=根河市&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1)已收藏住宿点 → [敖鲁古雅使鹿部落景区](https://www.amap.com/place/B0K1NULQCT) → 根河已收藏住宿点。
 
-**道路设置**　莫尔道嘎至根河保持 X325 方向，不设置金河镇为途经点；敖鲁古雅往返按景区开放和 14:30 到达节点执行。
+**道路设置**　莫尔道嘎至根河按 X954—X325—G332 绕行，不设置金河镇为途经点；敖鲁古雅往返按景区开放和 14:30 到达节点执行。
 :::
 
 | 时间 | 安排 |
@@ -279,9 +283,9 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　根河住宿收藏点 → 伊图里河镇 → 阿里河镇 → 加格达奇区 → 大杨树镇 → 嫩江住宿收藏点。
+**自驾顺序**　根河已收藏住宿点 → [伊图里河镇](https://uri.amap.com/search?keyword=伊图里河镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [克一河镇](https://uri.amap.com/search?keyword=克一河镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [甘河镇](https://uri.amap.com/search?keyword=甘河镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [吉文镇](https://uri.amap.com/search?keyword=吉文镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [阿里河镇](https://uri.amap.com/search?keyword=阿里河镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [加格达奇区](https://uri.amap.com/search?keyword=加格达奇区&city=大兴安岭地区&view=map&src=dongbei-roadbook&callnative=1) → [大杨树镇](https://uri.amap.com/search?keyword=大杨树镇&city=呼伦贝尔市&view=map&src=dongbei-roadbook&callnative=1) → [嫩江市](https://uri.amap.com/search?keyword=嫩江市&city=黑河市&view=map&src=dongbei-roadbook&callnative=1)已收藏住宿点。
 
-**途经控制**　伊图里河、阿里河、加格达奇和大杨树用于校正南下走向；实时导航已经沿同一干线通过时，不进入镇区中心。10 月 1 日未完成敖鲁古雅时，先前往[敖鲁古雅使鹿部落景区](https://www.amap.com/place/B0K1NULQCT)，09:50 前回到南下主线。
+**途经控制**　伊图里河、克一河、甘河、吉文、阿里河、加格达奇和大杨树只用于核对 G332/S301 南下走向；实时导航已经沿同一干线通过时，不逐个进入镇区中心。10 月 1 日未完成敖鲁古雅时，先前往[敖鲁古雅使鹿部落景区](https://www.amap.com/place/B0K1NULQCT)，09:50 前回到南下主线。
 :::
 
 | 时间 | 安排 |
@@ -307,7 +311,7 @@ lightbox: true
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　嫩江住宿收藏点 → [五大连池风景区·温泊景区](https://www.amap.com/place/B01C800I2M) → 哈尔滨实际还车门店 → 当晚住宿收藏点。
+**自驾顺序**　嫩江已收藏住宿点 → [五大连池风景区·温泊景区](https://www.amap.com/place/B01C800I2M) → 订单中的哈尔滨还车门店（出发前保存为高德收藏点） → 当晚已收藏住宿点。
 
 **返程设置**　北安、绥化只作为沿途方向，不添加市中心途经点；出发前把终点替换为订单中的准确还车地址。
 :::
@@ -335,7 +339,7 @@ lightbox: true
 
 **16–28mm F2.8**
 
-- 用于乌苏浪子湖、不冻河、额尔古纳湿地和温泊；
+- 用于乌苏浪子湖、不冻河、额尔古纳国家湿地公园和温泊；
 - 拍摄道路近景时保持地平线水平，避免远景主体过小。
 
 **随车附件**
@@ -356,7 +360,7 @@ lightbox: true
 ### 优先预订
 
 1. **依子民宿：9 月 26 日**<br>
-   使用订单定位导航；确认晚到入住、晚餐、停车，以及 9 月 27 日凌晨前往乌苏浪子湖的车辆方式。
+   直接使用[依子民宿](https://uri.amap.com/search?keyword=依子民宿&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1)导航；确认晚到入住、晚餐、停车，以及 9 月 27 日凌晨前往乌苏浪子湖的车辆方式。
 
 2. **七卡住宿：9 月 29 日**<br>
    房量有限，优先锁定可取消、有停车位并能提供晚餐的房型。
@@ -391,7 +395,7 @@ lightbox: true
 |---|---|---|
 | 9 月 26 日 | 蘑阿降水和低云；阿尔山傍晚云量与风 | 湿滑时缩减沿途短停；日落条件关闭时直接入住 |
 | 9 月 27 日 | 乌苏浪子湖雾、低云和降水；新左旗傍晚云量 | 能见度可用时晨拍；下午无好光就取消草原日落并休息 |
-| 9 月 28 日 | 莫日格勒河能见度、风及车辆接驳规则；额尔古纳西侧云量 | 河曲清晰且车辆能在北端衔接时完成观景线；14:15 前取回车辆才进入额尔古纳湿地，超过时直接前往黑山头 |
+| 9 月 28 日 | 莫日格勒河北岸断崖开放、积水、风和车辆条件；额尔古纳国家湿地公园最晚入园时间 | 北岸道路干燥且确认开放才经图嘎营地进入；否则用正规景区观光车。13:10 前不能离开莫日格勒河就取消湿地公园，直接前往黑山头 |
 | 9 月 29 日 | 黑山头晨雾；卡线降水、阵风与路面 | 晨雾成立时执行日出；雨后只走铺装主线，湿滑时不进乌兰山支路 |
 | 9 月 30 日 | 七卡日出前雾、低云与能见度；临江—太平直连道路；七卡—莫尔道嘎降水和林区路面 | 黑山头晨拍未获得有效画面且七卡晨雾或层云合适时，05:15 到位启用七卡日出备选；其余情况按 08:00 起床。直连道路关闭或泥泞时跳过临江；持续降水时保留 S 弯后直接前往莫尔道嘎 |
 | 10 月 1 日 | 莫尔道嘎—根河道路；敖鲁古雅开放时间 | 08:40 离开莫尔道嘎，14:30 前到达才当日游览敖鲁古雅；进度落后则使用次晨补做分支 |
