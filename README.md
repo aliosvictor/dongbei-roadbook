@@ -12,8 +12,10 @@
 - `primary.qmd`：主行程的每天时间线、摄影与器材安排。
 - `option-skip-qiqian.qmd`：不进入奇乾的备用方案。
 - `sources.qmd`：天气、道路、景区、边境与无人机核验入口。
-- `data/itinerary.json`：完整路线与每日地图控制点。
-- `scripts/build_maps.py`：生成总览、每日路线与风险地图。
+- `data/itinerary.json`：地点、拍摄点与高德路线核验规格。
+- `data/amap-routes.json`：高德路线规划的日期化折线、里程与时间快照。
+- `scripts/update_amap_routes.py`：重新向高德路线规划核验并生成路线快照和网页整段路线链接。
+- `scripts/build_maps.py`：用高德折线和 OpenStreetMap 底图生成总览、每日路线与风险地图。
 - `figures/maps/`：网站使用的 WebP 静态地图图片。
 - `assets/fonts/web/`：网站使用的精简中文字体。
 - `requirements.txt`：地图生成脚本的 Python 依赖。
@@ -28,10 +30,11 @@ quarto preview
 
 ```bash
 python3 -m pip install -r requirements.txt
+python3 scripts/update_amap_routes.py
 python3 scripts/build_maps.py
 ```
 
-地图输出为适合网页加载的 WebP 图片。
+地图输出为适合网页加载的 WebP 图片。所有绘制的公路线路来自生成当天的高德推荐路线；原始高德坐标为 GCJ-02，绘图时转换为 WGS84 后叠加到 OpenStreetMap 底图。园内景交或未确认准确入口的支线只显示地点，不绘制虚构线路。
 
 生成静态网站：
 

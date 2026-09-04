@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Build compact WebP OSM-based schematic maps for the travel roadbook.
+"""Build compact WebP roadbook maps with checked Amap route geometry.
 
-Route lines pass through locally stored control points. OSM tiles are cached so
-later builds retain the same basemap and avoid repeated downloads.
+OpenStreetMap provides the static basemap.  Every drawn road/transfer line comes
+from the dated first-party Amap route snapshot in ``data/amap-routes.json``;
+point sequences that are not public-road navigation (for example a park shuttle)
+are shown only as labelled points and never joined by an invented line.
 """
 
 from __future__ import annotations
@@ -20,6 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "itinerary.json"
+AMAP_DATA = ROOT / "data" / "amap-routes.json"
 OUTPUT = ROOT / "figures" / "maps"
 CACHE = ROOT / "tmp" / "map_cache"
 TILE_CACHE = CACHE / "tiles"
@@ -47,6 +50,9 @@ COLORS = {
     "photo_pale": "#EAF4FF",
 }
 
+GCJ_A = 6378245.0
+GCJ_EE = 0.00669342162296594323
+
 
 def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     filename = "FandolHei-Bold.otf" if bold else "FandolHei-Regular.otf"
@@ -73,6 +79,44 @@ def lat_to_y(lat: float, zoom: int) -> float:
     lat = max(min(lat, 85.05112878), -85.05112878)
     rad = math.radians(lat)
     return (1.0 - math.asinh(math.tan(rad)) / math.pi) / 2.0 * (2**zoom) * TILE_SIZE
+
+
+def _gcj_delta(lon: float, lat: float) -> tuple[float, float]:
+    x, y = lon - 105.0, lat - 35.0
+    dlat = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * math.sqrt(abs(x))
+    dlat += (20.0 * math.sin(6.0 * x * math.pi) + 20.0 * math.sin(2.0 * x * math.pi)) * 2.0 / 3.0
+    dlat += (20.0 * math.sin(y * math.pi) + 40.0 * math.sin(y / 3.0 * math.pi)) * 2.0 / 3.0
+    dlat += (160.0 * math.sin(y / 12.0 * math.pi) + 320.0 * math.sin(y * math.pi / 30.0)) * 2.0 / 3.0
+    dlon = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * math.sqrt(abs(x))
+    dlon += (20.0 * math.sin(6.0 * x * math.pi) + 20.0 * math.sin(2.0 * x * math.pi)) * 2.0 / 3.0
+    dlon += (20.0 * math.sin(x * math.pi) + 40.0 * math.sin(x / 3.0 * math.pi)) * 2.0 / 3.0
+    dlon += (150.0 * math.sin(x / 12.0 * math.pi) + 300.0 * math.sin(x / 30.0 * math.pi)) * 2.0 / 3.0
+    radlat = lat / 180.0 * math.pi
+    magic = 1.0 - GCJ_EE * math.sin(radlat) ** 2
+    sqrt_magic = math.sqrt(magic)
+    return (
+        dlon * 180.0 / (GCJ_A / sqrt_magic * math.cos(radlat) * math.pi),
+        dlat * 180.0 / ((GCJ_A * (1.0 - GCJ_EE)) / (magic * sqrt_magic) * math.pi),
+    )
+
+
+def wgs84_to_gcj02(lon: float, lat: float) -> tuple[float, float]:
+    dlon, dlat = _gcj_delta(lon, lat)
+    return lon + dlon, lat + dlat
+
+
+def gcj02_to_wgs84(lon: float, lat: float) -> tuple[float, float]:
+    """Iteratively transform an Amap coordinate for the WGS84 OSM basemap."""
+    wgs_lon, wgs_lat = lon, lat
+    for _ in range(5):
+        gcj_lon, gcj_lat = wgs84_to_gcj02(wgs_lon, wgs_lat)
+        wgs_lon += lon - gcj_lon
+        wgs_lat += lat - gcj_lat
+    return wgs_lon, wgs_lat
+
+
+def map_point(record: dict) -> tuple[float, float]:
+    return gcj02_to_wgs84(float(record["lon"]), float(record["lat"]))
 
 
 def choose_zoom(points: list[tuple[float, float]], target: tuple[int, int]) -> int:
@@ -110,26 +154,37 @@ def fetch_tile(z: int, x: int, y: int) -> Image.Image:
     return tile
 
 
-def smooth_polyline(xy: list[tuple[float, float]], samples: int = 12) -> list[tuple[float, float]]:
-    """Round a local schematic through its explicit control points.
-
-    This is not road routing: it keeps all processing local and makes that
-    limitation visible in the map attribution.
-    """
-    if len(xy) < 3:
-        return xy
-    padded = [xy[0], *xy, xy[-1]]
-    result: list[tuple[float, float]] = []
-    for i in range(1, len(padded) - 2):
-        p0, p1, p2, p3 = padded[i - 1], padded[i], padded[i + 1], padded[i + 2]
-        for step in range(samples):
-            t = step / samples
-            t2, t3 = t * t, t * t * t
-            x = 0.5 * ((2 * p1[0]) + (-p0[0] + p2[0]) * t + (2*p0[0] - 5*p1[0] + 4*p2[0] - p3[0]) * t2 + (-p0[0] + 3*p1[0] - 3*p2[0] + p3[0]) * t3)
-            y = 0.5 * ((2 * p1[1]) + (-p0[1] + p2[1]) * t + (2*p0[1] - 5*p1[1] + 4*p2[1] - p3[1]) * t2 + (-p0[1] + 3*p1[1] - 3*p2[1] + p3[1]) * t3)
-            result.append((x, y))
-    result.append(xy[-1])
-    return result
+def route_lonlat(route: dict, amap_routes: dict) -> list[tuple[float, float]]:
+    """Return exact stored Amap geometry, or no line for an undrawn route."""
+    if route.get("draw", True) is False:
+        return []
+    route_key = route.get("amap_route")
+    if not route_key:
+        raise ValueError(f"Drawn route has no checked Amap snapshot: {route!r}")
+    if route_key not in amap_routes:
+        raise KeyError(f"Missing Amap snapshot: {route_key}")
+    snapshot = amap_routes[route_key]
+    if snapshot["points"] != route["points"]:
+        raise ValueError(
+            f"Amap snapshot {route_key} point sequence differs from itinerary: "
+            f'{snapshot["points"]!r} != {route["points"]!r}'
+        )
+    if snapshot["kind"] != route["kind"]:
+        raise ValueError(f"Amap snapshot {route_key} has the wrong route kind")
+    geometry: list[tuple[float, float]] = []
+    raw_point_count = 0
+    for polyline in snapshot["geometry"]:
+        for pair in polyline.split(";"):
+            if not pair:
+                continue
+            lon_text, lat_text = pair.split(",")
+            raw_point_count += 1
+            point = gcj02_to_wgs84(float(lon_text), float(lat_text))
+            if not geometry or geometry[-1] != point:
+                geometry.append(point)
+    if raw_point_count != snapshot["geometry_point_count"]:
+        raise ValueError(f"Amap snapshot {route_key} geometry point count changed")
+    return geometry
 
 
 def line_segments(draw: ImageDraw.ImageDraw, xy: list[tuple[float, float]], kind: str) -> None:
@@ -328,14 +383,18 @@ def hazard_marker(
     occupied.extend([hazard_box, (x - 21, y - 22, x + 21, y + 18)])
 
 
-def build_context_inset(key: str, spec: dict, places: dict, photo_points: dict, overview_spec: dict) -> Image.Image:
+def build_context_inset(
+    key: str,
+    spec: dict,
+    places: dict,
+    photo_points: dict,
+    overview_spec: dict,
+    amap_routes: dict,
+) -> Image.Image:
     """Build a fixed-scale whole-trip locator with the current day highlighted."""
     target = CONTEXT_TARGET
     full_routes = overview_spec["routes"]
-    full_keys: list[str] = []
-    for route in full_routes:
-        full_keys.extend(route["points"])
-    full_points = [(places[p]["lon"], places[p]["lat"]) for p in dict.fromkeys(full_keys)]
+    full_points = [point for route in full_routes for point in route_lonlat(route, amap_routes)]
 
     zoom = choose_zoom(full_points, target)
     px = [lon_to_x(lon, zoom) for lon, _ in full_points]
@@ -381,15 +440,17 @@ def build_context_inset(key: str, spec: dict, places: dict, photo_points: dict, 
         return ((lon_to_x(lon, zoom) - left) * sx, (lat_to_y(lat, zoom) - top) * sy)
 
     for route in full_routes:
-        raw = [places[p] for p in route["points"]]
-        line = smooth_polyline([project(p["lon"], p["lat"]) for p in raw], samples=8)
+        line = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
+        if len(line) < 2:
+            continue
         draw.line(line, fill="#FFFDF7", width=9, joint="curve")
         draw.line(line, fill=COLORS["context_route"], width=5, joint="curve")
 
     daily_routes = [route for route in spec["routes"] if route["kind"] != "alternative"]
     for route in daily_routes:
-        raw = [places[p] for p in route["points"]]
-        line = smooth_polyline([project(p["lon"], p["lat"]) for p in raw], samples=8)
+        line = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
+        if len(line) < 2:
+            continue
         draw.line(line, fill="#FFFDF7", width=12, joint="curve")
         draw.line(line, fill=COLORS["context_day"], width=8, joint="curve")
         for endpoint in (line[0], line[-1]):
@@ -398,7 +459,7 @@ def build_context_inset(key: str, spec: dict, places: dict, photo_points: dict, 
 
     for photo_key in spec.get("photos", []):
         photo = photo_points[photo_key]
-        x, y = project(photo["lon"], photo["lat"])
+        x, y = project(*map_point(photo))
         draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=COLORS["photo"], outline="#FFFDF7", width=1)
 
     badge = spec.get("badge", f"{key.upper()} / 8")
@@ -447,17 +508,27 @@ def place_context_inset(image: Image.Image, inset: Image.Image, route_points: li
     image.alpha_composite(inset, (x, y))
 
 
-def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Path, overview_spec: dict) -> None:
+def build_map(
+    key: str,
+    spec: dict,
+    places: dict,
+    photo_points: dict,
+    output: Path,
+    overview_spec: dict,
+    amap_routes: dict,
+    checked_date: str,
+) -> None:
     target = OVERVIEW_TARGET if key in {"overview", "risk"} or spec.get("layout") == "overview" else TARGET
     point_keys: list[str] = []
     for route in spec["routes"]:
         point_keys.extend(route["points"])
-    points = [(places[p]["lon"], places[p]["lat"]) for p in dict.fromkeys(point_keys)]
+    points = [map_point(places[p]) for p in dict.fromkeys(point_keys)]
+    points.extend(point for route in spec["routes"] for point in route_lonlat(route, amap_routes))
     for hazard in spec.get("hazards", []):
-        points.append((hazard["lon"], hazard["lat"]))
+        points.append(map_point(hazard))
     for photo_key in spec.get("photos", []):
         photo = photo_points[photo_key]
-        points.append((photo["lon"], photo["lat"]))
+        points.append(map_point(photo))
 
     zoom = choose_zoom(points, target)
     px = [lon_to_x(lon, zoom) for lon, _ in points]
@@ -511,9 +582,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
     # Rail/alternatives underneath, driving routes on top.
     ordered_routes = sorted(spec["routes"], key=lambda r: 1 if r["kind"] == "drive" else 0)
     for route in ordered_routes:
-        raw = [places[p] for p in route["points"]]
-        control_line = [project(p["lon"], p["lat"]) for p in raw]
-        geometry = smooth_polyline(control_line) if route["kind"] == "drive" else control_line
+        geometry = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
         line_segments(draw, geometry, route["kind"])
 
     occupied: list[tuple[float, float, float, float]] = []
@@ -522,7 +591,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
         occupied.append(
             label_box(
                 draw,
-                *project(p["lon"], p["lat"]),
+                *project(*map_point(p)),
                 p["short"],
                 i,
                 target[0],
@@ -536,7 +605,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
         photo = photo_points[photo_key]
         photo_marker(
             draw,
-            *project(photo["lon"], photo["lat"]),
+            *project(*map_point(photo)),
             photo["short"],
             target[0],
             target[1],
@@ -545,28 +614,30 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
         )
 
     for hazard in spec.get("hazards", []):
-        x, y = project(hazard["lon"], hazard["lat"])
+        x, y = project(*map_point(hazard))
         hazard_marker(draw, x, y, hazard["label"], target[0], target[1], occupied)
 
     if spec.get("context") or key.startswith("d"):
         daily_route_points: list[tuple[float, float]] = []
         for route in spec["routes"]:
             if route["kind"] != "alternative":
-                daily_route_points.extend(project(places[p]["lon"], places[p]["lat"]) for p in route["points"])
+                daily_route_points.extend(
+                    project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)
+                )
         daily_route_points.extend(
-            project(photo_points[p]["lon"], photo_points[p]["lat"])
+            project(*map_point(photo_points[p]))
             for p in spec.get("photos", [])
         )
         place_context_inset(
             image,
-            build_context_inset(key, spec, places, photo_points, overview_spec),
+            build_context_inset(key, spec, places, photo_points, overview_spec, amap_routes),
             daily_route_points,
         )
         draw = ImageDraw.Draw(image, "RGBA")
 
     # Compact legend and attribution; route timings remain in the roadbook text.
     legend_items = []
-    kinds = {route["kind"] for route in spec["routes"]}
+    kinds = {route["kind"] for route in spec["routes"] if route.get("draw", True)}
     for kind, label in (("drive", "自驾"), ("rail", "铁路"), ("transfer", "接驳"), ("alternative", "备选")):
         if kind in kinds:
             legend_items.append((kind, label))
@@ -581,7 +652,7 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["photo"], outline="#FFFDF7", width=2)
         draw.text((legend_x + 27, legend_y - 4), "拍摄点", fill=COLORS["ink"], font=FONT_SMALL)
 
-    credit = "© OpenStreetMap contributors · 路线示意，实时导航与交通管制优先"
+    credit = f"© OpenStreetMap contributors · 线路：高德推荐方案（核验 {checked_date}）"
     bbox = draw.textbbox((0, 0), credit, font=FONT_TINY)
     cw = bbox[2] - bbox[0]
     draw.rounded_rectangle((target[0] - cw - 26, target[1] - 42, target[0] - 10, target[1] - 10), radius=5, fill=(250, 248, 240, 220))
@@ -595,6 +666,11 @@ def build_map(key: str, spec: dict, places: dict, photo_points: dict, output: Pa
 
 def main() -> None:
     data = json.loads(DATA.read_text(encoding="utf-8"))
+    if data.get("coordinate_system") != "GCJ-02":
+        raise ValueError("itinerary coordinates must declare GCJ-02 for Amap/OSM reprojection")
+    amap_data = json.loads(AMAP_DATA.read_text(encoding="utf-8"))
+    amap_routes = amap_data["routes"]
+    checked_date = amap_data["checked_at"][:10]
     requested = sys.argv[1:]
     unknown = [key for key in requested if key not in data["maps"]]
     if unknown:
@@ -604,7 +680,16 @@ def main() -> None:
         spec = data["maps"][key]
         context_key = spec.get("context", "overview")
         overview_spec = data["maps"][context_key]
-        build_map(key, spec, data["places"], data["photo_points"], OUTPUT, overview_spec)
+        build_map(
+            key,
+            spec,
+            data["places"],
+            data["photo_points"],
+            OUTPUT,
+            overview_spec,
+            amap_routes,
+            checked_date,
+        )
 
 
 if __name__ == "__main__":

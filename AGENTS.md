@@ -27,8 +27,9 @@ This file defines durable repository constraints for the Northeast roadbook. Kee
 | Layer | Files | Rule |
 |---|---|---|
 | Editorial pages | `index.qmd`, `primary.qmd`, `option-skip-qiqian.qmd`, `sources.qmd` | These are the editable reader-facing sources. Keep route names, dates, timings, lodging, photography points, and decision rules consistent across them. |
-| Route schema | `data/itinerary.json` | This is the authoritative source for map places, photo points, route control points, labels, route kinds, contexts, and daily map identifiers. |
-| Generated maps | `figures/maps/*.webp` | Generate these from `data/itinerary.json` with `scripts/build_maps.py`; do not hand-edit the images. Track the resulting WebP files because the published site consumes them directly. |
+| Route schema | `data/itinerary.json` | This is the authoritative source for map places, photo points, checked Amap route specifications, labels, route kinds, contexts, and daily map identifiers. Coordinates are declared GCJ-02 because they come from Amap. |
+| Amap route snapshots | `data/amap-routes.json`, `includes/amap-route-links.md` | Generate these together with `scripts/update_amap_routes.py`. They preserve the dated Amap-recommended geometry, distance, duration, road names, and reader-facing route links; do not hand-edit generated values. |
+| Generated maps | `figures/maps/*.webp` | Generate these from the itinerary and Amap snapshots with `scripts/build_maps.py`; do not hand-edit the images. Track the resulting WebP files because the published site consumes them directly. |
 | Site schema | `_quarto.yml`, `styles.css`, `assets/fonts/web/` | Keep navigation, layout, typography, loading behavior, and reader-facing labels consistent. |
 | Deployment | `.github/workflows/publish.yml` | `main` contains sources; the workflow renders and publishes the site to `gh-pages`. Do not edit `gh-pages` manually. |
 
@@ -55,6 +56,8 @@ When a change affects more than one plan:
 ## 5. Route and timing integrity
 
 - Do not infer a drivable connection from geographic proximity or a schematic map line. Verify material connectors with current navigation, transport authority, scenic-area, or credible local information.
+- Every drawn `drive` or public-road `transfer` line must reference a dated Amap snapshot whose ordered points exactly match the itinerary. Never join control points with straight, smoothed, or invented geometry.
+- Keep Amap navigation time separate from the larger operational allowance for fuel, meals, rests, photography, poor surfaces, congestion, and access checks.
 - Mark each route segment accurately as `drive`, `transfer`, `rail`, or `alternative`. Park shuttles and official chauffeur segments must not appear as self-driving routes.
 - For restricted scenic areas, record how travelers reach the viewpoint, where their car remains, how they retrieve it, and the fallback when through-travel is unavailable.
 - For unpaved, seasonal, construction-affected, border, forest-fire-control, or limited-access roads, add a concrete decision point before entering and a clear safe fallback. Avoid plans that require entering a spur and then backtracking merely to discover closure.
@@ -68,7 +71,9 @@ When a change affects more than one plan:
 - Every daily map must show both the complete-plan context and that day's segment using visibly different colors.
 - Use blue points for priority photography locations and keep route nodes visually distinct from photo points.
 - Keep map labels, blue points, daily tables, prose, and photo priority lists synchronized. Removing or moving a stop requires auditing every representation.
-- Route lines are structural schematics through explicit control points, not turn-by-turn navigation. Do not present an approximate coordinate as an exact entrance, parking lot, or legal takeoff location.
+- Route lines reproduce the stored Amap-recommended road geometry from the stated verification date. The OpenStreetMap layer is only the visual basemap and must not be described as the routing source.
+- Reproject all GCJ-02 Amap route and marker coordinates to WGS84 before drawing over OpenStreetMap; do not overlay the two coordinate systems directly.
+- A park shuttle, unverified spur, approximate scenic area, or point without a confirmed road endpoint may be shown as a marker but must use `draw: false`; never imply a public-road navigation line. Do not present an approximate coordinate as an exact entrance, parking lot, or legal takeoff location.
 - Use the locally bundled map fonts. Rebuild the WebP font subsets when new Chinese characters are introduced in reader-facing QMD files or `_quarto.yml`, and verify complete glyph coverage.
 - Preserve WebP delivery, lazy loading, asynchronous decoding, and compact dimensions unless a measured quality or performance problem justifies a change.
 - Drone recommendations must be conditional on current airspace, protected-area, border, weather, crowd, and onsite rules. Never describe an unverified takeoff point as permitted.
@@ -96,6 +101,7 @@ When a change affects more than one plan:
 Translate the requested outcome into observable checks and run those relevant to the change:
 
 - parse `data/itinerary.json` and verify every route point, label, photo point, route kind, and context reference exists
+- verify every drawn road route has a matching `data/amap-routes.json` snapshot, the ordered point keys agree, the geometry has valid coordinates, and the published Amap link resolves
 - verify daily endpoint-to-next-start continuity for all affected plans
 - audit repeated undirected route segments and classify each as required access/return travel or unintended repetition
 - audit duplicate mapped photography points across days
