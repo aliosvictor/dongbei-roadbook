@@ -1,41 +1,41 @@
 {
   "coordinate_system": "GCJ-02",
   "places": {
-    "qiqihar": {"name": "齐齐哈尔市", "short": "齐齐哈尔", "lat": 47.354310, "lon": 123.917960},
-    "moguqi": {"name": "蘑菇气镇（蘑阿公路东端）", "short": "蘑菇气", "lat": 47.494182, "lon": 122.366461},
-    "chaihe": {"name": "柴河月亮小镇", "short": "柴河", "lat": 47.556670, "lon": 121.308194},
-    "aershan_east": {"name": "阿尔山国家森林公园东门", "short": "阿尔山东门", "lat": 47.580340, "lon": 120.773160},
-    "yizi": {"name": "依子民宿", "short": "依子民宿", "lat": 47.344390, "lon": 120.213251},
-    "jinjianggou": {"name": "金江沟游客服务中心停车场附近", "short": "金江沟", "lat": 47.275382, "lon": 120.300638},
-    "wusulangzi": {"name": "乌苏浪子湖拍摄区域（非停车点）", "short": "乌苏浪子湖", "lat": 47.300300, "lon": 120.338500},
-    "budonghe": {"name": "不冻河观景台", "short": "不冻河", "lat": 47.288735, "lon": 120.418447},
-    "tuofeng": {"name": "驼峰岭天池", "short": "驼峰岭", "lat": 47.460091, "lon": 120.648982},
-    "xinzuoqi": {"name": "新巴尔虎左旗阿木古郎镇", "short": "新左旗", "lat": 48.218474, "lon": 118.270930, "poi_url": "https://www.amap.com/place/B01D60N3CQ"},
-    "morigele_cliff": {"name": "莫日格勒河断崖", "short": "莫日格勒断崖", "lat": 49.699578, "lon": 120.094643},
-    "erguna_riverbend": {"name": "额尔古纳湿地·根河河湾日落机位（地图选点，非景区 POI）", "short": "湿地河湾日落", "lat": 50.299354, "lon": 120.233890},
-    "heishantou": {"name": "黑山头镇", "short": "黑山头", "lat": 50.214262, "lon": 119.532592},
-    "wuka": {"name": "五卡", "short": "五卡", "lat": 50.437788, "lon": 119.265158},
-    "wulan": {"name": "额尔古纳河乌兰山景区大门", "short": "乌兰山大门", "lat": 50.617083, "lon": 119.357127},
-    "qika": {"name": "七卡", "short": "七卡", "lat": 50.749702, "lon": 119.530938},
-    "baka": {"name": "八卡", "short": "八卡", "lat": 50.888366, "lon": 119.534574},
-    "jiuka": {"name": "九卡", "short": "九卡", "lat": 51.056132, "lon": 119.749176},
-    "shiwei": {"name": "室韦魅力名镇旅游区", "short": "室韦", "lat": 51.336848, "lon": 119.904175},
-    "linjiang": {"name": "临江村落脚点（蒙兀往事驿站）", "short": "临江村", "lat": 51.418279, "lon": 119.979172},
-    "moerdaoga": {"name": "莫尔道嘎镇", "short": "莫尔道嘎", "lat": 51.255739, "lon": 120.785635},
-    "bailudao": {"name": "白鹿岛景区中心（驾车吸附至外围道路）", "short": "白鹿岛", "lat": 51.703600, "lon": 121.001300, "route_snap_tolerance_m": 4000},
-    "qiqian": {"name": "奇乾村", "short": "奇乾", "lat": 52.189169, "lon": 120.766005},
-    "genhe": {"name": "根河市", "short": "根河", "lat": 50.779003, "lon": 121.520165},
-    "aoluguya": {"name": "敖鲁古雅使鹿部落景区", "short": "敖鲁古雅", "lat": 50.776185, "lon": 121.479454},
-    "genheyuan": {"name": "根河源国家湿地公园·冷极河栈道一带（示意）", "short": "根河源湿地", "lat": 50.882694, "lon": 121.696944},
+    "qiqihar": {"name": "齐齐哈尔市", "short": "齐齐哈尔", "lat": 47.354310, "lon": 123.917960, "role": "reference"},
+    "moguqi": {"name": "蘑菇气镇（蘑阿公路东端）", "short": "蘑菇气", "lat": 47.494182, "lon": 122.366461, "role": "optional"},
+    "chaihe": {"name": "柴河月亮小镇", "short": "柴河", "lat": 47.556670, "lon": 121.308194, "role": "optional"},
+    "aershan_east": {"name": "阿尔山国家森林公园东门", "short": "阿尔山东门", "lat": 47.580340, "lon": 120.773160, "role": "reference"},
+    "yizi": {"name": "依子民宿", "short": "依子民宿", "lat": 47.344390, "lon": 120.213251, "role": "stay"},
+    "jinjianggou": {"name": "金江沟游客服务中心停车场附近", "short": "金江沟", "lat": 47.275382, "lon": 120.300638, "role": "access"},
+    "wusulangzi": {"name": "乌苏浪子湖拍摄区域（非停车点）", "short": "乌苏浪子湖", "lat": 47.300300, "lon": 120.338500, "role": "photo"},
+    "budonghe": {"name": "不冻河观景台", "short": "不冻河", "lat": 47.288735, "lon": 120.418447, "role": "photo"},
+    "tuofeng": {"name": "驼峰岭天池", "short": "驼峰岭", "lat": 47.460091, "lon": 120.648982, "role": "photo"},
+    "xinzuoqi": {"name": "新巴尔虎左旗阿木古郎镇", "short": "新左旗", "lat": 48.218474, "lon": 118.270930, "poi_url": "https://www.amap.com/place/B01D60N3CQ", "role": "stay"},
+    "morigele_cliff": {"name": "莫日格勒河断崖", "short": "莫日格勒断崖", "lat": 49.699578, "lon": 120.094643, "role": "photo"},
+    "erguna_riverbend": {"name": "额尔古纳湿地·根河河湾日落机位（地图选点，非景区 POI）", "short": "湿地河湾日落", "lat": 50.299354, "lon": 120.233890, "role": "photo"},
+    "heishantou": {"name": "黑山头镇", "short": "黑山头", "lat": 50.214262, "lon": 119.532592, "role": "stay"},
+    "wuka": {"name": "五卡", "short": "五卡", "lat": 50.437788, "lon": 119.265158, "role": "reference"},
+    "wulan": {"name": "额尔古纳河乌兰山景区大门", "short": "乌兰山大门", "lat": 50.617083, "lon": 119.357127, "role": "access"},
+    "qika": {"name": "七卡", "short": "七卡", "lat": 50.749702, "lon": 119.530938, "role": "stay"},
+    "baka": {"name": "八卡", "short": "八卡", "lat": 50.888366, "lon": 119.534574, "role": "reference"},
+    "jiuka": {"name": "九卡", "short": "九卡", "lat": 51.056132, "lon": 119.749176, "role": "reference"},
+    "shiwei": {"name": "室韦魅力名镇旅游区", "short": "室韦", "lat": 51.336848, "lon": 119.904175, "role": "optional"},
+    "linjiang": {"name": "临江村落脚点（蒙兀往事驿站）", "short": "临江村", "lat": 51.418279, "lon": 119.979172, "role": "photo"},
+    "moerdaoga": {"name": "莫尔道嘎镇", "short": "莫尔道嘎", "lat": 51.255739, "lon": 120.785635, "role": "optional"},
+    "bailudao": {"name": "白鹿岛景区中心（驾车吸附至外围道路）", "short": "白鹿岛", "lat": 51.703600, "lon": 121.001300, "route_snap_tolerance_m": 4000, "role": "photo"},
+    "qiqian": {"name": "奇乾村", "short": "奇乾", "lat": 52.189169, "lon": 120.766005, "role": "stay"},
+    "genhe": {"name": "根河市", "short": "根河", "lat": 50.779003, "lon": 121.520165, "role": "stay"},
+    "aoluguya": {"name": "敖鲁古雅使鹿部落景区", "short": "敖鲁古雅", "lat": 50.776185, "lon": 121.479454, "role": "photo"},
+    "genheyuan": {"name": "根河源国家湿地公园·冷极河栈道一带（示意）", "short": "根河源湿地", "lat": 50.882694, "lon": 121.696944, "role": "photo"},
     "yitulihe": {"name": "伊图里河方向参考点", "short": "伊图里河方向", "lat": 50.636700, "lon": 121.858600, "role": "reference"},
     "alihe": {"name": "阿里河方向参考点", "short": "阿里河方向", "lat": 50.590300, "lon": 123.727500, "role": "reference"},
     "jiagedaqi": {"name": "加格达奇方向参考点", "short": "加格达奇方向", "lat": 50.424700, "lon": 124.126700, "role": "reference"},
     "dayangshu": {"name": "大杨树方向参考点", "short": "大杨树方向", "lat": 49.751800, "lon": 124.573900, "role": "reference"},
-    "nenjiang": {"name": "嫩江市区参考点", "short": "嫩江", "lat": 49.185766, "lon": 125.229904},
-    "wudalianchi": {"name": "黑龙山景区（开放待核验）", "short": "黑龙山待核验", "lat": 48.687406, "lon": 126.116065, "poi_url": "https://www.amap.com/place/B01C8000E4"},
+    "nenjiang": {"name": "嫩江市区参考点", "short": "嫩江", "lat": 49.185766, "lon": 125.229904, "role": "stay"},
+    "wudalianchi": {"name": "黑龙山景区（开放待核验）", "short": "黑龙山待核验", "lat": 48.687406, "lon": 126.116065, "poi_url": "https://www.amap.com/place/B01C8000E4", "role": "optional"},
     "beian": {"name": "北安方向参考点", "short": "北安方向", "lat": 48.239146, "lon": 126.507452, "role": "reference"},
     "suihua": {"name": "绥化方向参考点", "short": "绥化方向", "lat": 46.653900, "lon": 126.968900, "role": "reference"},
-    "wenbo": {"name": "五大连池风景区-温泊景区", "short": "温泊", "lat": 48.664152, "lon": 126.169478, "poi_url": "https://www.amap.com/place/B01C800I2M"},
+    "wenbo": {"name": "五大连池风景区-温泊景区", "short": "温泊", "lat": 48.664152, "lon": 126.169478, "poi_url": "https://www.amap.com/place/B01C800I2M", "role": "photo"},
     "harbin": {"name": "哈尔滨市区里程参考（非还车地址）", "short": "哈尔滨市区参考", "lat": 45.761621, "lon": 126.632690, "role": "reference", "reference_note": "借用哈尔滨站坐标估算市区里程；执行终点须替换为订单中的还车门店"}
   },
   "photo_points": {
@@ -48,7 +48,7 @@
     "morigele_curve": {"name": "莫日格勒河断崖（条件停车机位）", "short": "莫日格勒断崖", "lat": 49.699578, "lon": 120.094643, "grade": "S", "visit": "planned"},
     "erguna_riverbend_sunset": {"name": "额尔古纳湿地·根河河湾日落机位（地图选点）", "short": "额尔古纳湿地黄昏", "lat": 50.299354, "lon": 120.233890, "grade": "S", "visit": "planned"},
     "heishantou_sunrise": {"name": "黑山头晨拍候选观测坡（高德日落观测点）", "short": "黑山头晨拍候选", "lat": 50.214262, "lon": 119.532592, "grade": "A", "visit": "planned"},
-    "wuka_valley": {"name": "五卡河谷候选拍摄区（停车待现场确认）", "short": "五卡河谷", "lat": 50.437788, "lon": 119.265158, "grade": "S", "visit": "planned"},
+    "wuka_valley": {"name": "五卡河谷候选拍摄区（停车待现场确认）", "short": "五卡河谷", "lat": 50.437788, "lon": 119.265158, "grade": "S", "visit": "optional"},
     "wulan_taiji": {"name": "乌兰山太极湾俯瞰", "short": "乌兰山太极湾", "lat": 50.603812, "lon": 119.451961, "grade": "S", "visit": "planned"},
     "qika_light": {"name": "七卡河谷暮色（天气与体力合适时）", "short": "七卡暮色·机动", "lat": 50.749702, "lon": 119.530938, "grade": "A", "visit": "optional"},
     "baka_curve": {"name": "七卡至八卡S弯（与九卡择一短停）", "short": "七八卡S弯·择一", "lat": 50.829000, "lon": 119.528000, "grade": "S", "visit": "optional"},
@@ -67,14 +67,14 @@
   },
   "route_options": {"d08": ["d08_black"]},
   "amap_route_specs": {
-    "d01": {"points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"], "kind": "drive"},
+    "d01": {"points": ["qiqihar", "aershan_east", "budonghe", "yizi"], "kind": "drive"},
     "d02_drive": {"points": ["jinjianggou", "xinzuoqi"], "kind": "drive"},
     "d03": {"points": ["xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou"], "kind": "drive"},
     "d04": {"points": ["heishantou", "wuka", "wulan", "qika"], "kind": "drive"},
-    "d05_1": {"points": ["qika", "baka", "jiuka", "shiwei", "linjiang"], "kind": "drive"},
+    "d05_1": {"points": ["qika", "baka", "jiuka", "linjiang"], "kind": "drive"},
     "d05_2": {"points": ["linjiang", "bailudao", "qiqian"], "kind": "drive"},
     "s05_2": {"points": ["linjiang", "moerdaoga"], "kind": "drive"},
-    "d06": {"points": ["qiqian", "moerdaoga", "genhe"], "kind": "drive"},
+    "d06": {"points": ["qiqian", "genhe"], "kind": "drive"},
     "s06": {"points": ["moerdaoga", "genhe"], "kind": "drive"},
     "d07": {"points": ["genhe", "aoluguya", "nenjiang"], "kind": "drive"},
     "d08_black": {"points": ["nenjiang", "wudalianchi", "harbin"], "kind": "alternative"},
@@ -84,15 +84,15 @@
     "overview": {
       "title": "主方案：阿尔山、卡线与奇乾八日摄影自驾",
       "routes": [
-        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
         {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
         {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
-        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
+        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "linjiang"]},
         {"kind": "drive", "amap_route": "d05_2", "points": ["linjiang", "bailudao", "qiqian"]},
-        {"kind": "drive", "amap_route": "d06", "points": ["qiqian", "moerdaoga", "genhe"]},
+        {"kind": "drive", "amap_route": "d06", "points": ["qiqian", "genhe"]},
         {"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]},
         {"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}
       ],
@@ -103,7 +103,7 @@
     "d01": {
       "title": "09.26 齐齐哈尔经蘑阿公路到阿尔山",
       "routes": [
-        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]}
+        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "aershan_east", "budonghe", "yizi"]}
       ],
       "labels": ["qiqihar", "moguqi", "chaihe", "aershan_east", "yizi"],
       "photos": ["budonghe_sunset"]
@@ -134,7 +134,7 @@
     "d05": {
       "title": "09.30 七卡经室韦、临江和白鹿岛到奇乾",
       "routes": [
-        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
+        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "linjiang"]},
         {"kind": "drive", "amap_route": "d05_2", "points": ["linjiang", "bailudao", "qiqian"]}
       ],
       "labels": ["qika", "shiwei", "linjiang", "qiqian"],
@@ -142,7 +142,7 @@
     },
     "d06": {
       "title": "10.01 奇乾经莫尔道嘎到根河",
-      "routes": [{"kind": "drive", "amap_route": "d06", "points": ["qiqian", "moerdaoga", "genhe"]}],
+      "routes": [{"kind": "drive", "amap_route": "d06", "points": ["qiqian", "genhe"]}],
       "labels": ["qiqian", "moerdaoga", "genhe"],
       "photos": ["qiqian_mist"]
     },
@@ -161,16 +161,17 @@
       "photo_labels": ["wenbo_wetland"]
     },
     "skip_overview": {
+      "label_roles": {"moerdaoga": "stay"},
       "title": "备用方案：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
-        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
         {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
         {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
-        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
+        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "linjiang"]},
         {"kind": "drive", "amap_route": "s05_2", "points": ["linjiang", "moerdaoga"]},
         {"kind": "drive", "amap_route": "s06", "points": ["moerdaoga", "genhe"]},
         {"kind": "transfer", "draw": false, "points": ["genhe", "genheyuan", "genhe"]},
@@ -186,7 +187,7 @@
       "context": "skip_overview",
       "badge": "备用方案 · D1 / 8",
       "routes": [
-        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]}
+        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "aershan_east", "budonghe", "yizi"]}
       ],
       "labels": ["qiqihar", "moguqi", "chaihe", "aershan_east", "yizi"],
       "photos": ["budonghe_sunset"]
@@ -221,17 +222,19 @@
       "photos": ["heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light"]
     },
     "s05": {
+      "label_roles": {"moerdaoga": "stay"},
       "title": "09.30 七卡经室韦、临江到莫尔道嘎",
       "context": "skip_overview",
       "badge": "备用方案 · D5 / 8",
       "routes": [
-        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
+        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "linjiang"]},
         {"kind": "drive", "amap_route": "s05_2", "points": ["linjiang", "moerdaoga"]}
       ],
       "labels": ["qika", "shiwei", "linjiang", "moerdaoga"],
       "photos": ["baka_curve", "jiuka_valley", "linjiang_hill"]
     },
     "s06": {
+      "label_roles": {"moerdaoga": "stay"},
       "title": "10.01 莫尔道嘎经根河到根河源湿地",
       "context": "skip_overview",
       "badge": "备用方案 · D6 / 8",
@@ -264,15 +267,15 @@
     "risk": {
       "title": "全程道路、天气与无人机检查点",
       "routes": [
-        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
+        {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
         {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
         {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
-        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
+        {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "linjiang"]},
         {"kind": "drive", "amap_route": "d05_2", "points": ["linjiang", "bailudao", "qiqian"]},
-        {"kind": "drive", "amap_route": "d06", "points": ["qiqian", "moerdaoga", "genhe"]},
+        {"kind": "drive", "amap_route": "d06", "points": ["qiqian", "genhe"]},
         {"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]},
         {"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}
       ],

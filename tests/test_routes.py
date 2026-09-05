@@ -2,11 +2,12 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_maps import route_chunks
+from build_maps import COLORS, photo_marker, place_role, route_chunks
 from update_amap_routes import (
     generated_variables, geometry_from_path, parse_geometry,
     validate_route_points, validate_snapshot,
@@ -19,6 +20,15 @@ def point(lon):
 
 
 class RouteIntegrityTests(unittest.TestCase):
+    def test_planned_and_optional_map_symbols_use_different_colors(self):
+        image=Image.new('RGB',(100,100),'white')
+        draw=ImageDraw.Draw(image)
+        photo_marker(draw,25,25,'',100,100,[],show_label=False,conditional=False)
+        photo_marker(draw,75,75,'',100,100,[],show_label=False,conditional=True)
+        self.assertEqual(image.getpixel((25,25)), (22,119,210))
+        self.assertEqual(image.getpixel((75,64)), (118,82,166))
+        self.assertEqual(image.getpixel((75,75)), (255,253,247))
+
     def test_ordered_route(self):
         self.assertEqual(validate_route_points([point(120), point(120.02), point(120.04)], ["120,50;120.02,50;120.04,50"]), [0, 0, 0])
 
@@ -122,7 +132,7 @@ class RouteIntegrityTests(unittest.TestCase):
 
     def test_conditional_photography_is_explicit_and_not_repeated(self):
         data=json.loads((ROOT/'data/itinerary.json').read_text())
-        for key in ('dujuan_lake','shitang_forest','baka_curve','jiuka_valley','qika_light'):
+        for key in ('dujuan_lake','shitang_forest','baka_curve','jiuka_valley','qika_light','wuka_valley'):
             self.assertEqual(data['photo_points'][key]['visit'],'optional')
         for day in ('d05','s05'):
             self.assertNotIn('qika_light',data['maps'][day]['photos'])
@@ -131,11 +141,40 @@ class RouteIntegrityTests(unittest.TestCase):
 
     def test_qiqian_return_does_not_force_second_bailudao_visit(self):
         data=json.loads((ROOT/'data/itinerary.json').read_text())
-        self.assertEqual(data['amap_route_specs']['d06']['points'],['qiqian','moerdaoga','genhe'])
+        self.assertEqual(data['amap_route_specs']['d06']['points'],['qiqian','genhe'])
         text=(ROOT/'primary.qmd').read_text()
         day=text.split('### Day 6',1)[1].split('### Day 7',1)[0]
         self.assertNotIn('| 11:30—11:50 |',day)
-        self.assertIn('午餐出镇后',day)
+        self.assertIn('午餐后光线合适时',day)
+
+    def test_optional_town_centers_are_not_forced_vias(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        for route, omitted in [('d01', {'moguqi','chaihe'}), ('d05_1', {'shiwei'}), ('d06', {'moerdaoga'})]:
+            self.assertFalse(omitted & set(data['amap_route_specs'][route]['points']))
+            for key in omitted:
+                self.assertEqual(data['places'][key]['role'], 'optional')
+        snapshot=json.loads((ROOT/'data/amap-routes.json').read_text())
+        self.assertIn('蘑阿公路', snapshot['routes']['d01']['roads'])
+
+    def test_lodging_role_is_plan_specific_and_not_photo_grade(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        for day, expected in [('d06','optional'),('s05','stay'),('s06','stay'),('skip_overview','stay')]:
+            self.assertEqual(place_role(data['maps'][day], 'moerdaoga', data['places']), expected)
+        self.assertEqual(data['places']['qika']['role'], 'stay')
+        self.assertEqual(data['photo_points']['qika_light']['visit'], 'optional')
+        self.assertEqual(data['photo_points']['wuka_valley']['grade'], 'S')
+        self.assertEqual(data['photo_points']['wuka_valley']['visit'], 'optional')
+
+    def test_invalid_place_role_and_override_rejected(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        snapshot=json.loads((ROOT/'data/amap-routes.json').read_text())
+        data['places']['chaihe']['role']='unknown'
+        with self.assertRaisesRegex(ValueError,'place role'):
+            validate_data(data,snapshot)
+        data['places']['chaihe']['role']='optional'
+        data['maps']['s05']['label_roles']['chaihe']='stay'
+        with self.assertRaisesRegex(ValueError,'override without label'):
+            validate_data(data,snapshot)
 
     def test_harbin_station_not_an_execution_destination(self):
         data=json.loads((ROOT/'data/itinerary.json').read_text())

@@ -527,10 +527,64 @@ blockquote p:last-child,
 }
 
 .optional-stop,
+.optional-stop a,
 a.optional-stop {
   color: var(--optional-stop) !important;
   font-weight: 720;
   text-decoration-color: var(--optional-stop);
+}
+
+.pass-stop,
+a.pass-stop {
+  color: var(--muted) !important;
+}
+
+.stop-legend {
+  margin: 1.2rem 0;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.stop-legend li + li { margin-top: 0.6rem; }
+.stop-legend p:last-child { margin-bottom: 0; }
+
+.stop-tag {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.4rem;
+  color: var(--stop-accent, var(--muted));
+  background: var(--stop-tint, #f1f3f1);
+  font-size: 0.76rem;
+  font-weight: 750;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.row-planned, .schedule-scroll tr:has(.row-planned) {
+  --stop-accent: var(--photo-blue-ink);
+  --stop-tint: var(--photo-blue-soft);
+}
+.row-optional, .schedule-scroll tr:has(.row-optional) {
+  --stop-accent: var(--optional-stop);
+  --stop-tint: var(--optional-stop-soft);
+}
+.row-logistics, .schedule-scroll tr:has(.row-logistics) {
+  --stop-accent: #596437;
+  --stop-tint: #f0f2e5;
+}
+.row-drive, .row-rest,
+.schedule-scroll tr:has(.row-drive, .row-rest) {
+  --stop-accent: #626963;
+  --stop-tint: #f7f8f5;
+}
+
+.schedule-scroll .stop-tag {
+  display: table;
+  margin-bottom: 0.4rem;
 }
 
 .drone-no-fly {
@@ -625,7 +679,7 @@ th {
   letter-spacing: 0.025em;
 }
 
-tbody tr:nth-child(even):not(:has(.photo-stop, .optional-stop, .drone-check, .drone-no-fly)) > td {
+tbody tr:nth-child(even) > td {
   background: rgba(233, 224, 207, 0.23);
 }
 
@@ -646,48 +700,14 @@ tbody tr:hover > td {
   vertical-align: -0.32em;
 }
 
-tbody tr:has(.photo-stop) > td {
-  border-color: rgba(23, 111, 176, 0.16) !important;
-  color: var(--photo-blue-ink);
-  background: var(--photo-blue-soft) !important;
+.schedule-scroll tbody tr > td {
+  background: var(--stop-tint, var(--surface)) !important;
 }
 
-tbody tr:has(.photo-stop) > td:first-child {
-  box-shadow: inset 0.27rem 0 var(--photo-blue);
-  color: var(--photo-blue-ink);
+.schedule-scroll tbody tr > td:first-child {
+  box-shadow: inset 0.27rem 0 var(--stop-accent, var(--muted));
+  color: var(--ink);
   font-weight: 720;
-}
-
-tbody tr:has(.optional-stop) > td {
-  border-color: rgba(114, 82, 154, 0.16) !important;
-  background: var(--optional-stop-soft) !important;
-}
-
-tbody tr:has(.optional-stop) > td:first-child {
-  box-shadow: inset 0.27rem 0 var(--optional-stop);
-}
-
-tbody tr:has(.drone-check) > td {
-  border-color: rgba(149, 96, 10, 0.16) !important;
-  background: var(--drone-check-soft) !important;
-}
-
-tbody tr:has(.drone-check) > td:first-child {
-  box-shadow: inset 0.27rem 0 var(--drone-check);
-  color: var(--drone-check) !important;
-  font-weight: 720;
-}
-
-tbody tr:has(.drone-no-fly) > td,
-tbody tr:has(.drone-no-fly):hover > td {
-  border-color: rgba(189, 48, 48, 0.2) !important;
-  color: var(--no-fly-dark) !important;
-  background: var(--no-fly-soft) !important;
-}
-
-tbody tr:has(.drone-no-fly) > td:first-child {
-  box-shadow: inset 0.27rem 0 var(--no-fly);
-  font-weight: 760;
 }
 
 table:has(thead tr > th:nth-child(3):last-child) th:first-child {
@@ -939,21 +959,6 @@ code {
     margin-bottom: 0;
   }
 
-  .compact-scroll tbody tr:has(.photo-stop) {
-    border-color: rgba(23, 111, 176, 0.24);
-    background: var(--photo-blue-soft);
-  }
-
-  .compact-scroll tbody tr:has(.drone-check) {
-    border-color: rgba(149, 96, 10, 0.23);
-    background: var(--drone-check-soft);
-  }
-
-  .compact-scroll tbody tr:has(.drone-no-fly) {
-    border-color: rgba(189, 48, 48, 0.24);
-    background: var(--no-fly-soft);
-  }
-
   .schedule-scroll {
     overflow: visible;
     border-radius: 0;
@@ -1030,19 +1035,9 @@ code {
     letter-spacing: 0.08em;
   }
 
-  .schedule-scroll tbody tr:has(.photo-stop) {
-    border-color: rgba(23, 111, 176, 0.24);
-    background: var(--photo-blue-soft);
-  }
-
-  .schedule-scroll tbody tr:has(.drone-check) {
-    border-color: rgba(149, 96, 10, 0.23);
-    background: var(--drone-check-soft);
-  }
-
-  .schedule-scroll tbody tr:has(.drone-no-fly) {
-    border-color: rgba(189, 48, 48, 0.24);
-    background: var(--no-fly-soft);
+  .schedule-scroll tbody tr {
+    border-color: var(--stop-accent, var(--line));
+    background: var(--stop-tint, var(--surface));
   }
 }
 

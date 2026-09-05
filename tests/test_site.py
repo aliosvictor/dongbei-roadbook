@@ -58,6 +58,46 @@ class RenderedSiteTests(unittest.TestCase):
 
 
 class OverviewPageTests(unittest.TestCase):
+    def test_all_daily_rows_have_exactly_one_execution_role(self):
+        for name in ('primary.qmd', 'option-skip-qiqian.qmd'):
+            days, rows, active = 0, 0, False
+            for line in (ROOT/name).read_text().splitlines():
+                if line == '| 时间 | 安排 | 对应高德导航点 |':
+                    days += 1
+                    active = True
+                    continue
+                if not line.startswith('|'):
+                    active = False
+                if active and not line.startswith('|---'):
+                    rows += 1
+                    self.assertEqual(len(re.findall(r'class="stop-tag row-(?:planned|optional|logistics|drive|rest)"', line)), 1, line)
+            self.assertEqual(days, 8)
+            self.assertGreater(rows, 65)
+
+    def test_mixed_rows_do_not_make_lodging_or_rest_optional(self):
+        cases = [('primary.qmd','| 18:10—20:15 |','row-drive'),
+                 ('primary.qmd','| 09:10—09:25 |','row-rest'),
+                 ('option-skip-qiqian.qmd','| 14:15—16:40 |','row-logistics')]
+        for name, prefix, role in cases:
+            line=next(x for x in (ROOT/name).read_text().splitlines() if x.startswith(prefix))
+            self.assertIn('optional-stop', line)
+            self.assertIn(role, line)
+            self.assertNotIn('row-optional', line)
+        css=(ROOT/'styles.css').read_text()
+        for forbidden in ('tr:has(.optional-stop)', 'tr:has(.drone-no-fly)', 'tr:has(.drone-check)'):
+            self.assertNotIn(forbidden, css)
+
+    def test_stop_legend_is_shared_and_grade_is_not_a_visit_rule(self):
+        for name in ('index.qmd','primary.qmd','option-skip-qiqian.qmd','sources.qmd'):
+            text=(ROOT/name).read_text()
+            self.assertEqual(text.count('{{< include includes/stop-legend.md >}}'), 1)
+            self.assertNotIn('空心蓝点', text)
+            self.assertNotIn('红色时间行', text)
+            self.assertNotIn('固定导航到宾馆停车', text)
+        legend=(ROOT/'includes/stop-legend.md').read_text()
+        self.assertIn('紫色 · 选停 / 备选', legend)
+        self.assertIn('与 S / A / B 摄影等级无关', legend)
+
     def test_markdown_table_rows_keep_their_column_count(self):
         for file in ROOT.glob('*.qmd'):
             expected = None

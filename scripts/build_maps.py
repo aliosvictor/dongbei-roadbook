@@ -234,13 +234,13 @@ def label_box(
     canvas_width: int,
     canvas_height: int,
     occupied: list[tuple[float, float, float, float]],
-    optional: bool = False,
-    reference: bool = False,
+    role: str = "stay",
 ) -> tuple[float, float, float, float]:
-    radius = 7 if reference else 17
-    marker_color = "#777D78" if reference else COLORS["optional"] if optional else COLORS["olive"]
-    draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=marker_color, outline="#FFFDF7", width=3)
-    index_text = "" if reference else str(index)
+    optional, reference = role == "optional", role == "reference"
+    radius = 7 if reference else 11 if role == "photo" else 17
+    marker_color = "#777D78" if reference else COLORS["optional"] if optional else COLORS["photo"] if role == "photo" else COLORS["olive"]
+    draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill="#FFFDF7" if optional else marker_color, outline=marker_color if optional else "#FFFDF7", width=3)
+    index_text = str(index) if role in {"stay", "access"} else ""
     bbox = draw.textbbox((0, 0), index_text, font=FONT_PIN)
     draw.text((x - (bbox[2] - bbox[0]) / 2, y - (bbox[3] - bbox[1]) / 2 - 2), index_text, fill="white", font=FONT_PIN)
 
@@ -273,9 +273,13 @@ def label_box(
 
     assert best is not None
     tx, ty, box = best
+    # A displaced label must point back to its own location, especially in
+    # dense overview maps where the nearest town label may belong elsewhere.
+    anchor = (max(box[0], min(x, box[2])), max(box[1], min(y, box[3])))
+    draw.line((x, y, *anchor), fill=(98, 105, 99, 180), width=2)
     box_fill = (241, 234, 251, 235) if optional else (250, 248, 240, 224)
     draw.rounded_rectangle(box, radius=6, fill=box_fill, outline=(255, 255, 255, 235), width=2)
-    text_fill = "#626963" if reference else COLORS["optional"] if optional else COLORS["ink"]
+    text_fill = "#626963" if reference else COLORS["optional"] if optional else COLORS["photo"] if role == "photo" else COLORS["ink"]
     draw.text((tx, ty), text, fill=text_fill, font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
     return box
 
@@ -284,6 +288,11 @@ def boxes_overlap(a: tuple[float, float, float, float], b: tuple[float, float, f
     width = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
     height = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
     return width * height
+
+
+def place_role(spec: dict, key: str, places: dict) -> str:
+    """A supply candidate can be a required overnight base in another plan."""
+    return spec.get("label_roles", {}).get(key, places[key]["role"])
 
 
 def photo_marker(
@@ -297,12 +306,12 @@ def photo_marker(
     show_label: bool = True,
     conditional: bool = False,
 ) -> None:
-    """Draw a blue photography pin and place its label away from existing labels."""
+    """Blue is planned photography; purple is optional, independent of grade."""
     radius = 11
     draw.ellipse(
         (x - radius, y - radius, x + radius, y + radius),
         fill="#FFFDF7" if conditional else COLORS["photo"],
-        outline=COLORS["photo"] if conditional else "#FFFDF7",
+        outline=COLORS["optional"] if conditional else "#FFFDF7",
         width=4,
     )
     if not show_label:
@@ -341,14 +350,14 @@ def photo_marker(
     draw.rounded_rectangle(
         box,
         radius=7,
-        fill=(234, 244, 255, 238),
-        outline=COLORS["photo"],
+        fill=(241, 234, 251, 238) if conditional else (234, 244, 255, 238),
+        outline=COLORS["optional"] if conditional else COLORS["photo"],
         width=2,
     )
     draw.text(
         (tx, ty),
         text,
-        fill="#0C5FAA",
+        fill=COLORS["optional"] if conditional else "#0C5FAA",
         font=FONT_PHOTO,
         stroke_width=1,
         stroke_fill="#FFFFFF",
@@ -479,7 +488,7 @@ def build_context_inset(
         photo = photo_points[photo_key]
         x, y = project(*map_point(photo))
         conditional = photo["visit"] != "planned"
-        draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill="#FFFDF7" if conditional else COLORS["photo"], outline=COLORS["photo"] if conditional else "#FFFDF7", width=1)
+        draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill="#FFFDF7" if conditional else COLORS["photo"], outline=COLORS["optional"] if conditional else "#FFFDF7", width=1)
 
     badge = spec.get("badge", f"{key.upper()} / 8")
     badge_bbox = draw.textbbox((0, 0), badge, font=FONT_CONTEXT)
@@ -608,38 +617,55 @@ def build_map(
     # Reserve every marker before placing labels; later photo pins must not
     # overwrite earlier town/hotel labels in dense areas such as Arxan.
     occupied: list[tuple[float, float, float, float]] = []
+    logistics_pins = [project(*map_point(places[k])) for k in spec.get("labels", [])
+                      if place_role(spec, k, places) in {"stay", "access"}]
+    photo_positions = {}
     for photo_key in spec.get("photos", []):
-        x, y = project(*map_point(photo_points[photo_key]))
+        photo = photo_points[photo_key]
+        x, y = project(*map_point(photo))
+        labelled_photo = any(place_role(spec, k, places) == "photo" and
+                             map_point(places[k]) == map_point(photo)
+                             for k in spec.get("labels", []))
+        if not labelled_photo and any(math.hypot(x - px, y - py) < 28 for px, py in logistics_pins):
+            draw.line((x, y, x + 32, y + 28), fill="#777D78", width=2)
+            x, y = x + 32, y + 28
+        photo_positions[photo_key] = (x, y)
         occupied.append((x - 14, y - 14, x + 14, y + 14))
+    for hazard in spec.get("hazards", []):
+        x, y = project(*map_point(hazard))
+        occupied.append((x - 25, y - 25, x + 25, y + 25))
     for place_key in spec.get("labels", []):
         x, y = project(*map_point(places[place_key]))
         occupied.append((x - 20, y - 20, x + 20, y + 20))
     i = 0
+    photo_labels = set(spec.get("photo_labels", spec.get("photos", [])))
     for place_key in spec.get("labels", []):
         p = places[place_key]
-        reference = p.get("role") == "reference"
-        if not reference:
+        role = place_role(spec, place_key, places)
+        if role == "photo" and any(map_point(p) == map_point(photo_points[k]) for k in photo_labels):
+            continue
+        if role in {"stay", "access"}:
             i += 1
+        suffix = {"stay": "·住宿", "access": "·换乘/入口", "optional": "·选停"}.get(role, "")
         occupied.append(
             label_box(
                 draw,
                 *project(*map_point(p)),
-                p["short"],
+                p["short"] + suffix,
                 i,
                 target[0],
                 target[1],
                 occupied,
-                optional=p.get("role") == "optional_supply",
-                reference=reference,
+                role=role,
             )
         )
 
-    photo_labels = set(spec.get("photo_labels", spec.get("photos", [])))
     for photo_key in spec.get("photos", []):
         photo = photo_points[photo_key]
+        x, y = photo_positions[photo_key]
         photo_marker(
             draw,
-            *project(*map_point(photo)),
+            x, y,
             photo["short"],
             target[0],
             target[1],
@@ -677,30 +703,33 @@ def build_map(
         if kind in kinds:
             legend_items.append((kind, label))
     legend_x, legend_y = 20, target[1] - 76
-    has_optional = any(places[key].get("role") == "optional_supply" for key in spec.get("labels", []))
-    has_conditional = any(photo_points[key]["visit"] != "planned" for key in spec.get("photos", []))
-    has_reference = any(places[key].get("role") == "reference" for key in spec.get("labels", []))
-    legend_w = 92 * len(legend_items) + (116 if spec.get("photos") else 0) + (170 if has_conditional else 0) + (116 if has_reference else 0) + (136 if has_optional else 0) + 24
+    roles = {place_role(spec, key, places) for key in spec.get("labels", [])}
+    has_optional = "optional" in roles or any(photo_points[key]["visit"] != "planned" for key in spec.get("photos", []))
+    has_planned = "photo" in roles or any(photo_points[key]["visit"] == "planned" for key in spec.get("photos", []))
+    has_reference = "reference" in roles
+    has_logistics = bool(roles & {"stay", "access"})
+    legend_w = 92 * len(legend_items) + (116 if has_planned else 0) + (170 if has_optional else 0) + (116 if has_reference else 0) + (170 if has_logistics else 0) + 24
     draw.rounded_rectangle((12, target[1] - 92, 12 + legend_w, target[1] - 16), radius=10, fill=(250, 248, 240, 228), outline=(95, 105, 59, 170), width=2)
     for kind, label in legend_items:
         draw.line((legend_x, legend_y + 10, legend_x + 32, legend_y + 10), fill=COLORS[kind], width=6)
         draw.text((legend_x + 39, legend_y - 4), label, fill=COLORS["ink"], font=FONT_SMALL)
         legend_x += 92
-    if spec.get("photos"):
+    if has_planned:
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["photo"], outline="#FFFDF7", width=2)
         draw.text((legend_x + 27, legend_y - 4), "主拍点", fill=COLORS["ink"], font=FONT_SMALL)
         legend_x += 116
-    if has_conditional:
-        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill="#FFFDF7", outline=COLORS["photo"], width=3)
-        draw.text((legend_x + 27, legend_y - 4), "择一/备选", fill=COLORS["ink"], font=FONT_SMALL)
+    if has_optional:
+        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill="#FFFDF7", outline=COLORS["optional"], width=3)
+        draw.text((legend_x + 27, legend_y - 4), "选停/备选", fill=COLORS["optional"], font=FONT_SMALL)
+        legend_x += 170
+    if has_logistics:
+        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["olive"], outline="#FFFDF7", width=2)
+        draw.text((legend_x + 27, legend_y - 4), "住宿/换乘", fill=COLORS["ink"], font=FONT_SMALL)
         legend_x += 170
     if has_reference:
         draw.ellipse((legend_x + 3, legend_y + 4, legend_x + 15, legend_y + 16), fill="#777D78", outline="#FFFDF7", width=1)
         draw.text((legend_x + 27, legend_y - 4), "参照点", fill=COLORS["ink"], font=FONT_SMALL)
         legend_x += 116
-    if has_optional:
-        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["optional"], outline="#FFFDF7", width=2)
-        draw.text((legend_x + 27, legend_y - 4), "可选补给", fill=COLORS["optional"], font=FONT_SMALL)
 
     credit = f"© OpenStreetMap contributors · 线路：高德推荐方案（核验 {checked_date}）"
     bbox = draw.textbbox((0, 0), credit, font=FONT_TINY)

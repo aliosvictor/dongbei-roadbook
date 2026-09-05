@@ -48,11 +48,7 @@ lightbox: true
 :::
 ::::
 
-> 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 为 {{< var route-checked >}} 高德路线规划返回的实际道路折线；橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号仅供位置参考，不代表必须进镇；实际途经点以每日高德路线为准，紫色 <span class="legend-swatch legend-optional" aria-label="紫色可选补给图标"></span> 表示可按油量与餐食跳过的补给点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。阿尔山园内景交没有画成社会车辆路线。
-
-::: {.drone-legend}
-逐日页中，<span class="drone-no-fly">红色地名和红色时间行</span>表示本路书按禁飞执行的边境敏感段；<span class="drone-check">琥珀色</span>表示出发前必须同时核验 UOM 与景区或保护地管理规则的无人机候选；<span class="optional-stop">紫色</span>只表示可跳过的补给绕行，不是拍摄点。
-:::
+{{< include includes/stop-legend.md >}}
 
 ## 三、两套路线对比
 

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def required_characters(root: Path) -> set[int]:
     paths = list(root.glob("*.qmd")) + [root / "_quarto.yml", root / "_variables.yml", root / "filters/table-scroll.lua"]
+    paths += list((root / "includes").glob("*.md"))
     text = "".join(path.read_text(encoding="utf-8") for path in paths)
     return set(range(32, 127)) | {ord(c) for c in text if not c.isspace()}
 

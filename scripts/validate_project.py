@@ -30,12 +30,18 @@ def validate_data(data: dict, snapshot: dict) -> None:
     signatures = [(tuple(s["points"]), s["kind"]) for s in specs.values()]
     require(len(signatures) == len(set(signatures)), "Duplicate route specifications")
     used_places, used_routes, used_photos = set(), set(), set()
+    place_roles = {"stay", "access", "photo", "optional", "reference"}
+    for key, place in data["places"].items():
+        require(place.get("role") in place_roles, f"{key}: missing/invalid place role")
     for key, point in data["photo_points"].items():
         require(point.get("visit") in {"planned", "optional", "replacement"}, f"{key}: missing/invalid photography visit status")
     for key, spec in specs.items():
         validate_snapshot(spec, routes[key], data["places"])
         used_places.update(spec["points"])
     for key, spec in maps.items():
+        for label, role in spec.get("label_roles", {}).items():
+            require(label in spec.get("labels", []), f"{key}: role override without label")
+            require(role in place_roles, f"{key}: invalid role override")
         require(spec.get("context", "overview") in maps, f"{key}: missing context")
         if re.fullmatch("s0[1-8]", key):
             require(spec.get("context") == "skip_overview", f"{key}: wrong plan context")
@@ -73,7 +79,7 @@ def validate_data(data: dict, snapshot: dict) -> None:
         require(not any(v > 1 for v in photo_days.values()), "Undeclared repeated photography stop")
         require(set(photo_days) == set(maps[overview].get("photos", [])), f"{overview}: daily photo drift")
     for n in (1, 2, 3, 4, 7, 8):
-        for field in ("routes", "labels", "photos", "photo_labels"):
+        for field in ("routes", "labels", "photos", "photo_labels", "label_roles"):
             require(maps[f"d{n:02}"].get(field) == maps[f"s{n:02}"].get(field), f"Shared day {n}: {field} differs")
 
 
