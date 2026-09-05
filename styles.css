@@ -158,13 +158,31 @@ a:hover {
 
 .quarto-title-block .quarto-title-banner {
   position: relative;
+  display: flex;
+  min-height: 18.75rem;
   overflow: hidden;
+  align-items: center;
   padding-block: clamp(2.8rem, 5.5vw, 4.5rem);
   color: #fffdf8;
   background:
     radial-gradient(circle at 82% 18%, rgba(217, 158, 72, 0.38), transparent 19rem),
     radial-gradient(circle at 15% 118%, rgba(170, 182, 138, 0.25), transparent 28rem),
     linear-gradient(118deg, var(--forest-950), var(--forest-800));
+}
+
+.quarto-title-block .quarto-title-banner > .quarto-container {
+  width: 100%;
+}
+
+/* Use one desktop masthead proportion on every navigation page. The two plan
+   titles wrap to two lines, so the shorter overview and verification titles
+   share their height instead of making the site jump between tabs. */
+@media (min-width: 851px) {
+  .quarto-title-block .quarto-title-banner {
+    height: 21rem;
+    min-height: 21rem;
+    padding-block: 3.5rem;
+  }
 }
 
 .quarto-title-block .quarto-title-banner::after {
@@ -185,12 +203,13 @@ a:hover {
 .quarto-title-block .quarto-title-banner h1.title {
   position: relative;
   z-index: 1;
-  max-width: 18ch;
+  max-width: 12em;
   color: #fffdf8;
   font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 820;
   line-height: 1.12;
   letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .quarto-title-block .subtitle,
@@ -690,32 +709,6 @@ code {
   background: var(--forest-950);
 }
 
-/* The overview has no useful sidebar. The :has() fallback also recognises a
-   briefly cached pre-redesign index document, so an old TOC can never sit on
-   top of the wider overview body while GitHub Pages caches roll over. */
-body.roadbook-index #quarto-sidebar,
-body.roadbook-index #quarto-sidebar-glass,
-body:has(main #一方案选择规则) #quarto-sidebar,
-body:has(main #一方案选择规则) #quarto-sidebar-glass {
-  display: none !important;
-}
-
-/* Keep the overview hero and body optically centred instead of reserving
-   Quarto's asymmetric margin column. */
-@media (min-width: 768px) {
-  body.roadbook-index .page-columns,
-  body:has(main #一方案选择规则) .page-columns {
-    display: grid;
-    gap: 0;
-    grid-template-columns:
-      [screen-start] minmax(2rem, 1fr)
-      [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start]
-      minmax(0, 58rem)
-      [body-content-end body-end body-end-outset page-end-inset page-end]
-      minmax(2rem, 1fr) [screen-end-inset screen-end];
-  }
-}
-
 /* Quarto keeps the desktop TOC at 992px, where it squeezes the article into a
    phone-like column. Between tablet and wide desktop, reclaim that space. */
 @media (min-width: 992px) and (max-width: 1279.98px) {
@@ -723,9 +716,9 @@ body:has(main #一方案选择规则) #quarto-sidebar-glass {
     display: none !important;
   }
 
-  body:not(.roadbook-index) .page-columns,
-  body:not(.roadbook-index):not(.floating):not(.docked) .page-columns.toc-left,
-  body:not(.roadbook-index):not(.floating):not(.docked) .page-columns.toc-left .page-columns {
+  body .page-columns,
+  body:not(.floating):not(.docked) .page-columns.toc-left,
+  body:not(.floating):not(.docked) .page-columns.toc-left .page-columns {
     display: grid;
     gap: 0;
     grid-template-columns:
