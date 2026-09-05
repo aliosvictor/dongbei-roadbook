@@ -117,7 +117,7 @@ class OverviewPageTests(unittest.TestCase):
             self.assertGreater(rows, 65)
 
     def test_mixed_rows_do_not_make_lodging_or_rest_optional(self):
-        cases = [('primary.qmd','| 18:10—20:15 |','row-drive'),
+        cases = [('primary.qmd','| 18:40—20:15 |','row-drive'),
                  ('primary.qmd','| 09:10—09:25 |','row-rest'),
                  ('option-skip-qiqian.qmd','| 14:15—16:40 |','row-logistics')]
         for name, prefix, role in cases:
