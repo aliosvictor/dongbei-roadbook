@@ -101,6 +101,61 @@ class RouteIntegrityTests(unittest.TestCase):
             self.assertIn('阿木古郎湿地公园没有经过独立核实的停车场落点',text)
             self.assertNotIn('海拉尔是 9 月 27 日固定住宿和补给点',text)
 
+    def test_unselected_stops_and_imaginary_photo_coordinates_removed(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        for key in ('shanshui_rock','moa_valley','moerdaoga_forest'):
+            self.assertNotIn(key,data['photo_points'])
+        for filename in ('index.qmd','primary.qmd','option-skip-qiqian.qmd','sources.qmd'):
+            text=(ROOT/filename).read_text()
+            for name in ('山水岩壁画','白龙湖','柴河源游客服务中心','图嘎营地'):
+                self.assertNotIn(name,text)
+
+    def test_north_route_does_not_force_campsite_detour(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        self.assertEqual(data['amap_route_specs']['d03']['points'],['xinzuoqi','morigele_cliff','erguna_riverbend','heishantou'])
+
+    def test_shared_photography_choices_are_identical(self):
+        texts=[(ROOT/name).read_text().split('### 每日拍摄安排',1)[1].split('## 三、',1)[0] for name in ('primary.qmd','option-skip-qiqian.qmd')]
+        for date in ('9 月 26 日','9 月 27 日','9 月 28 日','9 月 29 日','10 月 2 日','10 月 3 日'):
+            rows=[next(line for line in text.splitlines() if line.startswith('| '+date+' |')) for text in texts]
+            self.assertEqual(rows[0],rows[1],date)
+
+    def test_conditional_photography_is_explicit_and_not_repeated(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        for key in ('dujuan_lake','shitang_forest','baka_curve','jiuka_valley','qika_light'):
+            self.assertEqual(data['photo_points'][key]['visit'],'optional')
+        for day in ('d05','s05'):
+            self.assertNotIn('qika_light',data['maps'][day]['photos'])
+        for key in ('xinzuoqi_sunset','erguna_riverbend_sunset'):
+            self.assertEqual(data['photo_points'][key]['visit'],'planned')
+
+    def test_qiqian_return_does_not_force_second_bailudao_visit(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        self.assertEqual(data['amap_route_specs']['d06']['points'],['qiqian','moerdaoga','genhe'])
+        text=(ROOT/'primary.qmd').read_text()
+        day=text.split('### Day 6',1)[1].split('### Day 7',1)[0]
+        self.assertNotIn('| 11:30—11:50 |',day)
+        self.assertIn('午餐出镇后',day)
+
+    def test_harbin_station_not_an_execution_destination(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        self.assertEqual(data['places']['harbin']['role'],'reference')
+        for filename in ('primary.qmd','option-skip-qiqian.qmd'):
+            text=(ROOT/filename).read_text()
+            self.assertNotIn('哈尔滨站',text)
+            self.assertIn('还车门店（待录入）',text)
+
+    def test_visit_status_and_overview_photo_drift_rejected(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        snapshot=json.loads((ROOT/'data/amap-routes.json').read_text())
+        data['photo_points']['dujuan_lake'].pop('visit')
+        with self.assertRaisesRegex(ValueError,'visit status'):
+            validate_data(data,snapshot)
+        data['photo_points']['dujuan_lake']['visit']='optional'
+        data['maps']['overview']['photos'].remove('dujuan_lake')
+        with self.assertRaisesRegex(ValueError,'daily photo drift'):
+            validate_data(data,snapshot)
+
 
 if __name__ == '__main__':
     unittest.main()

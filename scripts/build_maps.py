@@ -235,11 +235,12 @@ def label_box(
     canvas_height: int,
     occupied: list[tuple[float, float, float, float]],
     optional: bool = False,
+    reference: bool = False,
 ) -> tuple[float, float, float, float]:
-    radius = 17
-    marker_color = COLORS["optional"] if optional else COLORS["olive"]
+    radius = 7 if reference else 17
+    marker_color = "#777D78" if reference else COLORS["optional"] if optional else COLORS["olive"]
     draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=marker_color, outline="#FFFDF7", width=3)
-    index_text = str(index)
+    index_text = "" if reference else str(index)
     bbox = draw.textbbox((0, 0), index_text, font=FONT_PIN)
     draw.text((x - (bbox[2] - bbox[0]) / 2, y - (bbox[3] - bbox[1]) / 2 - 2), index_text, fill="white", font=FONT_PIN)
 
@@ -274,7 +275,7 @@ def label_box(
     tx, ty, box = best
     box_fill = (241, 234, 251, 235) if optional else (250, 248, 240, 224)
     draw.rounded_rectangle(box, radius=6, fill=box_fill, outline=(255, 255, 255, 235), width=2)
-    text_fill = COLORS["optional"] if optional else COLORS["ink"]
+    text_fill = "#626963" if reference else COLORS["optional"] if optional else COLORS["ink"]
     draw.text((tx, ty), text, fill=text_fill, font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
     return box
 
@@ -294,13 +295,14 @@ def photo_marker(
     canvas_height: int,
     occupied: list[tuple[float, float, float, float]],
     show_label: bool = True,
+    conditional: bool = False,
 ) -> None:
     """Draw a blue photography pin and place its label away from existing labels."""
     radius = 11
     draw.ellipse(
         (x - radius, y - radius, x + radius, y + radius),
-        fill=COLORS["photo"],
-        outline="#FFFDF7",
+        fill="#FFFDF7" if conditional else COLORS["photo"],
+        outline=COLORS["photo"] if conditional else "#FFFDF7",
         width=4,
     )
     if not show_label:
@@ -476,7 +478,8 @@ def build_context_inset(
     for photo_key in spec.get("photos", []):
         photo = photo_points[photo_key]
         x, y = project(*map_point(photo))
-        draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=COLORS["photo"], outline="#FFFDF7", width=1)
+        conditional = photo["visit"] != "planned"
+        draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill="#FFFDF7" if conditional else COLORS["photo"], outline=COLORS["photo"] if conditional else "#FFFDF7", width=1)
 
     badge = spec.get("badge", f"{key.upper()} / 8")
     badge_bbox = draw.textbbox((0, 0), badge, font=FONT_CONTEXT)
@@ -602,9 +605,21 @@ def build_map(
             geometry = [project(lon, lat) for lon, lat in chunk]
             line_segments(draw, geometry, route["kind"])
 
+    # Reserve every marker before placing labels; later photo pins must not
+    # overwrite earlier town/hotel labels in dense areas such as Arxan.
     occupied: list[tuple[float, float, float, float]] = []
-    for i, place_key in enumerate(spec.get("labels", []), start=1):
+    for photo_key in spec.get("photos", []):
+        x, y = project(*map_point(photo_points[photo_key]))
+        occupied.append((x - 14, y - 14, x + 14, y + 14))
+    for place_key in spec.get("labels", []):
+        x, y = project(*map_point(places[place_key]))
+        occupied.append((x - 20, y - 20, x + 20, y + 20))
+    i = 0
+    for place_key in spec.get("labels", []):
         p = places[place_key]
+        reference = p.get("role") == "reference"
+        if not reference:
+            i += 1
         occupied.append(
             label_box(
                 draw,
@@ -615,6 +630,7 @@ def build_map(
                 target[1],
                 occupied,
                 optional=p.get("role") == "optional_supply",
+                reference=reference,
             )
         )
 
@@ -629,6 +645,7 @@ def build_map(
             target[1],
             occupied,
             show_label=photo_key in photo_labels,
+            conditional=photo["visit"] != "planned",
         )
 
     for hazard in spec.get("hazards", []):
@@ -661,7 +678,9 @@ def build_map(
             legend_items.append((kind, label))
     legend_x, legend_y = 20, target[1] - 76
     has_optional = any(places[key].get("role") == "optional_supply" for key in spec.get("labels", []))
-    legend_w = 92 * len(legend_items) + (116 if spec.get("photos") else 0) + (136 if has_optional else 0) + 24
+    has_conditional = any(photo_points[key]["visit"] != "planned" for key in spec.get("photos", []))
+    has_reference = any(places[key].get("role") == "reference" for key in spec.get("labels", []))
+    legend_w = 92 * len(legend_items) + (116 if spec.get("photos") else 0) + (170 if has_conditional else 0) + (116 if has_reference else 0) + (136 if has_optional else 0) + 24
     draw.rounded_rectangle((12, target[1] - 92, 12 + legend_w, target[1] - 16), radius=10, fill=(250, 248, 240, 228), outline=(95, 105, 59, 170), width=2)
     for kind, label in legend_items:
         draw.line((legend_x, legend_y + 10, legend_x + 32, legend_y + 10), fill=COLORS[kind], width=6)
@@ -669,7 +688,15 @@ def build_map(
         legend_x += 92
     if spec.get("photos"):
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["photo"], outline="#FFFDF7", width=2)
-        draw.text((legend_x + 27, legend_y - 4), "拍摄点", fill=COLORS["ink"], font=FONT_SMALL)
+        draw.text((legend_x + 27, legend_y - 4), "主拍点", fill=COLORS["ink"], font=FONT_SMALL)
+        legend_x += 116
+    if has_conditional:
+        draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill="#FFFDF7", outline=COLORS["photo"], width=3)
+        draw.text((legend_x + 27, legend_y - 4), "择一/备选", fill=COLORS["ink"], font=FONT_SMALL)
+        legend_x += 170
+    if has_reference:
+        draw.ellipse((legend_x + 3, legend_y + 4, legend_x + 15, legend_y + 16), fill="#777D78", outline="#FFFDF7", width=1)
+        draw.text((legend_x + 27, legend_y - 4), "参照点", fill=COLORS["ink"], font=FONT_SMALL)
         legend_x += 116
     if has_optional:
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["optional"], outline="#FFFDF7", width=2)

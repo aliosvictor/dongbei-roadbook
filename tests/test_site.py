@@ -58,6 +58,24 @@ class RenderedSiteTests(unittest.TestCase):
 
 
 class OverviewPageTests(unittest.TestCase):
+    def test_markdown_table_rows_keep_their_column_count(self):
+        for file in ROOT.glob('*.qmd'):
+            expected = None
+            for number, line in enumerate(file.read_text().splitlines(), start=1):
+                if not line.startswith('|'):
+                    expected = None
+                    continue
+                count = len(re.split(r'(?<!\\)\|', line)) - 2
+                if expected is None:
+                    expected = count
+                self.assertEqual(count, expected, f'{file.name}:{number}: table column drift')
+
+    def test_sunrise_table_keeps_times_and_selected_sunset(self):
+        for name in ('primary.qmd', 'option-skip-qiqian.qmd'):
+            text = (ROOT/name).read_text().split('## 三、日出与日落参考', 1)[1].split('## 四、', 1)[0]
+            self.assertIn('| 9 月 27 日 | 乌苏浪子湖（日出） | 05:50 | — | 05:10—05:15 |', text)
+            self.assertIn('| 9 月 27 日 | 新左旗阿木古郎（日落） | — | 约 17:57 |', text)
+
     def test_primary_precedes_backup_without_summary_cards(self):
         source = (ROOT / "index.qmd").read_text()
         self.assertNotIn("trip-pulse", source)

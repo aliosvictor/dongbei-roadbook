@@ -30,6 +30,8 @@ def validate_data(data: dict, snapshot: dict) -> None:
     signatures = [(tuple(s["points"]), s["kind"]) for s in specs.values()]
     require(len(signatures) == len(set(signatures)), "Duplicate route specifications")
     used_places, used_routes, used_photos = set(), set(), set()
+    for key, point in data["photo_points"].items():
+        require(point.get("visit") in {"planned", "optional", "replacement"}, f"{key}: missing/invalid photography visit status")
     for key, spec in specs.items():
         validate_snapshot(spec, routes[key], data["places"])
         used_places.update(spec["points"])
@@ -68,7 +70,8 @@ def validate_data(data: dict, snapshot: dict) -> None:
                 previous = route["points"][-1]
                 daily_routes.append(route)
         require(daily_routes == maps[overview]["routes"], f"{overview}: daily route drift")
-        require({k for k,v in photo_days.items() if v > 1} <= {"qika_light"}, "Undeclared repeated photography stop")
+        require(not any(v > 1 for v in photo_days.values()), "Undeclared repeated photography stop")
+        require(set(photo_days) == set(maps[overview].get("photos", [])), f"{overview}: daily photo drift")
     for n in (1, 2, 3, 4, 7, 8):
         for field in ("routes", "labels", "photos", "photo_labels"):
             require(maps[f"d{n:02}"].get(field) == maps[f"s{n:02}"].get(field), f"Shared day {n}: {field} differs")
