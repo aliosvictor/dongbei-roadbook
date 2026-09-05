@@ -1057,6 +1057,22 @@ code {
   }
 }
 
+@media (max-width: 380px) {
+  .navbar .navbar-container {
+    gap: 0.08rem;
+    padding-inline: 0.55rem;
+  }
+
+  .navbar-brand::after {
+    font-size: 0.72rem;
+  }
+
+  .navbar .nav-link {
+    padding-inline: 0.28rem !important;
+    font-size: 0.74rem;
+  }
+}
+
 @media print {
   .navbar,
   #quarto-sidebar,
