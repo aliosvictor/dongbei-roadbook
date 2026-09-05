@@ -57,6 +57,19 @@ class RenderedSiteTests(unittest.TestCase):
             validate_site(self.site)
 
 
+class OverviewPageTests(unittest.TestCase):
+    def test_primary_precedes_backup_without_summary_cards(self):
+        source = (ROOT / "index.qmd").read_text()
+        self.assertNotIn("trip-pulse", source)
+        rules = source.split("## 一、方案选择规则", 1)[1].split("## 二、", 1)[0]
+        self.assertLess(rules.index("**主方案**"), rules.index("**备用方案**"))
+        self.assertLess(rules.index("[主方案]"), rules.index("[备用方案]"))
+        usage = next(line for line in source.splitlines() if line.startswith("| 使用顺序 |"))
+        self.assertNotIn("默认执行", usage)
+        for filename in ("overview.webp", "skip_overview.webp"):
+            self.assertIn(f"figures/maps/{filename}", source)
+
+
 class PreparationPageTests(unittest.TestCase):
     def test_six_preparation_sections_and_risk_map_are_preserved(self):
         source = (ROOT / "sources.qmd").read_text()
