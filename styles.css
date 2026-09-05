@@ -690,10 +690,21 @@ code {
   background: var(--forest-950);
 }
 
-/* The overview has no useful sidebar: keep its hero and body optically centred
-   instead of reserving Quarto's asymmetric margin column. */
+/* The overview has no useful sidebar. The :has() fallback also recognises a
+   briefly cached pre-redesign index document, so an old TOC can never sit on
+   top of the wider overview body while GitHub Pages caches roll over. */
+body.roadbook-index #quarto-sidebar,
+body.roadbook-index #quarto-sidebar-glass,
+body:has(main #一方案选择规则) #quarto-sidebar,
+body:has(main #一方案选择规则) #quarto-sidebar-glass {
+  display: none !important;
+}
+
+/* Keep the overview hero and body optically centred instead of reserving
+   Quarto's asymmetric margin column. */
 @media (min-width: 768px) {
-  body.roadbook-index .page-columns {
+  body.roadbook-index .page-columns,
+  body:has(main #一方案选择规则) .page-columns {
     display: grid;
     gap: 0;
     grid-template-columns:
