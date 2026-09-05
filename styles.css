@@ -159,7 +159,7 @@ a:hover {
 .quarto-title-block .quarto-title-banner {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(3rem, 7vw, 5.2rem);
+  padding-block: clamp(2.8rem, 5.5vw, 4.5rem);
   color: #fffdf8;
   background:
     radial-gradient(circle at 82% 18%, rgba(217, 158, 72, 0.38), transparent 19rem),
@@ -203,7 +203,8 @@ a:hover {
 }
 
 #quarto-content main.content {
-  max-width: 75rem;
+  max-width: none;
+  padding-bottom: 2rem;
 }
 
 h1,
@@ -294,7 +295,7 @@ blockquote p:last-child,
 .trip-pulse {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.8rem;
+  gap: 1rem;
   margin: 1.3rem 0 2.4rem;
 }
 
@@ -448,8 +449,11 @@ blockquote p:last-child,
 }
 
 #quarto-sidebar .nav-link {
+  padding-block: 0.2rem;
   border-left: 2px solid transparent;
   color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 #quarto-sidebar .nav-link.active {
@@ -686,6 +690,42 @@ code {
   background: var(--forest-950);
 }
 
+/* The overview has no useful sidebar: keep its hero and body optically centred
+   instead of reserving Quarto's asymmetric margin column. */
+@media (min-width: 768px) {
+  body.roadbook-index .page-columns {
+    display: grid;
+    gap: 0;
+    grid-template-columns:
+      [screen-start] minmax(2rem, 1fr)
+      [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start]
+      minmax(0, 58rem)
+      [body-content-end body-end body-end-outset page-end-inset page-end]
+      minmax(2rem, 1fr) [screen-end-inset screen-end];
+  }
+}
+
+/* Quarto keeps the desktop TOC at 992px, where it squeezes the article into a
+   phone-like column. Between tablet and wide desktop, reclaim that space. */
+@media (min-width: 992px) and (max-width: 1279.98px) {
+  #quarto-sidebar {
+    display: none !important;
+  }
+
+  body:not(.roadbook-index) .page-columns,
+  body:not(.roadbook-index):not(.floating):not(.docked) .page-columns.toc-left,
+  body:not(.roadbook-index):not(.floating):not(.docked) .page-columns.toc-left .page-columns {
+    display: grid;
+    gap: 0;
+    grid-template-columns:
+      [screen-start] minmax(2rem, 1fr)
+      [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start]
+      minmax(0, 56rem)
+      [body-content-end body-end body-end-outset page-end-inset page-end]
+      minmax(2rem, 1fr) [screen-end-inset screen-end];
+  }
+}
+
 @media (max-width: 1000px) {
   .route-strip > p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -722,18 +762,95 @@ code {
     grid-template-columns: 1fr;
   }
 
-  .table-scroll:not(.schedule-scroll) table {
+  .table-scroll:not(.schedule-scroll):not(.compact-scroll) table {
     min-width: 38rem;
     white-space: normal;
   }
 
-  .table-scroll:not(.schedule-scroll) table:has(thead tr > th:nth-child(2):last-child) {
-    min-width: 28rem;
+  .table-scroll:not(.schedule-scroll):not(.compact-scroll) th,
+  .table-scroll:not(.schedule-scroll):not(.compact-scroll) td {
+    overflow-wrap: anywhere;
   }
 
-  .table-scroll:not(.schedule-scroll) th,
-  .table-scroll:not(.schedule-scroll) td {
+  .compact-scroll {
+    overflow: visible;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .compact-scroll table {
+    display: block;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .compact-scroll thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .compact-scroll tbody {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .compact-scroll tbody tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.85rem;
+    background: rgba(255, 253, 248, 0.95);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .compact-scroll tbody td {
+    display: grid;
+    grid-template-columns: minmax(6.8rem, 32%) minmax(0, 1fr);
+    gap: 0.7rem;
+    width: auto !important;
+    min-width: 0;
     overflow-wrap: anywhere;
+    border: 0 !important;
+    border-bottom: 1px dashed rgba(34, 50, 41, 0.13) !important;
+    background: transparent !important;
+  }
+
+  .compact-scroll tbody td:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .compact-scroll tbody td::before {
+    color: var(--forest-700);
+    content: attr(data-label);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-align: left;
+  }
+
+  .compact-scroll tbody td > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .compact-scroll tbody tr:has(.photo-stop) {
+    border-color: rgba(23, 111, 176, 0.24);
+    background: var(--photo-blue-soft);
+  }
+
+  .compact-scroll tbody tr:has(.drone-check) {
+    border-color: rgba(149, 96, 10, 0.23);
+    background: var(--drone-check-soft);
+  }
+
+  .compact-scroll tbody tr:has(.drone-no-fly) {
+    border-color: rgba(189, 48, 48, 0.24);
+    background: var(--no-fly-soft);
   }
 
   .schedule-scroll {
@@ -921,6 +1038,11 @@ code {
   }
 
   .schedule-scroll tbody td {
+    padding: 0.68rem !important;
+  }
+
+  .compact-scroll tbody td {
+    grid-template-columns: 6.4rem minmax(0, 1fr);
     padding: 0.68rem !important;
   }
 

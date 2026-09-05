@@ -1,3 +1,10 @@
 /*-- scss:defaults --*/
 // Local WOFF2 fonts in styles.css replace Cosmo's blocking Google Fonts import.
 $web-font-path: false;
+
+// The default Quarto article grid is too narrow once a left TOC is present.
+// Keep comfortable reading measure while giving maps and three-column tables room.
+$grid-body-width: 940px;
+$grid-sidebar-width: 210px;
+$grid-margin-width: 120px;
+$grid-column-gutter-width: 1.5rem;
