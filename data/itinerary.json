@@ -84,7 +84,7 @@
   },
   "maps": {
     "overview": {
-      "title": "阿尔山、卡线与奇乾八日摄影自驾",
+      "title": "主方案：阿尔山、卡线与奇乾八日摄影自驾",
       "routes": [
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
@@ -163,7 +163,7 @@
       "photo_labels": ["wenbo_wetland"]
     },
     "skip_overview": {
-      "title": "稳健方案：不去奇乾八日摄影自驾",
+      "title": "备用方案：不去奇乾八日摄影自驾",
       "layout": "overview",
       "routes": [
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
@@ -186,7 +186,7 @@
     "s01": {
       "title": "09.26 齐齐哈尔经蘑阿公路到阿尔山",
       "context": "skip_overview",
-      "badge": "稳健方案 · D1 / 8",
+      "badge": "备用方案 · D1 / 8",
       "routes": [
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]}
       ],
@@ -196,7 +196,7 @@
     "s02": {
       "title": "09.27 阿尔山到海拉尔",
       "context": "skip_overview",
-      "badge": "稳健方案 · D2 / 8",
+      "badge": "备用方案 · D2 / 8",
       "routes": [
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
@@ -208,7 +208,7 @@
     "s03": {
       "title": "09.28 海拉尔经莫日格勒河到黑山头",
       "context": "skip_overview",
-      "badge": "稳健方案 · D3 / 8",
+      "badge": "备用方案 · D3 / 8",
       "routes": [{"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]}],
       "labels": ["hailar", "heishantou"],
       "photos": ["morigele_curve", "erguna_riverbend_sunset"],
@@ -217,7 +217,7 @@
     "s04": {
       "title": "09.29 黑山头沿卡线到七卡",
       "context": "skip_overview",
-      "badge": "稳健方案 · D4 / 8",
+      "badge": "备用方案 · D4 / 8",
       "routes": [{"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]}],
       "labels": ["heishantou", "qika"],
       "photos": ["heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light"]
@@ -225,7 +225,7 @@
     "s05": {
       "title": "09.30 七卡经室韦、临江到莫尔道嘎",
       "context": "skip_overview",
-      "badge": "稳健方案 · D5 / 8",
+      "badge": "备用方案 · D5 / 8",
       "routes": [
         {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
         {"kind": "drive", "amap_route": "s05_2", "points": ["linjiang", "moerdaoga"]}
@@ -236,7 +236,7 @@
     "s06": {
       "title": "10.01 莫尔道嘎经根河到根河源湿地",
       "context": "skip_overview",
-      "badge": "稳健方案 · D6 / 8",
+      "badge": "备用方案 · D6 / 8",
       "routes": [
         {"kind": "drive", "amap_route": "s06", "points": ["moerdaoga", "genhe"]},
         {"kind": "transfer", "draw": false, "points": ["genhe", "genheyuan", "genhe"]}
@@ -248,7 +248,7 @@
     "s07": {
       "title": "10.02 根河经敖鲁古雅、阿里河到嫩江",
       "context": "skip_overview",
-      "badge": "稳健方案 · D7 / 8",
+      "badge": "备用方案 · D7 / 8",
       "routes": [{"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]}],
       "labels": ["aoluguya", "yitulihe", "alihe", "jiagedaqi", "dayangshu", "nenjiang"],
       "photos": ["aoluguya_reindeer"],
@@ -257,7 +257,7 @@
     "s08": {
       "title": "10.03 嫩江经五大连池到哈尔滨",
       "context": "skip_overview",
-      "badge": "稳健方案 · D8 / 8",
+      "badge": "备用方案 · D8 / 8",
       "routes": [{"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}],
       "labels": ["nenjiang", "wenbo", "beian", "suihua", "harbin"],
       "photos": ["wenbo_wetland"],

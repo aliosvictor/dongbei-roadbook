@@ -1,6 +1,6 @@
 ---
-title: "稳健方案｜不去奇乾"
-subtitle: "默认路线：保留阿尔山与卡线，避开奇乾偏远支线"
+title: "备用方案｜不去奇乾"
+subtitle: "保留阿尔山与卡线，避开奇乾偏远支线"
 description: "以莫尔道嘎为北端的八日大兴安岭摄影自驾备选方案"
 lang: zh
 toc: true
@@ -12,7 +12,7 @@ lightbox: true
 > 使用条件：奇乾住宿没有落实，或室韦—奇乾方向道路、天气不适合进入。<br>
 > 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 海拉尔 → 莫日格勒河北线 → 额尔古纳湿地·根河河湾日落机位 → 黑山头 → 卡线 → 室韦 → 莫尔道嘎 → 根河 → 敖鲁古雅 → 嫩江 → 温泊 → 哈尔滨
 
-![稳健方案完整路线](figures/maps/skip_overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="以莫尔道嘎为北端住宿点的稳健方案八日完整路线图"}
+![备用方案完整路线](figures/maps/skip_overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="以莫尔道嘎为北端住宿点的备用方案八日完整路线图"}
 
 > 地图图例：砖红色 <span class="legend-swatch legend-route" aria-label="砖红色路线图标"></span> 自驾线来自 {{< var route-checked >}} 高德实际路线折线；橄榄色 <span class="legend-swatch legend-node" aria-label="橄榄色节点图标"></span> 编号仅供位置参考，不代表必须进镇；实际途经点以每日高德路线为准，紫色 <span class="legend-swatch legend-optional" aria-label="紫色可选补给图标"></span> 表示可按油量与餐食跳过的补给点，蓝色 <span class="legend-swatch legend-photo" aria-label="蓝色拍摄点图标"></span> 圆点表示重点拍摄位置。园内景交不画成社会车辆导航线。
 
@@ -88,7 +88,7 @@ lightbox: true
 
 ### Day 1｜9 月 26 日：齐齐哈尔—蘑阿公路—阿尔山 {#skip-day-1}
 
-![稳健方案 Day 1 路线](figures/maps/s01.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第一天齐齐哈尔按高德推荐道路经蘑阿公路到阿尔山路线图"}
+![备用方案 Day 1 路线](figures/maps/s01.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第一天齐齐哈尔按高德推荐道路经蘑阿公路到阿尔山路线图"}
 
 **路线**：齐齐哈尔 → 碾北公路—S310—G232 → 蘑菇气 → 柴河 → 蘑阿公路 → 阿尔山东门 → 不冻河观景台 → 依子民宿。
 
@@ -124,7 +124,7 @@ lightbox: true
 
 ### Day 2｜9 月 27 日：阿尔山—海拉尔 {#skip-day-2}
 
-![稳健方案 Day 2 路线](figures/maps/s02.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第二天阿尔山园区游览后从金江沟直接前往海拉尔的路线图"}
+![备用方案 Day 2 路线](figures/maps/s02.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第二天阿尔山园区游览后从金江沟直接前往海拉尔的路线图"}
 
 **路线**：依子民宿 → 阿尔山乌苏浪子湖渔村宾馆停车 → 乌苏浪子湖晨拍 → 金江沟游客服务中心停车 → 景交精选机位 → 返回取车 → 海拉尔。
 
@@ -165,7 +165,7 @@ lightbox: true
 
 ### Day 3｜9 月 28 日：海拉尔—莫日格勒河北线—额尔古纳湿地河湾—黑山头 {#skip-day-3}
 
-![稳健方案 Day 3 路线](figures/maps/s03.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第三天从海拉尔经莫日格勒河和额尔古纳河湾到黑山头路线图"}
+![备用方案 Day 3 路线](figures/maps/s03.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第三天从海拉尔经莫日格勒河和额尔古纳河湾到黑山头路线图"}
 
 **路线**<br>
 海拉尔 → 图嘎营地 → 莫日格勒河断崖（条件停靠）→ <span class="drone-check">额尔古纳湿地·根河河湾日落机位</span> → 经额尔古纳主路 → 黑山头
@@ -210,7 +210,7 @@ lightbox: true
 
 ### Day 4｜9 月 29 日：黑山头—五卡—乌兰山—七卡 {#skip-day-4}
 
-![稳健方案 Day 4 路线](figures/maps/s04.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第四天黑山头沿卡线到七卡路线图"}
+![备用方案 Day 4 路线](figures/maps/s04.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第四天黑山头沿卡线到七卡路线图"}
 
 **路线**<br>
 <span class="drone-check">黑山头日出观测点</span> → <span class="drone-no-fly">五卡 → 乌兰山 → 七卡</span>
@@ -245,7 +245,7 @@ lightbox: true
 
 ### Day 5｜9 月 30 日：七卡—室韦—临江—莫尔道嘎 {#skip-day-5}
 
-![稳健方案 Day 5 路线](figures/maps/s05.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第五天七卡经室韦和临江到莫尔道嘎路线图"}
+![备用方案 Day 5 路线](figures/maps/s05.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第五天七卡经室韦和临江到莫尔道嘎路线图"}
 
 **路线**<br>
 <span class="drone-no-fly">七卡 → 八卡 → 九卡</span> → <span class="drone-check">室韦 → 临江</span> → X325 → 莫尔道嘎
@@ -285,7 +285,7 @@ lightbox: true
 
 ### Day 6｜10 月 1 日：莫尔道嘎—根河—根河源国家湿地公园 {#skip-day-6}
 
-![稳健方案 Day 6 路线](figures/maps/s06.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第六天莫尔道嘎到根河并往返根河源国家湿地公园路线图"}
+![备用方案 Day 6 路线](figures/maps/s06.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第六天莫尔道嘎到根河并往返根河源国家湿地公园路线图"}
 
 **路线**：莫尔道嘎 → X325 → G332 → 根河 → <span class="drone-check">根河源国家湿地公园</span> → 根河。
 
@@ -312,11 +312,11 @@ lightbox: true
 | 14:10—16:30 | <span class="photo-stop drone-check">根河源湿地、冷极河与森林水系；先核验 UOM、园区无人机规则与森林火险，允许时以俯拍湿地纹理为主，否则走地面栈道</span> | [根河源国家湿地公园](https://uri.amap.com/search?keyword=根河源国家湿地公园&city=根河市&view=map&src=dongbei-roadbook&callnative=1)（准确入口 T-72 核验） |
 | 16:30—17:15 | 返回根河住宿、晚餐和休息 | 根河已收藏住宿点 |
 
-**道路与拍摄**：莫尔道嘎至根河按临行高德推荐道路执行。根河源是稳健方案新增的自然景观和无人机候选，不是保证可飞点；14:10 前无法抵达、园区不开放或不允许航拍时，取消往返并在根河休息，不挪到次日补做。
+**道路与拍摄**：莫尔道嘎至根河按临行高德推荐道路执行。根河源是备用方案新增的自然景观和无人机候选，不是保证可飞点；14:10 前无法抵达、园区不开放或不允许航拍时，取消往返并在根河休息，不挪到次日补做。
 
 ### Day 7｜10 月 2 日：根河—敖鲁古雅—嫩江 {#skip-day-7}
 
-![稳健方案 Day 7 路线](figures/maps/s07.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第七天根河先到敖鲁古雅使鹿部落，再沿高德推荐道路到嫩江的路线图"}
+![备用方案 Day 7 路线](figures/maps/s07.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第七天根河先到敖鲁古雅使鹿部落，再沿高德推荐道路到嫩江的路线图"}
 
 **路线**：根河 → 敖鲁古雅使鹿部落景区 → 返回南下主线 → 阿里河方向 → 加格达奇方向 → 大杨树方向 → 嫩江。
 
@@ -349,7 +349,7 @@ lightbox: true
 
 ### Day 8｜10 月 3 日：嫩江—五大连池—哈尔滨 {#skip-day-8}
 
-![稳健方案 Day 8 路线](figures/maps/s08.webp){.route-map loading="lazy" decoding="async" fig-alt="稳健方案第八天嫩江经五大连池到哈尔滨路线图"}
+![备用方案 Day 8 路线](figures/maps/s08.webp){.route-map loading="lazy" decoding="async" fig-alt="备用方案第八天嫩江经五大连池到哈尔滨路线图"}
 
 **路线**：嫩江 → <span class="drone-check">温泊景区（默认）</span> → 哈尔滨；黑龙山仅在确认恢复开放后切换。
 

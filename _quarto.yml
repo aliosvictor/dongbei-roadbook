@@ -21,9 +21,9 @@ website:
       - href: index.qmd
         text: 总行程
       - href: primary.qmd
-        text: 奇乾方案
+        text: 主方案
       - href: option-skip-qiqian.qmd
-        text: 稳健方案
+        text: 备用方案
       - href: sources.qmd
         text: 核验
   page-footer:

@@ -1,5 +1,5 @@
 ---
-title: "奇乾方案｜阿尔山、卡线与奇乾"
+title: "主方案｜阿尔山、卡线与奇乾"
 subtitle: "2026.09.26—10.03｜齐齐哈尔到哈尔滨"
 description: "阿尔山、莫日格勒河、卡线、奇乾与五大连池八日摄影路书"
 lang: zh
@@ -357,7 +357,7 @@ lightbox: true
 | 09:00 | <span class="drone-no-fly">从七卡出发，卡线继续禁飞</span> | [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){.drone-no-fly} → [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){.drone-no-fly} |
 | 09:40—10:00 | <span class="photo-stop drone-no-fly">八卡、九卡按光线择一短停，只用地面相机</span> | [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){.drone-no-fly} / [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){.drone-no-fly} |
 | 10:30—11:10 | 抵达室韦即视为驶离卡线；加满油、提前午餐、补水和车载食品，重新核验后续机位 UOM 与现场规则 | [室韦魅力名镇旅游区](https://www.amap.com/place/B0IK3CUHLM) |
-| 11:10—11:40 | 确认后续路线成立后，从室韦驾车前往临江并停车；不成立时在室韦切换稳健方案 | [室韦](https://www.amap.com/place/B0IK3CUHLM) → [临江村落脚点](https://www.amap.com/place/B0FFH58MN1) |
+| 11:10—11:40 | 确认后续路线成立后，从室韦驾车前往临江并停车；不成立时在室韦切换备用方案 | [室韦](https://www.amap.com/place/B0IK3CUHLM) → [临江村落脚点](https://www.amap.com/place/B0FFH58MN1) |
 | 11:40—12:00 | <span class="photo-stop drone-check">条件成立时拍摄临江河谷；UOM 与现场管理均允许时可短飞，否则使用地面相机并按时离开</span> | [临江村落脚点（蒙兀往事驿站）](https://www.amap.com/place/B0FFH58MN1) |
 | 12:35—12:50 | 主路正规停车区休息，确认白鹿岛方向通行 | [临江—白鹿岛—奇乾高德路线][amap-d05_2]沿线实时选择 |
 | 12:50—14:35 | 按第二段高德折线继续驶向白鹿岛外围可达道路；条件不成立时转往莫尔道嘎住宿 | [白鹿岛](https://uri.amap.com/search?keyword=白鹿岛&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1) |
@@ -379,7 +379,7 @@ lightbox: true
 - 七卡经室韦、临江、白鹿岛至奇乾的两段高德核验距离合计 {{< var d05-km >}} 公里；室韦完成加油，避免为补给专程进入莫尔道嘎镇；
 - G331 奇下十七桥施工期间，不手工指定旧绕行线；按两段高德路线和 T-72 小时交通公告确认室韦—临江—白鹿岛方向；
 - 在室韦确认无法到达临江或第二段路线不可用时，直接按实时导航前往莫尔道嘎，不先进入临江再折返；
-- 14:30 前确认白鹿岛方向道路、能见度、车辆和驾驶员状态；不能继续时转往莫尔道嘎并从当晚起执行稳健方案；
+- 14:30 前确认白鹿岛方向道路、能见度、车辆和驾驶员状态；不能继续时转往莫尔道嘎并从当晚起执行备用方案；
 - 夜间行车集中在最后一段，入夜后降低车速，重点留意林区动物和临时施工标志；
 - 室韦加满油，车辆补给按进入偏远林区后的完整行程准备。
 
@@ -619,7 +619,7 @@ lightbox: true
 | 9 月 27 日 | 乌苏浪子湖低云、雾、降水；阿尔山至海拉尔沿线天气 | 无持续降水且能见度可用时晨拍；11:40 离园后不增加支路，按时到海拉尔休息 |
 | 9 月 28 日 | 图嘎至断崖通行、断崖停车；额尔古纳湿地·根河河湾便道、围栏、土地管理、风与 UOM | 14:30 前离开莫日格勒河；16:35 左右白天勘察河湾便道，任一条件不成立即取消进入；国家湿地公园只作提前决定的替换方案 |
 | 9 月 29 日 | <span class="drone-check">黑山头晨雾、UOM 与现场管理</span>；<span class="drone-no-fly">卡线路面和边境管理</span> | 黑山头核验通过时执行日出航拍；<span class="drone-no-fly">10:30 进入卡线后禁飞</span>；雨后不进草地土路，乌兰山支路湿滑时只走铺装主线 |
-| 9 月 30 日 | <span class="drone-no-fly">七卡—八卡—九卡卡线段</span>；室韦、临江与白鹿岛无人机规则；临江—白鹿岛—奇乾第二段导航 | <span class="drone-no-fly">驶离卡线前及奇乾禁飞</span>；室韦、临江和白鹿岛核验通过才起飞；第二段路线不可用、持续雨雪或进村限制成立时转用稳健方案 |
+| 9 月 30 日 | <span class="drone-no-fly">七卡—八卡—九卡卡线段</span>；室韦、临江与白鹿岛无人机规则；临江—白鹿岛—奇乾第二段导航 | <span class="drone-no-fly">驶离卡线前及奇乾禁飞</span>；室韦、临江和白鹿岛核验通过才起飞；第二段路线不可用、持续雨雪或进村限制成立时转用备用方案 |
 | 10 月 1 日 | <span class="drone-no-fly">奇乾晨雾与边境管理</span>；林区路面 | <span class="drone-no-fly">奇乾只用地面相机</span>；无雾或持续降水时缩短晨拍，提早驶向根河 |
 | 10 月 2 日 | 敖鲁古雅开放时段；根河至嫩江降水、降温、结冰风险与驾驶员状态 | 08:40 前往敖鲁古雅，驯鹿只作地面拍摄；10:20 南下，每约 2 小时休息，16:30 后只走主路并接受夜间抵达 |
 | 10 月 3 日 | 温泊开放、UOM/景区航拍规则、黑龙山是否恢复开放、能见度、风、国庆车流及还车门店夜间交车 | 默认温泊；黑龙山仅在明确恢复开放后切换，三处只选一处；前晚 21:30 后到嫩江或条件不利时缩短拍摄，15:45 前离开 |
