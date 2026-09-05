@@ -2,12 +2,13 @@ import json
 import sys
 import unittest
 from pathlib import Path
-from PIL import Image, ImageDraw
+from PIL import Image, ImageColor, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_maps import COLORS, photo_marker, place_role, route_chunks
+from build_maps import COLORS, hazard_marker, photo_marker, place_role, route_chunks
+from build_colors import load_palette
 from update_amap_routes import (
     generated_variables, geometry_from_path, parse_geometry,
     validate_route_points, validate_snapshot,
@@ -20,13 +21,25 @@ def point(lon):
 
 
 class RouteIntegrityTests(unittest.TestCase):
+    def test_map_statuses_do_not_reuse_road_color(self):
+        palette = load_palette()
+        for status in ('check', 'no-fly'):
+            image = Image.new('RGB', (300, 300), 'white')
+            hazard_marker(ImageDraw.Draw(image), 150, 150, '', 300, 300, [], status)
+            self.assertEqual(image.getpixel((150, 150)), ImageColor.getrgb(palette[status]['color']))
+            self.assertNotEqual(palette[status]['color'], COLORS['drive'])
+        self.assertEqual(COLORS['context_day'], palette['drive']['color'])
+        self.assertEqual(COLORS['olive'], palette['logistics']['color'])
+        self.assertEqual(COLORS['reference'], palette['reference']['color'])
+
     def test_planned_and_optional_map_symbols_use_different_colors(self):
         image=Image.new('RGB',(100,100),'white')
         draw=ImageDraw.Draw(image)
         photo_marker(draw,25,25,'',100,100,[],show_label=False,conditional=False)
         photo_marker(draw,75,75,'',100,100,[],show_label=False,conditional=True)
-        self.assertEqual(image.getpixel((25,25)), (22,119,210))
-        self.assertEqual(image.getpixel((75,64)), (118,82,166))
+        palette = load_palette()
+        self.assertEqual(image.getpixel((25,25)), ImageColor.getrgb(palette['planned']['color']))
+        self.assertEqual(image.getpixel((75,64)), ImageColor.getrgb(palette['optional']['color']))
         self.assertEqual(image.getpixel((75,75)), (255,253,247))
 
     def test_ordered_route(self):

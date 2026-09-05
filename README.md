@@ -18,6 +18,8 @@
 - `scripts/update_amap_routes.py`：重新向高德路线规划核验并生成路线快照、网页指标和链接；若高德忽略或改变途经点顺序，按起终点、距离和经过顺序检查报错。
 - `scripts/build_maps.py`：用高德折线和 OpenStreetMap 底图生成总览、每日路线与风险地图。
 - `scripts/build_fonts.py`：从随项目分发的原字体重建 WOFF2 子集。
+- `data/color-system.json`：地图与网页共用的用途色和状态色；`scripts/build_colors.py` 生成 `assets/colors.css`，地图直接读取同一配置。
+- `filters/stop-links.lua`：从行程数据与当前方案派生导航地名颜色；`data-place` / `data-photo` 指向既有点位，`data-stop-role` 仅用于未绘制的回退点或同地不同用途。
 - `scripts/validate_project.py`、`tests/`：路线顺序、坐标变更、地图生成状态、文档引用与回归检查。
 - `figures/maps/`：网站使用的 WebP 静态地图图片。
 - `assets/fonts/web/`：网站使用的精简中文字体。
@@ -35,6 +37,7 @@ quarto preview
 ```bash
 python3 -m pip install -r requirements.txt
 python3 scripts/update_amap_routes.py
+python3 scripts/build_colors.py
 python3 scripts/build_maps.py
 python3 scripts/build_fonts.py
 python3 -B -m unittest discover -s tests -v
@@ -48,6 +51,8 @@ python3 -B scripts/validate_project.py
 乌苏浪子湖渔村宾馆使用统一名称搜索链接，湖景蓝点不能充当宾馆停车坐标；未核准的晨拍进出不画线、不计入高德里程。10 月 3 日默认使用温泊路线，黑龙山为确认恢复开放后的独立条件路线。实心蓝点为计划主拍，紫色空心点为选停补给、短拍或条件备选，橄榄色编号为住宿/换乘，灰色标记仅作方向与里程参照，哈尔滨执行终点须落实到订单门店。
 
 生成静态网站：
+
+仅调整配色不需要重新请求高德；运行 `build_colors.py`、`build_maps.py` 和 `build_fonts.py` 后再渲染。用途色为蓝色主拍、紫色选停、橄榄色住宿换乘、灰色参照、砖红色行车；休息使用中性底色。禁飞红色与待核验琥珀色只用于独立状态标签 / 风险三角，不染整段正文或导航地名。更改共享配色后未重建 CSS 或地图会被离线校验拒绝。
 
 ```bash
 quarto render

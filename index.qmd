@@ -69,5 +69,5 @@ lightbox: true
 - 飞行条件允许的拍摄点以无人机为主，卡线、奇乾及敖鲁古雅使用地面相机：9 月 27 日保留新左旗阿木古郎湿地草原日落，9 月 28 日以额尔古纳湿地·根河河湾作为固定日落蓝点，五大连池下午默认温泊，黑龙山仅在明确恢复开放后替换；
 - Canon R5 Mark II + 28–70mm F2.8 作为道路、河谷、草原和林区主力组合；
 - 16–28mm F2.8 用于湖岸前景、河流倒影、湿地和大范围天空；
-- DJI Air 3S 只在 UOM 当时显示适飞、管理方允许且远离边境设施、人群和野生动物的位置起飞；<span class="drone-check">黑山头日出作为无人机候选</span>，<span class="drone-no-fly">卡线和奇乾按禁飞执行</span>；
+- DJI Air 3S 只在 UOM 当时显示适飞、管理方允许且远离边境设施、人群和野生动物的位置起飞；<span class="status-tag status-check">航拍待核验</span> <span>黑山头日出作为无人机候选</span>，<span class="status-tag status-no-fly">禁飞</span> <span>卡线和奇乾按禁飞执行</span>；
 - 每天把重点拍摄点分为固定机位、顺路短停和备用点三级，同类日出、日落只保留效果最好的机位。

@@ -283,11 +283,11 @@
       "photos": ["budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "bailudao_valley", "qiqian_mist", "genheyuan_wetland", "aoluguya_reindeer", "heilongshan_volcano", "wenbo_wetland"],
       "photo_labels": [],
       "hazards": [
-        {"lat": 47.550, "lon": 121.450, "label": "蘑阿天气"},
-        {"lat": 50.700, "lon": 119.520, "label": "卡线通行/禁飞"},
-        {"lat": 51.650, "lon": 120.650, "label": "奇乾道路/禁飞"},
-        {"lat": 50.350, "lon": 122.700, "label": "根河绕行"},
-        {"lat": 47.400, "lon": 126.700, "label": "五大连池开放/航拍"}
+        {"lat": 47.550, "lon": 121.450, "label": "蘑阿天气", "status": "check"},
+        {"lat": 50.700, "lon": 119.520, "label": "卡线通行/禁飞", "status": "no-fly"},
+        {"lat": 51.650, "lon": 120.650, "label": "奇乾道路/禁飞", "status": "no-fly"},
+        {"lat": 50.350, "lon": 122.700, "label": "根河绕行", "status": "check"},
+        {"lat": 47.400, "lon": 126.700, "label": "五大连池开放/航拍", "status": "check"}
       ]
     }
   }

@@ -18,7 +18,8 @@ import time
 import urllib.request
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageColor, ImageDraw, ImageFont
+from build_colors import load_palette
 from update_amap_routes import parse_geometry, validate_snapshot
 
 
@@ -37,21 +38,22 @@ OVERVIEW_TARGET = (1500, 930)
 CONTEXT_TARGET = (390, 255)
 TILE_SIZE = 256
 
+PALETTE = load_palette()
 COLORS = {
-    "drive": "#B85335",
+    "drive": PALETTE["drive"]["color"],
     "rail": "#2F6F73",
-    "transfer": "#A47E25",
-    "alternative": "#6D6B63",
-    "ink": "#273128",
-    "olive": "#5F693B",
+    "transfer": PALETTE["logistics"]["color"],
+    "alternative": PALETTE["optional"]["color"],
+    "ink": PALETTE["rest"]["color"],
+    "olive": PALETTE["logistics"]["color"],
+    "reference": PALETTE["reference"]["color"],
     "paper": "#F5F0E4",
-    "rust": "#B85335",
-    "context_route": "#7E8978",
-    "context_day": "#D45532",
-    "photo": "#1677D2",
-    "photo_pale": "#EAF4FF",
-    "optional": "#7652A6",
-    "optional_pale": "#F1EAFB",
+    "context_route": PALETTE["reference"]["color"],
+    "context_day": PALETTE["drive"]["color"],
+    "photo": PALETTE["planned"]["color"],
+    "photo_pale": PALETTE["planned"]["tint"],
+    "optional": PALETTE["optional"]["color"],
+    "optional_pale": PALETTE["optional"]["tint"],
 }
 
 GCJ_A = 6378245.0
@@ -189,6 +191,7 @@ def route_lonlat(route: dict, amap_routes: dict) -> list[tuple[float, float]]:
 def map_input_digest(root: Path) -> str:
     digest = hashlib.sha256()
     for name in ("data/itinerary.json", "data/amap-routes.json", "scripts/build_maps.py",
+                 "data/color-system.json", "scripts/build_colors.py",
                  "scripts/update_amap_routes.py", "requirements.txt",
                  "assets/fonts/fandol/FandolHei-Regular.otf", "assets/fonts/fandol/FandolHei-Bold.otf"):
         digest.update(name.encode())
@@ -238,7 +241,7 @@ def label_box(
 ) -> tuple[float, float, float, float]:
     optional, reference = role == "optional", role == "reference"
     radius = 7 if reference else 11 if role == "photo" else 17
-    marker_color = "#777D78" if reference else COLORS["optional"] if optional else COLORS["photo"] if role == "photo" else COLORS["olive"]
+    marker_color = COLORS["reference"] if reference else COLORS["optional"] if optional else COLORS["photo"] if role == "photo" else COLORS["olive"]
     draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill="#FFFDF7" if optional else marker_color, outline=marker_color if optional else "#FFFDF7", width=3)
     index_text = str(index) if role in {"stay", "access"} else ""
     bbox = draw.textbbox((0, 0), index_text, font=FONT_PIN)
@@ -277,9 +280,10 @@ def label_box(
     # dense overview maps where the nearest town label may belong elsewhere.
     anchor = (max(box[0], min(x, box[2])), max(box[1], min(y, box[3])))
     draw.line((x, y, *anchor), fill=(98, 105, 99, 180), width=2)
-    box_fill = (241, 234, 251, 235) if optional else (250, 248, 240, 224)
+    semantic = "reference" if reference else "optional" if optional else "planned" if role == "photo" else "logistics"
+    box_fill = ImageColor.getrgb(PALETTE[semantic]["tint"]) + (235,)
     draw.rounded_rectangle(box, radius=6, fill=box_fill, outline=(255, 255, 255, 235), width=2)
-    text_fill = "#626963" if reference else COLORS["optional"] if optional else COLORS["photo"] if role == "photo" else COLORS["ink"]
+    text_fill = marker_color
     draw.text((tx, ty), text, fill=text_fill, font=FONT_LABEL, stroke_width=1, stroke_fill="#FFFDF7")
     return box
 
@@ -350,14 +354,14 @@ def photo_marker(
     draw.rounded_rectangle(
         box,
         radius=7,
-        fill=(241, 234, 251, 238) if conditional else (234, 244, 255, 238),
+        fill=ImageColor.getrgb(COLORS["optional_pale"] if conditional else COLORS["photo_pale"]) + (238,),
         outline=COLORS["optional"] if conditional else COLORS["photo"],
         width=2,
     )
     draw.text(
         (tx, ty),
         text,
-        fill=COLORS["optional"] if conditional else "#0C5FAA",
+        fill=COLORS["optional"] if conditional else COLORS["photo"],
         font=FONT_PHOTO,
         stroke_width=1,
         stroke_fill="#FFFFFF",
@@ -373,10 +377,12 @@ def hazard_marker(
     canvas_width: int,
     canvas_height: int,
     occupied: list[tuple[float, float, float, float]],
+    status: str = "check",
 ) -> None:
     """Draw a warning marker with a label that avoids route labels."""
     tri = [(x, y - 20), (x - 19, y + 16), (x + 19, y + 16)]
-    draw.polygon(tri, fill=COLORS["rust"], outline="#FFFDF7")
+    color = PALETTE[status]["color"]
+    draw.polygon(tri, fill=color, outline="#FFFDF7")
 
     bbox = draw.textbbox((0, 0), text, font=FONT_LABEL, stroke_width=2)
     tw = bbox[2] - bbox[0]
@@ -403,7 +409,7 @@ def hazard_marker(
 
     assert best is not None
     tx, ty, hazard_box = best
-    draw.text((tx, ty), text, fill=COLORS["rust"], font=FONT_LABEL, stroke_width=2, stroke_fill="#FFFDF7")
+    draw.text((tx, ty), text, fill=color, font=FONT_LABEL, stroke_width=2, stroke_fill="#FFFDF7")
     occupied.extend([hazard_box, (x - 21, y - 22, x + 21, y + 18)])
 
 
@@ -676,7 +682,7 @@ def build_map(
 
     for hazard in spec.get("hazards", []):
         x, y = project(*map_point(hazard))
-        hazard_marker(draw, x, y, hazard["label"], target[0], target[1], occupied)
+        hazard_marker(draw, x, y, hazard["label"], target[0], target[1], occupied, hazard["status"])
 
     if spec.get("context") or key.startswith("d"):
         daily_route_points: list[tuple[float, float]] = []
@@ -708,7 +714,8 @@ def build_map(
     has_planned = "photo" in roles or any(photo_points[key]["visit"] == "planned" for key in spec.get("photos", []))
     has_reference = "reference" in roles
     has_logistics = bool(roles & {"stay", "access"})
-    legend_w = 92 * len(legend_items) + (116 if has_planned else 0) + (170 if has_optional else 0) + (116 if has_reference else 0) + (170 if has_logistics else 0) + 24
+    statuses = {hazard["status"] for hazard in spec.get("hazards", [])}
+    legend_w = 92 * len(legend_items) + (116 if has_planned else 0) + (170 if has_optional else 0) + (116 if has_reference else 0) + (170 if has_logistics else 0) + 160 * len(statuses) + 24
     draw.rounded_rectangle((12, target[1] - 92, 12 + legend_w, target[1] - 16), radius=10, fill=(250, 248, 240, 228), outline=(95, 105, 59, 170), width=2)
     for kind, label in legend_items:
         draw.line((legend_x, legend_y + 10, legend_x + 32, legend_y + 10), fill=COLORS[kind], width=6)
@@ -716,7 +723,7 @@ def build_map(
         legend_x += 92
     if has_planned:
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["photo"], outline="#FFFDF7", width=2)
-        draw.text((legend_x + 27, legend_y - 4), "主拍点", fill=COLORS["ink"], font=FONT_SMALL)
+        draw.text((legend_x + 27, legend_y - 4), "主拍点", fill=COLORS["photo"], font=FONT_SMALL)
         legend_x += 116
     if has_optional:
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill="#FFFDF7", outline=COLORS["optional"], width=3)
@@ -724,12 +731,19 @@ def build_map(
         legend_x += 170
     if has_logistics:
         draw.ellipse((legend_x, legend_y + 1, legend_x + 18, legend_y + 19), fill=COLORS["olive"], outline="#FFFDF7", width=2)
-        draw.text((legend_x + 27, legend_y - 4), "住宿/换乘", fill=COLORS["ink"], font=FONT_SMALL)
+        draw.text((legend_x + 27, legend_y - 4), "住宿/换乘", fill=COLORS["olive"], font=FONT_SMALL)
         legend_x += 170
     if has_reference:
-        draw.ellipse((legend_x + 3, legend_y + 4, legend_x + 15, legend_y + 16), fill="#777D78", outline="#FFFDF7", width=1)
-        draw.text((legend_x + 27, legend_y - 4), "参照点", fill=COLORS["ink"], font=FONT_SMALL)
+        draw.ellipse((legend_x + 3, legend_y + 4, legend_x + 15, legend_y + 16), fill=COLORS["reference"], outline="#FFFDF7", width=1)
+        draw.text((legend_x + 27, legend_y - 4), "参照点", fill=COLORS["reference"], font=FONT_SMALL)
         legend_x += 116
+
+    for status, label in (("check", "待核验"), ("no-fly", "按禁飞")):
+        if status in statuses:
+            color = PALETTE[status]["color"]
+            draw.polygon([(legend_x + 10, legend_y), (legend_x, legend_y + 19), (legend_x + 20, legend_y + 19)], fill=color)
+            draw.text((legend_x + 27, legend_y - 4), label, fill=color, font=FONT_SMALL)
+            legend_x += 160
 
     credit = f"© OpenStreetMap contributors · 线路：高德推荐方案（核验 {checked_date}）"
     bbox = draw.textbbox((0, 0), credit, font=FONT_TINY)

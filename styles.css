@@ -30,16 +30,6 @@
   --ink: #253027;
   --muted: #687169;
   --line: rgba(34, 50, 41, 0.14);
-  --photo-blue: #176fb0;
-  --photo-blue-soft: #e8f3fb;
-  --photo-blue-ink: #104c78;
-  --no-fly: #bd3030;
-  --no-fly-soft: #fff0ef;
-  --no-fly-dark: #8d1f1f;
-  --drone-check: #95600a;
-  --drone-check-soft: #fff5da;
-  --optional-stop: #72529a;
-  --optional-stop-soft: #f3eef9;
   --shadow-sm: 0 0.35rem 1rem rgba(23, 35, 28, 0.07);
   --shadow-md: 0 1rem 2.8rem rgba(23, 35, 28, 0.12);
 }
@@ -72,7 +62,7 @@ body::before {
 }
 
 a {
-  color: #286448;
+  color: var(--ink);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -481,62 +471,30 @@ blockquote p:last-child,
   font-weight: 700;
 }
 
-.legend-swatch {
-  display: inline-block;
-  width: 0.9em;
-  height: 0.9em;
-  margin-left: 0.2em;
-  vertical-align: -0.08em;
-  border: 2px solid #fffdf8;
-  box-shadow: 0 0 0 1px rgba(34, 50, 41, 0.3);
-}
-
-.legend-route {
-  width: 1.25em;
-  height: 0.42em;
-  border-radius: 999px;
-  background: var(--rust);
-}
-
-.legend-transfer {
-  width: 1.25em;
-  height: 0.42em;
-  border: 0;
-  box-shadow: none;
-  background: repeating-linear-gradient(90deg, #9d7929 0 0.38em, transparent 0.38em 0.58em);
-}
-
-.legend-node {
-  border-radius: 50%;
-  background: var(--moss);
-}
-
-.legend-photo {
-  border-radius: 50%;
-  background: var(--photo-blue);
-}
-
-.legend-no-fly {
-  border-radius: 0.2em;
-  background: var(--no-fly);
-}
-
-.legend-optional {
-  border-radius: 50%;
-  background: var(--optional-stop);
-}
-
-.optional-stop,
-.optional-stop a,
-a.optional-stop {
-  color: var(--optional-stop) !important;
+.optional-stop {
   font-weight: 720;
-  text-decoration-color: var(--optional-stop);
 }
 
-.pass-stop,
-a.pass-stop {
-  color: var(--muted) !important;
+.stop-planned { --link-accent: var(--semantic-planned-color); }
+.stop-optional { --link-accent: var(--semantic-optional-color); }
+.stop-logistics { --link-accent: var(--semantic-logistics-color); }
+.stop-reference { --link-accent: var(--semantic-reference-color); }
+.stop-drive { --link-accent: var(--semantic-drive-color); }
+
+/* Links keep their location/activity role even inside a different row role. */
+a.stop-link,
+a.stop-link:hover,
+.daily-nav a.stop-link,
+.daily-nav a.stop-link:hover {
+  color: var(--link-accent);
+  text-decoration-color: currentColor;
+  font-weight: 720;
+}
+
+a.stop-link:hover { text-decoration-thickness: 0.13em; }
+.pass-stop { color: var(--semantic-reference-color); }
+.optional-stop a:not(.stop-link), a.optional-stop {
+  color: var(--semantic-optional-color);
 }
 
 .stop-legend {
@@ -565,21 +523,34 @@ a.pass-stop {
 }
 
 .row-planned, .schedule-scroll tr:has(.row-planned) {
-  --stop-accent: var(--photo-blue-ink);
-  --stop-tint: var(--photo-blue-soft);
+  --stop-accent: var(--semantic-planned-color);
+  --stop-tint: var(--semantic-planned-tint);
 }
 .row-optional, .schedule-scroll tr:has(.row-optional) {
-  --stop-accent: var(--optional-stop);
-  --stop-tint: var(--optional-stop-soft);
+  --stop-accent: var(--semantic-optional-color);
+  --stop-tint: var(--semantic-optional-tint);
 }
 .row-logistics, .schedule-scroll tr:has(.row-logistics) {
-  --stop-accent: #596437;
-  --stop-tint: #f0f2e5;
+  --stop-accent: var(--semantic-logistics-color);
+  --stop-tint: var(--semantic-logistics-tint);
 }
-.row-drive, .row-rest,
-.schedule-scroll tr:has(.row-drive, .row-rest) {
-  --stop-accent: #626963;
-  --stop-tint: #f7f8f5;
+.row-reference {
+  --stop-accent: var(--semantic-reference-color);
+  --stop-tint: var(--semantic-reference-tint);
+}
+.row-drive, .schedule-scroll tr:has(.row-drive) {
+  --stop-accent: var(--semantic-drive-color);
+  --stop-tint: var(--semantic-drive-tint);
+}
+.row-rest, .schedule-scroll tr:has(.row-rest) {
+  --stop-accent: var(--semantic-rest-color);
+  --stop-tint: var(--semantic-rest-tint);
+}
+.stop-tag.row-rest {
+  border-color: var(--line);
+}
+.schedule-scroll tbody tr:has(.row-rest) > td:first-child {
+  box-shadow: none;
 }
 
 .schedule-scroll .stop-tag {
@@ -587,34 +558,32 @@ a.pass-stop {
   margin-bottom: 0.4rem;
 }
 
-.drone-no-fly {
-  color: var(--no-fly-dark) !important;
-  font-weight: 780;
+.status-tag {
+  display: inline-block;
+  padding: 0.08rem 0.42rem;
+  margin: 0.12rem 0.25rem 0.12rem 0;
+  border: 1px solid currentColor;
+  border-radius: 0.3rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  font-weight: 750;
+  vertical-align: baseline;
 }
-
-a.drone-no-fly,
-.drone-no-fly a {
-  color: var(--no-fly-dark) !important;
-  text-decoration-color: var(--no-fly);
-  text-decoration-thickness: 0.11em;
+.status-no-fly {
+  color: var(--semantic-no-fly-color);
+  background: var(--semantic-no-fly-tint);
 }
-
-.drone-check,
-a.drone-check,
-.daily-nav a.drone-check,
-.daily-nav a.drone-check:hover,
-.photo-stop.drone-check {
-  color: var(--drone-check) !important;
-  font-weight: 720;
+.status-check {
+  color: var(--semantic-check-color);
+  background: var(--semantic-check-tint);
 }
 
 .drone-legend {
   margin: 1rem 0 1.5rem;
   padding: 1rem 1.05rem;
-  border: 1px solid rgba(189, 48, 48, 0.22);
-  border-left: 0.38rem solid var(--no-fly);
+  border: 1px solid var(--line);
   border-radius: 0.85rem;
-  background: linear-gradient(100deg, var(--no-fly-soft), rgba(255, 253, 248, 0.9));
+  background: var(--surface);
 }
 
 .daily-nav {
@@ -632,7 +601,7 @@ a.drone-check,
 }
 
 .daily-nav a {
-  color: #286448;
+  color: var(--ink);
   font-weight: 680;
 }
 
@@ -688,7 +657,7 @@ tbody tr:hover > td {
 }
 
 .photo-stop {
-  color: var(--photo-blue-ink);
+  color: var(--ink);
   font-weight: 680;
 }
 
@@ -1009,8 +978,8 @@ code {
   .schedule-scroll tbody td:first-child {
     grid-row: 1 / span 2;
     padding-top: 1rem !important;
-    color: var(--forest-900);
-    background: rgba(117, 132, 90, 0.1) !important;
+    color: var(--ink);
+    background: var(--stop-tint, var(--surface)) !important;
     font-weight: 760;
   }
 
@@ -1039,6 +1008,8 @@ code {
     border-color: var(--stop-accent, var(--line));
     background: var(--stop-tint, var(--surface));
   }
+
+  .schedule-scroll tbody tr:has(.row-rest) { border-color: var(--line); }
 }
 
 @media (max-width: 560px) {

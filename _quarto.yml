@@ -38,7 +38,9 @@ format:
     theme:
       - cosmo
       - theme.scss
-    css: styles.css
+    css:
+      - assets/colors.css
+      - styles.css
     toc: true
     toc-location: left
     toc-title: ""
@@ -48,4 +50,5 @@ format:
     fig-align: center
 
 filters:
+  - filters/stop-links.lua
   - filters/table-scroll.lua

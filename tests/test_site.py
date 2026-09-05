@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_project import validate_site
+from build_colors import generated_css, load_palette
 
 
 class RenderedSiteTests(unittest.TestCase):
@@ -58,6 +59,47 @@ class RenderedSiteTests(unittest.TestCase):
 
 
 class OverviewPageTests(unittest.TestCase):
+    def test_generated_palette_is_shared_and_fresh(self):
+        self.assertEqual((ROOT / 'assets/colors.css').read_text(), generated_css(ROOT))
+        self.assertIn('assets/colors.css', (ROOT / '_quarto.yml').read_text())
+        css = (ROOT / 'styles.css').read_text()
+        for role in load_palette():
+            self.assertIn(f'var(--semantic-{role}-color)', css)
+        self.assertNotIn('background: rgba(117, 132, 90, 0.1)', css)
+        self.assertIn('.schedule-scroll tbody tr:has(.row-rest) > td:first-child', css)
+
+    def test_semantic_small_labels_have_readable_contrast(self):
+        def luminance(value):
+            rgb = [int(value[i:i+2], 16) / 255 for i in (1, 3, 5)]
+            linear = [v / 12.92 if v <= .04045 else ((v + .055) / 1.055) ** 2.4 for v in rgb]
+            return sum(v * weight for v, weight in zip(linear, (.2126, .7152, .0722)))
+        for role, values in load_palette().items():
+            contrast = (luminance(values['tint']) + .05) / (luminance(values['color']) + .05)
+            self.assertGreaterEqual(contrast, 4.5, role)
+
+    def test_flight_states_are_short_badges_not_link_or_prose_colors(self):
+        for path in list(ROOT.glob('*.qmd')) + [ROOT / 'includes/stop-legend.md']:
+            source = path.read_text()
+            self.assertNotRegex(source, r'class="[^"]*\bdrone-(?:check|no-fly)\b')
+            self.assertNotRegex(source, r'\{[^}]*\.drone-(?:check|no-fly)\b')
+            for badge in re.findall(r'<span class="status-tag status-(?:check|no-fly)">([^<]+)</span>', source):
+                self.assertIn(badge, {'禁飞', '待核验', '航拍待核验'})
+
+    def test_navigation_links_declare_map_role_inputs(self):
+        import json
+        data = json.loads((ROOT / 'data/itinerary.json').read_text())
+        for name, overview in [('primary.qmd', 'overview'), ('option-skip-qiqian.qmd', 'skip_overview')]:
+            source = (ROOT / name).read_text()
+            self.assertIn('itinerary-map: ' + overview, source)
+            links = re.findall(r'\[[^]\n]+\](?:\(https://[^)\n]*amap\.com[^)\n]*\)|\[(?:amap|nav)-[^]\n]+\])(\{[^}\n]+\})?', source)
+            self.assertGreater(len(links), 90)
+            for attrs in links:
+                self.assertRegex(attrs, r'data-(?:place|photo|stop-role)="[a-z0-9_-]+"')
+            for kind, key in re.findall(r'data-(place|photo)="([a-z0-9_-]+)"', source):
+                self.assertIn(key, data['places' if kind == 'place' else 'photo_points'])
+            five = [line for line in source.splitlines() if 'keyword=五卡' in line]
+            self.assertTrue(all('data-photo="wuka_valley"' in line or 'data-stop-role="optional"' in line for line in five))
+
     def test_all_daily_rows_have_exactly_one_execution_role(self):
         for name in ('primary.qmd', 'option-skip-qiqian.qmd'):
             days, rows, active = 0, 0, False

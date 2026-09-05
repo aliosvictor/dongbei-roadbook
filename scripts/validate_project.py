@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from build_fonts import font_characters, required_characters
+from build_colors import generated_css
 from build_maps import map_input_digest
 from update_amap_routes import generated_links, generated_variables, validate_snapshot
 
@@ -39,6 +40,8 @@ def validate_data(data: dict, snapshot: dict) -> None:
         validate_snapshot(spec, routes[key], data["places"])
         used_places.update(spec["points"])
     for key, spec in maps.items():
+        for hazard in spec.get("hazards", []):
+            require(hazard.get("status") in {"check", "no-fly"}, f"{key}: invalid hazard status")
         for label, role in spec.get("label_roles", {}).items():
             require(label in spec.get("labels", []), f"{key}: role override without label")
             require(role in place_roles, f"{key}: invalid role override")
@@ -137,6 +140,7 @@ def main() -> None:
     data = json.loads((ROOT / "data/itinerary.json").read_text())
     snapshot = json.loads((ROOT / "data/amap-routes.json").read_text())
     validate_data(data, snapshot)
+    require((ROOT / "assets/colors.css").read_text() == generated_css(ROOT), "Generated palette stale; run build_colors.py")
     require((ROOT / "includes/amap-route-links.md").read_text() == generated_links(data, snapshot), "Generated links stale")
     require((ROOT / "_variables.yml").read_text() == generated_variables(data, snapshot), "Generated metrics stale")
     variables = set(re.findall(r"^([\w-]+):", generated_variables(data, snapshot), re.M))

@@ -1,0 +1,10 @@
+{
+  "planned": {"color": "#176FB0", "tint": "#E8F3FB"},
+  "optional": {"color": "#72529A", "tint": "#F3EEF9"},
+  "logistics": {"color": "#596437", "tint": "#F0F2E5"},
+  "reference": {"color": "#626963", "tint": "#F7F8F5"},
+  "drive": {"color": "#AC492D", "tint": "#FBEEE8"},
+  "rest": {"color": "#253027", "tint": "#FFFDF8"},
+  "check": {"color": "#95600A", "tint": "#FFF5DA"},
+  "no-fly": {"color": "#8D1F1F", "tint": "#FFF0EF"}
+}
