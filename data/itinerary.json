@@ -10,7 +10,7 @@
     "wusulangzi": {"name": "乌苏浪子湖拍摄区域（非停车点）", "short": "乌苏浪子湖", "lat": 47.300300, "lon": 120.338500},
     "budonghe": {"name": "不冻河观景台", "short": "不冻河", "lat": 47.288735, "lon": 120.418447},
     "tuofeng": {"name": "驼峰岭天池", "short": "驼峰岭", "lat": 47.460091, "lon": 120.648982},
-    "hailar": {"name": "海拉尔区住宿参考点", "short": "海拉尔", "lat": 49.234715, "lon": 119.824542},
+    "xinzuoqi": {"name": "新巴尔虎左旗阿木古郎镇", "short": "新左旗", "lat": 48.218474, "lon": 118.270930, "poi_url": "https://www.amap.com/place/B01D60N3CQ"},
     "tuga": {"name": "图嘎营地", "short": "图嘎营地", "lat": 49.556800, "lon": 119.809336},
     "morigele_cliff": {"name": "莫日格勒河断崖", "short": "莫日格勒断崖", "lat": 49.699578, "lon": 120.094643},
     "erguna_riverbend": {"name": "额尔古纳湿地·根河河湾日落机位（地图选点，非景区 POI）", "short": "湿地河湾日落", "lat": 50.299354, "lon": 120.233890},
@@ -47,6 +47,7 @@
     "tuofeng_view": {"name": "驼峰岭天池俯瞰", "short": "驼峰岭天池", "lat": 47.460091, "lon": 120.648982, "grade": "A"},
     "dujuan_lake": {"name": "杜鹃湖湖岸", "short": "杜鹃湖", "lat": 47.413970, "lon": 120.567036, "grade": "A"},
     "shitang_forest": {"name": "石塘林熔岩与秋林", "short": "石塘林", "lat": 47.372130, "lon": 120.491450, "grade": "A"},
+    "xinzuoqi_sunset": {"name": "阿木古郎湿地公园日落候选区（停车待现场确认）", "short": "左旗湿地日落", "lat": 48.210948, "lon": 118.273563, "grade": "A"},
     "morigele_curve": {"name": "莫日格勒河断崖（条件停车机位）", "short": "莫日格勒断崖", "lat": 49.699578, "lon": 120.094643, "grade": "S"},
     "erguna_riverbend_sunset": {"name": "额尔古纳湿地·根河河湾日落机位（地图选点）", "short": "额尔古纳湿地黄昏", "lat": 50.299354, "lon": 120.233890, "grade": "S"},
     "heishantou_sunrise": {"name": "黑山头晨拍候选观测坡（高德日落观测点）", "short": "黑山头晨拍候选", "lat": 50.214262, "lon": 119.532592, "grade": "A"},
@@ -65,13 +66,14 @@
     "wenbo_wetland": {"name": "温泊火山湿地与熔岩水系", "short": "温泊火山湿地", "lat": 48.664152, "lon": 126.169478, "grade": "A"}
   },
   "navigation_points": {
-    "wusulangzi_parking": {"name": "阿尔山乌苏浪子湖渔村宾馆", "url": "https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1", "status": "name_search"}
+    "wusulangzi_parking": {"name": "阿尔山乌苏浪子湖渔村宾馆", "url": "https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&city=阿尔山市&view=map&src=dongbei-roadbook&callnative=1", "status": "name_search"},
+    "amugulang_wetland": {"name": "阿木古郎湿地公园", "url": "https://uri.amap.com/search?keyword=阿木古郎湿地公园&city=新巴尔虎左旗&view=map&src=dongbei-roadbook&callnative=1", "status": "name_search"}
   },
   "route_options": {"d08": ["d08_black"]},
   "amap_route_specs": {
     "d01": {"points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"], "kind": "drive"},
-    "d02_drive": {"points": ["jinjianggou", "hailar"], "kind": "drive"},
-    "d03": {"points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"], "kind": "drive"},
+    "d02_drive": {"points": ["jinjianggou", "xinzuoqi"], "kind": "drive"},
+    "d03": {"points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"], "kind": "drive"},
     "d04": {"points": ["heishantou", "wuka", "wulan", "qika"], "kind": "drive"},
     "d05_1": {"points": ["qika", "baka", "jiuka", "shiwei", "linjiang"], "kind": "drive"},
     "d05_2": {"points": ["linjiang", "bailudao", "qiqian"], "kind": "drive"},
@@ -89,8 +91,8 @@
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
-        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "hailar"]},
-        {"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
+        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
+        {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
         {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
         {"kind": "drive", "amap_route": "d05_2", "points": ["linjiang", "bailudao", "qiqian"]},
@@ -98,8 +100,8 @@
         {"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]},
         {"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan_east", "yizi", "hailar", "morigele_cliff", "erguna_riverbend", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wenbo", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "wenbo_wetland"],
+      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou", "qika", "qiqian", "genhe", "alihe", "nenjiang", "wenbo", "harbin"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "aoluguya_reindeer", "wenbo_wetland"],
       "photo_labels": []
     },
     "d01": {
@@ -111,19 +113,19 @@
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset"]
     },
     "d02": {
-      "title": "09.27 阿尔山到海拉尔",
+      "title": "09.27 阿尔山到新巴尔虎左旗",
       "routes": [
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
-        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "hailar"]}
+        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]}
       ],
-      "labels": ["yizi", "jinjianggou", "hailar"],
-      "photos": ["wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest"]
+      "labels": ["yizi", "jinjianggou", "xinzuoqi"],
+      "photos": ["wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset"]
     },
     "d03": {
-      "title": "09.28 海拉尔经莫日格勒河到黑山头",
-      "routes": [{"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]}],
-      "labels": ["hailar", "heishantou"],
+      "title": "09.28 新左旗经莫日格勒河到黑山头",
+      "routes": [{"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]}],
+      "labels": ["xinzuoqi", "heishantou"],
       "photos": ["morigele_curve", "erguna_riverbend_sunset"],
       "photo_labels": ["morigele_curve", "erguna_riverbend_sunset"]
     },
@@ -169,8 +171,8 @@
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
-        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "hailar"]},
-        {"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
+        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
+        {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
         {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
         {"kind": "drive", "amap_route": "s05_2", "points": ["linjiang", "moerdaoga"]},
@@ -179,8 +181,8 @@
         {"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]},
         {"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}
       ],
-      "labels": ["qiqihar", "aershan_east", "yizi", "hailar", "morigele_cliff", "erguna_riverbend", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wenbo", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "genheyuan_wetland", "aoluguya_reindeer", "wenbo_wetland"],
+      "labels": ["qiqihar", "aershan_east", "yizi", "xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou", "qika", "shiwei", "moerdaoga", "genhe", "nenjiang", "wenbo", "harbin"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "genheyuan_wetland", "aoluguya_reindeer", "wenbo_wetland"],
       "photo_labels": []
     },
     "s01": {
@@ -194,23 +196,23 @@
       "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset"]
     },
     "s02": {
-      "title": "09.27 阿尔山到海拉尔",
+      "title": "09.27 阿尔山到新巴尔虎左旗",
       "context": "skip_overview",
       "badge": "备用方案 · D2 / 8",
       "routes": [
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
-        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "hailar"]}
+        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]}
       ],
-      "labels": ["yizi", "jinjianggou", "hailar"],
-      "photos": ["wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest"]
+      "labels": ["yizi", "jinjianggou", "xinzuoqi"],
+      "photos": ["wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset"]
     },
     "s03": {
-      "title": "09.28 海拉尔经莫日格勒河到黑山头",
+      "title": "09.28 新左旗经莫日格勒河到黑山头",
       "context": "skip_overview",
       "badge": "备用方案 · D3 / 8",
-      "routes": [{"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]}],
-      "labels": ["hailar", "heishantou"],
+      "routes": [{"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]}],
+      "labels": ["xinzuoqi", "heishantou"],
       "photos": ["morigele_curve", "erguna_riverbend_sunset"],
       "photo_labels": ["morigele_curve", "erguna_riverbend_sunset"]
     },
@@ -269,8 +271,8 @@
         {"kind": "drive", "amap_route": "d01", "points": ["qiqihar", "moguqi", "chaihe", "aershan_east", "budonghe", "yizi"]},
         {"kind": "transfer", "draw": false, "points": ["yizi", "wusulangzi", "jinjianggou"]},
         {"kind": "transfer", "draw": false, "points": ["jinjianggou", "tuofeng", "jinjianggou"]},
-        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "hailar"]},
-        {"kind": "drive", "amap_route": "d03", "points": ["hailar", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
+        {"kind": "drive", "amap_route": "d02_drive", "points": ["jinjianggou", "xinzuoqi"]},
+        {"kind": "drive", "amap_route": "d03", "points": ["xinzuoqi", "tuga", "morigele_cliff", "erguna_riverbend", "heishantou"]},
         {"kind": "drive", "amap_route": "d04", "points": ["heishantou", "wuka", "wulan", "qika"]},
         {"kind": "drive", "amap_route": "d05_1", "points": ["qika", "baka", "jiuka", "shiwei", "linjiang"]},
         {"kind": "drive", "amap_route": "d05_2", "points": ["linjiang", "bailudao", "qiqian"]},
@@ -278,8 +280,8 @@
         {"kind": "drive", "amap_route": "d07", "points": ["genhe", "aoluguya", "nenjiang"]},
         {"kind": "drive", "amap_route": "d08_wenbo", "points": ["nenjiang", "wenbo", "harbin"]}
       ],
-      "labels": ["qiqihar", "hailar", "morigele_cliff", "erguna_riverbend", "heishantou", "qiqian", "genhe", "nenjiang", "wenbo", "harbin"],
-      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genheyuan_wetland", "aoluguya_reindeer", "heilongshan_volcano", "wenbo_wetland"],
+      "labels": ["qiqihar", "xinzuoqi", "morigele_cliff", "erguna_riverbend", "heishantou", "qiqian", "genhe", "nenjiang", "wenbo", "harbin"],
+      "photos": ["shanshui_rock", "moa_valley", "budonghe_sunset", "wusulangzi_sunrise", "tuofeng_view", "dujuan_lake", "shitang_forest", "xinzuoqi_sunset", "morigele_curve", "erguna_riverbend_sunset", "heishantou_sunrise", "wuka_valley", "wulan_taiji", "qika_light", "baka_curve", "jiuka_valley", "linjiang_hill", "moerdaoga_forest", "bailudao_valley", "qiqian_mist", "genheyuan_wetland", "aoluguya_reindeer", "heilongshan_volcano", "wenbo_wetland"],
       "photo_labels": [],
       "hazards": [
         {"lat": 47.550, "lon": 121.450, "label": "蘑阿天气"},

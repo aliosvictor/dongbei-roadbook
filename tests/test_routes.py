@@ -88,6 +88,19 @@ class RouteIntegrityTests(unittest.TestCase):
             self.assertIn('B0FFH58MN1',line)
             self.assertNotIn('白鹿岛',line)
 
+    def test_left_banner_sunset_and_next_day_route_agree(self):
+        data=json.loads((ROOT/'data/itinerary.json').read_text())
+        self.assertEqual(data['amap_route_specs']['d02_drive']['points'],['jinjianggou','xinzuoqi'])
+        self.assertEqual(data['amap_route_specs']['d03']['points'][0],'xinzuoqi')
+        self.assertIn('xinzuoqi_sunset',data['maps']['d02']['photos'])
+        self.assertEqual(data['navigation_points']['amugulang_wetland']['status'],'name_search')
+        for day in ('d02','d03'):
+            self.assertEqual(data['maps'][day]['routes'],data['maps']['s'+day[1:]]['routes'])
+        for filename in ('primary.qmd','option-skip-qiqian.qmd'):
+            text=(ROOT/filename).read_text()
+            self.assertIn('阿木古郎湿地公园没有经过独立核实的停车场落点',text)
+            self.assertNotIn('海拉尔是 9 月 27 日固定住宿和补给点',text)
+
 
 if __name__ == '__main__':
     unittest.main()
