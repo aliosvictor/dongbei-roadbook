@@ -11,7 +11,7 @@
 - `index.qmd`：两套路线的选择规则与总览。
 - `primary.qmd`：主方案的每天时间线、摄影与器材安排。
 - `option-skip-qiqian.qmd`：备用方案的完整执行页。
-- `sources.qmd`：沿途交通管制、边境与林区证件的办理入口。
+- `sources.qmd`：核验与准备，分为交通管制与证件、地点与预约、天气与拍摄、无人机、摄影器材、物资清单六部分；有效来源按主题归档。
 - `data/itinerary.json`：地点、拍摄点与高德路线核验规格。
 - `data/amap-routes.json`：高德路线规划的日期化折线、里程与时间快照。
 - `_variables.yml`、`includes/amap-route-links.md`：由同一快照自动生成的网页里程、时间、核验日期和高德链接。

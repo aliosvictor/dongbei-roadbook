@@ -1,4 +1,5 @@
 import sys
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -54,6 +55,22 @@ class RenderedSiteTests(unittest.TestCase):
         self.change_index('<p>{{< var missing >}}</p>')
         with self.assertRaisesRegex(ValueError, "unresolved shortcode"):
             validate_site(self.site)
+
+
+class PreparationPageTests(unittest.TestCase):
+    def test_six_preparation_sections_and_risk_map_are_preserved(self):
+        source = (ROOT / "sources.qmd").read_text()
+        self.assertEqual(re.findall(r"^## .*\{#([^}]+)\}$", source, re.M), [
+            "traffic-documents", "places-bookings", "weather-shooting",
+            "drone-checks", "photo-equipment", "supplies",
+        ])
+        self.assertIn("figures/maps/risk.webp", source)
+
+    def test_shared_plans_link_to_preparation_details(self):
+        for name in ("primary.qmd", "option-skip-qiqian.qmd"):
+            source = (ROOT / name).read_text()
+            for anchor in ("permits", "photo-equipment", "supplies"):
+                self.assertIn(f"sources.qmd#{anchor}", source, name)
 
 
 if __name__ == "__main__":

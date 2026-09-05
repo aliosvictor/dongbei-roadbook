@@ -11,6 +11,14 @@ local function add_mobile_labels(tbl, headers)
     for _, row in ipairs(body.body) do
       for index, cell in ipairs(row.cells) do
         cell.attr.attributes["data-label"] = headers[index] or ""
+        -- Quarto's simple-table renderer can drop cell attributes. A real label
+        -- survives both rendering paths; hide it from assistive technology,
+        -- which already receives the semantic table headers.
+        cell.contents = {
+          pandoc.Div({pandoc.Plain({pandoc.Str(headers[index] or "")})},
+            pandoc.Attr("", {"cell-label"}, {["aria-hidden"] = "true"})),
+          pandoc.Div(cell.contents, pandoc.Attr("", {"cell-content"}))
+        }
       end
     end
   end
