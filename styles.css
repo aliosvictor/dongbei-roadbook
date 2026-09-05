@@ -702,6 +702,102 @@ code {
   color: var(--rust-dark);
 }
 
+/* One content wrapper prevents links and emphasis becoming separate grid cells. */
+.cell-label {
+  display: none;
+}
+
+.cell-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cell-content > :last-child {
+  margin-bottom: 0;
+}
+
+.prep-jump > p {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-block: 1.6rem;
+}
+
+.prep-jump a {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.prep-jump a:hover,
+.prep-jump a:focus-visible {
+  border-color: var(--forest-700);
+  background: #edf1e6;
+}
+
+.source-details {
+  margin-block: 1.2rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: rgba(255, 253, 248, 0.8);
+}
+
+.source-details summary {
+  color: var(--forest-800);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.source-details[open] summary {
+  margin-bottom: 1rem;
+}
+
+.source-details li + li {
+  margin-top: 0.65rem;
+}
+
+.preparation-page .compact-scroll col {
+  width: auto !important;
+}
+
+.preparation-page .table-scroll.compact-scroll th:first-child {
+  width: 24%;
+}
+
+.preparation-page .table-scroll.compact-scroll th:last-child {
+  width: 44%;
+}
+
+@media (max-width: 767.98px) {
+  .prep-jump > p {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .prep-jump a {
+    padding: 0.7rem;
+    font-size: 0.86rem;
+  }
+
+  /* Dense prose reads better with its label above it, using the full card width. */
+  .preparation-page .compact-scroll tbody td {
+    display: block;
+  }
+
+  .preparation-page .compact-scroll tbody .cell-label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .source-details {
+    padding: 0.8rem;
+  }
+}
+
 .page-footer {
   margin-top: 4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -717,6 +813,7 @@ code {
   }
 
   body .page-columns,
+  html body.floating .page-columns,
   body:not(.floating):not(.docked) .page-columns.toc-left,
   body:not(.floating):not(.docked) .page-columns.toc-left .page-columns {
     display: grid;
@@ -829,9 +926,9 @@ code {
     border-bottom: 0 !important;
   }
 
-  .compact-scroll tbody td::before {
+  .compact-scroll tbody .cell-label {
+    display: block;
     color: var(--forest-700);
-    content: attr(data-label);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.03em;
