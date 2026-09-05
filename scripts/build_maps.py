@@ -10,6 +10,7 @@ are shown only as labelled points and never joined by an invented line.
 from __future__ import annotations
 
 import io
+import hashlib
 import json
 import math
 import sys
@@ -18,6 +19,7 @@ import urllib.request
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+from update_amap_routes import parse_geometry, validate_snapshot
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -156,8 +158,8 @@ def fetch_tile(z: int, x: int, y: int) -> Image.Image:
     return tile
 
 
-def route_lonlat(route: dict, amap_routes: dict) -> list[tuple[float, float]]:
-    """Return exact stored Amap geometry, or no line for an undrawn route."""
+def route_chunks(route: dict, amap_routes: dict) -> list[list[tuple[float, float]]]:
+    """Preserve every Amap step boundary, including gaps between adjacent steps."""
     if route.get("draw", True) is False:
         return []
     route_key = route.get("amap_route")
@@ -173,20 +175,25 @@ def route_lonlat(route: dict, amap_routes: dict) -> list[tuple[float, float]]:
         )
     if snapshot["kind"] != route["kind"]:
         raise ValueError(f"Amap snapshot {route_key} has the wrong route kind")
-    geometry: list[tuple[float, float]] = []
-    raw_point_count = 0
-    for polyline in snapshot["geometry"]:
-        for pair in polyline.split(";"):
-            if not pair:
-                continue
-            lon_text, lat_text = pair.split(",")
-            raw_point_count += 1
-            point = gcj02_to_wgs84(float(lon_text), float(lat_text))
-            if not geometry or geometry[-1] != point:
-                geometry.append(point)
-    if raw_point_count != snapshot["geometry_point_count"]:
+    chunks = parse_geometry(snapshot["geometry"])
+    if sum(map(len, chunks)) != snapshot["geometry_point_count"]:
         raise ValueError(f"Amap snapshot {route_key} geometry point count changed")
-    return geometry
+    return [[gcj02_to_wgs84(*point) for point in chunk] for chunk in chunks]
+
+
+def route_lonlat(route: dict, amap_routes: dict) -> list[tuple[float, float]]:
+    """Flatten only for extent/label calculations, never for drawing lines."""
+    return [point for chunk in route_chunks(route, amap_routes) for point in chunk]
+
+
+def map_input_digest(root: Path) -> str:
+    digest = hashlib.sha256()
+    for name in ("data/itinerary.json", "data/amap-routes.json", "scripts/build_maps.py",
+                 "scripts/update_amap_routes.py", "requirements.txt",
+                 "assets/fonts/fandol/FandolHei-Regular.otf", "assets/fonts/fandol/FandolHei-Bold.otf"):
+        digest.update(name.encode())
+        digest.update((root / name).read_bytes())
+    return digest.hexdigest()
 
 
 def line_segments(draw: ImageDraw.ImageDraw, xy: list[tuple[float, float]], kind: str) -> None:
@@ -446,19 +453,22 @@ def build_context_inset(
         return ((lon_to_x(lon, zoom) - left) * sx, (lat_to_y(lat, zoom) - top) * sy)
 
     for route in full_routes:
-        line = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
-        if len(line) < 2:
-            continue
-        draw.line(line, fill="#FFFDF7", width=9, joint="curve")
-        draw.line(line, fill=COLORS["context_route"], width=5, joint="curve")
+        for chunk in route_chunks(route, amap_routes):
+            line = [project(lon, lat) for lon, lat in chunk]
+            if len(line) >= 2:
+                draw.line(line, fill="#FFFDF7", width=9, joint="curve")
+                draw.line(line, fill=COLORS["context_route"], width=5, joint="curve")
 
     daily_routes = [route for route in spec["routes"] if route["kind"] != "alternative"]
     for route in daily_routes:
+        for chunk in route_chunks(route, amap_routes):
+            segment = [project(lon, lat) for lon, lat in chunk]
+            if len(segment) >= 2:
+                draw.line(segment, fill="#FFFDF7", width=12, joint="curve")
+                draw.line(segment, fill=COLORS["context_day"], width=8, joint="curve")
         line = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
         if len(line) < 2:
             continue
-        draw.line(line, fill="#FFFDF7", width=12, joint="curve")
-        draw.line(line, fill=COLORS["context_day"], width=8, joint="curve")
         for endpoint in (line[0], line[-1]):
             x, y = endpoint
             draw.ellipse((x - 6, y - 6, x + 6, y + 6), fill=COLORS["context_day"], outline="#FFFDF7", width=2)
@@ -588,8 +598,9 @@ def build_map(
     # Rail/alternatives underneath, driving routes on top.
     ordered_routes = sorted(spec["routes"], key=lambda r: 1 if r["kind"] == "drive" else 0)
     for route in ordered_routes:
-        geometry = [project(lon, lat) for lon, lat in route_lonlat(route, amap_routes)]
-        line_segments(draw, geometry, route["kind"])
+        for chunk in route_chunks(route, amap_routes):
+            geometry = [project(lon, lat) for lon, lat in chunk]
+            line_segments(draw, geometry, route["kind"])
 
     occupied: list[tuple[float, float, float, float]] = []
     for i, place_key in enumerate(spec.get("labels", []), start=1):
@@ -682,12 +693,17 @@ def main() -> None:
         raise ValueError("itinerary coordinates must declare GCJ-02 for Amap/OSM reprojection")
     amap_data = json.loads(AMAP_DATA.read_text(encoding="utf-8"))
     amap_routes = amap_data["routes"]
+    for key, spec in data["amap_route_specs"].items():
+        validate_snapshot(spec, amap_routes[key], data["places"])
     checked_date = amap_data["checked_at"][:10]
     requested = sys.argv[1:]
     unknown = [key for key in requested if key not in data["maps"]]
     if unknown:
         raise SystemExit(f"Unknown map key(s): {', '.join(unknown)}")
     keys = requested or list(data["maps"])
+    manifest_path = OUTPUT / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    signature = map_input_digest(ROOT)
     for key in keys:
         spec = data["maps"][key]
         context_key = spec.get("context", "overview")
@@ -702,6 +718,9 @@ def main() -> None:
             amap_routes,
             checked_date,
         )
+        manifest[key] = {"inputs": signature, "sha256": hashlib.sha256((OUTPUT / f"{key}.webp").read_bytes()).hexdigest()}
+    manifest = {key: value for key, value in manifest.items() if key in data["maps"]}
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

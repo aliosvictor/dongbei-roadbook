@@ -7,10 +7,18 @@ on:
     paths:
       - "**.qmd"
       - "_quarto.yml"
+      - "_variables.yml"
       - "styles.css"
+      - "theme.scss"
       - "assets/**"
       - "figures/**"
       - "icons/**"
+      - "includes/**"
+      - "data/**"
+      - "scripts/**"
+      - "filters/**"
+      - "tests/**"
+      - "requirements.txt"
       - ".github/workflows/publish.yml"
 
 jobs:
@@ -22,14 +30,32 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Check routes, generated assets and regression tests
+        run: |
+          python -m pip install -r requirements.txt
+          python -B -m unittest discover -s tests -v
+          python -B scripts/validate_project.py
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: "1.10.18"
 
-      - name: Render and publish
+      - name: Render and verify website
+        run: |
+          quarto render
+          python -B scripts/validate_project.py --site _site
+
+      - name: Publish verified website
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

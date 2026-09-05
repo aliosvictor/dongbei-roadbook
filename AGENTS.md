@@ -28,9 +28,9 @@ This file defines durable repository constraints for the Northeast roadbook. Kee
 |---|---|---|
 | Editorial pages | `index.qmd`, `primary.qmd`, `option-skip-qiqian.qmd`, `sources.qmd` | These are the editable reader-facing sources. Keep route names, dates, timings, lodging, photography points, and decision rules consistent across them. |
 | Route schema | `data/itinerary.json` | This is the authoritative source for map places, photo points, checked Amap route specifications, labels, route kinds, contexts, and daily map identifiers. Coordinates are declared GCJ-02 because they come from Amap. |
-| Amap route snapshots | `data/amap-routes.json`, `includes/amap-route-links.md` | Generate these together with `scripts/update_amap_routes.py`. They preserve the dated Amap-recommended geometry, distance, duration, road names, and reader-facing route links; do not hand-edit generated values. |
-| Generated maps | `figures/maps/*.webp` | Generate these from the itinerary and Amap snapshots with `scripts/build_maps.py`; do not hand-edit the images. Track the resulting WebP files because the published site consumes them directly. |
-| Site schema | `_quarto.yml`, `styles.css`, `assets/fonts/web/` | Keep navigation, layout, typography, loading behavior, and reader-facing labels consistent. |
+| Amap route snapshots | `data/amap-routes.json`, `includes/amap-route-links.md`, `_variables.yml` | Generate these together with `scripts/update_amap_routes.py`. They preserve the dated Amap-recommended geometry, distance, duration, road names, and reader-facing route links; do not hand-edit generated values. |
+| Generated maps | `figures/maps/*.webp`, `figures/maps/manifest.json` | Generate these from the itinerary and Amap snapshots with `scripts/build_maps.py`; do not hand-edit the images. Track the resulting WebP files because the published site consumes them directly. |
+| Site schema | `_quarto.yml`, `styles.css`, `theme.scss`, `filters/`, `assets/fonts/web/` | Keep navigation, layout, typography, loading behavior, and reader-facing labels consistent. |
 | Deployment | `.github/workflows/publish.yml` | `main` contains sources; the workflow renders and publishes the site to `gh-pages`. Do not edit `gh-pages` manually. |
 
 - `_site/`, `.quarto/`, local tools, caches, screenshots, and temporary QA artifacts are generated state and must remain untracked.
@@ -40,8 +40,8 @@ This file defines durable repository constraints for the Northeast roadbook. Kee
 
 The site has two complete alternatives with parallel information architecture:
 
-- Main itinerary: `primary.qmd`, `overview`, and `d01` through `d08`.
-- Backup itinerary without Qiqian: `option-skip-qiqian.qmd`, `skip_overview`, and `s01` through `s08`.
+- Qiqian itinerary: `primary.qmd`, `overview`, and `d01` through `d08`.
+- Steady itinerary without Qiqian: `option-skip-qiqian.qmd`, `skip_overview`, and `s01` through `s08`.
 
 When a change affects more than one plan:
 
@@ -74,7 +74,7 @@ When a change affects more than one plan:
 - Route lines reproduce the stored Amap-recommended road geometry from the stated verification date. The OpenStreetMap layer is only the visual basemap and must not be described as the routing source.
 - Reproject all GCJ-02 Amap route and marker coordinates to WGS84 before drawing over OpenStreetMap; do not overlay the two coordinate systems directly.
 - A park shuttle, unverified spur, approximate scenic area, or point without a confirmed road endpoint may be shown as a marker but must use `draw: false`; never imply a public-road navigation line. Do not present an approximate coordinate as an exact entrance, parking lot, or legal takeoff location.
-- Use the locally bundled map fonts. Rebuild the WebP font subsets when new Chinese characters are introduced in reader-facing QMD files or `_quarto.yml`, and verify complete glyph coverage.
+- Use the locally bundled map fonts. Rebuild the WOFF2 font subsets when new Chinese characters are introduced in reader-facing QMD files or `_quarto.yml`, and verify complete glyph coverage.
 - Preserve WebP delivery, lazy loading, asynchronous decoding, and compact dimensions unless a measured quality or performance problem justifies a change.
 - Drone recommendations must be conditional on current airspace, protected-area, border, weather, crowd, and onsite rules. Never describe an unverified takeoff point as permitted.
 
@@ -133,3 +133,4 @@ Before claiming completion, and before any commit when committing is in scope, c
 - time-sensitive claims are current enough for their use and uncertainty is explicit
 - no conflict markers, partial merges, stale temporary files, accidental outputs, duplicate artifacts, or secrets remain
 - the final report states what changed, what was verified, what was skipped, and any material remaining risk
+- run `python3 -B -m unittest discover -s tests -v` and `python3 -B scripts/validate_project.py --site _site` to check route order, generated metrics, map hashes, font coverage, and rendered links

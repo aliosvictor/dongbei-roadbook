@@ -21,9 +21,9 @@ website:
       - href: index.qmd
         text: 总行程
       - href: primary.qmd
-        text: 主行程
+        text: 奇乾方案
       - href: option-skip-qiqian.qmd
-        text: 备用方案
+        text: 稳健方案
       - href: sources.qmd
         text: 核验
   page-footer:
@@ -35,7 +35,9 @@ website:
 format:
   html:
     title-block-banner: true
-    theme: cosmo
+    theme:
+      - cosmo
+      - theme.scss
     css: styles.css
     toc: true
     toc-location: left
@@ -44,3 +46,6 @@ format:
     link-external-newwindow: true
     anchor-sections: true
     fig-align: center
+
+filters:
+  - filters/table-scroll.lua
