@@ -3,8 +3,8 @@ title: "总行程"
 subtitle: "2026.09.26—10.03｜稳健路线与奇乾方案"
 description: "大兴安岭摄影自驾稳健路线与奇乾方案总览"
 lang: zh
-toc: false
-body-classes: roadbook-index
+toc: true
+toc-depth: 2
 lightbox: true
 ---
 
