@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
+<link rel="stylesheet" href="assets/colors.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -199,13 +200,17 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="stop-tag row-planned">蓝色 · 主拍</span> 本日计划重点拍摄，仍以开放、通行和合法停车条件为前提。</li>
 <li><span class="stop-tag row-optional">紫色 · 选停 / 备选</span> 按需补给、顺路短拍或满足条件后的替换点；可跳过，不是必到清单。地图使用紫色空心圆。</li>
 <li><span class="stop-tag row-logistics">橄榄色 · 住宿 / 换乘</span> 执行所选方案需要衔接的住宿、停车换乘或入口；实际住宿用已确认的订单地址。</li>
-<li><span class="stop-tag row-drive">灰色 · 途经参照</span> 只帮助判断方向或估算市区里程，不要求停车、进镇或游览。</li>
+<li><span class="stop-tag row-reference">灰色 · 途经参照</span> 只帮助判断方向或估算市区里程，不要求停车、进镇或游览。</li>
+<li><span class="stop-tag row-drive">砖红色 · 行车</span> 对应地图自驾道路和整段高德路线链接，不表示禁飞或风险等级。</li>
+<li><span class="stop-tag row-rest">中性底色 · 休息 / 准备</span> 保留用餐、休息和装车等安排，不等于可跳过的途经点。</li>
 </ul>
-<p>颜色按当天用途区分，与 S / A / B 摄影等级无关。休息、用餐和安全余量要保留，具体补给地点可以替换；选停时间是预留窗口，不是到点必须停车。整段导航中的道路方向控制点也不等于停车指令。</p>
+<p>地图点位、时间行标签与导航地名使用同一套用途颜色，与 S / A / B 摄影等级无关。时间行表示这段时间做什么，导航链接表示落点的用途：主拍时段也可能导航到橄榄色的停车换乘点。同一地点的住宿与选拍按各自用途区分，正文说明使用中性文字，不随禁飞状态改色。</p>
+<p>休息、用餐和安全余量要保留，具体补给地点可以替换；选停时间是预留窗口，不是到点必须停车。整段导航中的道路方向控制点也不等于停车指令。</p>
 <p>砖红线为 2026-09-06 高德道路快照；园内景交和未核实支线不画自驾线。地图点位不是停车许可；准确入口、可停车位置与还车门店仍按逐日说明核实。</p>
 </div>
 <div class="drone-legend">
-<p><strong>无人机另看文字提示</strong>：<span class="drone-no-fly">红色＝本路书按禁飞执行</span>，不凭 DJI 解禁或现场猜测起飞，除非事先取得可核验的书面批准；<span class="drone-check">琥珀色＝起飞前同时核验 UOM 与管理方规则</span>。这两种文字颜色不表示是否停车，也不改变时间行的主拍、选停或住宿类别。</p>
+<p><strong>状态另看短标签</strong>：<span class="status-tag status-no-fly">禁飞</span> 红色表示本路书按禁飞执行，不凭 DJI 解禁或现场猜测起飞，除非事先取得可核验的书面批准；<span class="status-tag status-check">待核验</span> 琥珀色提示出行前核对天气、通行或开放等条件；<span class="status-tag status-check">航拍待核验</span> 表示起飞前同时核验 UOM 与管理方规则。</p>
+<p>风险地图使用相同状态色的三角形，与圆形点位及砖红道路分开。状态标签不表示是否停车，不改变主拍、选停或住宿类别；没有禁飞标签也不代表获准起飞。</p>
 </div>
 <p>地图中的奇乾支路属于主方案，根河源为备用方案拍摄点；实际执行以所选方案每日地图为准。公路折线来自高德快照，背景地图来自 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>。地图可定位到某处，不等于已经获准进入或飞行。</p>
 <p><strong>地点怎么读</strong>：主拍点按本日时间表执行；择一和替换点只在写明条件成立时使用；沿途短拍合并休息、不专程进入支路；宾馆、驿站等导航参考不等于住宿或游览商家。灰色方向与市区参照点不要求逐一到达，哈尔滨实际还车终点须从订单录入。</p>
@@ -227,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="road-controls" class="level3">
 <h3 class="anchored" data-anchor-id="road-controls">1.1 沿途交通管制、施工与绕行</h3>
 <p><strong>当前明确覆盖旅行日期的施工管制是 G605 根河二桥段全封闭。</strong> 其余道路按下表保留公告的适用时间，不以旧公告推断旅行当天通行状态。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -436,7 +441,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <section id="personal-vehicle-documents" class="level3">
 <h3 class="anchored" data-anchor-id="personal-vehicle-documents">1.3 人员、驾驶与租赁车辆证件</h3>
 <p>以下区分法定证件和本次旅行建议保存的材料；取车日为 <strong>9 月 25 日</strong>。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -644,7 +649,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <section id="opening-bookings" class="level3">
 <h3 class="anchored" data-anchor-id="opening-bookings">2.1 景区开放、预约与入园时间</h3>
 <p>以下平台营业信息为 <strong>2026-09-05 整理的记录</strong>，不是旅行当天的承诺。咨询时说明实际日期、人数、车辆和预计抵达时间，同时问清票务、停止入园、末班接驳及是否需提前预约。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -827,7 +832,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <h3 class="anchored" data-anchor-id="access-parking">2.2 入口、停车与景区接驳</h3>
 <ul>
 <li><strong>阿尔山园内交通</strong>：9 月 25 日确认次日东门至西侧住宿的过境通行；若不能过境，在进入柴河前按实时导航改走阿尔山市方向。9 月 27 日晨拍后把自驾车留在金江沟游客服务中心，乘景交游览，再返回原处取车；景交站点不能当自驾终点，也不安排车辆与游客在不同出口分离。</li>
-<li><strong>乌苏浪子湖</strong>：导航到<a href="https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&amp;city=阿尔山市&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1">阿尔山乌苏浪子湖渔村宾馆</a>附近允许的停车处，再步行到湖边；这家宾馆只作停车候选，不是当晚住宿；地点存在不代表免费停车或凌晨通行已获许可，须提前落实。</li>
+<li><strong>乌苏浪子湖</strong>：导航到<a href="https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&amp;city=阿尔山市&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1" class="stop-link stop-logistics" data-stop-role="logistics">阿尔山乌苏浪子湖渔村宾馆</a>附近允许的停车处，再步行到湖边；这家宾馆只作停车候选，不是当晚住宿；地点存在不代表免费停车或凌晨通行已获许可，须提前落实。</li>
 <li><strong>乌兰山与白鹿岛</strong>：乌兰山使用景区大门 POI，太极湾实际机位不是大门坐标；白鹿岛高德折线止于外围可达道路，距 POI 中心约 3.6 公里，需确认最后一段方式，不能按“停车即到”排程。</li>
 <li><strong>根河源，仅备用方案</strong>：地图标注的是冷极河栈道一带的拍摄区域，不是已核实入口。确认前只给名称搜索、不绘制往返道路，也未将这段计入高德里程；14:10—17:15 的窗口须覆盖往返、停车和游览，入口较远或接驳较慢时相应缩短拍摄。</li>
 <li><strong>通用停车原则</strong>：选择开放停车场、正规停车带或管理方允许的位置；不在弯道、桥面或行车道占道拍摄，不跨越围栏，不以导航可达代替土地使用许可。</li>
@@ -836,7 +841,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <section id="photo-locations" class="level3">
 <h3 class="anchored" data-anchor-id="photo-locations">2.3 拍摄点真实性、位置与现场可达性</h3>
 <p><strong>链接的核验边界</strong>：高德地点页用于核对名称和坐标；名称搜索只提供查找入口，手动坐标链接只定位到所填位置。这三类都不等于已确认停车、商家预约或通行许可。“柴河月亮小镇”的高德记录类别为宾馆酒店，本行程仅借它定位柴河镇补给区域；住宿仍按当晚行程执行。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -981,17 +986,17 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 </summary>
 <ul>
 <li><a href="http://www.aes.gov.cn/aes/2025-04/15/article_2025041515301061440.html">阿尔山市政府｜阿尔山国家森林公园游览与交通说明</a> — 核对游客中心停车、园内观光车、乌苏浪子湖 06:00—08:00 晨雾窗口，以及驼峰岭、杜鹃湖、石塘林和不冻河的园内关系；实际开放时间以临行公告为准。</li>
-<li><a href="https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&amp;city=阿尔山市&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1">高德地图｜阿尔山乌苏浪子湖渔村宾馆</a> — 9 月 27 日清晨停车候选的名称搜索入口；停车后步行前往湖边日出机位，凌晨通行和停车规则在 9 月 25 日确认。</li>
+<li><a href="https://uri.amap.com/search?keyword=阿尔山乌苏浪子湖渔村宾馆&amp;city=阿尔山市&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1" class="stop-link stop-logistics" data-stop-role="logistics">高德地图｜阿尔山乌苏浪子湖渔村宾馆</a> — 9 月 27 日清晨停车候选的名称搜索入口；停车后步行前往湖边日出机位，凌晨通行和停车规则在 9 月 25 日确认。</li>
 <li><a href="https://m.ctrip.com/html5/hotel/hoteldetail/130835632.html">携程｜依子民宿</a> — 核对 9 月 26 日住宿的准确名称和“G621 哈拉哈河 2 号大桥东南约 410 米”地址；路书导航直接写“依子民宿”。</li>
 <li><a href="https://lbs.amap.com/api/uri-api/guide/search/search?type=spa">高德 URI API｜地点搜索</a> — 未取得稳定地点 ID、但名称明确的导航点统一使用 <code>uri.amap.com/search</code> 搜索链接；住宿和还车门店等未确定订单地址不伪造落点。</li>
 <li><a href="https://you.ctrip.com/sight/arxan120084/52423.html">携程｜阿尔山国家森林公园</a> — 交叉核对金江沟游客服务中心停车、景交衔接和景区咨询电话；开放与通行方式在 9 月 25 日再次确认。</li>
-<li><a href="https://www.amap.com/place/B01D60N3CQ">高德地图｜新巴尔虎左旗阿木古郎镇</a> — 9 月 27 日已核验自驾路线的住宿终点和 9 月 28 日出发点；订单确定后仍须把导航终点替换为实际酒店收藏点。</li>
+<li><a href="https://www.amap.com/place/B01D60N3CQ" class="stop-link stop-logistics" data-place="xinzuoqi" data-stop-role="logistics">高德地图｜新巴尔虎左旗阿木古郎镇</a> — 9 月 27 日已核验自驾路线的住宿终点和 9 月 28 日出发点；订单确定后仍须把导航终点替换为实际酒店收藏点。</li>
 <li><a href="https://xzq.gov.cn/News/show/1334458.html">新巴尔虎左旗政府｜阿木古郎镇概况</a> — 核对镇区地理、南部湿地和秋季降温、初霜背景。官方页面不提供湿地公园停车、开放或无人机许可，因此这些信息仍须现场和属地管理方确认。</li>
-<li><a href="https://hk.trip.com/travel-guide/attraction/new-barag-left-banner/amugulang-wetland-park-145444234/">携程｜阿木古郎湿地公园</a> — 平台地址与坐标只用于确认公园名称及地图蓝点，不视为官方入口或停车场；路线页只提供<a href="https://uri.amap.com/search?keyword=阿木古郎湿地公园&amp;city=新巴尔虎左旗&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1">高德名称搜索</a>，不伪造停车落点。</li>
+<li><a href="https://hk.trip.com/travel-guide/attraction/new-barag-left-banner/amugulang-wetland-park-145444234/">携程｜阿木古郎湿地公园</a> — 平台地址与坐标只用于确认公园名称及地图蓝点，不视为官方入口或停车场；路线页只提供<a href="https://uri.amap.com/search?keyword=阿木古郎湿地公园&amp;city=新巴尔虎左旗&amp;view=map&amp;src=dongbei-roadbook&amp;callnative=1" class="stop-link stop-planned" data-photo="xinzuoqi_sunset" data-stop-role="planned">高德名称搜索</a>，不伪造停车落点。</li>
 <li><a href="https://you.ctrip.com/travels/innermongolia100062/4144672.html">携程游记｜阿木古郎湿地公园日落实拍记录</a> — 仅证明曾有旅行者在该区域拍摄日落，用于判断题材可行性；不能证明 2026 年开放、道路、停车或飞行许可。</li>
 <li><a href="https://weibo.com/2/detail/comos%3Aniqqncq1876768">微博网络攻略｜阿尔山行程信息</a> — 页面内容偏通用攻略，不能证明 2026 年东门至西侧住宿的过境状态，本路书不以它作为通行依据；实际过境与停车规则以景区临行回复为准。</li>
 <li><a href="https://www.zhalantun.gov.cn/News/show/1317861.html">扎兰屯市政府｜柴河景区资源</a> — 用于确认柴河沿途自然资源背景；当天沿蘑阿主线正规停车带短拍秋林河谷。</li>
-<li><a href="https://www.amap.com/place/B0FFJEZTED">高德地图｜不冻河观景台</a> — 9 月 26 日日落蓝点坐标。</li>
+<li><a href="https://www.amap.com/place/B0FFJEZTED" class="stop-link stop-planned" data-place="budonghe" data-stop-role="planned">高德地图｜不冻河观景台</a> — 9 月 26 日日落蓝点坐标。</li>
 </ul>
 </details>
 <details class="source-details">
@@ -999,20 +1004,20 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 莫日格勒、额尔古纳湿地与卡线：地点、构图和证据边界
 </summary>
 <ul>
-<li><a href="https://www.amap.com/place/B0KDPC3LJC">高德地图｜断崖</a> — 高德记录的断崖 POI 位于莫尔格勒河景区东北侧；只作现场允许时的条件机位，不作为自驾必停终点。</li>
+<li><a href="https://www.amap.com/place/B0KDPC3LJC" class="stop-link stop-planned" data-place="morigele_cliff" data-stop-role="planned">高德地图｜断崖</a> — 高德记录的断崖 POI 位于莫尔格勒河景区东北侧；只作现场允许时的条件机位，不作为自驾必停终点。</li>
 <li><a href="https://www.sina.cn/news/detail/5333789649143061.html">新浪转载｜2026-08-20 莫日格勒河北线游客记录</a> — 仅用于了解游客当次北线体验；不将其局部行车时长套用本路线，断崖停车与通行仍须向景区及现场管理确认。</li>
 <li><a href="https://www.hlbe.gov.cn/PolicyDocument/52/page_1.html?style=920&amp;typeId=3">呼伦贝尔市政府政策库｜2026 年莫尔格勒河景区观光车票价批复</a> — 证明 2026 年仍有正式观光车运行与定价管理；临行开放规则以景区当天公告为准。</li>
 <li><a href="https://www.xiaohongshu.com/discovery/item/6a87d0d10000000032030661">小红书｜到大兴安岭追秋记住这个位置</a> — 动态页面在自动核验中不可读，不能独立确认原帖文字、道路状态或精确落点；仅保留为用户提供的构图参考，不作为道路或飞行许可。</li>
-<li><a href="https://uri.amap.com/marker?position=120.233890,50.299354&amp;name=额尔古纳湿地根河河湾日落机位&amp;coordinate=gaode&amp;callnative=0">高德地图｜额尔古纳湿地·根河河湾候选机位</a> · <a href="https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&amp;mode=car&amp;coordinate=gaode&amp;callnative=0">驾车导航</a> — 高德坐标 <code>120.233890, 50.299354</code> 是根据用户提供的地图画面拟合的候选点，并非正式 POI，也没有足够证据声明米级误差。“额尔古纳湿地”只说明拍摄对象，不代表国家湿地公园或额尔古纳湿地景区。高德只能导航至坐标附近，非铺装便道、围栏、土地管理和实际构图必须在白天现场确认；任一不成立即放弃进入。</li>
-<li><a href="https://www.amap.com/place/B0FFJ2XXCH">高德地图｜额尔古纳国家湿地公园</a> — 仅作河湾便道无法进入时的提前替换方案；它与市区西侧“额尔古纳湿地景区”是两个不同 POI，且不与河湾日落叠加执行。</li>
+<li><a href="https://uri.amap.com/marker?position=120.233890,50.299354&amp;name=额尔古纳湿地根河河湾日落机位&amp;coordinate=gaode&amp;callnative=0" class="stop-link stop-planned" data-place="erguna_riverbend" data-stop-role="planned">高德地图｜额尔古纳湿地·根河河湾候选机位</a> · <a href="https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&amp;mode=car&amp;coordinate=gaode&amp;callnative=0" class="stop-link stop-planned" data-place="erguna_riverbend" data-stop-role="planned">驾车导航</a> — 高德坐标 <code>120.233890, 50.299354</code> 是根据用户提供的地图画面拟合的候选点，并非正式 POI，也没有足够证据声明米级误差。“额尔古纳湿地”只说明拍摄对象，不代表国家湿地公园或额尔古纳湿地景区。高德只能导航至坐标附近，非铺装便道、围栏、土地管理和实际构图必须在白天现场确认；任一不成立即放弃进入。</li>
+<li><a href="https://www.amap.com/place/B0FFJ2XXCH" class="stop-link stop-optional" data-stop-role="optional">高德地图｜额尔古纳国家湿地公园</a> — 仅作河湾便道无法进入时的提前替换方案；它与市区西侧“额尔古纳湿地景区”是两个不同 POI，且不与河湾日落叠加执行。</li>
 <li><a href="https://you.ctrip.com/sight/ergun2026/4690344.html">携程｜额尔古纳国家湿地公园</a> — 当前页面显示 09:00—17:00、16:30 停止入园及咨询电话 <code>0470-6995188</code>；如启用回退，须提前确认开放且预计 15:00 前能够抵达，平台状态不能替代临行核验。</li>
 <li><a href="https://news.cctv.com/2020/08/06/ARTIRIHUblaUJO8SFBzTqYS0200806.shtml">央视新闻｜额尔古纳国家湿地公园航拍</a> · <a href="https://www.news.cn/politics/20250815/6c6b93a691d8409c8137068c3c6bec0c/c.html">新华网｜湿地观景平台实景</a> — 只用于评估回退方案的空中与地面画面价值，不代表游客无人机获准。</li>
-<li><a href="https://www.amap.com/place/B0H2B7KCNJ">高德地图｜额尔古纳河乌兰山景区大门</a> — 乌兰山固定入口的导航核验；太极湾拍摄位置与入口不是同一个坐标。</li>
-<li><a href="https://www.amap.com/place/B0HUKN51FP">高德地图｜黑山头日落观测点</a> — 路书把这一观测坡作为次晨日出导航点，避免直接导航“黑山头镇”；起飞仍须核验 UOM 与现场管理。</li>
+<li><a href="https://www.amap.com/place/B0H2B7KCNJ" class="stop-link stop-logistics" data-place="wulan" data-stop-role="logistics">高德地图｜额尔古纳河乌兰山景区大门</a> — 乌兰山固定入口的导航核验；太极湾拍摄位置与入口不是同一个坐标。</li>
+<li><a href="https://www.amap.com/place/B0HUKN51FP" class="stop-link stop-planned" data-photo="heishantou_sunrise" data-stop-role="planned">高德地图｜黑山头日落观测点</a> — 路书把这一观测坡作为次晨日出导航点，避免直接导航“黑山头镇”；起飞仍须核验 UOM 与现场管理。</li>
 <li><a href="https://www.amap.com/ranking/hulunbeier/scenic">高德地图｜呼伦贝尔自然景观榜</a> — 交叉确认“断崖”“额尔古纳国家湿地公园”“黑山头日落观测点”和乌兰山等 POI 的独立名称。</li>
 <li><a href="https://www.yoojia.com/dongtai/6696208002">卡线沿途实拍与停车点梳理</a> — 五卡、乌兰山、七卡至八卡 S 弯与沿线停车带的相对顺序。</li>
 <li><a href="https://gs.ctrip.com/html5/you/travels/2036894/4143183.html">携程游记｜卡线北段与临江</a> — 九卡、室韦、临江与边境河谷的顺序核验。</li>
-<li><a href="https://www.amap.com/place/B0FFH58MN1">高德地图｜临江村落脚点（蒙兀往事驿站）</a> — 地址明确写在额尔古纳市室韦镇临江村，坐标 <code>119.979172, 51.418279</code>，高德能够生成进出村驾车路线；用于两套行程的临江落脚导航。</li>
+<li><a href="https://www.amap.com/place/B0FFH58MN1" class="stop-link stop-planned" data-place="linjiang" data-stop-role="planned">高德地图｜临江村落脚点（蒙兀往事驿站）</a> — 地址明确写在额尔古纳市室韦镇临江村，坐标 <code>119.979172, 51.418279</code>，高德能够生成进出村驾车路线；用于两套行程的临江落脚导航。</li>
 </ul>
 </details>
 <details class="source-details">
@@ -1020,7 +1025,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 根河及五大连池：开放记录、入口与景观来源
 </summary>
 <ul>
-<li><a href="https://www.amap.com/place/B0K1NULQCT">高德地图｜敖鲁古雅使鹿部落景区</a> — 10 月 2 日的导航点，已纳入当天整段高德路线。</li>
+<li><a href="https://www.amap.com/place/B0K1NULQCT" class="stop-link stop-planned" data-place="aoluguya" data-stop-role="planned">高德地图｜敖鲁古雅使鹿部落景区</a> — 10 月 2 日的导航点，已纳入当天整段高德路线。</li>
 <li><a href="https://www.genhe.gov.cn/News/show/1082909.html">根河市政府｜敖鲁古雅景区提档升级与开放接待</a> — 核对景区游客中心与接待状态；属于当前开放背景，不能替代 10 月 2 日当天营业确认。</li>
 <li><a href="https://you.ctrip.com/sight/genhe2955/1701408.html">携程｜敖鲁古雅使鹿部落景区</a> — 当前页面显示 10 月 1—8 日 <code>08:30—17:30</code>、16:30 停止入园；平台时段可能调整，T-72 小时仍须电话确认。驯鹿附近只作地面拍摄，不飞无人机。</li>
 <li><a href="https://www.genhe.gov.cn/News/show/574132.html">根河市政府｜根河源国家湿地公园介绍</a> — 核对森林、河流与湿地自然资源；备用方案把 10 月 1 日下午完整留给自然景观拍摄。</li>
@@ -1031,15 +1036,15 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <li><a href="https://www.hlj.gov.cn/hlj/c108519/202503/c00_31464378.shtml">黑龙江省政府｜五大连池火山与堰塞湖资源</a> — 官方资料说明 14 座火山与 5 个串珠状火山堰塞湖的整体空间关系，适合无人机表达。</li>
 <li><a href="https://wdlcgwh.heihe.gov.cn/">五大连池风景区管委会</a> — T-72 小时拨打 <code>0456-7296999</code> 核对黑龙山—火烧山和温泊的国庆开放、接驳、停车与无人机管理。</li>
 <li><a href="https://wdlcgwh.heihe.gov.cn/wdlcfjq/xwtt/202604/c11_352438.shtml">五大连池风景区管委会｜2026 年开放准备</a> — 说明景区 2026 年进行了老黑山等区域开放准备；不能替代 10 月 3 日的最新开放确认。</li>
-<li><a href="https://www.amap.com/place/B01C8000E4">高德地图｜黑龙山景区</a> — 2026-09-05 核验时地点页明确显示“暂停开放”，因此只保留为确认恢复开放后的条件方案。</li>
-<li><a href="https://www.amap.com/place/B01C800I2M">高德地图｜温泊景区</a> — 当前默认入口；已单独生成嫩江—温泊—哈尔滨高德路线。开放、停车及游客无人机规则仍在 T-72 小时复核。</li>
+<li><a href="https://www.amap.com/place/B01C8000E4" class="stop-link stop-optional" data-photo="heilongshan_volcano" data-stop-role="optional">高德地图｜黑龙山景区</a> — 2026-09-05 核验时地点页明确显示“暂停开放”，因此只保留为确认恢复开放后的条件方案。</li>
+<li><a href="https://www.amap.com/place/B01C800I2M" class="stop-link stop-planned" data-place="wenbo" data-stop-role="planned">高德地图｜温泊景区</a> — 当前默认入口；已单独生成嫩江—温泊—哈尔滨高德路线。开放、停车及游客无人机规则仍在 T-72 小时复核。</li>
 <li><a href="https://touch.travel.qunar.com/youji/6583917">去哪儿游记｜五大连池航拍视角</a> · <a href="https://club.m.autohome.com.cn/bbs/thread/958dc808185e5136/109447030-1.html">汽车之家｜温泊无人机记录</a> — 社交/游客内容只用于比较火山群、湖群和温泊的构图，不作为飞行许可依据。</li>
 </ul>
 </details>
 </section>
 <section id="lodging-handoffs" class="level3">
 <h3 class="anchored" data-anchor-id="lodging-handoffs">2.4 住宿、取还车地点与交接条件</h3>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1169,7 +1174,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 </section>
 <section id="light-foliage" class="level3">
 <h3 class="anchored" data-anchor-id="light-foliage">3.2 秋色、晨雾与日出日落条件</h3>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1294,7 +1299,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <section id="drone-locations" class="level3">
 <h3 class="anchored" data-anchor-id="drone-locations">4.2 沿途各拍摄点的飞行限制</h3>
 <p>下表红色为<strong>本路书的保守执行限制</strong>，不是据未经核实资料绘制的法定禁飞边界；黄色表示待逐点核验，不能理解为已获准。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1320,7 +1325,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">逐点核对空域、园区和保护地规则</span>；不在行车道起降
+<span class="status-tag status-check">航拍待核验</span> <span>逐点核对空域、园区和保护地规则</span>；不在行车道起降
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1340,7 +1345,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">同时确认空域、土地/湿地管理、鸟类活动与人群</span>
+<span class="status-tag status-check">航拍待核验</span> <span>同时确认空域、土地/湿地管理、鸟类活动与人群</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1360,7 +1365,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">空域、景区与起降地管理均通过才飞</span>
+<span class="status-tag status-check">航拍待核验</span> <span>空域、景区与起降地管理均通过才飞</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1380,7 +1385,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">可作主拍候选，不能把卡线外自动等同于适飞</span>
+<span class="status-tag status-check">航拍待核验</span> <span>可作主拍候选，不能把卡线外自动等同于适飞</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1400,7 +1405,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-no-fly">本路书按禁飞执行；无人机收纳</span>
+<span class="status-tag status-no-fly">禁飞</span> <span>本路书按禁飞执行；无人机收纳</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1420,7 +1425,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">驶离卡线后逐点重新核验，不沿用前一地点结论</span>
+<span class="status-tag status-check">航拍待核验</span> <span>驶离卡线后逐点重新核验，不沿用前一地点结论</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1440,7 +1445,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-no-fly">本路书按禁飞执行</span>
+<span class="status-tag status-no-fly">禁飞</span> <span>本路书按禁飞执行</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1460,7 +1465,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">确认空域、森林/湿地管理与安全起降地</span>
+<span class="status-tag status-check">航拍待核验</span> <span>确认空域、森林/湿地管理与安全起降地</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1500,7 +1505,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 本次执行
 </div>
 <div class="cell-content">
-<span class="drone-check">景区、保护地与 UOM 均允许才飞</span>
+<span class="status-tag status-check">航拍待核验</span> <span>景区、保护地与 UOM 均允许才飞</span>
 </div></td>
 <td data-label="地面替代"><div class="cell-label" aria-hidden="true">
 地面替代
@@ -1540,7 +1545,7 @@ X325 K159+073—K162+000、K170+000—K173+000、K187+000—K188+421 半幅施�
 <section id="camera-lenses" class="level3">
 <h3 class="anchored" data-anchor-id="camera-lenses">5.1 相机、镜头与拍摄用途</h3>
 <p>按现有 <strong>Canon R5 Mark II + RF28–70mm F2.8 IS STM + RF16–28mm F2.8 IS STM</strong> 配置准备；不为本次路线默认增购长焦或第二机身。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1650,7 +1655,7 @@ RF16–28mm F2.8 IS STM
 </section>
 <section id="photo-power-backup" class="level3">
 <h3 class="anchored" data-anchor-id="photo-power-backup">5.3 电池、充电、存储与素材备份</h3>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1793,7 +1798,7 @@ R5 Mark II 使用 CFexpress Type B 与 UHS-II SD；各备可轮换卡
 <section id="clothing" class="level3">
 <h3 class="anchored" data-anchor-id="clothing">6.1 衣物分层、鞋袜与保暖用品</h3>
 <p>按 <strong>8 天重复穿外层、途中可少量洗晒</strong>作打包建议。下表为每人数量，不是已购清单；出发前按低温、风雨预报调整。久站晨拍比短时走路更容易冷，保暖衣物要随身可取。</p>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1934,7 +1939,7 @@ R5 Mark II 使用 CFexpress Type B 与 UHS-II SD；各备可轮换卡
 </section>
 <section id="vehicle-communications" class="level3">
 <h3 class="anchored" data-anchor-id="vehicle-communications">6.4 车辆应急、照明、通信与生活用电</h3>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -2071,7 +2076,7 @@ R5 Mark II 使用 CFexpress Type B 与 UHS-II SD；各备可轮换卡
 </section>
 <section id="packing-timing" class="level3">
 <h3 class="anchored" data-anchor-id="packing-timing">6.5 携带数量、提前采购与当地补充</h3>
-<div class="table-scroll compact-scroll" tabindex="0" role="region" aria-label="窄屏以卡片显示的表格">
+<div class="table-scroll compact-scroll" role="region" tabindex="0" aria-label="窄屏以卡片显示的表格">
 <table class="caption-top table">
 <thead>
 <tr class="header">
