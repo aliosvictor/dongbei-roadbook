@@ -1,0 +1,8 @@
+[stay-ji_hotel]: <https://uri.amap.com/search?keyword=%E5%85%A8%E5%AD%A3%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94%E5%8D%9C%E5%A5%8E%E5%A4%A7%E8%A1%97%E9%85%92%E5%BA%97&city=%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>
+[stay-yizi]: <https://uri.amap.com/search?keyword=%E4%BE%9D%E5%AD%90%E6%B0%91%E5%AE%BF&city=%E9%98%BF%E5%B0%94%E5%B1%B1%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>
+[stay-runfengyuan]: <https://uri.amap.com/search?keyword=%E6%B6%A6%E4%B8%B0%E5%85%83%E9%85%92%E5%BA%97&city=%E6%96%B0%E5%B7%B4%E5%B0%94%E8%99%8E%E5%B7%A6%E6%97%97&view=map&src=dongbei-roadbook&callnative=1>
+[stay-saina]: <https://uri.amap.com/search?keyword=%E5%91%BC%E4%BC%A6%E8%B4%9D%E5%B0%94%E9%99%88%E5%B7%B4%E5%B0%94%E8%99%8E%E6%97%97%E8%B5%9B%E7%BA%B3%E6%B0%91%E5%AE%BF&city=%E9%99%88%E5%B7%B4%E5%B0%94%E8%99%8E%E6%97%97&view=map&src=dongbei-roadbook&callnative=1>
+[stay-sushuo]: <https://uri.amap.com/search?keyword=%E5%AE%BF%E8%AF%B4%E5%AE%A2%E6%A0%88%EF%BC%88%E4%B8%83%E5%8D%A1%E5%BA%97%EF%BC%89&city=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>
+[stay-wangjia]: <https://uri.amap.com/search?keyword=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%A5%87%E4%B9%BE%E7%8E%8B%E5%AE%B6%E9%A9%BF%E7%AB%99&city=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>
+[stay-muye]: <https://uri.amap.com/search?keyword=%E6%A0%B9%E6%B2%B3%E7%89%A7%E9%87%8E%E5%B0%8F%E4%BD%8F%E5%AE%BE%E9%A6%86&city=%E6%A0%B9%E6%B2%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>
+[stay-hanting]: <https://uri.amap.com/search?keyword=%E6%B1%89%E5%BA%AD%E5%AB%A9%E6%B1%9F%E7%81%AB%E8%BD%A6%E7%AB%99%E5%BA%97&city=%E5%AB%A9%E6%B1%9F%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1>

@@ -189,8 +189,10 @@ def generated_variables(itinerary: dict, snapshot: dict) -> str:
         minutes = round(sum(snapshot["routes"][k]["duration_s"] for k in route_keys) / 60)
         values[f"{key}-km"] = f"{distance / 1000:.1f}"
         values[f"{key}-time"] = f"{minutes // 60} 小时 {minutes % 60:02d} 分"
-    main_keys = ("d05_2", "d06")
-    backup_keys = ("s05_2", "s06")
+    # Compare the complete drawn plans: actual main-plan hotels can change
+    # other days as well, so the northern two-leg difference is no longer enough.
+    main_keys = [r["amap_route"] for r in itinerary["maps"]["overview"]["routes"] if r.get("draw", True)]
+    backup_keys = [r["amap_route"] for r in itinerary["maps"]["skip_overview"]["routes"] if r.get("draw", True)]
     delta_m = sum(snapshot["routes"][k]["distance_m"] for k in main_keys) - sum(snapshot["routes"][k]["distance_m"] for k in backup_keys)
     delta_minutes = round((sum(snapshot["routes"][k]["duration_s"] for k in main_keys) - sum(snapshot["routes"][k]["duration_s"] for k in backup_keys)) / 60)
     values["primary-extra-km"] = f"{delta_m / 1000:.1f}"

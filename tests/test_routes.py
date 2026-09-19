@@ -118,7 +118,9 @@ class RouteIntegrityTests(unittest.TestCase):
         self.assertIn('xinzuoqi_sunset',data['maps']['d02']['photos'])
         self.assertEqual(data['navigation_points']['amugulang_wetland']['status'],'name_search')
         for day in ('d02','d03'):
-            self.assertEqual(data['maps'][day]['routes'],data['maps']['s'+day[1:]]['routes'])
+            self.assertEqual(data['maps'][day]['photos'],data['maps']['s'+day[1:]]['photos'])
+        self.assertEqual(data['amap_route_specs']['p02_drive']['points'],['jinjianggou','runfengyuan'])
+        self.assertEqual(data['amap_route_specs']['p03']['points'][0],'runfengyuan')
         for filename in ('primary.qmd','option-skip-qiqian.qmd'):
             text=(ROOT/filename).read_text()
             self.assertIn('阿木古郎湿地公园没有经过独立核实的停车场落点',text)
@@ -154,7 +156,7 @@ class RouteIntegrityTests(unittest.TestCase):
 
     def test_qiqian_return_does_not_force_second_bailudao_visit(self):
         data=json.loads((ROOT/'data/itinerary.json').read_text())
-        self.assertEqual(data['amap_route_specs']['d06']['points'],['qiqian','genhe'])
+        self.assertEqual(data['amap_route_specs']['d06']['points'],['wangjia','muye'])
         text=(ROOT/'primary.qmd').read_text()
         day=text.split('### Day 6',1)[1].split('### Day 7',1)[0]
         self.assertNotIn('| 11:30—11:50 |',day)

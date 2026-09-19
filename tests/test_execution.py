@@ -57,9 +57,16 @@ class ExecutionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Overlapping'):
             check_order(['| 13:30—14:00 | hotel | x |', '| 13:50—15:00 | photo | y |'])
 
-    def test_shared_days_have_the_same_execution_rows(self):
-        for day in (2, 3, 7, 8):
-            self.assertEqual(self.tables[PLANS[0]][day - 1], self.tables[PLANS[1]][day - 1], f'Day {day}')
+    def test_shared_clocks_and_actions_allow_plan_specific_hotel_navigation(self):
+        for day in (2, 7, 8):
+            # Column 3 intentionally names the supplied main-plan hotel only.
+            left = [row.split('|')[1:3] for row in self.tables[PLANS[0]][day - 1]]
+            right = [row.split('|')[1:3] for row in self.tables[PLANS[1]][day - 1]]
+            self.assertEqual(left, right, f'Day {day}')
+        left, right = [self.tables[name][2] for name in PLANS]
+        self.assertEqual([clock_window(row) for row in left[:-2]],
+                         [clock_window(row) for row in right[:-1]])
+        self.assertEqual(clock_window(left[-1]), (1155, 1185))
 
     def test_arxan_return_car_retrieval_and_departure_are_separate(self):
         for text, tables in zip(self.plans.values(), self.tables.values()):
@@ -104,7 +111,8 @@ class ExecutionTests(unittest.TestCase):
         self.assertIn('明珠街向南', rule)
         self.assertIn('未证明局部绕行已纳入', rule)
         self.assertIn('{#genhe-bypass}', self.sources)
-        self.assertIn('接口收藏点、实际酒店和局部导航尚待确认', self.sources)
+        self.assertIn('接口收藏点与局部导航尚待确认', self.sources)
+        self.assertIn('主方案实际酒店已录入牧野小住', self.sources)
         self.assertIn('原发布页及当期执行尚待确认', self.sources)
 
     def test_riverbend_spur_exit_precedes_main_road(self):
@@ -112,7 +120,7 @@ class ExecutionTests(unittest.TestCase):
             rows = tables[2]
             exit_row = next(row for row in rows if clock_window(row) == (1090, 1120))
             self.assertIn('支路原路退出', exit_row)
-            main_row = next(row for row in rows if clock_window(row) == (1120, 1215))
+            main_row = next(row for row in rows if clock_window(row)[0] == 1120)
             self.assertIn('接回主路后', main_row)
 
     def test_car_return_deadline_uses_actual_store_not_city_reference(self):

@@ -91,7 +91,7 @@ class OverviewPageTests(unittest.TestCase):
         for name, overview in [('primary.qmd', 'overview'), ('option-skip-qiqian.qmd', 'skip_overview')]:
             source = (ROOT / name).read_text()
             self.assertIn('itinerary-map: ' + overview, source)
-            links = re.findall(r'\[[^]\n]+\](?:\(https://[^)\n]*amap\.com[^)\n]*\)|\[(?:amap|nav)-[^]\n]+\])(\{[^}\n]+\})?', source)
+            links = re.findall(r'\[[^]\n]+\](?:\(https://[^)\n]*amap\.com[^)\n]*\)|\[(?:amap|nav|stay)-[^]\n]+\])(\{[^}\n]+\})?', source)
             self.assertGreater(len(links), 90)
             for attrs in links:
                 self.assertRegex(attrs, r'data-(?:place|photo|stop-role)="[a-z0-9_-]+"')
@@ -117,7 +117,7 @@ class OverviewPageTests(unittest.TestCase):
             self.assertGreater(rows, 65)
 
     def test_mixed_rows_do_not_make_lodging_or_rest_optional(self):
-        cases = [('primary.qmd','| 18:40—20:15 |','row-drive'),
+        cases = [('primary.qmd','| 18:40—19:15 |','row-drive'),
                  ('primary.qmd','| 09:10—09:25 |','row-rest'),
                  ('option-skip-qiqian.qmd','| 14:15—16:40 |','row-logistics')]
         for name, prefix, role in cases:

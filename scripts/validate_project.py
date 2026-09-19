@@ -13,6 +13,9 @@ from urllib.parse import unquote, urlsplit
 
 from build_fonts import font_characters, required_characters
 from build_colors import generated_css
+from build_lodgings import bd09_to_gcj02, generated_lodgings
+from datetime import date, timedelta
+from urllib.parse import parse_qs
 from build_maps import map_input_digest
 from update_amap_routes import generated_links, generated_variables, validate_snapshot
 
@@ -81,9 +84,59 @@ def validate_data(data: dict, snapshot: dict) -> None:
         require(daily_routes == maps[overview]["routes"], f"{overview}: daily route drift")
         require(not any(v > 1 for v in photo_days.values()), "Undeclared repeated photography stop")
         require(set(photo_days) == set(maps[overview].get("photos", [])), f"{overview}: daily photo drift")
+    # Main plan now has actual accommodation references; backup keeps town
+    # references. Shared sightseeing must still match after that explicit mapping.
+    lodging_towns = dict(ji_hotel="qiqihar", runfengyuan="xinzuoqi", saina="heishantou",
+                         sushuo="qika", wangjia="qiqian", muye="genhe", hanting="nenjiang")
     for n in (1, 2, 3, 4, 7, 8):
-        for field in ("routes", "labels", "photos", "photo_labels", "label_roles"):
-            require(maps[f"d{n:02}"].get(field) == maps[f"s{n:02}"].get(field), f"Shared day {n}: {field} differs")
+        main, backup = maps[f"d{n:02}"], maps[f"s{n:02}"]
+        for field in ("photos", "photo_labels"):
+            require(main.get(field) == backup.get(field), f"Shared day {n}: {field} differs")
+        normalized = []
+        for route in main["routes"]:
+            route = dict(route)
+            points = route["points"]
+            if n == 4:
+                require(points[0] == "saina" and points[1] == "heishantou", "Missing Saina morning transfer")
+                points = points[1:]
+            route["points"] = [lodging_towns.get(k, k) for k in points]
+            if route.get("amap_route", "").startswith("p"):
+                route["amap_route"] = "d" + route["amap_route"][1:]
+            normalized.append(route)
+        require(normalized == backup["routes"], f"Shared day {n}: sightseeing route differs")
+        labels = main["labels"][1:] if n == 4 else main["labels"]
+        require([lodging_towns.get(k, k) for k in labels] == backup["labels"], f"Shared day {n}: labels differ")
+        if n == 4:
+            require(main.get("label_roles") == {"heishantou": "photo"}, "Morning slope is not main-plan lodging")
+        else:
+            require(main.get("label_roles") == backup.get("label_roles"), f"Shared day {n}: roles differ")
+
+
+def validate_lodgings(data: dict, lodgings: dict) -> None:
+    stays = lodgings["stays"]
+    expected = ["ji_hotel", "yizi", "runfengyuan", "saina", "sushuo", "wangjia", "muye", "hanting"]
+    require([s["id"] for s in stays] == expected, "Missing/reordered main-plan lodging")
+    for offset, stay in enumerate(stays):
+        check_in = date(2026, 9, 25) + timedelta(days=offset)
+        require(stay["plan"] == "primary" and stay["status"] == "user_supplied", "Lodging is not a booking confirmation")
+        require(stay["check_in"] == check_in.isoformat() and
+                stay["check_out"] == (check_in + timedelta(days=1)).isoformat(), "Lodging date gap or overlap")
+        url = urlsplit(stay["amap_url"])
+        query = parse_qs(url.query)
+        require(url.scheme == "https" and url.netloc == "uri.amap.com" and url.path == "/search" and
+                stay["link_kind"] == "name_search", "Lodging link must be honest name search")
+        require(query.get("keyword") == [stay["name"]] and query.get("city") == [stay["city"]], "Wrong hotel search")
+        reference = stay["map_reference"]
+        require(reference["coordinate_system"] == "BD-09" and
+                reference["precision"] == "platform_location_not_verified_vehicle_entrance", "Unknown hotel coordinate provenance")
+        point = data["places"][stay["id"]]
+        require(point["name"] in {stay["name"], stay["name"] + "（平台位置参考）"}, "Hotel name differs between lodging and map")
+        require((point["lon"], point["lat"]) == bd09_to_gcj02(reference["lon"], reference["lat"]), "Hotel coordinate drift")
+        require(point["role"] == "stay", "Hotel must use logistics color")
+        day = data["maps"][f"d{offset + 1:02}"]
+        require(day["routes"][0]["points"][0] == stay["id"], "Morning route starts at wrong lodging")
+        if offset < 7:
+            require(day["routes"][-1]["points"][-1] == stays[offset + 1]["id"], "Evening route ends at wrong lodging")
 
 
 class Page(HTMLParser):
@@ -122,7 +175,7 @@ def validate_site(site: Path) -> None:
         require(len(page.ids) == len(set(page.ids)), f"{name}: duplicate fragment IDs")
         require(page.table_count > 0 and page.unwrapped_tables == 0, f"{name}: tables lack scroll wrappers")
         text = (site / name).read_text()
-        require("{{<" not in text and not re.search(r"\]\[(?:amap|nav)-", text), f"{name}: unresolved shortcode/link")
+        require("{{<" not in text and not re.search(r"\]\[(?:amap|nav|stay)-", text), f"{name}: unresolved shortcode/link")
         for url in page.links:
             parsed = urlsplit(url)
             if parsed.scheme or parsed.netloc:
@@ -140,11 +193,16 @@ def main() -> None:
     data = json.loads((ROOT / "data/itinerary.json").read_text())
     snapshot = json.loads((ROOT / "data/amap-routes.json").read_text())
     validate_data(data, snapshot)
+    lodgings = json.loads((ROOT / "data/lodgings.json").read_text())
+    validate_lodgings(data, lodgings)
+    table, lodging_links = generated_lodgings(lodgings)
+    require((ROOT / "includes/lodgings-primary.md").read_text() == table, "Generated lodging table stale")
+    require((ROOT / "includes/lodging-links.md").read_text() == lodging_links, "Generated lodging links stale")
     require((ROOT / "assets/colors.css").read_text() == generated_css(ROOT), "Generated palette stale; run build_colors.py")
     require((ROOT / "includes/amap-route-links.md").read_text() == generated_links(data, snapshot), "Generated links stale")
     require((ROOT / "_variables.yml").read_text() == generated_variables(data, snapshot), "Generated metrics stale")
     variables = set(re.findall(r"^([\w-]+):", generated_variables(data, snapshot), re.M))
-    definitions = set(re.findall(r"^\[([^]]+)\]:", generated_links(data, snapshot), re.M))
+    definitions = set(re.findall(r"^\[([^]]+)\]:", generated_links(data, snapshot) + lodging_links, re.M))
     for p in ROOT.glob("*.qmd"):
         text = p.read_text()
         require(set(re.findall(r"{{< var ([\w-]+) >}}", text)) <= variables, f"{p.name}: undefined metric")

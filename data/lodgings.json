@@ -1,0 +1,181 @@
+{
+  "note": "入住日期与酒店由用户截图提供；公开资料核对名称、地址及平台地图位置，不证明订单、房型、停车或未来通行。",
+  "stays": [
+    {
+      "id": "ji_hotel",
+      "plan": "primary",
+      "check_in": "2026-09-25",
+      "check_out": "2026-09-26",
+      "name": "全季齐齐哈尔卜奎大街酒店",
+      "city": "齐齐哈尔市",
+      "address": "建华区卜奎大街88号",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E5%85%A8%E5%AD%A3%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94%E5%8D%9C%E5%A5%8E%E5%A4%A7%E8%A1%97%E9%85%92%E5%BA%97&city=%E9%BD%90%E9%BD%90%E5%93%88%E5%B0%94%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://m.huazhu.com/Hotel/Detail/1610993",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 123.961881,
+        "lat": 47.354321,
+        "source_url": "https://hotels.ctrip.com/hotels/2646342.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "yizi",
+      "plan": "primary",
+      "check_in": "2026-09-26",
+      "check_out": "2026-09-27",
+      "name": "依子民宿",
+      "city": "阿尔山市",
+      "address": "G621哈拉哈河2号大桥东南约410米",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E4%BE%9D%E5%AD%90%E6%B0%91%E5%AE%BF&city=%E9%98%BF%E5%B0%94%E5%B1%B1%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/130835632.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 120.219723,
+        "lat": 47.350449,
+        "source_url": "https://hotels.ctrip.com/hotels/130835632.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "runfengyuan",
+      "plan": "primary",
+      "check_in": "2026-09-27",
+      "check_out": "2026-09-28",
+      "name": "润丰元酒店",
+      "city": "新巴尔虎左旗",
+      "address": "呼格吉乐街客运站北50米",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E6%B6%A6%E4%B8%B0%E5%85%83%E9%85%92%E5%BA%97&city=%E6%96%B0%E5%B7%B4%E5%B0%94%E8%99%8E%E5%B7%A6%E6%97%97&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/80128702.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 118.284007,
+        "lat": 48.230376,
+        "source_url": "https://hotels.ctrip.com/hotels/80128702.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "saina",
+      "plan": "primary",
+      "check_in": "2026-09-28",
+      "check_out": "2026-09-29",
+      "name": "呼伦贝尔陈巴尔虎旗赛纳民宿",
+      "city": "陈巴尔虎旗",
+      "address": "鄂温克民族苏木拉布大林六队海纳蒙古庄园西北方向900米",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E5%91%BC%E4%BC%A6%E8%B4%9D%E5%B0%94%E9%99%88%E5%B7%B4%E5%B0%94%E8%99%8E%E6%97%97%E8%B5%9B%E7%BA%B3%E6%B0%91%E5%AE%BF&city=%E9%99%88%E5%B7%B4%E5%B0%94%E8%99%8E%E6%97%97&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/135011551.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 119.842719,
+        "lat": 50.174348,
+        "source_url": "https://hotels.ctrip.com/hotels/135011551.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "sushuo",
+      "plan": "primary",
+      "check_in": "2026-09-29",
+      "check_out": "2026-09-30",
+      "name": "宿说客栈（七卡店）",
+      "city": "额尔古纳市",
+      "address": "恩和牧场七卡队14幢17号",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E5%AE%BF%E8%AF%B4%E5%AE%A2%E6%A0%88%EF%BC%88%E4%B8%83%E5%8D%A1%E5%BA%97%EF%BC%89&city=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/121742752.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 119.546877,
+        "lat": 50.749571,
+        "source_url": "https://hotels.ctrip.com/hotels/121742752.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "wangjia",
+      "plan": "primary",
+      "check_in": "2026-09-30",
+      "check_out": "2026-10-01",
+      "name": "额尔古纳奇乾王家驿站",
+      "city": "额尔古纳市",
+      "address": "奇乾乡奇乾村",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%A5%87%E4%B9%BE%E7%8E%8B%E5%AE%B6%E9%A9%BF%E7%AB%99&city=%E9%A2%9D%E5%B0%94%E5%8F%A4%E7%BA%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/43103834.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 120.771126,
+        "lat": 52.194886,
+        "source_url": "https://hotels.ctrip.com/hotels/43103834.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "muye",
+      "plan": "primary",
+      "check_in": "2026-10-01",
+      "check_out": "2026-10-02",
+      "name": "根河牧野小住宾馆",
+      "city": "根河市",
+      "address": "兴安小区东区4号",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E6%A0%B9%E6%B2%B3%E7%89%A7%E9%87%8E%E5%B0%8F%E4%BD%8F%E5%AE%BE%E9%A6%86&city=%E6%A0%B9%E6%B2%B3%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://hotels.ctrip.com/hotels/78218809.html",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 121.553233,
+        "lat": 50.784051,
+        "source_url": "https://hotels.ctrip.com/hotels/78218809.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    },
+    {
+      "id": "hanting",
+      "plan": "primary",
+      "check_in": "2026-10-02",
+      "check_out": "2026-10-03",
+      "name": "汉庭嫩江火车站店",
+      "city": "嫩江市",
+      "address": "嫩江镇嫩兴路646号",
+      "status": "user_supplied",
+      "amap_url": "https://uri.amap.com/search?keyword=%E6%B1%89%E5%BA%AD%E5%AB%A9%E6%B1%9F%E7%81%AB%E8%BD%A6%E7%AB%99%E5%BA%97&city=%E5%AB%A9%E6%B1%9F%E5%B8%82&view=map&src=dongbei-roadbook&callnative=1",
+      "link_kind": "name_search",
+      "checked_on": "2026-09-20",
+      "source_url": "https://m.huazhu.com/list/heihe-hanting",
+      "map_reference": {
+        "coordinate_system": "BD-09",
+        "lon": 125.252974,
+        "lat": 49.183293,
+        "source_url": "https://hotels.ctrip.com/hotels/132011605.html",
+        "source_field": "hotelPositionInfo",
+        "precision": "platform_location_not_verified_vehicle_entrance"
+      }
+    }
+  ]
+}

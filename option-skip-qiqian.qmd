@@ -216,9 +216,9 @@ itinerary-map: skip_overview
 | 时间 | 安排 | 对应高德导航点 |
 |---|---|---|
 | 08:00—08:40 | <span class="stop-tag row-rest">休息 / 准备</span> 起床、早餐、装车并复核油量、餐食和北线路况 | 新左旗阿木古郎镇已收藏住宿点 |
-| 08:40—11:35 | <span class="stop-tag row-drive">行车</span> 沿高德推荐主线前往莫日格勒河北线；途中择正规停车区休息，经过海拉尔交通廊道但不进城停留 | [当日主线参考][amap-d03]{data-stop-role="drive"}；进入北线前确认通行 |
-| 11:35—12:00 | <span class="stop-tag row-rest">休息 / 准备</span> 随车简餐和驾驶员休息，不进入城区补给 | 进入北线前的主路正规停车区（现场选择） |
-| 12:00—14:25 | <span class="stop-tag row-planned">主拍</span> <span class="photo-stop">条件成立时进入北线并拍摄河曲；断崖只有明确允许停车时才停靠</span> | [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"} |
+| 08:40—12:45 | <span class="stop-tag row-drive">行车</span> 沿高德推荐主线前往莫日格勒河北线；途中择正规停车区休息，经过海拉尔交通廊道但不进城停留 | [当日主线参考][amap-d03]{data-stop-role="drive"}；进入北线前确认通行 |
+| 12:45—13:10 | <span class="stop-tag row-rest">休息 / 准备</span> 随车简餐和驾驶员休息，不进入城区补给 | 进入北线前的主路正规停车区（现场选择） |
+| 13:10—14:25 | <span class="stop-tag row-planned">主拍</span> <span class="photo-stop">条件成立时进入北线并拍摄河曲；断崖只有明确允许停车时才停靠</span> | [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"} |
 | 14:30 | <span class="stop-tag row-drive">行车</span> 离开莫日格勒河的硬截止；进度落后时压缩断崖停留，不压缩河湾日落到位余量 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
 | 14:30—16:35 | <span class="stop-tag row-drive">行车</span> 前往额尔古纳湿地·根河河湾日落机位 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
 | 16:35—16:55 | <span class="stop-tag row-planned">主拍</span> 在支路入口先确认便道、围栏、停车及低光退路，再决定是否进入；不满足条件不下支路，不能开到尽端才核验 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
@@ -272,7 +272,7 @@ itinerary-map: skip_overview
 **路线**<br>
 <span class="status-tag status-no-fly">禁飞</span> <span>七卡 → 八卡 → 九卡</span> → <span class="status-tag status-check">航拍待核验</span> <span>室韦 → 临江</span> → X325 → 莫尔道嘎
 
-**里程与驾驶**：本日依次使用两段高德导航。两段合计 {{< var s05-km >}} 公里、纯驾驶约 {{< var s05-time >}}（{{< var route-checked >}} 快照）；常规执行表为 08:00—17:00，共约 9 小时，若启用七卡备选日出则从 05:15 开始。差额用于边境路段低速、通行确认、休息和拍摄。
+**里程与驾驶**：本日依次使用两段高德导航。两段合计 {{< var s05-km >}} 公里、纯驾驶约 {{< var s05-time >}}（{{< var route-checked >}} 快照）；常规执行表为 07:20—17:00，共约 9 小时 40 分，若启用七卡备选日出则从 05:15 开始。差额用于边境路段低速、通行确认、休息和拍摄。
 
 **当晚住宿**：莫尔道嘎镇。
 
@@ -289,10 +289,10 @@ itinerary-map: skip_overview
 | 时间 | 安排 | 对应高德导航点 |
 |---|---|---|
 | 05:15—06:45（天气备选） | <span class="stop-tag row-optional">选停</span> <span class="optional-stop"><img src="icons/sunrise_3222792.png" class="sun-event-icon" alt="日出">七卡河谷日出，<span class="status-tag status-no-fly">禁飞</span> <span>只用地面相机</span>；条件不成立时继续休息</span> | [七卡](https://uri.amap.com/search?keyword=七卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-stop-role="optional"} |
-| 06:50—08:00（执行备选时） | <span class="stop-tag row-rest">休息 / 准备</span> 返回七卡住宿补觉、早餐 | 七卡已收藏住宿点 |
-| 08:00 | <span class="stop-tag row-rest">休息 / 准备</span> <span class="status-tag status-no-fly">禁飞</span> <span>七卡常规起床；无人机继续收纳</span> | 七卡已收藏住宿点 |
-| 08:30—08:55 | <span class="stop-tag row-rest">休息 / 准备</span> 七卡早餐、退房 | 七卡已收藏住宿点 |
-| 09:00 | <span class="stop-tag row-drive">行车</span> <span class="status-tag status-no-fly">禁飞</span> <span>七卡出发，卡线继续禁飞</span> | [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="baka_curve"} → [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="jiuka_valley"} |
+| 06:50—07:20（执行备选时） | <span class="stop-tag row-rest">休息 / 准备</span> 返回七卡住宿补觉、早餐 | 七卡已收藏住宿点 |
+| 07:20 | <span class="stop-tag row-rest">休息 / 准备</span> <span class="status-tag status-no-fly">禁飞</span> <span>七卡常规起床；无人机继续收纳</span> | 七卡已收藏住宿点 |
+| 07:35—07:55 | <span class="stop-tag row-rest">休息 / 准备</span> 七卡早餐、退房 | 七卡已收藏住宿点 |
+| 08:00 | <span class="stop-tag row-drive">行车</span> <span class="status-tag status-no-fly">禁飞</span> <span>七卡出发，卡线继续禁飞</span> | [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="baka_curve"} → [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="jiuka_valley"} |
 | 09:40—10:20 | <span class="stop-tag row-optional">选停</span> <span class="optional-stop">八卡、九卡仅按光线择一选停，无合适停车处则通过，<span class="status-tag status-no-fly">禁飞</span> <span>只用地面相机</span></span> | [八卡](https://uri.amap.com/search?keyword=八卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="baka_curve"} / [九卡](https://uri.amap.com/search?keyword=九卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="jiuka_valley"} |
 | 10:50—11:30 | <span class="stop-tag row-rest">休息 / 准备</span> 沿途午餐、休息并检查油量；<span class="optional-stop">室韦为补给候选，餐食和油量充足时不进旅游区</span>；进入后续偏远路段前保证补给够用，飞行另按具体位置核验 UOM 与现场规则 | <span class="optional-stop">[室韦镇区参照](https://www.amap.com/place/B0IK3CUHLM){data-place="shiwei"}（选停）</span>；需要补给时另选营业网点加入导航 |
 | 11:30—12:00 | <span class="stop-tag row-drive">行车</span> 确认后续路线成立后，经室韦方向驾车前往临江并停车；不成立时在进入临江前核对开放替代路；无已确认通路则暂缓转场 | [室韦方向参照](https://www.amap.com/place/B0IK3CUHLM){data-place="shiwei"} → [临江村落脚点](https://www.amap.com/place/B0FFH58MN1){data-place="linjiang"}；不要求先到室韦旅游区 |
@@ -467,6 +467,8 @@ itinerary-map: skip_overview
 - 不追飞野生动物或牧群，不贴近民居、车辆和边防设施。
 
 ## 六、住宿与预约
+
+[主方案已提供的 8 晚住宿清单](primary.qmd#primary-lodgings)不自动等于备用方案订房。备用方案的黑山头镇住宿、莫尔道嘎住宿需另行确认；其余同城晚数也须核对是否沿用订单。
 
 ### 优先预订
 
