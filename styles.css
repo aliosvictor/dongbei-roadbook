@@ -761,6 +761,21 @@ code {
   width: 44%;
 }
 
+/* Hotel addresses need more room than the generic schedule navigation column. */
+@media (min-width: 768px) {
+  .lodging-list .compact-scroll col {
+    width: auto !important;
+  }
+
+  .lodging-list .table-scroll.compact-scroll th:first-child {
+    width: 19%;
+  }
+
+  .lodging-list .table-scroll.compact-scroll th:last-child {
+    width: 45%;
+  }
+}
+
 @media (max-width: 767.98px) {
   .prep-jump > p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
