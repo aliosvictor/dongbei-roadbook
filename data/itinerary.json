@@ -65,7 +65,7 @@
     "qiqian_mist": {"name": "奇乾村晨雾与河谷", "short": "奇乾晨雾", "lat": 52.189169, "lon": 120.766005, "grade": "S", "visit": "planned"},
     "genheyuan_wetland": {"name": "根河源湿地与冷极河（位置示意）", "short": "根河源湿地", "lat": 50.882694, "lon": 121.696944, "grade": "A", "visit": "planned"},
     "aoluguya_reindeer": {"name": "敖鲁古雅驯鹿与林地（地面拍摄）", "short": "敖鲁古雅驯鹿", "lat": 50.776185, "lon": 121.479454, "grade": "A", "visit": "planned"},
-    "heilongshan_volcano": {"name": "黑龙山—火烧山火山地貌（暂停开放，条件备选）", "short": "火山群条件备选", "lat": 48.687406, "lon": 126.116065, "grade": "S", "visit": "replacement"},
+    "heilongshan_volcano": {"name": "黑龙山—火烧山火山地貌（开放待确认，条件备选）", "short": "火山群条件备选", "lat": 48.687406, "lon": 126.116065, "grade": "S", "visit": "replacement"},
     "wenbo_wetland": {"name": "温泊火山湿地与熔岩水系", "short": "温泊火山湿地", "lat": 48.664152, "lon": 126.169478, "grade": "A", "visit": "planned"}
   },
   "navigation_points": {
