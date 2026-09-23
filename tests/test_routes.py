@@ -7,7 +7,7 @@ from PIL import Image, ImageColor, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from build_maps import COLORS, hazard_marker, photo_marker, place_role, route_chunks
+from build_maps import COLORS, hazard_marker, photo_marker, place_role, route_chunks, map_checked_date
 from build_colors import load_palette
 from update_amap_routes import (
     generated_variables, geometry_from_path, parse_geometry,
@@ -151,8 +151,26 @@ class RouteIntegrityTests(unittest.TestCase):
             self.assertEqual(data['photo_points'][key]['visit'],'optional')
         for day in ('d05','s05'):
             self.assertNotIn('qika_light',data['maps'][day]['photos'])
-        for key in ('xinzuoqi_sunset','erguna_riverbend_sunset'):
-            self.assertEqual(data['photo_points'][key]['visit'],'planned')
+        self.assertEqual(data['photo_points']['xinzuoqi_sunset']['visit'], 'planned')
+        for key in ('erguna_riverbend_sunset', 'heishantou_sunrise'):
+            self.assertEqual(data['photo_points'][key]['visit'], 'optional')
+
+    def test_partial_refresh_dates_and_route_metrics_do_not_alias_daily_maps(self):
+        data = json.loads((ROOT / 'data/itinerary.json').read_text())
+        snapshot = json.loads((ROOT / 'data/amap-routes.json').read_text())
+        self.assertEqual(map_checked_date(data['maps']['d03'], snapshot), '2026-09-23')
+        self.assertEqual(map_checked_date(data['maps']['s03'], snapshot), '2026-09-23')
+        self.assertEqual(map_checked_date(data['maps']['d04'], snapshot), '2026-09-20')
+        self.assertEqual(map_checked_date(data['maps']['overview'], snapshot), '2026-09-20—2026-09-23')
+        variables = generated_variables(data, snapshot)
+        self.assertIn('route-checked: "2026-09-20—2026-09-23"', variables)
+        self.assertIn('d03-checked: "2026-09-23"', variables)
+        self.assertIn('route-d03-checked: "2026-09-20"', variables)
+        for key in ('d03', 'p03'):
+            km = f'{snapshot["routes"][key]["distance_m"] / 1000:.1f}'
+            self.assertIn(f'route-{key}-km: "{km}"', variables)
+        for filename, key in (('primary.qmd', 'p03'), ('option-skip-qiqian.qmd', 'd03')):
+            self.assertIn('{{< var route-' + key + '-km >}}', (ROOT / filename).read_text())
 
     def test_qiqian_return_does_not_force_second_bailudao_visit(self):
         data=json.loads((ROOT/'data/itinerary.json').read_text())

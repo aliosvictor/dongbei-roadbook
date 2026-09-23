@@ -180,8 +180,13 @@ def generated_links(itinerary: dict, snapshot: dict) -> str:
 
 def generated_variables(itinerary: dict, snapshot: dict) -> str:
     """Quarto variables keep every repeated distance, duration and check date in sync."""
-    values = {"route-checked": snapshot["checked_at"][:10]}
-    groups = {key: [key] for key in snapshot["routes"]}
+    dates = sorted({r.get("checked_at", snapshot["checked_at"])[:10]
+                    for r in snapshot["routes"].values()})
+    values = {"route-checked": dates[0] if len(dates) == 1 else f"{dates[0]}—{dates[-1]}"}
+    # Route ids such as d03 are also daily map ids. Keep unambiguous route-only
+    # metrics for conditional branches while retaining existing daily aliases.
+    groups = {f"route-{key}": [key] for key in snapshot["routes"]}
+    groups.update({key: [key] for key in snapshot["routes"]})
     for key, spec in itinerary["maps"].items():
         groups[key] = [r["amap_route"] for r in spec["routes"] if r.get("draw", True)]
     for key, route_keys in groups.items():
@@ -189,6 +194,10 @@ def generated_variables(itinerary: dict, snapshot: dict) -> str:
         minutes = round(sum(snapshot["routes"][k]["duration_s"] for k in route_keys) / 60)
         values[f"{key}-km"] = f"{distance / 1000:.1f}"
         values[f"{key}-time"] = f"{minutes // 60} 小时 {minutes % 60:02d} 分"
+        route_dates = sorted({snapshot["routes"][k].get("checked_at", snapshot["checked_at"])[:10]
+                              for k in route_keys})
+        if route_dates:
+            values[f"{key}-checked"] = route_dates[0] if len(route_dates) == 1 else f"{route_dates[0]}—{route_dates[-1]}"
     # Compare the complete drawn plans: actual main-plan hotels can change
     # other days as well, so the northern two-leg difference is no longer enough.
     main_keys = [r["amap_route"] for r in itinerary["maps"]["overview"]["routes"] if r.get("draw", True)]
@@ -204,7 +213,9 @@ def generated_variables(itinerary: dict, snapshot: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--from-snapshot", action="store_true", help="Regenerate links/metrics from the existing validated snapshot without a network refresh")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--from-snapshot", action="store_true", help="Regenerate links/metrics from the existing validated snapshot without a network refresh")
+    mode.add_argument("--only", nargs="+", help="Refresh only named route specs, preserving other geometry and verification dates")
     args = parser.parse_args()
     itinerary = json.loads(ITINERARY.read_text(encoding="utf-8"))
     places = itinerary["places"]
@@ -217,9 +228,14 @@ def main() -> None:
         print("Regenerated links and metrics; snapshot geometry and verification date unchanged")
         return
     checked_at = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")
-    routes: dict[str, dict] = {}
+    previous = json.loads(OUTPUT.read_text(encoding="utf-8")) if args.only else None
+    routes: dict[str, dict] = dict(previous["routes"]) if previous else {}
+    if args.only and not set(args.only) <= itinerary["amap_route_specs"].keys():
+        parser.error("--only contains an unknown route specification")
 
     for key, spec in itinerary["amap_route_specs"].items():
+        if args.only and key not in args.only:
+            continue
         point_keys = spec["points"]
         points = [places[point_key] for point_key in point_keys]
         path, request_url = request_route(points)
@@ -227,6 +243,7 @@ def main() -> None:
         geometry, geometry_point_count = geometry_from_path(path)
         point_snap_distances_m = validate_route_points(points, geometry)
         routes[key] = {
+            "checked_at": checked_at,
             "points": point_keys,
             "point_coordinates": [[p["lon"], p["lat"]] for p in points],
             "kind": spec["kind"],
@@ -249,13 +266,16 @@ def main() -> None:
         )
 
     snapshot = {
-        "checked_at": checked_at,
+        "checked_at": previous["checked_at"] if previous else checked_at,
+        "last_refreshed_at": checked_at,
         "source": "高德地图 PC 端路线规划",
         "source_url": "https://www.amap.com/ssr/doc/route-plan",
         "policy2": 10,
         "note": "保存高德当次推荐路线的原始折线、距离和预计时间；实时路况与临时管制仍以出发时高德为准。",
         "routes": routes,
     }
+    if routes.keys() != itinerary["amap_route_specs"].keys():
+        raise ValueError("Partial refresh does not cover the current route specifications")
     for key, route in routes.items():
         validate_snapshot(itinerary["amap_route_specs"][key], route, places)
     variables = generated_variables(itinerary, snapshot)

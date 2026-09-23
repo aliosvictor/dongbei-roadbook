@@ -757,6 +757,15 @@ def build_map(
     print(f"{key}: z{zoom} -> {out.relative_to(ROOT)}")
 
 
+def map_checked_date(spec: dict, snapshot: dict) -> str:
+    """Date only the drawn routes on this map, including mixed-age snapshots."""
+    dates = sorted({snapshot["routes"][r["amap_route"]].get("checked_at", snapshot["checked_at"])[:10]
+                    for r in spec["routes"] if r.get("draw", True)})
+    if not dates:
+        raise ValueError("Map has no dated road routes")
+    return dates[0] if len(dates) == 1 else f"{dates[0]}—{dates[-1]}"
+
+
 def main() -> None:
     data = json.loads(DATA.read_text(encoding="utf-8"))
     if data.get("coordinate_system") != "GCJ-02":
@@ -765,7 +774,6 @@ def main() -> None:
     amap_routes = amap_data["routes"]
     for key, spec in data["amap_route_specs"].items():
         validate_snapshot(spec, amap_routes[key], data["places"])
-    checked_date = amap_data["checked_at"][:10]
     requested = sys.argv[1:]
     unknown = [key for key in requested if key not in data["maps"]]
     if unknown:
@@ -786,7 +794,7 @@ def main() -> None:
             OUTPUT,
             overview_spec,
             amap_routes,
-            checked_date,
+            map_checked_date(spec, amap_data),
         )
         manifest[key] = {"inputs": signature, "sha256": hashlib.sha256((OUTPUT / f"{key}.webp").read_bytes()).hexdigest()}
     manifest = {key: value for key, value in manifest.items() if key in data["maps"]}

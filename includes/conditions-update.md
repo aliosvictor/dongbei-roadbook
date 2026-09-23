@@ -1,1 +1,1 @@
-> **9 月 20 日更新**：逐日[天气趋势](sources.qmd#weather-checks)、[施工与绕行](sources.qmd#road-controls)、[属地管理分工](sources.qmd#jurisdictions)已按本次住宿和路线对应。当前中期预报有低温、降水信号；道路出线、工程完工和预订住宿均不等于已获通行许可。出发前仍须取得实际点位的短期天气及管理方答复。
+> **9 月 23 日更新**：保留 27 日新左旗日落；28 日河湾改为[准入确认后的候选](sources.qmd#riverbend-access)，29 日默认休息后北上、晨拍仅在前晚条件改善时恢复；30 日起关注低温雨雪趋势。详见[逐日天气](sources.qmd#weather-checks)、[施工绕行](sources.qmd#road-controls)及[属地管理](sources.qmd#jurisdictions)。中期预报不等于路面实况，住宿预订和导航出线不等于通行许可。

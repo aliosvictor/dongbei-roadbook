@@ -17,8 +17,10 @@ class ConditionsTests(unittest.TestCase):
         dates = re.findall(r'^\| (\d+ 月 \d+ 日) ·', self.weather, re.M)
         self.assertEqual(dates, [f'9 月 {d} 日' for d in range(25, 31)]
                          + [f'10 月 {d} 日' for d in range(1, 4)])
-        self.assertIn('2026-09-20', self.weather)
-        self.assertIn('9 月 19 日为首日', self.weather)
+        self.assertIn('2026-09-23', self.weather)
+        self.assertIn('9 月 23 日为首日', self.weather)
+        self.assertIn('覆盖至 9 月 29 日', self.weather)
+        self.assertIn('9 月 30 日—10 月 3 日', self.weather)
         self.assertIn('第 8—15 天', self.weather)
         self.assertIn('不会自动刷新', self.weather)
         self.assertIn('不能直接当成当天 05:00', self.weather)
@@ -30,10 +32,54 @@ class ConditionsTests(unittest.TestCase):
                     '嫩江': '101050602', '五大连池': '101050605',
                     '哈尔滨': '101050101'}
         for name, code in expected.items():
-            self.assertIn(f'[{name}](https://e.weather.com.cn/mweather15d/{code}.shtml)',
+            kind = 'weather15d' if name in ('根河', '嫩江', '五大连池', '哈尔滨') else 'weather'
+            self.assertIn(f'[{name}](https://www.weather.com.cn/{kind}/{code}.shtml)',
                           self.weather)
-        self.assertIn('未取得奇乾村、白鹿岛、莫尔道嘎本地', self.weather)
+        self.assertIn('未取得奇乾村、白鹿岛逐点可靠预报', self.weather)
+        self.assertIn('10108101401A.shtml', self.weather)
+        self.assertIn('公园预报不等于奇乾村', self.weather)
         self.assertIn('不能用陈旗旗府天气替代民宿实况', self.weather)
+
+    def test_candidate_roles_and_access_gate_match_across_plans(self):
+        data = json.loads((ROOT / 'data/itinerary.json').read_text())
+        self.assertEqual(data['places']['erguna_riverbend']['role'], 'optional')
+        for key in ('erguna_riverbend_sunset', 'heishantou_sunrise'):
+            self.assertEqual(data['photo_points'][key]['visit'], 'optional')
+        self.assertEqual(data['photo_points']['xinzuoqi_sunset']['visit'], 'planned')
+        gate = (ROOT / 'includes/riverbend-gate.md').read_text()
+        for phrase in ('保护区边界尚未核定', '不专程去支路入口探路', '删除河湾途经点'):
+            self.assertIn(phrase, gate)
+        self.assertIn('{#riverbend-access}', self.pages['sources.qmd'])
+        self.assertIn('1439809.html', self.pages['sources.qmd'])
+        for day, key in (('d03', 'p03_direct'), ('s03', 'd03_direct')):
+            self.assertEqual(data['maps'][day]['routes'][0]['amap_route'], key)
+            self.assertNotIn('erguna_riverbend', data['amap_route_specs'][key]['points'])
+            self.assertIn('erguna_riverbend_sunset', data['maps'][day]['photos'])
+            self.assertIn(day, data['route_options'])
+        for name in ('primary.qmd', 'option-skip-qiqian.qmd'):
+            self.assertIn('{{< include includes/riverbend-gate.md >}}', self.pages[name])
+            self.assertIn('候选晨拍：仅 9 月 28 日晚确认条件改善后启用', self.pages[name])
+        for text in self.pages.values():
+            for stale in ('河湾固定日落', '唯一固定日落', '两个明确蓝点', '| 固定早起 |'):
+                self.assertNotIn(stale, text)
+
+    def test_original_road_notice_and_historical_reopening_are_distinguished(self):
+        text = self.pages['sources.qmd']
+        for phrase in ('1431216.html', '1444462.html', '1448717.html',
+                       '政府原文已核实', '7 月 22 日 17:30', '截至 8 月 6 日'):
+            self.assertIn(phrase, text)
+        self.assertNotIn('未取得原发布页', text)
+        self.assertNotIn('仍只有封闭公告转载', text)
+
+    def test_cold_weather_is_conditional_and_wenbo_is_not_a_mandatory_four_hours(self):
+        for name in ('primary.qmd', 'option-skip-qiqian.qmd'):
+            text = self.pages[name]
+            self.assertIn('{{< include includes/cold-weather-gate.md >}}', text)
+            self.assertIn('不强凑 4 小时', text)
+            self.assertIn('最长 4 小时拍摄预算', text)
+        self.assertNotIn('9 月 28 日和 10 月 3 日也均为 08:00 起床，接受主路夜间驾驶', self.pages['option-skip-qiqian.qmd'])
+        self.assertIn('15:45 是最晚离场上限', self.weather)
+        self.assertIn('备用方案同受冷空气影响', self.weather)
 
     def test_dated_weather_has_one_authoritative_table(self):
         for name in ('index.qmd', 'primary.qmd', 'option-skip-qiqian.qmd'):

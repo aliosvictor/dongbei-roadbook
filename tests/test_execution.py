@@ -53,6 +53,15 @@ class ExecutionTests(unittest.TestCase):
                 with self.subTest(plan=name, day=day):
                     check_order(rows)
 
+    def test_blackhead_default_morning_starts_at_eight_with_optional_sunrise_separate(self):
+        for name, tables in self.tables.items():
+            rows = tables[3]
+            self.assertEqual(clock_window(rows[0])[0], 480, name)
+            self.assertNotIn((275, 320), [clock_window(row) for row in rows])
+            self.assertIn('不进晨拍观测坡', '\\n'.join(rows))
+            self.assertIn('候选晨拍：仅 9 月 28 日晚确认条件改善后启用', self.plans[name])
+        self.assertIn('**04:35—05:20**', self.plans['primary.qmd'])
+
     def test_overlap_detector_rejects_a_regression(self):
         with self.assertRaisesRegex(ValueError, 'Overlapping'):
             check_order(['| 13:30—14:00 | hotel | x |', '| 13:50—15:00 | photo | y |'])
@@ -65,8 +74,9 @@ class ExecutionTests(unittest.TestCase):
             self.assertEqual(left, right, f'Day {day}')
         left, right = [self.tables[name][2] for name in PLANS]
         self.assertEqual([clock_window(row) for row in left[:-2]],
-                         [clock_window(row) for row in right[:-1]])
-        self.assertEqual(clock_window(left[-1]), (1155, 1185))
+                         [clock_window(row) for row in right[:-2]])
+        self.assertEqual(clock_window(left[-1]), (975, 1005))
+        self.assertEqual(clock_window(right[-1]), (1005, 1035))
 
     def test_arxan_return_car_retrieval_and_departure_are_separate(self):
         for text, tables in zip(self.plans.values(), self.tables.values()):
@@ -113,11 +123,14 @@ class ExecutionTests(unittest.TestCase):
         self.assertIn('{#genhe-bypass}', self.sources)
         self.assertIn('接口收藏点与局部导航尚待确认', self.sources)
         self.assertIn('主方案实际酒店已录入牧野小住', self.sources)
-        self.assertIn('原发布页及当期执行尚待确认', self.sources)
+        self.assertIn('政府原文已核实，当期执行与导航折线匹配尚待确认', self.sources)
 
     def test_riverbend_spur_exit_precedes_main_road(self):
-        for tables in self.tables.values():
-            rows = tables[2]
+        for text in self.plans.values():
+            section = text.split('| 候选时间 | 安排 | 对应高德导航点 |', 1)[1]
+            rows = [line for line in section.split('</details>', 1)[0].splitlines()
+                    if line.startswith('| ') and not line.startswith('|---')]
+            check_order(rows)
             exit_row = next(row for row in rows if clock_window(row) == (1090, 1120))
             self.assertIn('支路原路退出', exit_row)
             main_row = next(row for row in rows if clock_window(row)[0] == 1120)

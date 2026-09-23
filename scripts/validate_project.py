@@ -97,7 +97,7 @@ def validate_data(data: dict, snapshot: dict) -> None:
             route = dict(route)
             points = route["points"]
             if n == 4:
-                require(points[0] == "saina" and points[1] == "heishantou", "Missing Saina morning transfer")
+                require(points[0] == "saina" and points[1] == "heishantou", "Missing Saina to Heishantou route reference")
                 points = points[1:]
             route["points"] = [lodging_towns.get(k, k) for k in points]
             if route.get("amap_route", "").startswith("p"):
@@ -107,7 +107,7 @@ def validate_data(data: dict, snapshot: dict) -> None:
         labels = main["labels"][1:] if n == 4 else main["labels"]
         require([lodging_towns.get(k, k) for k in labels] == backup["labels"], f"Shared day {n}: labels differ")
         if n == 4:
-            require(main.get("label_roles") == {"heishantou": "photo"}, "Morning slope is not main-plan lodging")
+            require(main.get("label_roles") == {"heishantou": "reference"}, "Heishantou reference is not mandatory photography or main-plan lodging")
         else:
             require(main.get("label_roles") == backup.get("label_roles"), f"Shared day {n}: roles differ")
 

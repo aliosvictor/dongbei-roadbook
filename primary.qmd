@@ -9,8 +9,8 @@ lightbox: true
 itinerary-map: overview
 ---
 
-> 版本日期：{{< var route-checked >}}<br>
-> 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 新巴尔虎左旗阿木古郎镇 → 莫日格勒河北线 → 额尔古纳湿地·根河河湾日落机位 → 赛纳民宿 → 黑山头晨拍 → 卡线 → 奇乾 → 根河 → 敖鲁古雅 → 嫩江 → 温泊 → 哈尔滨
+> 行程与条件更新：2026-09-23 · 高德路线快照：{{< var route-checked >}}<br>
+> 核心路线：齐齐哈尔 → 蘑阿公路 → 阿尔山 → 新巴尔虎左旗阿木古郎镇 → 莫日格勒河北线 → 额尔古纳湿地·根河河湾（准入候选）→ 赛纳民宿 → 黑山头（晨拍候选）→ 卡线 → 奇乾 → 根河 → 敖鲁古雅 → 嫩江 → 温泊 → 哈尔滨
 
 ![八日完整路线总览](figures/maps/overview.webp){.route-map loading="eager" decoding="async" fetchpriority="high" fig-alt="从齐齐哈尔经阿尔山、呼伦贝尔、卡线、奇乾、根河和五大连池到哈尔滨的完整路线图"}
 
@@ -28,13 +28,13 @@ itinerary-map: overview
 
 1. 蘑阿公路西段的森林、河谷与火山地貌；
 2. 阿尔山乌苏浪子湖日出与不冻河日落；
-3. 莫日格勒河北线断崖河曲和额尔古纳湿地·根河河湾日落；
+3. 莫日格勒河北线断崖河曲；额尔古纳湿地·根河河湾日落为准入确认后的候选；
 4. 黑山头至七卡的卡线核心段；
 5. 七卡、室韦、临江、白鹿岛至奇乾的森林边境线；
 6. 奇乾村晨景、根河方向沿途秋林与敖鲁古雅驯鹿地面拍摄；
 7. 五大连池温泊火山湿地。
 
-车辆已在 9 月 25 日取妥，9 月 26 日装车后直接离开齐齐哈尔；9 月 27 日游览阿尔山后住新巴尔虎左旗阿木古郎镇，保留湿地草原日落，并在当晚完成次日补给；9 月 28 日从新左旗按高德推荐主线接入莫日格勒河北线，经过海拉尔交通廊道但不进城停留或补给。9 月 29 日以卡线为绝对优先；9 月 30 日按道路条件和硬截止时间串联室韦方向、临江、白鹿岛，争取 17:30 前抵达奇乾。10 月 1 日只安排全程最后一次日出早起，返程经过莫尔道嘎方向，补给按需选停；10 月 2 日上午拍敖鲁古雅驯鹿后住嫩江，10 月 3 日默认走温泊回哈尔滨，把两段长距离转场分开执行。
+按 9 月 25 日完成取车安排，9 月 26 日装车后直接离开齐齐哈尔；9 月 27 日游览阿尔山后住新巴尔虎左旗阿木古郎镇，保留湿地草原日落，并在当晚完成次日补给；9 月 28 日从新左旗按高德推荐主线接入莫日格勒河北线，经过海拉尔交通廊道但不进城停留或补给。9 月 29 日默认 08:00 起床，休息后北上，以卡线为绝对优先；9 月 30 日按道路条件和硬截止时间串联室韦方向、临江、白鹿岛，争取 17:30 前抵达奇乾。10 月 1 日只安排全程最后一次日出早起，返程经过莫尔道嘎方向，补给按需选停；10 月 2 日上午拍敖鲁古雅驯鹿后住嫩江，10 月 3 日默认走温泊回哈尔滨，把两段长距离转场分开执行。
 
 ## 二、拍摄优先级
 
@@ -45,7 +45,7 @@ itinerary-map: overview
 - 蘑阿公路西段沿途秋林、河谷和火山地貌；
 - 乌苏浪子湖日出；
 - 莫日格勒河北线河曲；断崖仅在现场明确允许时停靠；
-- <span class="status-tag status-check">航拍待核验</span> <span>额尔古纳湿地·根河河湾日落机位（地图选点，非景区 POI）</span>；
+- <span class="status-tag status-check">航拍待核验</span> <span class="optional-stop">额尔古纳湿地·根河河湾日落候选（地图选点，准入待确认）</span>；
 - <span class="status-tag status-no-fly">禁飞</span> <span>五卡—乌兰山—七卡的卡线风光只用地面相机</span>；
 - <span class="status-tag status-no-fly">禁飞</span> <span>七卡—八卡—九卡卡线段只用地面相机</span>；室韦、临江、白鹿岛按核验结果决定无人机；
 - <span class="status-tag status-no-fly">禁飞</span> <span>奇乾村晨雾、木屋、河谷与秋林（只用地面相机）</span>；
@@ -55,7 +55,7 @@ itinerary-map: overview
 
 - 阿尔山不冻河日落；
 - <span class="status-tag status-check">航拍待核验</span> <span>新巴尔虎左旗阿木古郎湿地草原日落</span>；
-- <span class="status-tag status-check">航拍待核验</span> <span>黑山头日出</span>；
+- <span class="status-tag status-check">航拍待核验</span> <span class="optional-stop">黑山头日出（前晚决定的候选）</span>；
 - 10 月 1 日莫尔道嘎至根河主路沿途秋林，顺路短停。
 
 ### B 级：顺路补充
@@ -67,9 +67,9 @@ itinerary-map: overview
 | 日期 | 主拍与顺路安排 | 选择条件 |
 |---|---|---|
 | 9 月 26 日 | 主拍：不冻河日落；<span class="optional-stop">选停：蘑阿公路秋林河谷</span> | 沿途按光线选停，最多 3 次正规停车带短停，不为构图进入支路；不冻河无法执行时，替换为住宿附近合法河岸拍摄 |
-| 9 月 27 日 | 乌苏浪子湖日出；驼峰岭天池；<span class="status-tag status-check">航拍待核验</span> <span>阿木古郎湿地公园周边日落候选区</span> | 乌苏浪子湖固定；驼峰岭优先，时间足够才从杜鹃湖、石塘林中加选 1 个；16:45 前到日落候选区现场核验开放、停车、围栏、风与 UOM，不能进入时改在镇郊合法公共区域地面拍摄 |
-| 9 月 28 日 | [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}；[额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} | 两个蓝点均给出高德落点；河湾机位用于拍额尔古纳湿地黄昏，但只是地图选点、不是景区 POI；断崖只在允许停车时拍，两处均须核验 UOM 与现场管理 |
-| 9 月 29 日 | <span class="status-tag status-check">航拍待核验</span> <span>黑山头日出</span>；<span class="status-tag status-no-fly">禁飞</span> <span>乌兰山太极湾</span>；<span class="optional-stop">选停：五卡河谷</span> | 七卡暮色仅天气与体力合适时在住宿附近拍；<span class="status-tag status-no-fly">禁飞</span> <span>离开黑山头进入卡线后只用地面相机</span> |
+| 9 月 27 日 | 乌苏浪子湖日出；驼峰岭天池；<span class="status-tag status-check">航拍待核验</span> <span>阿木古郎湿地公园周边日落候选区</span> | 乌苏浪子湖按前晚小时预报与休息决定，持续降水则跳过晨拍；驼峰岭优先，时间足够才从杜鹃湖、石塘林中加选 1 个；16:45 前到日落候选区现场核验开放、停车、围栏、风与 UOM，不能进入时改在镇郊合法公共区域地面拍摄 |
+| 9 月 28 日 | [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}；[额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} | 断崖为蓝色主拍、现场允许停车才停；河湾为紫色准入候选，出发前取得保护区边界及进路答复才启用；未确认则删除河湾途经点，直接去住宿 |
+| 9 月 29 日 | <span class="status-tag status-check">航拍待核验</span> <span class="optional-stop">黑山头日出（前晚决定的候选）</span>；<span class="status-tag status-no-fly">禁飞</span> <span>乌兰山太极湾</span>；<span class="optional-stop">选停：五卡河谷</span> | 默认 08:00 起床，不追黑山头日出；仅前晚小时天气、路面及睡眠均支持时恢复。七卡暮色按天气与体力选拍；<span class="status-tag status-no-fly">禁飞</span> <span>离开黑山头进入卡线后只用地面相机</span> |
 | 9 月 30 日 | <span class="status-tag status-check">航拍待核验</span> <span>临江河谷、白鹿岛河谷</span>；<span class="optional-stop">选停：八卡或九卡择一短拍</span> | 七卡日出仅作天气替换，不固定早起；卡线段只用地面相机；后续机位逐点核验通行与飞行条件 |
 | 10 月 1 日 | <span class="status-tag status-no-fly">禁飞</span> <span>奇乾晨雾</span>；<span class="optional-stop">选停：莫尔道嘎至根河主路秋林</span> | <span class="status-tag status-no-fly">禁飞</span> <span>奇乾只用地面相机</span>；沿高德主线找正规停车点短拍，不设固定林景坐标，不为拍摄进入支路 |
 | 10 月 2 日 | [敖鲁古雅使鹿部落景区](https://www.amap.com/place/B0K1NULQCT){data-place="aoluguya"} | 驯鹿与林地地面拍摄；动物附近无人机保持收纳，10:20 后进入嫩江方向长转场 |
@@ -84,8 +84,8 @@ itinerary-map: overview
 | 9 月 26 日 | 阿尔山不冻河 | 05:49 | 17:51 | 17:00—17:05 |
 | 9 月 27 日 | 乌苏浪子湖（日出） | 05:50 | — | 05:10—05:15 |
 | 9 月 27 日 | 新左旗阿木古郎（日落） | — | 约 17:57 | 16:45—17:00 |
-| 9 月 28 日 | 额尔古纳湿地·根河河湾 | 05:53 | 17:47 | 16:45—17:00 |
-| 9 月 29 日 | 黑山头 | 05:57 | 17:47 | 05:15—05:20 |
+| 9 月 28 日 | 额尔古纳湿地·根河河湾（准入候选） | 05:53 | 17:47 | 16:45—17:00 |
+| 9 月 29 日 | 黑山头（天气候选） | 05:57 | 17:47 | 05:15—05:20；前晚启用后执行 |
 | 9 月 30 日 | 七卡（天气备选） | 05:59 | 17:44 | 05:15—05:20；满足替换条件时执行 |
 | 10 月 1 日 | 奇乾 | 05:56 | 17:37 | 05:15—05:20 |
 
@@ -206,6 +206,8 @@ itinerary-map: overview
 
 **停车与交通**：乌苏浪子湖以宾馆为停车候选，提前确认允许外来车辆停靠后再导航；无法落实时改用已确认的车辆与上下客点；景交期间车辆留在金江沟。阿木古郎湿地公园没有经过独立核实的停车场落点，只能名称搜索后选择公共道路正规停车位置；不越围栏、不占道、不驶入草地。不能安全进入时，改在阿木古郎镇郊合法公共区域用地面相机完成日落，不继续寻找偏僻土路。
 
+**晨拍天气门槛**：26 日晚查询乌苏浪子湖实际点位小时预报及路面，持续降水、能见度不足或司机休息不足时不启用凌晨晨拍；在依子休息后按已确认的景交首班安排前往金江沟。不得压缩 10:30 返程、11:50 取车与 12:20 离场余量。
+
 **接驳执行条件**：9 月 25 日向景区确认首班、去程换乘、返程上车站和候车时间，再按“11:50 回到金江沟”倒推返程。若无法保证至少 90 分钟步行游览及按时取车，出发前改选景区确认能按时往返的较近开放点，不压缩返程余量。凌晨用预约车辆时，约定“依子接人 → 湖边合法上下客点 → 返回依子取自驾车与行李 → 自驾去金江沟”；自驾获准时按湖边停车 → 金江沟执行。各段均须落实上下客点，不能让人和自驾车分在不同出口。
 
 **拍摄重点**
@@ -216,69 +218,86 @@ itinerary-map: overview
 
 ---
 
-### Day 3｜9 月 28 日：新巴尔虎左旗—莫日格勒河北线—额尔古纳湿地河湾—赛纳民宿 {#day-3}
+### Day 3｜9 月 28 日：新巴尔虎左旗—莫日格勒河北线—赛纳民宿 {#day-3}
 
-![Day 3 路线与全程定位](figures/maps/d03.webp){.route-map loading="lazy" decoding="async" fig-alt="新巴尔虎左旗经莫日格勒河和额尔古纳河湾到赛纳民宿的当日路线图"}
+![Day 3 路线与全程定位](figures/maps/d03.webp){.route-map loading="lazy" decoding="async" fig-alt="新巴尔虎左旗经莫日格勒河直达赛纳民宿的当日路线图"}
 
 **路线**<br>
-新巴尔虎左旗阿木古郎镇 → 莫日格勒河北线断崖（条件停靠）→ <span class="status-tag status-check">航拍待核验</span> <span>额尔古纳湿地·根河河湾日落机位</span> → 经额尔古纳主路 → 赛纳民宿
+新巴尔虎左旗阿木古郎镇 → 莫日格勒河北线断崖（条件停靠）→ 沿开放主路 → 赛纳民宿
 
 **里程与驾驶**<br>
-高德推荐方案（{{< var route-checked >}} 快照）为 {{< var d03-km >}} 公里、纯驾驶约 {{< var d03-time >}}；执行表为 08:00—19:45，共 11 小时 45 分。前一晚已在阿木古郎镇完成加油和餐食准备，差额用于北岸低速路、便道核验、休息和两处拍摄。
+默认不进河湾的高德推荐方案（{{< var d03-checked >}} 快照）为 {{< var d03-km >}} 公里、纯驾驶约 {{< var d03-time >}}；默认执行表为 08:00—16:45，共 8 小时 45 分。河湾只保留候选点，不在默认地图中绘制其支路；启用后另用候选路线与预算。前一晚已在阿木古郎镇完成加油和餐食准备，差额用于北岸低速路、通行核验、休息及莫日格勒拍摄。
 
 **当晚住宿**<br>
-[呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"}，9 月 28 日入住、29 日退房；陈巴尔虎旗鄂温克民族苏木拉布大林六队，海纳蒙古庄园西北方向 900 米。不是黑山头镇内住宿，次晨需提前驾车前往观测坡。
+[呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"}，9 月 28 日入住、29 日退房；陈巴尔虎旗鄂温克民族苏木拉布大林六队，海纳蒙古庄园西北方向 900 米。不是黑山头镇内住宿；次日默认睡足后带行李北上，只有前晚启用晨拍时才凌晨去观测坡。
 
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　[润丰元酒店][stay-runfengyuan]{data-stop-role="logistics"} → [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}（条件停靠）→ [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} → 经额尔古纳主路 → [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"}。
+**默认自驾顺序**　[润丰元酒店][stay-runfengyuan]{data-stop-role="logistics"} → [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}（条件停靠）→ 沿开放主路 → [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"}。不经过河湾候选点。
 
-**整段核验**　[在高德打开 9 月 28 日完整途经点路线][amap-p03]{data-stop-role="drive"}
+**默认整段导航**　[9 月 28 日不进河湾的主路参考][amap-p03_direct]{data-stop-role="drive"}（{{< var d03-checked >}} 核验）；断崖受限时按景区回退另算，不能据此推定北线或酒店入口已获准。
 
-**补给安排**　前一晚在阿木古郎镇完成加油、早餐、简易午餐和饮水采购；当天即使按高德主线经过海拉尔交通廊道，也不进城补给。08:40 出发前再次确认莫日格勒河北线至断崖路面、断崖停车与河湾便道状态。
+**候选路线参考**　[仅河湾准入已确认时使用的 9 月 28 日途经点路线][amap-p03]{data-stop-role="drive"}
 
-**两个蓝点的定位边界**　北线蓝点是[莫日格勒河断崖高德 POI](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}，高德坐标 `120.094643, 49.699578`；日落蓝点是[额尔古纳湿地·根河河湾地图选点](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"}，高德坐标 `120.233890, 50.299354`。后者只是根据地图画面拟合的候选机位，不是“额尔古纳国家湿地公园”或“额尔古纳湿地景区”的正式 POI；导航只能定位到坐标附近，最后一段进路的实际长度、路面与通行条件须在天黑前确认。
+**补给安排**　前一晚在阿木古郎镇完成加油、早餐、简易午餐和饮水采购；当天即使按高德主线经过海拉尔交通廊道，也不进城补给。08:40 出发前再次确认莫日格勒河北线至断崖路面、断崖停车与河湾准入答复；未获确认即删去河湾，不专程探路。
+
+**主拍与候选点的定位边界**　北线蓝点是[莫日格勒河断崖高德 POI](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}，高德坐标 `120.094643, 49.699578`；紫色日落候选点是[额尔古纳湿地·根河河湾地图选点](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"}，高德坐标 `120.233890, 50.299354`。后者只是根据地图画面拟合的候选机位，不是“额尔古纳国家湿地公园”或“额尔古纳湿地景区”的正式 POI；导航只能定位到坐标附近，最后一段进路的实际长度、路面与通行条件须在天黑前确认。
 
 **北岸主选**　只在道路干燥、当地确认开放且车辆条件合适时，按高德整段路线前往[断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"}。只有现场明确允许并有正规停车位置时才停靠；遇封闭、禁停或路况不成立就直接切换安全回退。
 
 **安全回退**　改为[呼伦贝尔大草原·莫尔格勒河景区](https://www.amap.com/place/B0JDZ5C6RX){data-stop-role="optional"}停车，按当天管理乘观光车前往[浩林温都日驿站](https://www.amap.com/place/B0J10U123W){data-stop-role="optional"}，不搜索来源不明的“高端观景台”。
 
-**湿地回退**　河湾便道雨后泥泞、设有围栏或现场不允许进入时，不驶入草地。只有能够在 15:00 前到达且已确认开放时，才以[额尔古纳国家湿地公园](https://www.amap.com/place/B0FFJ2XXCH){data-stop-role="optional"}替换河湾日落机位；两处不叠加执行；傍晚才发现河湾不能进入时，取消该处拍摄并沿主路去赛纳民宿。
+{{< include includes/riverbend-gate.md >}}
+
+**湿地回退**　出发前尚未确认保护区准入，或便道雨后泥泞、设有围栏、现场不允许进入时，删除河湾途经点，不下支路、不驶入草地。只有能够在 15:00 前到达且已确认开放时，才以[额尔古纳国家湿地公园](https://www.amap.com/place/B0FFJ2XXCH){data-stop-role="optional"}替换河湾日落机位；两处不叠加执行；傍晚才发现河湾不能进入时，取消该处拍摄并沿主路去赛纳民宿。
 :::
 
 **莫日格勒河位置**<br>
-莫日格勒河位于海拉尔以北、陈巴尔虎草原腹地。高德核验路线从新左旗出发，按推荐道路经过海拉尔交通廊道后，依次连接北线断崖、河湾日落机位和赛纳民宿；海拉尔城区和额尔古纳市区都不设停留点，只有突发补给需要时才按实时导航另行进入。
+莫日格勒河位于海拉尔以北、陈巴尔虎草原腹地。默认高德快照从新左旗出发，经海拉尔交通廊道及北线断崖后直接去赛纳，河湾只显示候选点、不画支路线；旧河湾链接只在准入确认后使用；海拉尔城区和额尔古纳市区都不设停留点，只有突发补给需要时才按实时导航另行进入。
 
 **时间安排**
 
 | 时间 | 安排 | 对应高德导航点 |
 |---|---|---|
 | 08:00—08:40 | <span class="stop-tag row-rest">休息 / 准备</span> 起床、早餐、装车并复核油量、餐食和北线路况 | [润丰元酒店][stay-runfengyuan]{data-stop-role="logistics"} |
-| 08:40—12:45 | <span class="stop-tag row-drive">行车</span> 沿高德推荐主线前往莫日格勒河北线；途中择正规停车区休息，经过海拉尔交通廊道但不进城停留 | [当日主线参考][amap-p03]{data-stop-role="drive"}；进入北线前确认通行 |
+| 08:40—12:45 | <span class="stop-tag row-drive">行车</span> 沿高德推荐主线前往莫日格勒河北线；途中择正规停车区休息，经过海拉尔交通廊道但不进城停留 | [当日主线参考][amap-p03_direct]{data-stop-role="drive"}；进入北线前确认通行 |
 | 12:45—13:10 | <span class="stop-tag row-rest">休息 / 准备</span> 随车简餐和驾驶员休息，不进入城区补给 | 进入北线前的主路正规停车区（现场选择） |
 | 13:10—14:25 | <span class="stop-tag row-planned">主拍</span> <span class="photo-stop">条件成立时进入北线并拍摄河曲；断崖只有明确允许停车时才停靠</span> | [莫日格勒河断崖](https://www.amap.com/place/B0KDPC3LJC){data-place="morigele_cliff"} |
-| 14:30 | <span class="stop-tag row-drive">行车</span> 离开莫日格勒河的硬截止；进度落后时压缩断崖停留，不压缩河湾日落到位余量 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
-| 14:30—16:35 | <span class="stop-tag row-drive">行车</span> 前往额尔古纳湿地·根河河湾日落机位 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
-| 16:35—16:55 | <span class="stop-tag row-planned">主拍</span> 在支路入口先确认便道、围栏、停车及低光退路，再决定是否进入；不满足条件不下支路，不能开到尽端才核验 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
-| 16:55—18:10 | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-check">航拍待核验</span> <span class="photo-stop"><img src="icons/sunset_3222795.png" class="sun-event-icon" alt="日落">额尔古纳湿地河湾固定日落；核验通过时以无人机拍河曲、湿地林带与斜射光，地面相机兜底</span> | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
-| 18:10—18:40 | <span class="stop-tag row-drive">行车</span> 最晚 18:10 上车，沿入场时已核对的约 6 公里支路原路退出，接回主路；若低光无法安全退出，提前收拍 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
-| 18:40—19:15 | <span class="stop-tag row-drive">行车</span> 接回主路后前往赛纳民宿；<span class="optional-stop">额尔古纳市区补给仅缺油缺餐时另加</span>，绕行另计；提前抵达即可入住 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
-| 19:15—19:45 | <span class="stop-tag row-logistics">住宿 / 换乘</span> 目标到店、入住并约定早退房和打包早餐；提前到即可休息，延误时联系店家，不赶路 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+| 14:30 | <span class="stop-tag row-drive">行车</span> 离开莫日格勒河，默认不去河湾；雨后北线受限则由正规景区沿开放主路出发 | [不进河湾的主路参考][amap-p03_direct]{data-stop-role="drive"} |
+| 14:30—16:15 | <span class="stop-tag row-drive">行车</span> 沿开放主路前往当晚住宿，含低速与途中休息机动；实际交通变化时联系住宿，不为赶点提速 | [不进河湾的主路参考][amap-p03_direct]{data-stop-role="drive"} |
+| 16:15—16:45 | <span class="stop-tag row-logistics">住宿 / 换乘</span> 默认目标到店、入住休息；确认供暖、晚餐和次日出发道路，提前到即可入住 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+
+<details class="source-details">
+<summary>河湾准入候选：只有提前确认合法进路后，才替换下午直达住宿分支</summary>
+
+候选沿用 {{< var route-p03-checked >}} 高德快照：{{< var route-p03-km >}} 公里、纯驾驶约 {{< var route-p03-time >}}，不能当作今天的通行确认。以管理方确认的合法入口重新核对导航，不驶入未经确认的便道；以下预算与默认 14:30 后安排二选一，不能叠加。
+
+| 候选时间 | 安排 | 对应高德导航点 |
+|---|---|---|
+| 14:30 | <span class="stop-tag row-drive">行车</span> 离开莫日格勒河的硬截止；已启用河湾才预留日落到位余量，未启用则直接按开放主路去住宿 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
+| 14:30—16:35 | <span class="stop-tag row-drive">行车</span> 仅准入已确认时前往河湾候选；未启用则按实时导航去当晚住宿，不等待此窗口 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/navigation?to=120.233890,50.299354,额尔古纳湿地根河河湾日落机位&mode=car&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
+| 16:35—16:55 | <span class="stop-tag row-optional">条件候选</span> 仅已获准入答复时在合法入口复核便道、停车及低光退路；任一不满足即放弃，不进入草地试路 | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
+| 16:55—18:10 | <span class="stop-tag row-optional">条件候选</span> <span class="status-tag status-check">航拍待核验</span> <span class="optional-stop"><img src="icons/sunset_3222795.png" class="sun-event-icon" alt="日落">河湾日落仅在准入、进路与天气均成立时拍摄；飞行另核 UOM 与保护区管理方，不以地面可达代替许可</span> | [额尔古纳湿地·根河河湾日落机位](https://uri.amap.com/marker?position=120.233890,50.299354&name=额尔古纳湿地根河河湾日落机位&coordinate=gaode&callnative=0){data-place="erguna_riverbend"} |
+| 18:10—18:40 | <span class="stop-tag row-drive">行车</span> 仅启用河湾时最晚 18:10 上车，沿入场时已核对的约 6 公里支路原路退出，接回主路；若低光无法安全退出，提前收拍 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+| 18:40—19:15 | <span class="stop-tag row-drive">行车</span> 仅启用河湾时接回主路后前往赛纳民宿；<span class="optional-stop">额尔古纳市区补给仅缺油缺餐时另加</span>，绕行另计；提前抵达即可入住 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+| 19:15—19:45 | <span class="stop-tag row-logistics">住宿 / 换乘</span> 目标到店、入住；默认次晨早餐后退房，仅候选晨拍启用时另约早退房和打包早餐；提前到即可休息，延误时联系店家，不赶路 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+
+</details>
 
 **拍摄重点**
 
 - 莫日格勒河以北线河曲为第一优先；断崖只作条件机位，通行与停车规则高于拍摄；
-- 额尔古纳湿地·根河河湾是当天第二核心和唯一固定日落，重点拍河道弯曲、湿地林带与低角度光；名称说明拍摄对象，不冒充国家湿地公园或市区西侧额尔古纳湿地景区的正式 POI；
+- 河湾日落为紫色准入候选，不是固定必到点；确认合法进路后才拍河曲、湿地林带与低角度光，无法确认时直接去赛纳，不为补点绕行；
 - 28–70mm 用于压缩河曲和远处牛羊，16–28mm 用于草原大景；
 - 莫日格勒河与河湾日落都以无人机画面为主，但每次起飞仍须同时通过 UOM、景区或土地管理方、风速与人流核验；不把“地图可解禁”当作允许起飞。
 
 **执行重点**
 
 - 出发前两天向景区或当地住宿方确认莫日格勒河北线至断崖道路是否开放、是否积水、车辆要求和断崖是否禁停；不以短视频口述替代当天确认；
-- 北线不可达时使用正规景区观光车；14:30 后仍未离开莫日格勒河时立即转场，不为补拍断崖牺牲日落前的便道勘察；
+- 北线不可达时使用正规景区观光车；14:30 后仍未离开莫日格勒河时立即转场，不为补拍断崖压缩驾驶休息；启用河湾时还须保留入场复核与退路余量；
 - 新左旗阿木古郎镇是前一晚住宿与固定补给点；当天海拉尔只按主线过境，不增加海拉尔或额尔古纳市区补给绕行；
-- 日落后先沿已核准支路原路退出，再走实时导航确认的主路前往赛纳民宿；黑山头固定拍摄安排仍是次日日出，不在同一晚重复追第二个日落点。
+- 日落后先沿已核准支路原路退出，再走实时导航确认的主路前往赛纳民宿；黑山头日出也只作次日天气候选，不在同一晚另追第二个日落点。
 
 ---
 
@@ -287,10 +306,10 @@ itinerary-map: overview
 ![Day 4 路线与全程定位](figures/maps/d04.webp){.route-map loading="lazy" decoding="async" fig-alt="赛纳民宿经黑山头晨拍、五卡和乌兰山至七卡宿说客栈的当日路线图"}
 
 **路线**<br>
-赛纳民宿 → <span class="status-tag status-check">航拍待核验</span> <span>黑山头日出观测点</span> → <span class="status-tag status-no-fly">禁飞</span> <span>五卡 → 乌兰山 → 七卡</span>
+赛纳民宿 → 黑山头镇（休息 / 按需补给；晨拍仅前晚启用后执行）→ <span class="status-tag status-no-fly">禁飞</span> <span>五卡 → 乌兰山 → 七卡</span>
 
 **里程与驾驶**<br>
-高德推荐方案（{{< var route-checked >}} 快照）为 {{< var d04-km >}} 公里、纯驾驶约 {{< var d04-time >}}；执行表为 04:20—18:05，共 13 小时 45 分，包含赛纳至黑山头晨拍点的转场；06:50—10:00 用于镇区早餐和驾驶员休息，不返回赛纳补觉，其余差额用于卡线正规停车带拍摄、用餐和休息。
+高德推荐方案（{{< var route-checked >}} 快照）为 {{< var d04-km >}} 公里、纯驾驶约 {{< var d04-time >}}；默认执行表为 08:00—18:05，共 10 小时 05 分；含镇区补给、卡线低速、正规停车带拍摄及驾驶员休息。高德快照以黑山头参考点控制道路方向，不要求去观测坡停车；实际加油站另存收藏，候选晨拍进出另核。
 
 **当晚住宿**<br>
 [宿说客栈（七卡店）][stay-sushuo]{data-stop-role="logistics"}，9 月 29 日入住、30 日退房；恩和牧场七卡队 14 幢 17 号。不要导航到恩和俄罗斯族民族乡，按“七卡店”与订单地址匹配。
@@ -298,11 +317,11 @@ itinerary-map: overview
 **高德导航**
 
 ::: {.daily-nav}
-**自驾顺序**　[呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} → [黑山头晨拍观测坡（高德名称：日落观测点）](https://www.amap.com/place/B0HUKN51FP){data-photo="heishantou_sunrise"} → 黑山头已收藏加油站 → [五卡](https://uri.amap.com/search?keyword=五卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="wuka_valley"} → [额尔古纳河乌兰山景区大门](https://www.amap.com/place/B0H2B7KCNJ){data-place="wulan"} → [宿说客栈（七卡店）][stay-sushuo]{data-stop-role="logistics"}。
+**自驾顺序**　[呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} → 黑山头已收藏加油站（不进观测坡）→ [五卡](https://uri.amap.com/search?keyword=五卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="wuka_valley"} → [额尔古纳河乌兰山景区大门](https://www.amap.com/place/B0H2B7KCNJ){data-place="wulan"} → [宿说客栈（七卡店）][stay-sushuo]{data-stop-role="logistics"}。
 
 **整段核验**　[在高德打开 9 月 29 日完整途经点路线][amap-p04]{data-stop-role="drive"}
 
-**住宿到晨拍**　赛纳至观测坡约 24 公里，9 月 20 日高德参考约 27 分钟；计划留 45 分钟给驾驶、停车和步行，不能把“05:10 起床”同时当成已到机位。凌晨道路或退房不成立、睡眠不足时不赶日出，休息后携行李直接北上。若需要床上补觉，应在前晚选择这一休息分支，不安排晨拍后往返赛纳。
+**默认执行**　08:00 起床，早餐后带齐行李退房，白天经黑山头镇补给后北上，不去观测坡，不回赛纳取物。前晚核实镇区实际网点及通行，08:50—09:40 为驾驶机动预算，不是重新核准的车程。
 
 **卡线路径**　五卡无法搜索时直接把乌兰山景区设为下一站，确认导航全程沿 X904 和额尔古纳河方向行驶。
 :::
@@ -311,10 +330,9 @@ itinerary-map: overview
 
 | 时间 | 安排 | 对应高德导航点 |
 |---|---|---|
-| 04:20—04:35 | <span class="stop-tag row-rest">休息 / 准备</span> 起床、带齐行李，按前夜约定办理早退房；不把行李留在民宿 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
-| 04:35—05:20 | <span class="stop-tag row-drive">行车</span> 驶向黑山头晨拍观测坡，预留停车、步行与架机；前晚核对合法停车和凌晨路况，条件不成立则放弃晨拍、睡足后北上 | [黑山头晨拍观测坡（高德名称：日落观测点）](https://www.amap.com/place/B0HUKN51FP){data-photo="heishantou_sunrise"} |
-| 05:20—06:40 | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-check">航拍待核验</span> <span class="photo-stop"><img src="icons/sunrise_3222792.png" class="sun-event-icon" alt="日出">黑山头日出；核验通过时以无人机俯拍湿地、河曲和晨雾，地面相机同步兜底</span> | [黑山头晨拍观测坡](https://www.amap.com/place/B0HUKN51FP){data-photo="heishantou_sunrise"} |
-| 06:50—10:00 | <span class="stop-tag row-rest">休息 / 准备</span> 镇区早餐、合法停车休息、整理器材；不返回赛纳。驾驶员仍困倦时继续休息并压缩沿途选停，不赶路 | 黑山头镇区已确认营业早餐点及允许停车休息处 |
+| 08:00—08:50 | <span class="stop-tag row-rest">休息 / 准备</span> 默认睡足后起床、早餐、装车退房；带齐行李，不回民宿取物 | [呼伦贝尔陈巴尔虎旗赛纳民宿][stay-saina]{data-stop-role="logistics"} |
+| 08:50—09:40 | <span class="stop-tag row-drive">行车</span> 按前晚确认的开放道路前往黑山头镇实际补给网点；不进晨拍观测坡 | 黑山头已收藏加油站 / 正规停车休息处 |
+| 09:40—10:20 | <span class="stop-tag row-rest">休息 / 准备</span> 按需加油、补充路餐并休息，核实卡线当期通行；困倦或路况不良时先休息、压缩拍摄 | 黑山头镇已确认网点 |
 | 10:30 | <span class="stop-tag row-drive">行车</span> <span class="status-tag status-no-fly">禁飞</span> <span>离开黑山头，进入卡线前收起无人机</span> | [五卡](https://uri.amap.com/search?keyword=五卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="wuka_valley"} |
 | 11:20—11:40 | <span class="stop-tag row-optional">选停</span> <span class="optional-stop">五卡河谷按光线与合法停车条件选停，可直接通过；<span class="status-tag status-no-fly">禁飞</span> <span>只用地面相机</span></span> | [五卡](https://uri.amap.com/search?keyword=五卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-photo="wuka_valley"} |
 | 12:15—13:20 | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-no-fly">禁飞</span> <span class="photo-stop">乌兰山及周边俯瞰机位，只用地面相机</span> | [额尔古纳河乌兰山景区大门](https://www.amap.com/place/B0H2B7KCNJ){data-place="wulan"} |
@@ -323,12 +341,24 @@ itinerary-map: overview
 | 17:00 | <span class="stop-tag row-logistics">住宿 / 换乘</span> 到七卡入住 | [宿说客栈（七卡店）][stay-sushuo]{data-stop-role="logistics"} |
 | 17:10—18:05 | <span class="stop-tag row-optional">选停</span> <span class="optional-stop"><img src="icons/sunset_3222795.png" class="sun-event-icon" alt="日落">体力与天气合适时拍摄七卡日落，<span class="status-tag status-no-fly">禁飞</span> <span>只用地面相机</span></span> | [七卡](https://uri.amap.com/search?keyword=七卡&city=额尔古纳市&view=map&src=dongbei-roadbook&callnative=1){data-stop-role="optional"} |
 
+<details class="source-details">
+<summary>候选晨拍：仅 9 月 28 日晚确认条件改善后启用</summary>
+
+9 月 23 日陈旗、额尔古纳预报 29 日小雨、5—6 级风，故默认不早起；这不是 05:00 的逐小时实况。只有实际机位小时天气、道路、合法停车、视野和驾驶员睡眠均支持，才启用以下替代晨间分支；它与 08:00 起床分支二选一，无人机还须另过 UOM、保护地 / 属地管理和机型风限核验。
+
+- **04:20—04:35** 起床、带齐行李早退房；**04:35—05:20** 驾车、停车及步行到位。赛纳至观测坡 9 月 20 日高德参考约 24 公里、27 分钟，45 分钟为执行预算，非凌晨通行承诺。
+- **05:20—06:40** <span class="stop-tag row-optional">天气候选</span> [黑山头晨拍观测坡](https://www.amap.com/place/B0HUKN51FP){data-photo="heishantou_sunrise"}；地面拍摄优先，风雨不适合时不开机、不追光。
+- **06:50—10:00** 在镇区吃早餐、合法停车休息，不往返赛纳补觉。睡眠不足则前晚直接选默认休息分支，不能把停车小憩当作足够睡眠。
+- **10:30** 接回同一套卡线北上安排；不因候选晨拍推迟北上目标，也不为守时压缩安全休息。
+
+</details>
+
 **拍摄重点**
 
 - 黑山头日出选择草原高点；核验通过时用无人机俯拍湿地、河曲、晨雾和放牧地关系，地面长焦补充层次；
 - 卡线重点捕捉道路起伏、额尔古纳河、秋色与远处村落；
 - 长焦端压缩边境河谷层次，广角端拍道路引导线；
-- <span class="status-tag status-check">航拍待核验</span> <span>黑山头日出是当天唯一无人机候选</span>；<span class="status-tag status-no-fly">禁飞</span> <span>10:30 离开黑山头进入卡线后全程禁飞，即使 DJI App 显示可解禁也不视为获准。</span>
+- <span class="status-tag status-check">航拍待核验</span> <span>黑山头仅在候选晨拍启用后核验航拍，默认无人机收纳</span>；<span class="status-tag status-no-fly">禁飞</span> <span>10:30 离开黑山头进入卡线后全程禁飞，即使 DJI App 显示可解禁也不视为获准。</span>
 
 **停车原则**
 
@@ -338,6 +368,8 @@ itinerary-map: overview
 - 雨后不驶入草地土路，避免陷车与破坏草场。
 
 ---
+
+{{< include includes/cold-weather-gate.md >}}
 
 ### Day 5｜9 月 30 日：七卡—室韦—临江—白鹿岛—奇乾 {#day-5}
 
@@ -519,7 +551,7 @@ itinerary-map: overview
 嫩江 → <span class="status-tag status-check">航拍待核验</span> <span>温泊景区（默认）</span> → 哈尔滨；黑龙山仅在确认当日开放后切换
 
 **里程与驾驶**<br>
-下列里程对应“嫩江—温泊—哈尔滨市区参考点”，用于估算长转场，不是已确定的还车导航。高德推荐方案（{{< var route-checked >}} 快照）为 {{< var d08-km >}} 公里、纯驾驶约 {{< var d08-time >}}。目标执行窗为 08:00—20:30，共 12 小时 30 分，另含五大连池约 4 小时拍摄、补给、休息和国庆车流余量。实际还车地址尚待订单确认；出发前录入门店地址并重算末段，按最晚交车时间反推离场时间。
+下列里程对应“嫩江—温泊—哈尔滨市区参考点”，用于估算长转场，不是已确定的还车导航。高德推荐方案（{{< var route-checked >}} 快照）为 {{< var d08-km >}} 公里、纯驾驶约 {{< var d08-time >}}。目标执行窗为 08:00—20:30，共 12 小时 30 分，另含五大连池最长 4 小时拍摄预算、补给、休息和国庆车流余量；低温降雨持续时缩短拍摄，不等待至 15:00。实际还车地址尚待订单确认；出发前录入门店地址并重算末段，按最晚交车时间反推离场时间。
 
 **当晚住宿**<br>
 哈尔滨市区，优先选择方便还车和次日出行的位置。
@@ -543,7 +575,7 @@ itinerary-map: overview
 | 08:00 | <span class="stop-tag row-rest">休息 / 准备</span> 起床、早餐、整理行李 | [汉庭嫩江火车站店][stay-hanting]{data-stop-role="logistics"} |
 | 08:40 | <span class="stop-tag row-drive">行车</span> 从嫩江出发，默认导航温泊地点前往五大连池 | [温泊景区](https://www.amap.com/place/B01C800I2M){data-place="wenbo"}（已提前切换时使用黑龙山地点） |
 | 10:40—11:00 | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-check">航拍待核验</span> <span>到达并复核 UOM 当时空域、临时管制、景区开放与书面或现场许可；任一不通过则不开机</span> | [温泊景区](https://www.amap.com/place/B01C800I2M){data-place="wenbo"}（默认）；仅提前满足替换条件时改用黑龙山 |
-| 11:00—15:00 | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-check">航拍待核验</span> <span class="photo-stop">只执行一个核心区：默认拍温泊火山湿地、熔岩水系与秋色；确认黑龙山当日开放后才改拍火山锥与熔岩台地</span> | 前一行已确定的唯一高德点位 |
+| 11:00—15:00（最长预留） | <span class="stop-tag row-planned">主拍</span> <span class="status-tag status-check">航拍待核验</span> <span class="photo-stop">只执行一个核心区：默认温泊；低温降雨持续时缩短拍摄并提前返程，不强凑 4 小时。黑龙山须确认当日开放后才替换</span> | 前一行已确定的唯一高德点位 |
 | 15:00—15:40 | <span class="stop-tag row-rest">休息 / 准备</span> 简餐、加满油，确认哈尔滨还车门店夜间交车方式 | 五大连池景区出口附近实时选择正规补给点 |
 | 15:45 | <span class="stop-tag row-drive">行车</span> 最晚离开五大连池；此后不增加北安、绥化或其他景点 | 哈尔滨订单中的准确还车门店（出发前落实地址、最晚交车时间） |
 | 17:40—18:00 | <span class="stop-tag row-rest">休息 / 准备</span> 主路服务区驾驶员休息 | 默认[温泊路线][amap-p08_wenbo]{data-stop-role="drive"}或确认开放后的[黑龙山路线][amap-p08_black]{data-stop-role="drive"}沿线服务区 |
@@ -618,7 +650,7 @@ itinerary-map: overview
 
 - **齐齐哈尔全季**：9 月 25 日入住，26 日从酒店出发；酒店不是租车门店，取车地址仍按实际订单。
 - **依子民宿、润丰元酒店**：分别确认晚到接待及凌晨出入；27 日若到新左旗较晚，先拍日落再回润丰元，不为入住错过日落。
-- **赛纳民宿**：28 日拍完河湾后到店，不再多跑黑山头镇再折返；29 日早退房、带齐行李去黑山头晨拍，之后沿卡线北上，不回赛纳取行李。
+- **赛纳民宿**：28 日河湾仅准入确认后选拍；未启用则沿开放主路直接到店，不多跑黑山头再折返。29 日默认 08:00 起床、带齐行李退房后北上；仅前晚启用晨拍时早退房，不回赛纳取行李。
 - **宿说客栈**：核对“七卡店”，不按地址中的“恩和”二字导航到恩和乡中心；29 日入住，30 日退房北上。
 - **奇乾王家驿站**：落实进村手续、晚餐、供暖与早餐；订到房不代表车辆获准通行。切换备用方案时另处理奇乾取消与莫尔道嘎订房。
 - **牧野小住、嫩江汉庭**：分别确认施工期间可达入口、停车和早餐。根河实际酒店已录入，但交通部门确认的绕行接口仍待落实，不能标成全部已解决。
@@ -644,7 +676,7 @@ itinerary-map: overview
 {{< include includes/conditions-update.md >}}
 
 - **现在至 9 月 24 日**：检查边境通行证审批结果与补正，未办先确认受理时限（见[办理步骤](sources.qmd#permits)）；按逐日城市趋势备衣、确认住宿供暖，再用临近预报决定奇乾是否进入；
-- **T-72 小时**：按小时级预报调整日出、日落和长转场；同时逐点保存 UOM 查询截图，并确认阿尔山、阿木古郎湿地公园开放/围栏/停车和无人机管理、额尔古纳湿地·根河河湾便道、额尔古纳国家湿地公园回退、白鹿岛、敖鲁古雅 10 月 2 日开放时段与五大连池的开放和无人机规则；
+- **T-72 小时**：按小时级预报调整日出、日落和长转场；同时逐点保存 UOM 查询截图，并确认阿尔山、阿木古郎湿地公园开放/围栏/停车和无人机管理、河湾保护区边界与合法进路、额尔古纳国家湿地公园回退、白鹿岛、敖鲁古雅 10 月 2 日开放时段与五大连池的开放和无人机规则；
 - **前一晚 20:00**：锁定次日起床、首个机位、主拍点、备用点和最晚离场时间；
 - **出发前**：复核气象预警、实时降水、能见度、阵风、路面结冰与道路公告。管制状态、根河二桥绕行与证件步骤见[核验与准备](sources.qmd#traffic-documents)。
 
@@ -654,12 +686,12 @@ itinerary-map: overview
 |---|---|---|
 | 9 月 26 日 | 蘑阿沿线降水、低云；阿尔山 16:00 后云量与风 | 路面湿滑时缩减沿途短停；日落窗口关闭时直接入住并准备次日晨拍 |
 | 9 月 27 日 | 乌苏浪子湖低云、雾、降水；阿尔山至新左旗沿线天气；阿木古郎 16:30 后云量、阵风与 UOM | 无持续降水且能见度可用时晨拍；12:20 从金江沟驾车离场。保留左旗日落；阴雨时拍地面层次、不保证落日可见。公园受限则换合法公共区域，强风雷雨等危险天气先避险 |
-| 9 月 28 日 | 莫日格勒河北线至断崖通行、断崖停车；额尔古纳湿地·根河河湾便道、围栏、土地管理、风与 UOM | 14:30 前离开莫日格勒河；16:35 左右白天勘察河湾便道，任一条件不成立即取消进入；国家湿地公园只作提前决定的替换方案 |
-| 9 月 29 日 | <span class="status-tag status-check">航拍待核验</span> <span>黑山头晨雾、UOM 与现场管理</span>；<span class="status-tag status-no-fly">禁飞</span> <span>卡线路面和边境管理</span> | 黑山头核验通过时执行日出航拍；<span class="status-tag status-no-fly">禁飞</span> <span>10:30 进入卡线后禁飞</span>；雨后不进草地土路，乌兰山支路湿滑时只走铺装主线 |
+| 9 月 28 日 | 莫日格勒河北线至断崖通行、断崖停车；河湾保护区边界、合法进路、便道、停车、风与 UOM | 出发前先取得保护区管理方答复；未确认则删除河湾、不去支路探路。14:30 前离开莫日格勒河；国家湿地公园只作提前决定的替换方案 |
+| 9 月 29 日 | <span class="status-tag status-check">航拍待核验</span> <span>黑山头晨雾、UOM 与现场管理</span>；<span class="status-tag status-no-fly">禁飞</span> <span>卡线路面和边境管理</span> | 默认 08:00 起床、不追日出；仅前晚小时预报、道路、停车与睡眠均成立才恢复候选晨拍，航拍另核；<span class="status-tag status-no-fly">禁飞</span> <span>10:30 进入卡线后禁飞</span>；雨后不进草地土路，乌兰山支路湿滑时只走铺装主线 |
 | 9 月 30 日 | <span class="status-tag status-no-fly">禁飞</span> <span>七卡—八卡—九卡卡线段</span>；室韦、临江与白鹿岛无人机规则；临江—白鹿岛—奇乾第二段导航 | <span class="status-tag status-no-fly">禁飞</span> <span>驶离卡线前及奇乾禁飞</span>；室韦、临江和白鹿岛核验通过才起飞。仅奇乾支路不可用时，先确认莫尔道嘎进路开放再切备用；共用进路受限则暂缓，不自动绕行 |
 | 10 月 1 日 | <span class="status-tag status-no-fly">禁飞</span> <span>奇乾晨雾与边境管理</span>；林区路面 | <span class="status-tag status-no-fly">禁飞</span> <span>奇乾只用地面相机</span>；无雾或持续降水时缩短晨拍，提早驶向根河 |
 | 10 月 2 日 | 敖鲁古雅开放时段；根河至嫩江降水、降温、结冰风险与驾驶员状态 | 08:30 前往敖鲁古雅，09:00 目标入园，驯鹿只作地面拍摄；10:20 南下，每约 2 小时休息，目标 16:00—17:00 到嫩江；延误不增加支路拍摄，并按驾驶员状态休息 |
-| 10 月 3 日 | 温泊开放、UOM/景区航拍规则、黑龙山当日开放、能见度、风、国庆车流及还车门店夜间交车 | 默认温泊；黑龙山仅在管理方确认当日开放后切换，两处仅执行一处；前晚 21:30 后到嫩江或条件不利时缩短拍摄，按门店最晚接车时间倒推且不晚于 15:45 离开 |
+| 10 月 3 日 | 温泊开放、UOM/景区航拍规则、黑龙山当日开放、能见度、风、国庆车流及还车门店夜间交车 | 默认温泊；黑龙山仅在管理方确认当日开放后切换，两处仅执行一处；前晚 21:30 后到嫩江或低温降雨等条件不利时缩短拍摄，按门店最晚接车时间倒推且不晚于 15:45 离开 |
 
 ### 出发前
 
